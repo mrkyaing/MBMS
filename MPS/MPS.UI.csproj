@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF2A4532-1D0C-43F3-AE6C-88386F8CA285}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MPS</RootNamespace>
+    <AssemblyName>MPS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.4.0.3, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Billing\BillCode7Layerfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\BillCode7Layerfrm.Designer.cs">
+      <DependentUpon>BillCode7Layerfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\BillCode7LayerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing\BillCode7LayerList.Designer.cs">
+      <DependentUpon>BillCode7LayerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting Setup\CompanyProfilefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting Setup\CompanyProfilefrm.Designer.cs">
+      <DependentUpon>CompanyProfilefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Setup\CustomerListfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Setup\CustomerListfrm.Designer.cs">
+      <DependentUpon>CustomerListfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Setup\DetailCustomerfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Setup\DetailCustomerfrm.Designer.cs">
+      <DependentUpon>DetailCustomerfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMDI.Designer.cs">
+      <DependentUpon>MainMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ledger\Accountfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\Accountfrm.Designer.cs">
+      <DependentUpon>Accountfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer Setup\Customerfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Setup\Customerfrm.Designer.cs">
+      <DependentUpon>Customerfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\Quarterfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\Quarterfrm.Designer.cs">
+      <DependentUpon>Quarterfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\TransformerListfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\TransformerListfrm.Designer.cs">
+      <DependentUpon>TransformerListfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\MeterBoxfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\MeterBoxfrm.Designer.cs">
+      <DependentUpon>MeterBoxfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\MeterTypefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\MeterTypefrm.Designer.cs">
+      <DependentUpon>MeterTypefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\Polefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\Polefrm.Designer.cs">
+      <DependentUpon>Polefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\PunishmentRulefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\PunishmentRulefrm.Designer.cs">
+      <DependentUpon>PunishmentRulefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meter Setup\DetailMeterfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meter Setup\DetailMeterfrm.Designer.cs">
+      <DependentUpon>DetailMeterfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meter Setup\MeterFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meter Setup\MeterFrm.Designer.cs">
+      <DependentUpon>MeterFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meter Setup\MeterListfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meter Setup\MeterListfrm.Designer.cs">
+      <DependentUpon>MeterListfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeterUnitCollection\MeterUnitCollectionsfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterUnitCollection\MeterUnitCollectionsfrm.designer.cs">
+      <DependentUpon>MeterUnitCollectionsfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting Setup\Settingfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting Setup\Settingfrm.Designer.cs">
+      <DependentUpon>Settingfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Management\Rolefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Management\Rolefrm.Designer.cs">
+      <DependentUpon>Rolefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master Setup\Townshipfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\Townshipfrm.Designer.cs">
+      <DependentUpon>Townshipfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Master Setup\Transformerfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\Transformerfrm.Designer.cs">
+      <DependentUpon>Transformerfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Management\Userfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Management\Userfrm.Designer.cs">
+      <DependentUpon>Userfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Management\UserListfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User Management\UserListfrm.Designer.cs">
+      <DependentUpon>UserListfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Billing\BillCode7Layerfrm.resx">
+      <DependentUpon>BillCode7Layerfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing\BillCode7LayerList.resx">
+      <DependentUpon>BillCode7LayerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting Setup\CompanyProfilefrm.resx">
+      <DependentUpon>CompanyProfilefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Setup\CustomerListfrm.resx">
+      <DependentUpon>CustomerListfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Setup\DetailCustomerfrm.resx">
+      <DependentUpon>DetailCustomerfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMDI.resx">
+      <DependentUpon>MainMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\Accountfrm.resx">
+      <DependentUpon>Accountfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Setup\Customerfrm.resx">
+      <DependentUpon>Customerfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\Quarterfrm.resx">
+      <DependentUpon>Quarterfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\TransformerListfrm.resx">
+      <DependentUpon>TransformerListfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\MeterBoxfrm.resx">
+      <DependentUpon>MeterBoxfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\MeterTypefrm.resx">
+      <DependentUpon>MeterTypefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\Polefrm.resx">
+      <DependentUpon>Polefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\PunishmentRulefrm.resx">
+      <DependentUpon>PunishmentRulefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meter Setup\DetailMeterfrm.resx">
+      <DependentUpon>DetailMeterfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meter Setup\MeterFrm.resx">
+      <DependentUpon>MeterFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meter Setup\MeterListfrm.resx">
+      <DependentUpon>MeterListfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeterUnitCollection\MeterUnitCollectionsfrm.resx">
+      <DependentUpon>MeterUnitCollectionsfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting Setup\Settingfrm.resx">
+      <DependentUpon>Settingfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Management\Rolefrm.resx">
+      <DependentUpon>Rolefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\Townshipfrm.resx">
+      <DependentUpon>Townshipfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Master Setup\Transformerfrm.resx">
+      <DependentUpon>Transformerfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Management\Userfrm.resx">
+      <DependentUpon>Userfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Management\UserListfrm.resx">
+      <DependentUpon>UserListfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AppDb\POS01.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Importing\" />
+    <Folder Include="Integrate with HHU\" />
+    <Folder Include="Reports\" />
+    <Folder Include="System\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBMS.DAL\MBMS.DAL.csproj">
+      <Project>{09B10AC3-5730-4D04-95AF-B964D41709C2}</Project>
+      <Name>MBMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPS.BusinessLogic\MPS.BusinessLogic.csproj">
+      <Project>{50245542-dfb5-4bbd-b636-5a6e3f242735}</Project>
+      <Name>MPS.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPS.SQLiteHelper\MPS.SQLiteHelper.csproj">
+      <Project>{00925758-d3e3-4a90-b883-f1f52a528194}</Project>
+      <Name>MPS.SQLiteHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\ajax-loader %281%29.gif" />
+    <Content Include="resources\ajax-loader.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

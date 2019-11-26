@@ -1,0 +1,272 @@
+﻿using MBMS.DAL;
+using MPS.BusinessLogic.MasterSetUpController;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MPS
+{
+    public partial class Quarterfrm : Form
+    {
+        private ToolTip tooltip = new ToolTip();
+        MBMSEntities mbmsEntities = new MBMSEntities();
+        public String UserID { get; set; }
+        string quarterID;
+        public Boolean isEdit { get; set; }
+        Quarter quarter = new Quarter();
+        QuarterController quarterController = new QuarterController();
+        public Quarterfrm()
+        {
+            InitializeComponent();
+        }
+        public bool checkValidation()
+        {
+            bool hasError = true;
+            tooltip.RemoveAll();
+            tooltip.IsBalloon = true;
+            tooltip.ToolTipIcon = ToolTipIcon.Error;
+            tooltip.ToolTipTitle = "Error";
+
+
+            if (string.IsNullOrEmpty(txtQuarterCode.Text))
+            {
+                tooltip.SetToolTip(txtQuarterCode, "Error");
+                tooltip.Show("Please fill up Quarter Code!", txtQuarterCode);
+                hasError = false;
+            }
+            if (string.IsNullOrEmpty(txtQuarterNameEng.Text))
+            {
+                tooltip.SetToolTip(txtQuarterNameEng, "Error");
+                tooltip.Show("Please fill up Quarter Name (Eng)!", txtQuarterNameEng);
+                hasError = false;
+            }
+            if (string.IsNullOrEmpty(txtQuarterNameMM.Text))
+            {
+                tooltip.SetToolTip(txtQuarterNameMM, "Error");
+                tooltip.Show("Please fill up Quarter Name (MM)!", txtQuarterNameMM);
+                hasError = false;
+            }
+            if (cboTownshipName.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboTownshipName, "Error");
+                tooltip.Show("Please Choose Township Name!", cboTownshipName);
+                hasError = false;
+            }
+            return hasError;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {            
+            if (checkValidation())
+            {
+                if (isEdit)
+                {
+                    int editQuarterCodeCount = 0, editQuarterNameEngCount = 0, editQuarterNameMMCount = 0;
+
+
+                    Quarter updateQuarter = (from q in mbmsEntities.Quarters where q.QuarterID == quarterID  select q).FirstOrDefault();
+                    if (txtQuarterCode.Text != updateQuarter.QuarterCode)
+                    {
+                        editQuarterCodeCount = (from q in mbmsEntities.Quarters where q.QuarterCode == txtQuarterCode.Text && q.Active==true select q).ToList().Count;
+                    }
+
+                    if (editQuarterCodeCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterCode, "Error");
+                        tooltip.Show("Quarter Code is already exist!", txtQuarterCode);
+                        return;
+                    }
+                    if (txtQuarterNameEng.Text != updateQuarter.QuarterNameInEng)
+                    {
+                        editQuarterNameEngCount = (from q in mbmsEntities.Quarters where q.QuarterNameInEng == txtQuarterNameEng.Text && q.Active==true select q).ToList().Count;
+                    }
+
+                    if (editQuarterNameEngCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterNameEng, "Error");
+                        tooltip.Show("Quarter Name is already exist!", txtQuarterNameEng);
+                        return;
+                    }
+                    if (txtQuarterNameMM.Text != updateQuarter.QuarterNameInMM)
+                    {
+                        editQuarterNameMMCount = (from q in mbmsEntities.Quarters where q.QuarterNameInMM == txtQuarterNameMM.Text && q.Active==true select q).ToList().Count;
+                    }
+
+                    if (editQuarterNameMMCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterNameMM, "Error");
+                        tooltip.Show("Quarter Name is already exist!", txtQuarterNameMM);
+                        return;
+                    }
+
+                    updateQuarter.QuarterCode = txtQuarterCode.Text;
+                    updateQuarter.QuarterNameInEng = txtQuarterNameEng.Text;
+                    updateQuarter.QuarterNameInMM = txtQuarterNameMM.Text;
+                    updateQuarter.Address = txtAddress.Text;
+                    updateQuarter.TownshipID = cboTownshipName.SelectedValue.ToString();
+                    updateQuarter.UpdatedUserID = UserID;
+                    updateQuarter.UpdatedDate = DateTime.Now;
+                    quarterController.UpdateByQuarter(updateQuarter);
+                    MessageBox.Show("Successfully updated Quarter! Please check it in 'Quarter List'.", "Update");
+                    Clear();
+                    FormRefresh();
+                }
+                else
+                {
+                    int quarterCodeCount = 0, quarterNameEngCount=0, quarterNameMMCount=0;
+                    quarterCodeCount = (from q in mbmsEntities.Quarters where q.QuarterCode == txtQuarterCode.Text && q.Active==true select q).ToList().Count;
+                    quarterNameEngCount= (from q in mbmsEntities.Quarters where q.QuarterNameInEng == txtQuarterNameEng.Text && q.Active==true select q).ToList().Count;
+                    quarterNameMMCount = (from q in mbmsEntities.Quarters where q.QuarterNameInMM == txtQuarterNameMM.Text && q.Active==true select q).ToList().Count;
+                    if (quarterCodeCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterCode, "Error");
+                        tooltip.Show("Quarter Code is already exist!", txtQuarterCode);
+                        return;
+                    }
+                    if (quarterNameEngCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterNameEng, "Error");
+                        tooltip.Show("Quarter Name is already exist!", txtQuarterNameEng);
+                        return;
+                    }
+                    if (quarterNameMMCount > 0)
+                    {
+                        tooltip.SetToolTip(txtQuarterNameMM, "Error");
+                        tooltip.Show("Quarter Name is already exist!", txtQuarterNameMM);
+                        return;
+                    }
+                    quarter.QuarterID = Guid.NewGuid().ToString();
+                    quarter.QuarterCode = txtQuarterCode.Text;
+                    quarter.QuarterNameInEng = txtQuarterNameEng.Text;
+                    quarter.QuarterNameInMM = txtQuarterNameMM.Text;
+                    quarter.TownshipID = cboTownshipName.SelectedValue.ToString();
+                    quarter.Address = txtAddress.Text;
+                    quarter.Active = true;
+                    quarter.CreatedUserID = UserID;
+                    quarter.CreatedDate = DateTime.Now;
+                    quarterController.Save(quarter);
+                    MessageBox.Show("Success", "Save Success");
+                    Clear();
+                    FormRefresh();
+                }
+            }
+        }
+        public void Clear()
+        {
+            txtQuarterCode.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtQuarterNameEng.Text = string.Empty;
+            txtQuarterNameMM.Text = string.Empty;
+            cboTownshipName.SelectedIndex = 0;
+           
+        }
+
+        private void Quarterfrm_Load(object sender, EventArgs e)
+        {
+            bindTownship();
+            FormRefresh();
+            tooltip.AutoPopDelay = 1;
+            tooltip.InitialDelay = 1;
+            tooltip.ReshowDelay = 1;
+        }
+        public void bindTownship()
+        {
+            List<Township> townshipList = new List<Township>();
+            Township township = new Township();
+            township.TownshipID = Convert.ToString(0);
+            township.TownshipNameInEng = "Select";
+            townshipList.Add(township);
+            townshipList.AddRange(mbmsEntities.Townships.Where(x => x.Active == true).OrderBy(x=> x.TownshipNameInEng).ToList());
+            cboTownshipName.DataSource = townshipList;
+            cboTownshipName.DisplayMember = "TownshipNameInEng";
+            cboTownshipName.ValueMember = "TownshipID";
+        }
+        public void FormRefresh()
+        {
+            dgvQuarterList.AutoGenerateColumns = false;
+            dgvQuarterList.DataSource = (from q in mbmsEntities.Quarters where q.Active == true orderby q.QuarterCode descending select q).ToList();
+        }
+
+        private void dgvQuarterList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvQuarterList.Rows)
+            {
+                Quarter quarter = (Quarter)row.DataBoundItem;
+                row.Cells[0].Value = quarter.QuarterID;
+                row.Cells[1].Value = quarter.QuarterCode;
+                row.Cells[2].Value = quarter.QuarterNameInEng;
+                row.Cells[3].Value = quarter.QuarterNameInMM;
+                row.Cells[4].Value = quarter.Township.TownshipNameInEng;
+                row.Cells[5].Value = quarter.Address;
+            }
+        }
+
+        private void dgvQuarterList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 7)
+                {
+                    //DeleteForQuarter
+                    DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.OK))
+                    {
+
+                        DataGridViewRow row = dgvQuarterList.Rows[e.RowIndex];
+                        quarterID = Convert.ToString(row.Cells[0].Value);
+                        Quarter quarterObj = (Quarter)row.DataBoundItem;
+                        quarterObj = (from q in mbmsEntities.Quarters where q.QuarterID == quarterObj.QuarterID select q).FirstOrDefault();
+                        var transformerCount = (from t in quarterObj.Transformers where t.Active == true select t).Count();
+                        var customerCount = (from t in quarterObj.Customers where t.Active == true select t).Count();
+                        if (customerCount > 0)
+                        {
+                            MessageBox.Show("This Quarter cannot deleted! It is in used", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        if (transformerCount > 0)
+                        {
+                            MessageBox.Show("This Quarter cannot deleted! It is in used", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        dgvQuarterList.DataSource = "";
+                            Quarter quarter = (from q in mbmsEntities.Quarters where q.QuarterID == quarterID select q).FirstOrDefault();
+                            quarter.Active = false;
+                            quarter.DeletedUserID = UserID;
+                            quarter.DeletedDate = DateTime.Now;
+                            quarterController.DeleteByQuarter(quarter);
+                            dgvQuarterList.DataSource = (from q in mbmsEntities.Quarters where q.Active == true orderby q.QuarterCode descending select q).ToList();
+                            MessageBox.Show(this, "Successfully Deleted!", "Delete Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                            FormRefresh();
+                        
+                    }
+
+                }
+                else if (e.ColumnIndex == 6)
+                {
+                    //EditQuarter
+                    DataGridViewRow row = dgvQuarterList.Rows[e.RowIndex];
+                    quarterID = Convert.ToString(row.Cells[0].Value);
+                    txtQuarterCode.Text = Convert.ToString(row.Cells[1].Value);
+                    txtQuarterNameEng.Text = Convert.ToString(row.Cells[2].Value);
+                    txtQuarterNameMM.Text = Convert.ToString(row.Cells[3].Value);
+                    cboTownshipName.Text = Convert.ToString(row.Cells[4].Value);
+                    txtAddress.Text = Convert.ToString(row.Cells[5].Value);
+                    isEdit = true;
+
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+    }
+}
