@@ -268,6 +268,7 @@ namespace MPS
 
         private void meterBillCollectToolStripMenuItem_Click(object sender, EventArgs e) {
             MeterUnitCollectionsfrm _MeterUnitCollectionsfrm = new MeterUnitCollectionsfrm();
+            _MeterUnitCollectionsfrm.UserID = UserID;
             _MeterUnitCollectionsfrm.Show();
             }
 

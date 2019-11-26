@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MPS.BusinessLogic.MeterUnitCollectionController {
  public   interface IMeterUnitCollections {
-        void MeterUnitCollectionProces(MeterUnitCollect meterUnitCollect);
+        void MeterUnitProces(MeterUnitCollect meterUnitCollect);
+        void MeterUnitCollectionsProces(List<MeterUnitCollect> meterUnitCollect);
         }
     }

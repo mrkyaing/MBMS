@@ -2,15 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 using MBMS.DAL;
+using System.Data.Objects;
 
 namespace MPS.BusinessLogic.MeterUnitCollectionController {
     public class MeterUnitCollectionController : IMeterUnitCollections {
         MBMSEntities mBMSEntities = new MBMSEntities();
-        public void MeterUnitCollectionProces(MeterUnitCollect meterUnitCollect) {
+        public void MeterUnitProces(MeterUnitCollect meterUnitCollect) {
             mBMSEntities.MeterUnitCollects.Add(meterUnitCollect);
             mBMSEntities.SaveChanges();
+            }
+        public void MeterUnitCollectionsProces(List<MeterUnitCollect> meterUnitCollect) {
+            foreach(MeterUnitCollect item in meterUnitCollect) {
+                //MeterUnitCollect muc = mBMSEntities.MeterUnitCollects.Where(x => x.CustomerID == item.CustomerID && EntityFunctions.TruncateTime(x.FromDate) == item.FromDate.Date && EntityFunctions.TruncateTime(x.ToDate) == item.ToDate.Date).SingleOrDefault();
+                //mBMSEntities.MeterUnitCollects.Remove(muc);             
+                mBMSEntities.MeterUnitCollect_DeleteByCustomerIDFromDateToDate(item.CustomerID, item.FromDate, item.ToDate);
+                mBMSEntities.MeterUnitCollects.Add(item);
+                mBMSEntities.SaveChanges();
+                }
+          
             }
         }
     }

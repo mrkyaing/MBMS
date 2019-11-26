@@ -17,5 +17,12 @@ namespace MBMS.DAL
         public string SettingID { get; set; }
         public string Key { get; set; }
         public string Value { get; set; }
+        public bool Active { get; set; }
+        public string CreatedUserID { get; set; }
+        public System.DateTime CreatedDate { get; set; }
+        public string UpdatedUserID { get; set; }
+        public Nullable<System.DateTime> UpdatedDate { get; set; }
+        public string DeletedUserID { get; set; }
+        public Nullable<System.DateTime> DeletedDate { get; set; }
     }
 }
