@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 namespace MPS.MeterUnitCollect {
     public partial class MeterUnitCollectionsfrm : Form {
-
+        StringBuilder ErrorList = new StringBuilder();
         MBMSEntities mbmsEntities = new MBMSEntities();
         IMeterUnitCollections iMeterUnitColleciton = new MeterUnitCollectionController();
         public string UserID { get; set; }
@@ -62,6 +63,9 @@ namespace MPS.MeterUnitCollect {
                     MBMS.DAL.MeterUnitCollect meterUnit = new MBMS.DAL.MeterUnitCollect();
                     meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
                     Customer customerinfo = mbmsEntities.Customers.Where(x => x.CustomerCode == item.nod_csm_id&&x.Active==true).SingleOrDefault();//eg >>450-050-545-450-TPYTR05-00000428
+                    if (customerinfo == null) {
+
+                        }
                     meterUnit.CustomerID = customerinfo.CustomerID;
                     meterUnit.FromDate = dtpfromDate.Value;
                     meterUnit.ToDate = dtptoDate.Value;

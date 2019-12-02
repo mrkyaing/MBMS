@@ -15,9 +15,7 @@ namespace MPS.BusinessLogic.MeterUnitCollectionController {
             mBMSEntities.SaveChanges();
             }
         public void MeterUnitCollectionsProces(List<MeterUnitCollect> meterUnitCollect) {
-            foreach(MeterUnitCollect item in meterUnitCollect) {
-                //MeterUnitCollect muc = mBMSEntities.MeterUnitCollects.Where(x => x.CustomerID == item.CustomerID && EntityFunctions.TruncateTime(x.FromDate) == item.FromDate.Date && EntityFunctions.TruncateTime(x.ToDate) == item.ToDate.Date).SingleOrDefault();
-                //mBMSEntities.MeterUnitCollects.Remove(muc);             
+            foreach(MeterUnitCollect item in meterUnitCollect) {                    
                 mBMSEntities.MeterUnitCollect_DeleteByCustomerIDFromDateToDate(item.CustomerID, item.FromDate, item.ToDate);
                 mBMSEntities.MeterUnitCollects.Add(item);
                 mBMSEntities.SaveChanges();
