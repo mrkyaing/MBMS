@@ -43,10 +43,7 @@ namespace MPS.MeterUnitCollect {
             if (DialogResult.OK==result) {                        
             if (SaveMeterUnitCollection(data)) {
                 MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            else {
-                MessageBox.Show("Error occur when collection meter unit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }          
             }
            
             }
@@ -64,7 +61,9 @@ namespace MPS.MeterUnitCollect {
                     meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
                     Customer customerinfo = mbmsEntities.Customers.Where(x => x.CustomerCode == item.nod_csm_id&&x.Active==true).SingleOrDefault();//eg >>450-050-545-450-TPYTR05-00000428
                     if (customerinfo == null) {
-
+                        ErrorList.Append("Set customer record for :" + item.nod_csm_id);
+                        MessageBox.Show(ErrorList.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                         }
                     meterUnit.CustomerID = customerinfo.CustomerID;
                     meterUnit.FromDate = dtpfromDate.Value;
@@ -72,6 +71,11 @@ namespace MPS.MeterUnitCollect {
                     meterUnit.TotalMeterUnit = (decimal)item.nod_pres_eng;
                     meterUnit.BillMonth = (int)item.nod_bill_month;
                     Transformer transformer = mbmsEntities.Transformers.Where(x => x.QuarterID == customerinfo.QuarterID&&x.Active==true).SingleOrDefault();
+                    if (transformer == null) {
+                        ErrorList.Append("Set transformer record for :" + customerinfo.Quarter.QuarterNameInEng);
+                        MessageBox.Show(ErrorList.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                        }
                     meterUnit.TransformerID = transformer.TransformerID;
                     meterUnit.PoleID = mbmsEntities.Poles.Where(x => x.TransformerID == transformer.TransformerID&&x.Active==true).SingleOrDefault().PoleID;
                     meterUnit.MeterID = customerinfo.MeterID;
