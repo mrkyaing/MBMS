@@ -68,6 +68,8 @@
     <Compile Include="MasterSetUpController\QuarterController.cs" />
     <Compile Include="MasterSetUpController\TownshipController.cs" />
     <Compile Include="MasterSetUpController\TransformerController.cs" />
+    <Compile Include="MeterBillCalculationController\IMeterBillCalculateServices.cs" />
+    <Compile Include="MeterBillCalculationController\MeterBillCalculateController.cs" />
     <Compile Include="MeterController\IMeter.cs" />
     <Compile Include="MeterController\MeterController.cs" />
     <Compile Include="MeterUnitCollectionController\IMeterUnitCollections.cs" />
