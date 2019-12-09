@@ -34,8 +34,7 @@ namespace MPS.MeterBillCalculation {
             List<MeterBill> meterbillList = new List<MeterBill>();
             Random random = new Random();
             try {
-                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {
-                  
+                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {                 
                     MeterBill mb = new MeterBill();
                     mb.MeterBillID = Guid.NewGuid().ToString();
                     mb.MeterBillCode = random.Next().ToString();
@@ -52,7 +51,7 @@ namespace MPS.MeterBillCalculation {
                     mb.AdvanceMoney = 0;
                     mb.CreditAmount = 0;
                     mb.isPaid = false;
-                    mb.Remark = "bill data for " + item.FromDate.ToString("MM");           
+                    mb.Remark = "bill data for " + item.FromDate.ToString("MMMM");           
                     mb.MeterUnitCollectID = item.MeterUnitCollectID;
                     mb.Active = true;
                     mb.CreatedDate = DateTime.Now;
