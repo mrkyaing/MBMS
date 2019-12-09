@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MPS.BusinessLogic.MeterBillCalculationController {
-    interface IMeterBillCalculateServices {
+  public  interface IMeterBillCalculateServices {
+        List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate);
         void MeterBillCalculate(List<MeterBill> _meterBill);
         }
     }

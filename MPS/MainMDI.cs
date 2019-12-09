@@ -3,6 +3,7 @@ using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
 using MPS.Master_Setup;
 using MPS.Meter_Setup;
+using MPS.MeterBillCalculation;
 using MPS.MeterUnitCollect;
 using MPS.Setting_Setup;
 using MPS.User_Management;
@@ -284,5 +285,11 @@ namespace MPS
             Settingfrm settingform = new Settingfrm();
             settingform.Show();
         }
-    }
+
+        private void meterBillProcessToolStripMenuItem_Click(object sender, EventArgs e) {
+            MeterBillCalculate mbc = new MeterBillCalculate();
+            mbc.UserID = UserID;
+            mbc.Show();
+            }
+        }
 }

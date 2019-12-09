@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MBMS.DAL;
+using System.Data.Objects;
 
 namespace MPS.BusinessLogic.MeterBillCalculationController {
     public class MeterBillCalculateController : IMeterBillCalculateServices {
@@ -13,6 +14,10 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                 mBMSEntities.MeterBills.Add(item);
                 mBMSEntities.SaveChanges();
                 }
+            }
+
+        public List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate) {
+            return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime( x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();
             }
         }
     }
