@@ -16,9 +16,7 @@ namespace MBMS.DAL
     {
         public string AdvanceMoneyCustomerID { get; set; }
         public string MeterBillID { get; set; }
-        public System.DateTime FromDate { get; set; }
-        public System.DateTime ToDate { get; set; }
-        public Nullable<int> ForMonth { get; set; }
+        public Nullable<System.DateTime> ForMonth { get; set; }
         public decimal AdvanceMonthAmount { get; set; }
         public string Remark { get; set; }
         public bool Active { get; set; }

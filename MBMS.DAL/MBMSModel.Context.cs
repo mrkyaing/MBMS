@@ -30,6 +30,7 @@ namespace MBMS.DAL
     
         public DbSet<AdvanceMoneyCustomer> AdvanceMoneyCustomers { get; set; }
         public DbSet<BillCode7Layer> BillCode7Layer { get; set; }
+        public DbSet<BillCode7LayerDetail> BillCode7LayerDetail { get; set; }
         public DbSet<CompanyProfile> CompanyProfiles { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Ledger> Ledgers { get; set; }
@@ -49,6 +50,19 @@ namespace MBMS.DAL
         public DbSet<Transformer> Transformers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserInRole> UserInRoles { get; set; }
+    
+        public virtual int MeterBill_DeleteByFromDateToDate(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        {
+            var fromDateParameter = fromDate.HasValue ?
+                new ObjectParameter("FromDate", fromDate) :
+                new ObjectParameter("FromDate", typeof(System.DateTime));
+    
+            var toDateParameter = toDate.HasValue ?
+                new ObjectParameter("ToDate", toDate) :
+                new ObjectParameter("ToDate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MeterBill_DeleteByFromDateToDate", fromDateParameter, toDateParameter);
+        }
     
         public virtual int MeterUnitCollect_DeleteByCustomerIDFromDateToDate(string customerID, Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {

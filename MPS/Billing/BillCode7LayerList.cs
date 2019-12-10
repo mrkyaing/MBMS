@@ -32,9 +32,9 @@ namespace MPS.Billing
                 row.Cells[0].Value = billCode7Layer.BillCode7LayerID;
                 row.Cells[1].Value = billCode7Layer.BillCode7LayerNo;
                 row.Cells[2].Value = billCode7Layer.BillCodeLayerType;
-                row.Cells[3].Value = billCode7Layer.LowerLimit;
-                row.Cells[4].Value = billCode7Layer.UpperLimit;
-                row.Cells[5].Value = billCode7Layer.AmountPerUnit;
+                //row.Cells[3].Value = billCode7Layer.LowerLimit;
+                //row.Cells[4].Value = billCode7Layer.UpperLimit;
+                //row.Cells[5].Value = billCode7Layer.AmountPerUnit;
                      }
         }
 

@@ -20,7 +20,7 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void btnbillprocess_Click(object sender, EventArgs e) {
-            List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value);
+            List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value,this.cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
             if (dataList.Count == 0) {
                 MessageBox.Show("There is no meter unit collection record!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -72,8 +72,8 @@ namespace MPS.MeterBillCalculation {
             return result;
             }
 
-        private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate) {
-            return meterbillcalculateservice.MeterUnitCollect(fromdate,todate);
+        private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate,string townshipID,string QuaeterID) {
+            return meterbillcalculateservice.MeterUnitCollect(fromdate,todate,townshipID,QuaeterID);
             }
 
         private void MeterBillCalculate_Load(object sender, EventArgs e) {

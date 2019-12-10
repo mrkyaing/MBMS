@@ -54,6 +54,9 @@
     <Compile Include="BillCode7Layer.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BillCode7LayerDetail.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CompanyProfile.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>

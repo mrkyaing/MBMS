@@ -12,14 +12,13 @@ namespace MBMS.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class PunishmentCustomer
+    public partial class BillCode7LayerDetail
     {
-        public string PunishmentCustomerID { get; set; }
-        public System.DateTime ForMonth { get; set; }
-        public string PunishmentRuleID { get; set; }
-        public string MeterBillID { get; set; }
-        public decimal PunishmentAmount { get; set; }
-        public string Remark { get; set; }
+        public string BillCode7LayerDetailID { get; set; }
+        public string BillCode7LayerID { get; set; }
+        public decimal LowerLimit { get; set; }
+        public decimal UpperLimit { get; set; }
+        public decimal AmountPerUnit { get; set; }
         public bool Active { get; set; }
         public string CreatedUserID { get; set; }
         public System.DateTime CreatedDate { get; set; }
@@ -28,7 +27,6 @@ namespace MBMS.DAL
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
     
-        public virtual MeterBill MeterBill { get; set; }
-        public virtual PunishmentRule PunishmentRule { get; set; }
+        public virtual BillCode7Layer BillCode7Layer { get; set; }
     }
 }

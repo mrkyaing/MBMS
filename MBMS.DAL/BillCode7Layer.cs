@@ -16,14 +16,12 @@ namespace MBMS.DAL
     {
         public BillCode7Layer()
         {
+            this.BillCode7LayerDetail = new HashSet<BillCode7LayerDetail>();
             this.Customers = new HashSet<Customer>();
         }
     
         public string BillCode7LayerID { get; set; }
         public long BillCode7LayerNo { get; set; }
-        public decimal LowerLimit { get; set; }
-        public decimal UpperLimit { get; set; }
-        public decimal AmountPerUnit { get; set; }
         public bool Active { get; set; }
         public string CreatedUserID { get; set; }
         public System.DateTime CreatedDate { get; set; }
@@ -33,6 +31,7 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> DeletedDate { get; set; }
         public string BillCodeLayerType { get; set; }
     
+        public virtual ICollection<BillCode7LayerDetail> BillCode7LayerDetail { get; set; }
         public virtual ICollection<Customer> Customers { get; set; }
     }
 }

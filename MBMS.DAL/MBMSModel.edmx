@@ -11,9 +11,7 @@
           </Key>
           <Property Name="AdvanceMoneyCustomerID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="MeterBillID" Type="char" MaxLength="36" Nullable="false" />
-          <Property Name="FromDate" Type="datetime" Nullable="false" />
-          <Property Name="ToDate" Type="datetime" Nullable="false" />
-          <Property Name="ForMonth" Type="int" />
+          <Property Name="ForMonth" Type="date" />
           <Property Name="AdvanceMonthAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Remark" Type="nvarchar(max)" />
           <Property Name="Active" Type="bit" Nullable="false" />
@@ -30,6 +28,21 @@
           </Key>
           <Property Name="BillCode7LayerID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="BillCode7LayerNo" Type="bigint" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="BillCodeLayerType" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BillCode7LayerDetail">
+          <Key>
+            <PropertyRef Name="BillCode7LayerDetailID" />
+          </Key>
+          <Property Name="BillCode7LayerDetailID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="BillCode7LayerID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="LowerLimit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UpperLimit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="AmountPerUnit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -40,7 +53,6 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
-          <Property Name="BillCodeLayerType" Type="nvarchar" MaxLength="256" Nullable="false" />
         </EntityType>
         <EntityType Name="CompanyProfile">
           <Key>
@@ -257,9 +269,7 @@
             <PropertyRef Name="PunishmentCustomerID" />
           </Key>
           <Property Name="PunishmentCustomerID" Type="char" MaxLength="36" Nullable="false" />
-          <Property Name="FromDate" Type="datetime" Nullable="false" />
-          <Property Name="ToDate" Type="datetime" Nullable="false" />
-          <Property Name="ForMonth" Type="int" Nullable="false" />
+          <Property Name="ForMonth" Type="date" Nullable="false" />
           <Property Name="PunishmentRuleID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="MeterBillID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="PunishmentAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
@@ -439,6 +449,18 @@
             </Principal>
             <Dependent Role="AdvanceMoneyCustomer">
               <PropertyRef Name="MeterBillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillCode7LayerDetail_BillCode7Layer">
+          <End Role="BillCode7Layer" Type="Self.BillCode7Layer" Multiplicity="1" />
+          <End Role="BillCode7LayerDetail" Type="Self.BillCode7LayerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillCode7Layer">
+              <PropertyRef Name="BillCode7LayerID" />
+            </Principal>
+            <Dependent Role="BillCode7LayerDetail">
+              <PropertyRef Name="BillCode7LayerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -706,6 +728,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="MeterBill_DeleteByFromDateToDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FromDate" Type="datetime" Mode="In" />
+          <Parameter Name="ToDate" Type="datetime" Mode="In" />
+        </Function>
         <Function Name="MeterUnitCollect_DeleteByCustomerIDFromDateToDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CustomerID" Type="char" Mode="In" />
           <Parameter Name="FromDate" Type="datetime" Mode="In" />
@@ -714,6 +740,7 @@
         <EntityContainer Name="MBMSModelStoreContainer">
           <EntitySet Name="AdvanceMoneyCustomer" EntityType="Self.AdvanceMoneyCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BillCode7Layer" EntityType="Self.BillCode7Layer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BillCode7LayerDetail" EntityType="Self.BillCode7LayerDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CompanyProfile" EntityType="Self.CompanyProfile" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ledger" EntityType="Self.Ledger" Schema="dbo" store:Type="Tables" />
@@ -736,6 +763,10 @@
           <AssociationSet Name="FK_AdvanceMoneyCustomer_MeterBill" Association="Self.FK_AdvanceMoneyCustomer_MeterBill">
             <End Role="MeterBill" EntitySet="MeterBill" />
             <End Role="AdvanceMoneyCustomer" EntitySet="AdvanceMoneyCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillCode7LayerDetail_BillCode7Layer" Association="Self.FK_BillCode7LayerDetail_BillCode7Layer">
+            <End Role="BillCode7Layer" EntitySet="BillCode7Layer" />
+            <End Role="BillCode7LayerDetail" EntitySet="BillCode7LayerDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_Customer_BillCode7Layer" Association="Self.FK_Customer_BillCode7Layer">
             <End Role="BillCode7Layer" EntitySet="BillCode7Layer" />
@@ -837,9 +868,7 @@
           </Key>
           <Property Name="AdvanceMoneyCustomerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MeterBillID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ForMonth" Type="Int32" />
+          <Property Name="ForMonth" Type="DateTime" Precision="0" />
           <Property Name="AdvanceMonthAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
@@ -857,6 +886,23 @@
           </Key>
           <Property Name="BillCode7LayerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="BillCode7LayerNo" Type="Int64" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="BillCodeLayerType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BillCode7LayerDetail" Relationship="Self.FK_BillCode7LayerDetail_BillCode7Layer" FromRole="BillCode7Layer" ToRole="BillCode7LayerDetail" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_BillCode7Layer" FromRole="BillCode7Layer" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="BillCode7LayerDetail">
+          <Key>
+            <PropertyRef Name="BillCode7LayerDetailID" />
+          </Key>
+          <Property Name="BillCode7LayerDetailID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="BillCode7LayerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="LowerLimit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UpperLimit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="AmountPerUnit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
@@ -867,8 +913,7 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
-          <Property Name="BillCodeLayerType" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_BillCode7Layer" FromRole="BillCode7Layer" ToRole="Customer" />
+          <NavigationProperty Name="BillCode7Layer" Relationship="Self.FK_BillCode7LayerDetail_BillCode7Layer" FromRole="BillCode7LayerDetail" ToRole="BillCode7Layer" />
         </EntityType>
         <EntityType Name="CompanyProfile">
           <Key>
@@ -1111,9 +1156,7 @@
             <PropertyRef Name="PunishmentCustomerID" />
           </Key>
           <Property Name="PunishmentCustomerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="FromDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ForMonth" Type="Int32" Nullable="false" />
+          <Property Name="ForMonth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="PunishmentRuleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="MeterBillID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="PunishmentAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
@@ -1311,6 +1354,18 @@
             </Principal>
             <Dependent Role="AdvanceMoneyCustomer">
               <PropertyRef Name="MeterBillID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BillCode7LayerDetail_BillCode7Layer">
+          <End Role="BillCode7Layer" Type="Self.BillCode7Layer" Multiplicity="1" />
+          <End Role="BillCode7LayerDetail" Type="Self.BillCode7LayerDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BillCode7Layer">
+              <PropertyRef Name="BillCode7LayerID" />
+            </Principal>
+            <Dependent Role="BillCode7LayerDetail">
+              <PropertyRef Name="BillCode7LayerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1581,6 +1636,7 @@
         <EntityContainer Name="MBMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdvanceMoneyCustomers" EntityType="Self.AdvanceMoneyCustomer" />
           <EntitySet Name="BillCode7Layer" EntityType="Self.BillCode7Layer" />
+          <EntitySet Name="BillCode7LayerDetail" EntityType="Self.BillCode7LayerDetail" />
           <EntitySet Name="CompanyProfiles" EntityType="Self.CompanyProfile" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Ledgers" EntityType="Self.Ledger" />
@@ -1603,6 +1659,10 @@
           <AssociationSet Name="FK_AdvanceMoneyCustomer_MeterBill" Association="Self.FK_AdvanceMoneyCustomer_MeterBill">
             <End Role="MeterBill" EntitySet="MeterBills" />
             <End Role="AdvanceMoneyCustomer" EntitySet="AdvanceMoneyCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BillCode7LayerDetail_BillCode7Layer" Association="Self.FK_BillCode7LayerDetail_BillCode7Layer">
+            <End Role="BillCode7Layer" EntitySet="BillCode7Layer" />
+            <End Role="BillCode7LayerDetail" EntitySet="BillCode7LayerDetail" />
           </AssociationSet>
           <AssociationSet Name="FK_Customer_BillCode7Layer" Association="Self.FK_Customer_BillCode7Layer">
             <End Role="BillCode7Layer" EntitySet="BillCode7Layer" />
@@ -1692,6 +1752,10 @@
             <End Role="User" EntitySet="Users" />
             <End Role="UserInRole" EntitySet="UserInRoles" />
           </AssociationSet>
+          <FunctionImport Name="MeterBill_DeleteByFromDateToDate">
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <FunctionImport Name="MeterUnitCollect_DeleteByCustomerIDFromDateToDate">
             <Parameter Name="CustomerID" Mode="In" Type="String" />
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
@@ -1709,8 +1773,6 @@
               <MappingFragment StoreEntitySet="AdvanceMoneyCustomer">
                 <ScalarProperty Name="AdvanceMoneyCustomerID" ColumnName="AdvanceMoneyCustomerID" />
                 <ScalarProperty Name="MeterBillID" ColumnName="MeterBillID" />
-                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
                 <ScalarProperty Name="ForMonth" ColumnName="ForMonth" />
                 <ScalarProperty Name="AdvanceMonthAmount" ColumnName="AdvanceMonthAmount" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
@@ -1729,6 +1791,22 @@
               <MappingFragment StoreEntitySet="BillCode7Layer">
                 <ScalarProperty Name="BillCode7LayerID" ColumnName="BillCode7LayerID" />
                 <ScalarProperty Name="BillCode7LayerNo" ColumnName="BillCode7LayerNo" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="BillCodeLayerType" ColumnName="BillCodeLayerType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BillCode7LayerDetail">
+            <EntityTypeMapping TypeName="MBMSModel.BillCode7LayerDetail">
+              <MappingFragment StoreEntitySet="BillCode7LayerDetail">
+                <ScalarProperty Name="BillCode7LayerDetailID" ColumnName="BillCode7LayerDetailID" />
+                <ScalarProperty Name="BillCode7LayerID" ColumnName="BillCode7LayerID" />
                 <ScalarProperty Name="LowerLimit" ColumnName="LowerLimit" />
                 <ScalarProperty Name="UpperLimit" ColumnName="UpperLimit" />
                 <ScalarProperty Name="AmountPerUnit" ColumnName="AmountPerUnit" />
@@ -1739,7 +1817,6 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
-                <ScalarProperty Name="BillCodeLayerType" ColumnName="BillCodeLayerType" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1966,8 +2043,6 @@
             <EntityTypeMapping TypeName="MBMSModel.PunishmentCustomer">
               <MappingFragment StoreEntitySet="PunishmentCustomer">
                 <ScalarProperty Name="PunishmentCustomerID" ColumnName="PunishmentCustomerID" />
-                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
-                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
                 <ScalarProperty Name="ForMonth" ColumnName="ForMonth" />
                 <ScalarProperty Name="PunishmentRuleID" ColumnName="PunishmentRuleID" />
                 <ScalarProperty Name="MeterBillID" ColumnName="MeterBillID" />
@@ -2150,6 +2225,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MeterBill_DeleteByFromDateToDate" FunctionName="MBMSModel.Store.MeterBill_DeleteByFromDateToDate" />
           <FunctionImportMapping FunctionImportName="MeterUnitCollect_DeleteByCustomerIDFromDateToDate" FunctionName="MBMSModel.Store.MeterUnitCollect_DeleteByCustomerIDFromDateToDate" />
         </EntityContainerMapping>
       </Mapping>

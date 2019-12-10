@@ -36,9 +36,9 @@ namespace MPS.Billing
                 BillCode7Layer billCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
                 txtBillCodeNo.Text =Convert.ToString( billCode7Layer.BillCode7LayerNo);
                 cboBillCodeType.Text = billCode7Layer.BillCodeLayerType;
-                txtLowerLimit.Text = Convert.ToString(billCode7Layer.LowerLimit);
-                txtUpperLimit.Text = Convert.ToString(billCode7Layer.UpperLimit);
-                txtAmount.Text = Convert.ToString(billCode7Layer.AmountPerUnit);
+                //txtLowerLimit.Text = Convert.ToString(billCode7Layer.LowerLimit);
+                //txtUpperLimit.Text = Convert.ToString(billCode7Layer.UpperLimit);
+                //txtAmount.Text = Convert.ToString(billCode7Layer.AmountPerUnit);
             }
             }
 
@@ -101,9 +101,9 @@ namespace MPS.Billing
                  
                     updateBillCode7Layer.BillCode7LayerNo =Convert.ToInt64( txtBillCodeNo.Text);
                     updateBillCode7Layer.BillCodeLayerType = cboBillCodeType.Text;
-                    updateBillCode7Layer.LowerLimit = Convert.ToDecimal(txtLowerLimit.Text);
-                    updateBillCode7Layer.UpperLimit = Convert.ToDecimal(txtUpperLimit.Text);
-                    updateBillCode7Layer.AmountPerUnit = Convert.ToDecimal(txtAmount.Text);
+                    //updateBillCode7Layer.LowerLimit = Convert.ToDecimal(txtLowerLimit.Text);
+                    //updateBillCode7Layer.UpperLimit = Convert.ToDecimal(txtUpperLimit.Text);
+                    //updateBillCode7Layer.AmountPerUnit = Convert.ToDecimal(txtAmount.Text);
                     updateBillCode7Layer.UpdatedUserID = UserID;
                     updateBillCode7Layer.UpdatedDate = DateTime.Now;
                     billCode7LayerController.UpdateBillCode7Layer(updateBillCode7Layer);
@@ -128,9 +128,9 @@ namespace MPS.Billing
                     billCode7Layer.BillCode7LayerID = Guid.NewGuid().ToString();
                     billCode7Layer.BillCode7LayerNo = Convert.ToInt64(txtBillCodeNo.Text);
                     billCode7Layer.BillCodeLayerType = cboBillCodeType.Text;
-                    billCode7Layer.LowerLimit = Convert.ToDecimal(txtLowerLimit.Text);
-                    billCode7Layer.UpperLimit = Convert.ToDecimal(txtUpperLimit.Text);
-                    billCode7Layer.AmountPerUnit = Convert.ToDecimal(txtAmount.Text);
+                    //billCode7Layer.LowerLimit = Convert.ToDecimal(txtLowerLimit.Text);
+                    //billCode7Layer.UpperLimit = Convert.ToDecimal(txtUpperLimit.Text);
+                    //billCode7Layer.AmountPerUnit = Convert.ToDecimal(txtAmount.Text);
                     billCode7Layer.Active = true;
                     billCode7Layer.CreatedUserID = UserID;
                     billCode7Layer.CreatedDate = DateTime.Now;
