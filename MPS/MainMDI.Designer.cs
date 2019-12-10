@@ -40,6 +40,7 @@
             this.billCode7LayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billCode7LayerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meterBillCollectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meterBillCalculationProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddNewCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +78,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.meterBillCalculationProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -191,6 +191,13 @@
             this.meterBillCollectToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.meterBillCollectToolStripMenuItem.Text = "Meter Bill Collect";
             this.meterBillCollectToolStripMenuItem.Click += new System.EventHandler(this.meterBillCollectToolStripMenuItem_Click);
+            // 
+            // meterBillCalculationProcessToolStripMenuItem
+            // 
+            this.meterBillCalculationProcessToolStripMenuItem.Name = "meterBillCalculationProcessToolStripMenuItem";
+            this.meterBillCalculationProcessToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.meterBillCalculationProcessToolStripMenuItem.Text = "Meter Bill Calculation Process";
+            this.meterBillCalculationProcessToolStripMenuItem.Click += new System.EventHandler(this.meterBillCalculationProcessToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem
             // 
@@ -480,13 +487,6 @@
             this.tpUserName.Size = new System.Drawing.Size(65, 17);
             this.tpUserName.Text = "User Name";
             // 
-            // meterBillCalculationProcessToolStripMenuItem
-            // 
-            this.meterBillCalculationProcessToolStripMenuItem.Name = "meterBillCalculationProcessToolStripMenuItem";
-            this.meterBillCalculationProcessToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
-            this.meterBillCalculationProcessToolStripMenuItem.Text = "Meter Bill Calculation Process";
-            this.meterBillCalculationProcessToolStripMenuItem.Click += new System.EventHandler(this.meterBillCalculationProcessToolStripMenuItem_Click);
-            // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,6 +499,7 @@
             this.Name = "MainMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Myanmar Power Spectrum Meter Billing Management Sytem";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMDI_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMDI_FormClosed);
             this.Load += new System.EventHandler(this.MainMDI_Load);

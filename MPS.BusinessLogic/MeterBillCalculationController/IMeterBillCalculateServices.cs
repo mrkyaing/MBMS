@@ -9,5 +9,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
   public  interface IMeterBillCalculateServices {
         List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate);
         void MeterBillCalculate(List<MeterBill> _meterBill);
+        List<Township> GetTownship();
+        List<Quarter> GetQuarter();
         }
     }

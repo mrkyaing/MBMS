@@ -75,5 +75,24 @@ namespace MPS.MeterBillCalculation {
         private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate) {
             return meterbillcalculateservice.MeterUnitCollect(fromdate,todate);
             }
+
+        private void MeterBillCalculate_Load(object sender, EventArgs e) {
+            bindTownshipData();
+            bindQuarterData();
+            }
+
+        private void bindQuarterData() {
+            cboQuarter.DisplayMember = "QuarterNameInMM";
+            cboQuarter.ValueMember = "QuarterID";
+            cboQuarter.DataSource = meterbillcalculateservice.GetQuarter();
+            cboQuarter.Text = "Select One";
+            }
+
+        private void bindTownshipData() {
+            cboTownship.DisplayMember = "TownshipNameInMM";
+            cboTownship.ValueMember = "TownshipID";
+            cboTownship.DataSource = meterbillcalculateservice.GetTownship();
+            cboTownship.Text = "Select One";
+            }
         }
     }
