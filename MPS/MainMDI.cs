@@ -1,6 +1,7 @@
 ﻿using MPS.Billing;
 using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
+
 using MPS.Master_Setup;
 using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
@@ -129,7 +130,7 @@ namespace MPS
 
         private void MainMDI_Load(object sender, EventArgs e)
         {
-            lblUserName.Text = UserName;
+             tpUserName.Text = UserName;
         }
 
         private void userListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -286,7 +287,14 @@ namespace MPS
             settingform.Show();
         }
 
-        private void meterBillProcessToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void importExportCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ImportCustomerDatafrm importCustomerDataForm = new ImportCustomerDatafrm();
+            //importCustomerDataForm.Show();
+        }
+
+        private void meterBillCalculationProcessToolStripMenuItem_Click(object sender, EventArgs e) {
+
             MeterBillCalculate mbc = new MeterBillCalculate();
             mbc.UserID = UserID;
             mbc.Show();

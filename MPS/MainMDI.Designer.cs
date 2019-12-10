@@ -75,10 +75,11 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.meterBillProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.meterBillCalculationProcessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -164,7 +165,7 @@
             this.billCode7LayerToolStripMenuItem,
             this.billCode7LayerListToolStripMenuItem,
             this.meterBillCollectToolStripMenuItem,
-            this.meterBillProcessToolStripMenuItem});
+            this.meterBillCalculationProcessToolStripMenuItem});
             this.billingToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
             this.billingToolStripMenuItem.Size = new System.Drawing.Size(54, 21);
@@ -173,21 +174,21 @@
             // billCode7LayerToolStripMenuItem
             // 
             this.billCode7LayerToolStripMenuItem.Name = "billCode7LayerToolStripMenuItem";
-            this.billCode7LayerToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.billCode7LayerToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.billCode7LayerToolStripMenuItem.Text = "Add BillCode 7 Layer";
             this.billCode7LayerToolStripMenuItem.Click += new System.EventHandler(this.billCode7LayerToolStripMenuItem_Click);
             // 
             // billCode7LayerListToolStripMenuItem
             // 
             this.billCode7LayerListToolStripMenuItem.Name = "billCode7LayerListToolStripMenuItem";
-            this.billCode7LayerListToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.billCode7LayerListToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.billCode7LayerListToolStripMenuItem.Text = "Bill Code 7 Layer List";
             this.billCode7LayerListToolStripMenuItem.Click += new System.EventHandler(this.billCode7LayerListToolStripMenuItem_Click);
             // 
             // meterBillCollectToolStripMenuItem
             // 
             this.meterBillCollectToolStripMenuItem.Name = "meterBillCollectToolStripMenuItem";
-            this.meterBillCollectToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.meterBillCollectToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
             this.meterBillCollectToolStripMenuItem.Text = "Meter Bill Collect";
             this.meterBillCollectToolStripMenuItem.Click += new System.EventHandler(this.meterBillCollectToolStripMenuItem_Click);
             // 
@@ -387,6 +388,7 @@
             this.importExportCustomerToolStripMenuItem.Name = "importExportCustomerToolStripMenuItem";
             this.importExportCustomerToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.importExportCustomerToolStripMenuItem.Text = "Customer";
+            this.importExportCustomerToolStripMenuItem.Click += new System.EventHandler(this.importExportCustomerToolStripMenuItem_Click);
             // 
             // meterToolStripMenuItem1
             // 
@@ -456,47 +458,40 @@
             // 
             // statusStrip
             // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tpUserName});
             this.statusStrip.Location = new System.Drawing.Point(0, 551);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1370, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
-            // label1
+            // toolStripStatusLabel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 555);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 16);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "User Name : ";
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel1.Text = "User Name:";
             // 
-            // lblUserName
+            // tpUserName
             // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblUserName.Location = new System.Drawing.Point(80, 555);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(36, 16);
-            this.lblUserName.TabIndex = 5;
-            this.lblUserName.Text = "label2";
+            this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
+            this.tpUserName.Name = "tpUserName";
+            this.tpUserName.Size = new System.Drawing.Size(65, 17);
+            this.tpUserName.Text = "User Name";
             // 
-            // meterBillProcessToolStripMenuItem
+            // meterBillCalculationProcessToolStripMenuItem
             // 
-            this.meterBillProcessToolStripMenuItem.Name = "meterBillProcessToolStripMenuItem";
-            this.meterBillProcessToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.meterBillProcessToolStripMenuItem.Text = "Meter Bill Process";
-            this.meterBillProcessToolStripMenuItem.Click += new System.EventHandler(this.meterBillProcessToolStripMenuItem_Click);
+            this.meterBillCalculationProcessToolStripMenuItem.Name = "meterBillCalculationProcessToolStripMenuItem";
+            this.meterBillCalculationProcessToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.meterBillCalculationProcessToolStripMenuItem.Text = "Meter Bill Calculation Process";
+            this.meterBillCalculationProcessToolStripMenuItem.Click += new System.EventHandler(this.meterBillCalculationProcessToolStripMenuItem_Click);
             // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 573);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
@@ -509,6 +504,8 @@
             this.Load += new System.EventHandler(this.MainMDI_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,11 +556,11 @@
         private System.Windows.Forms.ToolStripMenuItem meterBillCollectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyMeterBillReportToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.ToolStripMenuItem transformeListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem meterBillProcessToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tpUserName;
+        private System.Windows.Forms.ToolStripMenuItem meterBillCalculationProcessToolStripMenuItem;
         }
 }
 
