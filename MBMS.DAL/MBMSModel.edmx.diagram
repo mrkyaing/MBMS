@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="25ac4ec47f5d4e94a0b33286d995f9fc" Name="Diagram1">
-        <EntityTypeShape EntityType="MBMSModel.AdvanceMoneyCustomer" Width="1.5" PointX="18.75" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.BillCode7Layer" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.CompanyProfile" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Customer" Width="1.5" PointX="9.75" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Ledger" Width="1.5" PointX="7.5" PointY="15.375" IsExpanded="true" />
+      <Diagram DiagramId="3399a00723b14e69b54ac6cb3f9cf095" Name="Diagram1">
+        <EntityTypeShape EntityType="MBMSModel.AdvanceMoneyCustomer" Width="1.5" PointX="18.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.BillCode7Layer" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.CompanyProfile" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Customer" Width="1.5" PointX="9.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Ledger" Width="1.5" PointX="7.5" PointY="16" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.Meter" Width="1.5" PointX="12" PointY="18.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.MeterBill" Width="1.5" PointX="16.5" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.MeterBox" Width="1.5" PointX="9.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.MeterType" Width="1.5" PointX="9.75" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.MeterUnitCollect" Width="1.5" PointX="14.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Pole" Width="1.5" PointX="7.5" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.PunishmentCustomer" Width="1.5" PointX="21.75" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.PunishmentRule" Width="1.5" PointX="19.5" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Quarter" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.MeterBill" Width="1.5" PointX="16.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.MeterBox" Width="1.5" PointX="9.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.MeterType" Width="1.5" PointX="9.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.MeterUnitCollect" Width="1.5" PointX="14.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Pole" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.PunishmentCustomer" Width="1.5" PointX="21.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.PunishmentRule" Width="1.5" PointX="19.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Quarter" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Setting" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Township" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.Transformer" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Setting" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.sysdiagram" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Township" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.Transformer" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.UserInRole" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="MBMSModel.FK_AdvanceMoneyCustomer_MeterBill" ManuallyRouted="false" />

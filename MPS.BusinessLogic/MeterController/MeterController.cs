@@ -37,6 +37,12 @@ namespace MPS.BusinessLogic.MeterController
             meter.Multiplier = m.Multiplier;
             meter.HP = m.HP;
             meter.iMax = m.iMax;
+            meter.BasicCurrent = m.BasicCurrent;
+            meter.AvailableYear = m.AvailableYear;
+            meter.Class = m.Class;
+            meter.Constant = m.Constant;
+            meter.Phrase = m.Phrase;
+            meter.Wire = m.Wire;
             meter.Voltage = m.Voltage;
             meter.AMP = m.AMP;
             meter.Standard = m.Standard;

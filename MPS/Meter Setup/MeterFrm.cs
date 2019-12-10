@@ -42,6 +42,12 @@ namespace MPS.Meter_Setup
                 txtVoltage.Text= Convert.ToString( meter.Voltage) ;
                 txtAMP.Text= meter.AMP;
                 txtStandard.Text=Convert.ToString( meter.Standard);
+                txtPhrase.Text = meter.Phrase;
+                txtWire.Text = meter.Wire;
+                txtAvailableYear.Text =Convert.ToString( meter.AvailableYear);
+                txtClass.Text = meter.Class;
+                txtConstant.Text = meter.Constant;
+                txtBasicCurrent.Text = meter.BasicCurrent;
                 if (meter.Status == "Enable")
                 {
                     rdoEnable.Checked = true;
@@ -132,6 +138,35 @@ namespace MPS.Meter_Setup
                 tooltip.SetToolTip(cboMeterTypeCode, "Error");
                 tooltip.Show("Please choose Meter Type Code!", cboMeterTypeCode);
                 hasError = false;
+            }else if (txtAvailableYear.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtAvailableYear, "Error");
+                tooltip.Show("Please fill up Available Year!", txtAvailableYear);
+                hasError = false;
+            }
+            else if (txtWire.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtWire, "Error");
+                tooltip.Show("Please fill up Wire!", txtWire);
+                hasError = false;
+            }
+            else if (txtPhrase.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtPhrase, "Error");
+                tooltip.Show("Please fill up Phrase!", txtPhrase);
+                hasError = false;
+            }
+            else if (txtiMax.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtiMax, "Error");
+                tooltip.Show("Please fill up Max Current!", txtiMax);
+                hasError = false;
+            }
+            else if (txtBasicCurrent.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtBasicCurrent, "Error");
+                tooltip.Show("Please fill up Basic Current!", txtBasicCurrent);
+                hasError = false;
             }
             else if (txtMeterBoxSequence.Text == string.Empty)
             {
@@ -181,6 +216,14 @@ namespace MPS.Meter_Setup
                     {
                         updateMeter.Status = "Disable";
                     }
+                    updateMeter.Phrase = txtPhrase.Text;
+                    updateMeter.Wire = txtWire.Text;
+                    updateMeter.BasicCurrent = txtBasicCurrent.Text;
+                    updateMeter.Constant = txtConstant.Text;
+                    updateMeter.AvailableYear =Convert.ToInt32( txtAvailableYear.Text);
+                    updateMeter.Class = txtClass.Text;
+
+
                     updateMeter.iMax = Convert.ToInt32(txtiMax.Text);
                     updateMeter.KVA = Convert.ToInt32(txtKVA.Text);
                     updateMeter.ManufactureBy = txtManufacture.Text;
@@ -191,6 +234,7 @@ namespace MPS.Meter_Setup
                     updateMeter.UpdatedUserID = UserID;
                     updateMeter.UpdatedDate = DateTime.Now;
                     meterController.UpdateMeter(updateMeter);
+                    
                     MessageBox.Show("Successfully updated Meter!", "Update");
                     Clear();
                     MeterListfrm meterListForm = new MeterListfrm();
@@ -212,12 +256,12 @@ namespace MPS.Meter_Setup
                     meter.MeterNo = txtMeterNo.Text;
                     meter.Model = txtMeterModel.Text;
                     meter.InstalledDate = dtpInstallDate.Value.Date;
-                    meter.Losses = Convert.ToInt32(txtLosses.Text);
-                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text);
-                    meter.HP = Convert.ToInt32(txtHp.Text);
-                    meter.Voltage = Convert.ToInt32(txtVoltage.Text);
+                    meter.Losses = Convert.ToInt32(txtLosses.Text.Trim());
+                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text.Trim());
+                    meter.HP = Convert.ToInt32(txtHp.Text.Trim());
+                    meter.Voltage = Convert.ToInt32(txtVoltage.Text.Trim());
                     meter.AMP = txtAMP.Text;
-                    meter.Standard = Convert.ToInt32(txtStandard.Text);
+                    meter.Standard = Convert.ToInt32(txtStandard.Text.Trim());
                     if (rdoEnable.Checked == true)
                     {
                         meter.Status = "Enable";
@@ -226,6 +270,13 @@ namespace MPS.Meter_Setup
                     {
                         meter.Status = "Disable";
                     }
+                    meter.Phrase = txtPhrase.Text;
+                    meter.Wire = txtWire.Text;
+                    meter.BasicCurrent = txtBasicCurrent.Text;
+                    meter.Constant = txtConstant.Text;
+                    meter.AvailableYear = Convert.ToInt32(txtAvailableYear.Text);
+                    meter.Class = txtClass.Text;
+
                     meter.iMax = Convert.ToInt32(txtiMax.Text);
                     meter.KVA = Convert.ToInt32(txtKVA.Text);
                     meter.ManufactureBy = txtManufacture.Text;
@@ -262,6 +313,13 @@ namespace MPS.Meter_Setup
             cboMeterBoxCode.SelectedIndex = 0;
             cboMeterTypeCode.SelectedIndex = 0;
             rdoEnable.Checked = true;
+            txtAvailableYear.Text = string.Empty;
+            txtBasicCurrent.Text = string.Empty;
+            txtClass.Text = string.Empty;
+            txtConstant.Text = string.Empty;
+            txtWire.Text = string.Empty;
+            txtPhrase.Text = string.Empty;
+                
 
         }
 

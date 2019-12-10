@@ -45,6 +45,12 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public string Phrase { get; set; }
+        public string Wire { get; set; }
+        public string BasicCurrent { get; set; }
+        public string Constant { get; set; }
+        public string Class { get; set; }
+        public Nullable<int> AvailableYear { get; set; }
     
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual MeterBox MeterBox { get; set; }

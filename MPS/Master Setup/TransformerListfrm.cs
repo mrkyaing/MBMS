@@ -85,11 +85,11 @@ namespace MPS.Master_Setup
                 row.Cells[0].Value = transformer.TransformerID;
                 row.Cells[1].Value = transformer.TransformerName;
                 row.Cells[2].Value = transformer.Model;
-                row.Cells[3].Value = transformer.GPSX;
-                row.Cells[4].Value = transformer.GPSY;
+                row.Cells[3].Value = transformer.Maker;
+                row.Cells[4].Value = transformer.CountryOfOrgin;
                 row.Cells[5].Value = transformer.Status;
                 row.Cells[6].Value = transformer.Quarter.QuarterNameInEng;
-                row.Cells[7].Value = transformer.Address;
+                row.Cells[7].Value = transformer.Standard;
             }
         }
 
@@ -97,7 +97,7 @@ namespace MPS.Master_Setup
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 9)
+                if (e.ColumnIndex == 10)
                 {
                     //DeleteForTransformer
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -132,6 +132,11 @@ namespace MPS.Master_Setup
                         
                     }
 
+                }else if (e.ColumnIndex == 9)
+                {
+                    TransformerDetailfrm transformerDetailForm = new TransformerDetailfrm();
+                    transformerDetailForm.transformerID = Convert.ToString(dgvTransformerList.Rows[e.RowIndex].Cells[0].Value);
+                    transformerDetailForm.ShowDialog();
                 }
                 else if (e.ColumnIndex == 8)
                 {

@@ -69,9 +69,19 @@ namespace MPS
                         Transformer updateTransformer = (from tf in mbsEntities.Transformers where tf.TransformerID == TransformerID select tf).FirstOrDefault();
                         updateTransformer.TransformerName = txtTransformerName.Text;
                         updateTransformer.Model = txtTransformerModel.Text;
-                        updateTransformer.GPSX = Convert.ToDecimal(txtGPSX.Text);
-                        updateTransformer.GPSY = Convert.ToDecimal(txtGPSY.Text);
-                        updateTransformer.Address = txtAddress.Text;
+                        updateTransformer.CountryOfOrgin = txtCountryOrgin.Text;
+                        updateTransformer.FullLoadLoss =Convert.ToInt32( txtFullLoadLoss.Text);
+                        updateTransformer.ImpendanceVoltage =Convert.ToInt32( txtImpedanceVoltage.Text);
+                        updateTransformer.EfficiencyLoad =Convert.ToInt32( txtEfficiency.Text);
+                        updateTransformer.TappingRange = txtTappingRange.Text;
+                        updateTransformer.TypeofCooling = txtTypeOfCooling.Text;
+                        updateTransformer.VectorGroup = txtVectorGroup.Text;
+                        updateTransformer.VoltageRatio= Convert.ToInt32( txtVoltageRatio.Text);
+                        updateTransformer.Standard = txtStandard.Text;
+                        updateTransformer.NoloadLoss =Convert.ToInt32( txtNoLoadLoss.Text);
+                        updateTransformer.RatedOutputPower =Convert.ToInt32( txtRatedPower.Text);
+                        updateTransformer.Maker = txtmaker.Text;
+                        
                         if (rdoEnable.Checked == true)
                         {
                             updateTransformer.Status = "Enable";
@@ -106,8 +116,18 @@ namespace MPS
                         transformer.TransformerID = Guid.NewGuid().ToString();
                         transformer.TransformerName = txtTransformerName.Text;
                         transformer.Model = txtTransformerModel.Text;
-                        transformer.GPSX = Convert.ToDecimal(txtGPSX.Text);
-                        transformer.GPSY = Convert.ToDecimal(txtGPSY.Text);
+                        transformer.CountryOfOrgin = txtCountryOrgin.Text;
+                        transformer.FullLoadLoss = Convert.ToInt32(txtFullLoadLoss.Text);
+                        transformer.ImpendanceVoltage = Convert.ToInt32(txtImpedanceVoltage.Text);
+                        transformer.EfficiencyLoad = Convert.ToInt32(txtEfficiency.Text);
+                        transformer.TappingRange = txtTappingRange.Text;
+                        transformer.TypeofCooling = txtTypeOfCooling.Text;
+                        transformer.VectorGroup = txtVectorGroup.Text;
+                        transformer.VoltageRatio = Convert.ToInt32(txtVoltageRatio.Text);
+                        transformer.Standard = txtStandard.Text;
+                        transformer.NoloadLoss = Convert.ToInt32(txtNoLoadLoss.Text);
+                        transformer.RatedOutputPower = Convert.ToInt32(txtRatedPower.Text);
+                        transformer.Maker = txtmaker.Text;
                         if (rdoEnable.Checked == true)
                         {
                             transformer.Status = "Enable";
@@ -116,8 +136,7 @@ namespace MPS
                         {
                             transformer.Status = "Disable";
                         }
-                        transformer.QuarterID = cboQuarterName.SelectedValue.ToString();
-                        transformer.Address = txtAddress.Text;
+                        transformer.QuarterID = cboQuarterName.SelectedValue.ToString();                       
                         transformer.Active = true;
                         transformer.CreatedUserID = UserID;
                         transformer.CreatedDate = DateTime.Now;
@@ -138,11 +157,20 @@ namespace MPS
         {
             txtTransformerName.Text = string.Empty;
             txtTransformerModel.Text = string.Empty;
-            txtGPSX.Text = string.Empty;
-            txtGPSY.Text = string.Empty;
-            txtAddress.Text = string.Empty;
+            txtmaker.Text = string.Empty;
+            txtCountryOrgin.Text = string.Empty;
+            txtImpedanceVoltage.Text = string.Empty;
             cboQuarterName.SelectedIndex = 0;
+            txtEfficiency.Text = string.Empty;
+            txtFullLoadLoss.Text = string.Empty;
+            txtNoLoadLoss.Text = string.Empty;
+            txtRatedPower.Text = string.Empty;
+            txtTypeOfCooling.Text = string.Empty;
+            txtVectorGroup.Text = string.Empty;
+            txtVoltageRatio.Text = string.Empty;
             rdoEnable.Checked = true;
+            txtStandard.Text = string.Empty;
+            txtTappingRange.Text = string.Empty;
            
         }
         public void bindQuarter()
@@ -166,9 +194,19 @@ namespace MPS
                 Transformer transformer = (from tf in mbsEntities.Transformers where tf.TransformerID == TransformerID select tf).FirstOrDefault();
                 txtTransformerName.Text = transformer.TransformerName;
                 txtTransformerModel.Text = transformer.Model;
-                txtGPSX.Text = Convert.ToString(transformer.GPSX);
-                txtGPSY.Text = Convert.ToString( transformer.GPSY);
-                txtAddress.Text = transformer.Address;
+                txtmaker.Text = transformer.Maker;
+                txtCountryOrgin.Text =transformer.CountryOfOrgin;
+                txtTappingRange.Text = transformer.TappingRange;
+                txtStandard.Text = transformer.Standard;
+                txtRatedPower.Text =Convert.ToString( transformer.RatedOutputPower);
+                txtImpedanceVoltage.Text =Convert.ToString( transformer.ImpendanceVoltage);
+                txtEfficiency.Text =Convert.ToString( transformer.EfficiencyLoad);
+                txtTypeOfCooling.Text = transformer.TypeofCooling;
+                txtVectorGroup.Text = transformer.VectorGroup;
+                txtVoltageRatio.Text =Convert.ToString( transformer.VoltageRatio);
+                txtNoLoadLoss.Text =Convert.ToString( transformer.NoloadLoss);
+                txtFullLoadLoss.Text =Convert.ToString( transformer.FullLoadLoss);
+                
                 if (transformer.Status == "Enable")
                 {
                     rdoEnable.Checked = true;
@@ -181,37 +219,7 @@ namespace MPS
             }
         }
 
-        private void txtGPSX_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
-            {
-                e.Handled = true;
-                return;
-            }
-
-            // checks to make sure only 1 decimal is allowed
-            if (e.KeyChar == 46)
-            {
-                if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
-                    e.Handled = true;
-            }
-        }
-
-        private void txtGPSY_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8 && e.KeyChar != 46))
-            {
-                e.Handled = true;
-                return;
-            }
-
-            // checks to make sure only 1 decimal is allowed
-            if (e.KeyChar == 46)
-            {
-                if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
-                    e.Handled = true;
-            }
-        }
+       
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

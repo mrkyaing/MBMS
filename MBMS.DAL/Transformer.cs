@@ -36,6 +36,18 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public Nullable<int> RatedOutputPower { get; set; }
+        public Nullable<int> VoltageRatio { get; set; }
+        public string VectorGroup { get; set; }
+        public string TypeofCooling { get; set; }
+        public Nullable<int> EfficiencyLoad { get; set; }
+        public Nullable<int> ImpendanceVoltage { get; set; }
+        public Nullable<int> NoloadLoss { get; set; }
+        public Nullable<int> FullLoadLoss { get; set; }
+        public string TappingRange { get; set; }
+        public string Maker { get; set; }
+        public string CountryOfOrgin { get; set; }
+        public string Standard { get; set; }
     
         public virtual ICollection<Ledger> Ledgers { get; set; }
         public virtual ICollection<MeterUnitCollect> MeterUnitCollects { get; set; }

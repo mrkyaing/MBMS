@@ -30,11 +30,20 @@ namespace MPS.BusinessLogic.MasterSetUpController
         {
             Transformer transformer = mBMSEntities.Transformers.Where(x => x.TransformerID == tf.TransformerID).SingleOrDefault();
             transformer.TransformerName = tf.TransformerName;
-            transformer.GPSX = tf.GPSX;
-            transformer.GPSY = tf.GPSY;
-            transformer.Address = tf.Address;
+            transformer.CountryOfOrgin = tf.CountryOfOrgin;
+            transformer.EfficiencyLoad = tf.EfficiencyLoad;
+            transformer.FullLoadLoss = tf.FullLoadLoss;
+            transformer.ImpendanceVoltage = tf.ImpendanceVoltage;
+            transformer.NoloadLoss = tf.NoloadLoss;
+            transformer.RatedOutputPower = tf.RatedOutputPower;
+            transformer.Standard = tf.Standard;
+            transformer.TappingRange = tf.TappingRange;
             transformer.QuarterID = tf.QuarterID;
             transformer.Model = tf.Model;
+            transformer.TypeofCooling = tf.TypeofCooling;
+            transformer.VectorGroup = tf.VectorGroup;
+            transformer.VoltageRatio = tf.VoltageRatio;
+            transformer.Maker = tf.Maker;
             transformer.Status = tf.Status;
             transformer.UpdatedUserID = tf.UpdatedUserID;
             transformer.UpdateDate =tf.UpdateDate;

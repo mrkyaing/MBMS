@@ -87,11 +87,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 6);
+            this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 19);
+            this.label2.Size = new System.Drawing.Size(90, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "GPS X";
+            this.label2.Text = "GPS  Latitude";
             // 
             // txtGPSX
             // 
@@ -109,9 +109,9 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(2, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 19);
+            this.label3.Size = new System.Drawing.Size(97, 19);
             this.label3.TabIndex = 0;
-            this.label3.Text = "GPS Y";
+            this.label3.Text = "GPS Longitude";
             // 
             // txtGPSY
             // 
@@ -183,7 +183,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(66, 9);
+            this.label6.Location = new System.Drawing.Point(99, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(14, 16);
             this.label6.TabIndex = 4;
@@ -257,7 +257,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(66, 11);
+            this.label12.Location = new System.Drawing.Point(99, 10);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(14, 16);
             this.label12.TabIndex = 4;

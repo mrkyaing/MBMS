@@ -33,6 +33,14 @@ namespace MPS.Meter_Setup
             lblMeterboxSequence.Text = meter.MeterBoxSequence;
             lblMeterTypeCode.Text = meter.MeterType.MeterTypeCode;
 
+            lblAvailableYear.Text =Convert.ToString( meter.AvailableYear);
+            lblPhrase.Text = meter.Phrase;
+            lblWire.Text = meter.Wire;
+            lblBasicCurrent.Text = meter.BasicCurrent;
+            lblClass.Text = meter.Class !=""? meter.Class :"-";
+            lblConstant.Text = meter.Constant !=""? meter.Constant:"-";
+
+
             lblAMP.Text = meter.AMP != "" ? meter.AMP: "-";
             lblFrequency.Text =Convert.ToString( meter.Frequency) != "" ?Convert.ToString( meter.Frequency): "-";
             lblHP.Text= Convert.ToString(meter.HP) != "" ? Convert.ToString(meter.HP) : "-";

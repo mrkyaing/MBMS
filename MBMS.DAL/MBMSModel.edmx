@@ -135,6 +135,12 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="Phrase" Type="nvarchar(max)" />
+          <Property Name="Wire" Type="nvarchar(max)" />
+          <Property Name="BasicCurrent" Type="nvarchar(max)" />
+          <Property Name="Constant" Type="nvarchar(max)" />
+          <Property Name="Class" Type="nvarchar(max)" />
+          <Property Name="AvailableYear" Type="int" />
         </EntityType>
         <EntityType Name="MeterBill">
           <Key>
@@ -377,6 +383,18 @@
           <Property Name="UpdateDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="RatedOutputPower" Type="int" />
+          <Property Name="VoltageRatio" Type="int" />
+          <Property Name="VectorGroup" Type="nvarchar(max)" />
+          <Property Name="TypeofCooling" Type="nvarchar(max)" />
+          <Property Name="EfficiencyLoad" Type="int" />
+          <Property Name="ImpendanceVoltage" Type="int" />
+          <Property Name="NoloadLoss" Type="int" />
+          <Property Name="FullLoadLoss" Type="int" />
+          <Property Name="TappingRange" Type="nvarchar(max)" />
+          <Property Name="Maker" Type="nvarchar(max)" />
+          <Property Name="CountryOfOrgin" Type="nvarchar(max)" />
+          <Property Name="Standard" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -953,6 +971,12 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="Phrase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Wire" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BasicCurrent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Constant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AvailableYear" Type="Int32" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Meter" FromRole="Meter" ToRole="Customer" />
           <NavigationProperty Name="MeterBox" Relationship="Self.FK_Meter_MeterBox" FromRole="Meter" ToRole="MeterBox" />
           <NavigationProperty Name="MeterType" Relationship="Self.FK_Meter_MeterType" FromRole="Meter" ToRole="MeterType" />
@@ -1223,6 +1247,18 @@
           <Property Name="UpdateDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="RatedOutputPower" Type="Int32" />
+          <Property Name="VoltageRatio" Type="Int32" />
+          <Property Name="VectorGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeofCooling" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EfficiencyLoad" Type="Int32" />
+          <Property Name="ImpendanceVoltage" Type="Int32" />
+          <Property Name="NoloadLoss" Type="Int32" />
+          <Property Name="FullLoadLoss" Type="Int32" />
+          <Property Name="TappingRange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryOfOrgin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Ledgers" Relationship="Self.FK_Ledger_Transformer" FromRole="Transformer" ToRole="Ledger" />
           <NavigationProperty Name="MeterUnitCollects" Relationship="Self.FK_MeterUnitCollect_Transformer" FromRole="Transformer" ToRole="MeterUnitCollect" />
           <NavigationProperty Name="Poles" Relationship="Self.FK_Pole_Transformer" FromRole="Transformer" ToRole="Pole" />
@@ -1802,6 +1838,12 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="Phrase" ColumnName="Phrase" />
+                <ScalarProperty Name="Wire" ColumnName="Wire" />
+                <ScalarProperty Name="BasicCurrent" ColumnName="BasicCurrent" />
+                <ScalarProperty Name="Constant" ColumnName="Constant" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="AvailableYear" ColumnName="AvailableYear" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2057,6 +2099,18 @@
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="RatedOutputPower" ColumnName="RatedOutputPower" />
+                <ScalarProperty Name="VoltageRatio" ColumnName="VoltageRatio" />
+                <ScalarProperty Name="VectorGroup" ColumnName="VectorGroup" />
+                <ScalarProperty Name="TypeofCooling" ColumnName="TypeofCooling" />
+                <ScalarProperty Name="EfficiencyLoad" ColumnName="EfficiencyLoad" />
+                <ScalarProperty Name="ImpendanceVoltage" ColumnName="ImpendanceVoltage" />
+                <ScalarProperty Name="NoloadLoss" ColumnName="NoloadLoss" />
+                <ScalarProperty Name="FullLoadLoss" ColumnName="FullLoadLoss" />
+                <ScalarProperty Name="TappingRange" ColumnName="TappingRange" />
+                <ScalarProperty Name="Maker" ColumnName="Maker" />
+                <ScalarProperty Name="CountryOfOrgin" ColumnName="CountryOfOrgin" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

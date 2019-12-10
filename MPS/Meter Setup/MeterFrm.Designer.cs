@@ -94,6 +94,28 @@
             this.dtpInstallDate = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtMeterBoxSequence = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.txtBasicCurrent = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.txtPhrase = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtWire = new System.Windows.Forms.TextBox();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtAvailableYear = new System.Windows.Forms.TextBox();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtClass = new System.Windows.Forms.TextBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtConstant = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -113,13 +135,20 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.label15);
             this.panel16.Controls.Add(this.label24);
-            this.panel16.Location = new System.Drawing.Point(3, 594);
+            this.panel16.Location = new System.Drawing.Point(3, 486);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(200, 30);
             this.panel16.TabIndex = 21;
@@ -148,7 +177,7 @@
             // 
             this.panel18.Controls.Add(this.label26);
             this.panel18.Controls.Add(this.label17);
-            this.panel18.Location = new System.Drawing.Point(3, 634);
+            this.panel18.Location = new System.Drawing.Point(3, 534);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(200, 30);
             this.panel18.TabIndex = 21;
@@ -176,7 +205,7 @@
             // panel14
             // 
             this.panel14.Controls.Add(this.label13);
-            this.panel14.Location = new System.Drawing.Point(3, 471);
+            this.panel14.Location = new System.Drawing.Point(3, 291);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(200, 30);
             this.panel14.TabIndex = 17;
@@ -194,7 +223,7 @@
             // panel10
             // 
             this.panel10.Controls.Add(this.label9);
-            this.panel10.Location = new System.Drawing.Point(3, 320);
+            this.panel10.Location = new System.Drawing.Point(3, 194);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(200, 29);
             this.panel10.TabIndex = 13;
@@ -212,7 +241,7 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.label8);
-            this.panel9.Location = new System.Drawing.Point(3, 280);
+            this.panel9.Location = new System.Drawing.Point(3, 142);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 30);
             this.panel9.TabIndex = 12;
@@ -241,7 +270,7 @@
             // 
             this.panel17.Controls.Add(this.label25);
             this.panel17.Controls.Add(this.label16);
-            this.panel17.Location = new System.Drawing.Point(3, 553);
+            this.panel17.Location = new System.Drawing.Point(3, 436);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(200, 30);
             this.panel17.TabIndex = 20;
@@ -268,8 +297,9 @@
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.label36);
             this.panel11.Controls.Add(this.label10);
-            this.panel11.Location = new System.Drawing.Point(3, 355);
+            this.panel11.Location = new System.Drawing.Point(3, 191);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(200, 30);
             this.panel11.TabIndex = 14;
@@ -278,19 +308,19 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 5);
+            this.label10.Location = new System.Drawing.Point(3, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 19);
+            this.label10.Size = new System.Drawing.Size(127, 19);
             this.label10.TabIndex = 0;
-            this.label10.Text = "iMax";
+            this.label10.Text = "Basic / Max Current";
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(449, 738);
+            this.btnCancel.Location = new System.Drawing.Point(1063, 556);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
-            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -299,7 +329,7 @@
             // 
             this.panel15.Controls.Add(this.label23);
             this.panel15.Controls.Add(this.label14);
-            this.panel15.Location = new System.Drawing.Point(3, 508);
+            this.panel15.Location = new System.Drawing.Point(3, 338);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(200, 30);
             this.panel15.TabIndex = 18;
@@ -327,7 +357,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.label11);
-            this.panel12.Location = new System.Drawing.Point(3, 393);
+            this.panel12.Location = new System.Drawing.Point(3, 248);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(200, 30);
             this.panel12.TabIndex = 15;
@@ -366,16 +396,16 @@
             // 
             this.cboMeterBoxCode.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeterBoxCode.FormattingEnabled = true;
-            this.cboMeterBoxCode.Location = new System.Drawing.Point(308, 553);
+            this.cboMeterBoxCode.Location = new System.Drawing.Point(308, 436);
             this.cboMeterBoxCode.Name = "cboMeterBoxCode";
             this.cboMeterBoxCode.Size = new System.Drawing.Size(200, 27);
-            this.cboMeterBoxCode.TabIndex = 16;
+            this.cboMeterBoxCode.TabIndex = 13;
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.label22);
             this.panel13.Controls.Add(this.label12);
-            this.panel13.Location = new System.Drawing.Point(3, 433);
+            this.panel13.Location = new System.Drawing.Point(3, 290);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(200, 30);
             this.panel13.TabIndex = 16;
@@ -404,7 +434,7 @@
             // 
             this.panel8.Controls.Add(this.label21);
             this.panel8.Controls.Add(this.label7);
-            this.panel8.Location = new System.Drawing.Point(3, 240);
+            this.panel8.Location = new System.Drawing.Point(3, 247);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 30);
             this.panel8.TabIndex = 11;
@@ -466,7 +496,7 @@
             this.rdoDisable.Location = new System.Drawing.Point(179, 3);
             this.rdoDisable.Name = "rdoDisable";
             this.rdoDisable.Size = new System.Drawing.Size(70, 23);
-            this.rdoDisable.TabIndex = 15;
+            this.rdoDisable.TabIndex = 11;
             this.rdoDisable.Text = "Disable";
             this.rdoDisable.UseVisualStyleBackColor = true;
             // 
@@ -478,7 +508,7 @@
             this.rdoEnable.Location = new System.Drawing.Point(13, 6);
             this.rdoEnable.Name = "rdoEnable";
             this.rdoEnable.Size = new System.Drawing.Size(66, 23);
-            this.rdoEnable.TabIndex = 14;
+            this.rdoEnable.TabIndex = 10;
             this.rdoEnable.TabStop = true;
             this.rdoEnable.Text = "Enable";
             this.rdoEnable.UseVisualStyleBackColor = true;
@@ -506,7 +536,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Location = new System.Drawing.Point(3, 200);
+            this.panel7.Location = new System.Drawing.Point(3, 95);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 30);
             this.panel7.TabIndex = 10;
@@ -516,10 +546,10 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(320, 738);
+            this.btnSave.Location = new System.Drawing.Point(934, 556);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 26);
-            this.btnSave.TabIndex = 23;
+            this.btnSave.TabIndex = 25;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -538,7 +568,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(363, 704);
+            this.label27.Location = new System.Drawing.Point(977, 522);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(99, 13);
             this.label27.TabIndex = 22;
@@ -547,7 +577,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(3, 157);
+            this.panel6.Location = new System.Drawing.Point(3, 48);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 30);
             this.panel6.TabIndex = 9;
@@ -557,68 +587,53 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel16, 0, 15);
-            this.tableLayoutPanel1.Controls.Add(this.panel18, 0, 16);
-            this.tableLayoutPanel1.Controls.Add(this.panel17, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.panel15, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.panel14, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.cboMeterBoxCode, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.panel13, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.panel12, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.panel11, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.panel10, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.panel9, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterNo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterModel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtLosses, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtMultiplier, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtHp, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtVoltage, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtAMP, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtStandard, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.txtiMax, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.txtKVA, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.txtManufacture, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.txtFrequency, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 13);
-            this.tableLayoutPanel1.Controls.Add(this.cboMeterTypeCode, 1, 16);
             this.tableLayoutPanel1.Controls.Add(this.dtpInstallDate, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxSequence, 1, 15);
+            this.tableLayoutPanel1.Controls.Add(this.panel11, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel19, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel20, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel21, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel8, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.txtVoltage, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.panel13, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtManufacture, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.panel15, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.panel22, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtAvailableYear, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.panel17, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.cboMeterBoxCode, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.panel16, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxSequence, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.panel18, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.cboMeterTypeCode, 1, 11);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(56, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 17;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.10126F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowCount = 12;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.70642F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.29358F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(611, 672);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(611, 570);
             this.tableLayoutPanel1.TabIndex = 21;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(3, 117);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 30);
             this.panel5.TabIndex = 8;
@@ -627,7 +642,7 @@
             // 
             this.panel4.Controls.Add(this.label20);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(3, 78);
+            this.panel4.Location = new System.Drawing.Point(3, 96);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 30);
             this.panel4.TabIndex = 7;
@@ -636,7 +651,7 @@
             // 
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 39);
+            this.panel3.Location = new System.Drawing.Point(3, 47);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 32);
             this.panel3.TabIndex = 6;
@@ -652,7 +667,7 @@
             // txtMeterModel
             // 
             this.txtMeterModel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMeterModel.Location = new System.Drawing.Point(308, 39);
+            this.txtMeterModel.Location = new System.Drawing.Point(308, 47);
             this.txtMeterModel.Name = "txtMeterModel";
             this.txtMeterModel.Size = new System.Drawing.Size(200, 28);
             this.txtMeterModel.TabIndex = 2;
@@ -660,88 +675,88 @@
             // txtLosses
             // 
             this.txtLosses.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLosses.Location = new System.Drawing.Point(308, 117);
+            this.txtLosses.Location = new System.Drawing.Point(232, 3);
             this.txtLosses.Name = "txtLosses";
             this.txtLosses.Size = new System.Drawing.Size(200, 28);
-            this.txtLosses.TabIndex = 4;
+            this.txtLosses.TabIndex = 16;
             // 
             // txtMultiplier
             // 
             this.txtMultiplier.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMultiplier.Location = new System.Drawing.Point(308, 157);
+            this.txtMultiplier.Location = new System.Drawing.Point(232, 48);
             this.txtMultiplier.Name = "txtMultiplier";
             this.txtMultiplier.Size = new System.Drawing.Size(200, 28);
-            this.txtMultiplier.TabIndex = 5;
+            this.txtMultiplier.TabIndex = 17;
             // 
             // txtHp
             // 
             this.txtHp.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHp.Location = new System.Drawing.Point(308, 200);
+            this.txtHp.Location = new System.Drawing.Point(232, 95);
             this.txtHp.Name = "txtHp";
             this.txtHp.Size = new System.Drawing.Size(200, 28);
-            this.txtHp.TabIndex = 6;
+            this.txtHp.TabIndex = 18;
             // 
             // txtVoltage
             // 
             this.txtVoltage.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoltage.Location = new System.Drawing.Point(308, 240);
+            this.txtVoltage.Location = new System.Drawing.Point(308, 247);
             this.txtVoltage.Name = "txtVoltage";
             this.txtVoltage.Size = new System.Drawing.Size(200, 28);
-            this.txtVoltage.TabIndex = 7;
+            this.txtVoltage.TabIndex = 8;
             // 
             // txtAMP
             // 
             this.txtAMP.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAMP.Location = new System.Drawing.Point(308, 280);
+            this.txtAMP.Location = new System.Drawing.Point(232, 142);
             this.txtAMP.Name = "txtAMP";
             this.txtAMP.Size = new System.Drawing.Size(200, 28);
-            this.txtAMP.TabIndex = 8;
+            this.txtAMP.TabIndex = 19;
             // 
             // txtStandard
             // 
             this.txtStandard.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStandard.Location = new System.Drawing.Point(308, 320);
+            this.txtStandard.Location = new System.Drawing.Point(232, 194);
             this.txtStandard.Name = "txtStandard";
             this.txtStandard.Size = new System.Drawing.Size(200, 28);
-            this.txtStandard.TabIndex = 9;
+            this.txtStandard.TabIndex = 20;
             // 
             // txtiMax
             // 
             this.txtiMax.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtiMax.Location = new System.Drawing.Point(308, 355);
+            this.txtiMax.Location = new System.Drawing.Point(170, 6);
             this.txtiMax.Name = "txtiMax";
-            this.txtiMax.Size = new System.Drawing.Size(200, 28);
-            this.txtiMax.TabIndex = 10;
+            this.txtiMax.Size = new System.Drawing.Size(127, 28);
+            this.txtiMax.TabIndex = 7;
             // 
             // txtKVA
             // 
             this.txtKVA.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKVA.Location = new System.Drawing.Point(308, 393);
+            this.txtKVA.Location = new System.Drawing.Point(232, 248);
             this.txtKVA.Name = "txtKVA";
             this.txtKVA.Size = new System.Drawing.Size(200, 28);
-            this.txtKVA.TabIndex = 11;
+            this.txtKVA.TabIndex = 21;
             // 
             // txtManufacture
             // 
             this.txtManufacture.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtManufacture.Location = new System.Drawing.Point(308, 433);
+            this.txtManufacture.Location = new System.Drawing.Point(308, 290);
             this.txtManufacture.Name = "txtManufacture";
             this.txtManufacture.Size = new System.Drawing.Size(200, 28);
-            this.txtManufacture.TabIndex = 12;
+            this.txtManufacture.TabIndex = 9;
             // 
             // txtFrequency
             // 
             this.txtFrequency.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFrequency.Location = new System.Drawing.Point(308, 471);
+            this.txtFrequency.Location = new System.Drawing.Point(232, 291);
             this.txtFrequency.Name = "txtFrequency";
             this.txtFrequency.Size = new System.Drawing.Size(200, 28);
-            this.txtFrequency.TabIndex = 13;
+            this.txtFrequency.TabIndex = 22;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.rdoDisable);
             this.panel1.Controls.Add(this.rdoEnable);
-            this.panel1.Location = new System.Drawing.Point(308, 508);
+            this.panel1.Location = new System.Drawing.Point(308, 338);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 32);
             this.panel1.TabIndex = 2;
@@ -750,15 +765,15 @@
             // 
             this.cboMeterTypeCode.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeterTypeCode.FormattingEnabled = true;
-            this.cboMeterTypeCode.Location = new System.Drawing.Point(308, 634);
+            this.cboMeterTypeCode.Location = new System.Drawing.Point(308, 534);
             this.cboMeterTypeCode.Name = "cboMeterTypeCode";
             this.cboMeterTypeCode.Size = new System.Drawing.Size(200, 27);
-            this.cboMeterTypeCode.TabIndex = 18;
+            this.cboMeterTypeCode.TabIndex = 15;
             // 
             // dtpInstallDate
             // 
             this.dtpInstallDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInstallDate.Location = new System.Drawing.Point(308, 78);
+            this.dtpInstallDate.Location = new System.Drawing.Point(308, 96);
             this.dtpInstallDate.Name = "dtpInstallDate";
             this.dtpInstallDate.Size = new System.Drawing.Size(200, 28);
             this.dtpInstallDate.TabIndex = 3;
@@ -775,16 +790,247 @@
             // txtMeterBoxSequence
             // 
             this.txtMeterBoxSequence.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMeterBoxSequence.Location = new System.Drawing.Point(308, 594);
+            this.txtMeterBoxSequence.Location = new System.Drawing.Point(308, 486);
             this.txtMeterBoxSequence.Name = "txtMeterBoxSequence";
             this.txtMeterBoxSequence.Size = new System.Drawing.Size(200, 28);
-            this.txtMeterBoxSequence.TabIndex = 13;
+            this.txtMeterBoxSequence.TabIndex = 14;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtLosses, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtMultiplier, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel14, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.panel7, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtHp, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.panel9, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panel12, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtAMP, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panel10, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtStandard, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtKVA, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.txtFrequency, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.panel23, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.txtClass, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.panel24, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.txtConstant, 1, 8);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(732, 24);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 9;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.91304F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.08696F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 457);
+            this.tableLayoutPanel2.TabIndex = 25;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.label28);
+            this.panel19.Controls.Add(this.label29);
+            this.panel19.Location = new System.Drawing.Point(3, 141);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(200, 30);
+            this.panel19.TabIndex = 7;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Red;
+            this.label28.Location = new System.Drawing.Point(91, 7);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(11, 13);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "*";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(3, 5);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 19);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "Phrase / Wire";
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.txtBasicCurrent);
+            this.panel20.Controls.Add(this.label30);
+            this.panel20.Controls.Add(this.txtiMax);
+            this.panel20.Location = new System.Drawing.Point(308, 191);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(300, 39);
+            this.panel20.TabIndex = 14;
+            // 
+            // txtBasicCurrent
+            // 
+            this.txtBasicCurrent.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBasicCurrent.Location = new System.Drawing.Point(3, 6);
+            this.txtBasicCurrent.Name = "txtBasicCurrent";
+            this.txtBasicCurrent.Size = new System.Drawing.Size(129, 28);
+            this.txtBasicCurrent.TabIndex = 6;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(136, 10);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(13, 19);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "/";
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.txtPhrase);
+            this.panel21.Controls.Add(this.label31);
+            this.panel21.Controls.Add(this.txtWire);
+            this.panel21.Location = new System.Drawing.Point(308, 141);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(300, 37);
+            this.panel21.TabIndex = 14;
+            // 
+            // txtPhrase
+            // 
+            this.txtPhrase.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhrase.Location = new System.Drawing.Point(3, 4);
+            this.txtPhrase.Name = "txtPhrase";
+            this.txtPhrase.Size = new System.Drawing.Size(129, 28);
+            this.txtPhrase.TabIndex = 4;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(136, 10);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(13, 19);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "/";
+            // 
+            // txtWire
+            // 
+            this.txtWire.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWire.Location = new System.Drawing.Point(170, 3);
+            this.txtWire.Name = "txtWire";
+            this.txtWire.Size = new System.Drawing.Size(127, 28);
+            this.txtWire.TabIndex = 5;
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.label32);
+            this.panel22.Controls.Add(this.label33);
+            this.panel22.Location = new System.Drawing.Point(3, 390);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(200, 30);
+            this.panel22.TabIndex = 18;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(106, 5);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(11, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "*";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(4, 5);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(94, 19);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "Available Year";
+            // 
+            // txtAvailableYear
+            // 
+            this.txtAvailableYear.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAvailableYear.Location = new System.Drawing.Point(308, 390);
+            this.txtAvailableYear.Name = "txtAvailableYear";
+            this.txtAvailableYear.Size = new System.Drawing.Size(200, 28);
+            this.txtAvailableYear.TabIndex = 12;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.label34);
+            this.panel23.Location = new System.Drawing.Point(3, 341);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(200, 30);
+            this.panel23.TabIndex = 17;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(3, 6);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(41, 19);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Class";
+            // 
+            // txtClass
+            // 
+            this.txtClass.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClass.Location = new System.Drawing.Point(232, 341);
+            this.txtClass.Name = "txtClass";
+            this.txtClass.Size = new System.Drawing.Size(200, 28);
+            this.txtClass.TabIndex = 23;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.label35);
+            this.panel24.Location = new System.Drawing.Point(3, 392);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(200, 30);
+            this.panel24.TabIndex = 17;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(3, 6);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(60, 19);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Constant";
+            // 
+            // txtConstant
+            // 
+            this.txtConstant.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConstant.Location = new System.Drawing.Point(232, 392);
+            this.txtConstant.Name = "txtConstant";
+            this.txtConstant.Size = new System.Drawing.Size(200, 28);
+            this.txtConstant.TabIndex = 24;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.Red;
+            this.label36.Location = new System.Drawing.Point(136, 8);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(11, 13);
+            this.label36.TabIndex = 1;
+            this.label36.Text = "*";
             // 
             // MeterFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 789);
+            this.ClientSize = new System.Drawing.Size(1255, 623);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label27);
@@ -831,6 +1077,20 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -904,5 +1164,27 @@
         private System.Windows.Forms.DateTimePicker dtpInstallDate;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtMeterBoxSequence;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.TextBox txtBasicCurrent;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.TextBox txtPhrase;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txtWire;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtAvailableYear;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox txtClass;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtConstant;
+        private System.Windows.Forms.Label label36;
     }
 }

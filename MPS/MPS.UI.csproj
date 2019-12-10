@@ -91,6 +91,12 @@
     <Compile Include="Billing\BillCode7LayerList.Designer.cs">
       <DependentUpon>BillCode7LayerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master Setup\TransformerDetailfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master Setup\TransformerDetailfrm.designer.cs">
+      <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeterBillCalculation\MeterBillCalculate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Billing\BillCode7LayerList.resx">
       <DependentUpon>BillCode7LayerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master Setup\TransformerDetailfrm.resx">
+      <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeterBillCalculation\MeterBillCalculate.resx">
       <DependentUpon>MeterBillCalculate.cs</DependentUpon>
