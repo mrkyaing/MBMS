@@ -26,6 +26,13 @@ namespace MPS.Setting_Setup
 
         private void Settingfrm_Load(object sender, EventArgs e)
         {
+            CompanyProfile companyProfile = new CompanyProfile();
+            companyProfile = mbmsEntities.CompanyProfiles.Where(X => X.Active == true).SingleOrDefault();
+            lblCompanyName.Text = SettingController.defaultCompanyProfile.CompanyName;
+            lblAddress.Text = companyProfile.AddressEng;
+            lblEmail.Text = companyProfile.CompanyEmail;
+            lblPhoneNumber.Text = companyProfile.PhoneNumber;
+            lblWebsite.Text = companyProfile.CompanyWebsite;
 
             foreach (string printerName in PrinterSettings.InstalledPrinters)
             {
@@ -41,7 +48,6 @@ namespace MPS.Setting_Setup
         private void btnSave_Click(object sender, EventArgs e)
         {
             Boolean hasError = false;
-
             tp.RemoveAll();
             tp.IsBalloon = true;
             tp.ToolTipIcon = ToolTipIcon.Error;
@@ -57,13 +63,13 @@ namespace MPS.Setting_Setup
                 DefaultPrinter.A4Printer = cboPrinter.Text;
                 SettingController.CompanyName = lblCompanyName.Text;
                 SettingController.CompanyEmail = lblEmail.Text;
-                SettingController.CompanyName = lblCompanyName.Text;
+                SettingController.PhoneNo = lblPhoneNumber.Text;
                 SettingController.CompanyWebsite = lblWebsite.Text;
                 SettingController.CompanyAddress = lblAddress.Text;
-                SettingController.DefaultNoOfCopies =Convert.ToInt32( txtNoCopy.Text);
+                SettingController.DefaultNoOfCopies =Convert.ToInt32( txtNoCopy.Text);           
                 mbmsEntities.SaveChanges();
-
-            }
+                MessageBox.Show("Successfully save Setting!");
+                }
         }
-    }
+        }
 }
