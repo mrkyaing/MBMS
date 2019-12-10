@@ -24,12 +24,12 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnViewInvoices = new System.Windows.Forms.Button();
+            this.btnbillprocess = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.btnbillprocess = new System.Windows.Forms.Button();
-            this.btnViewInvoices = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,21 +48,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Calculation Process";
             // 
-            // dtpfromDate
+            // btnViewInvoices
             // 
-            this.dtpfromDate.Location = new System.Drawing.Point(101, 34);
-            this.dtpfromDate.Name = "dtpfromDate";
-            this.dtpfromDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpfromDate.TabIndex = 0;
+            this.btnViewInvoices.Location = new System.Drawing.Point(256, 129);
+            this.btnViewInvoices.Name = "btnViewInvoices";
+            this.btnViewInvoices.Size = new System.Drawing.Size(130, 34);
+            this.btnViewInvoices.TabIndex = 5;
+            this.btnViewInvoices.Text = "View Invoices";
+            this.btnViewInvoices.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnbillprocess
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "From Date:";
+            this.btnbillprocess.Location = new System.Drawing.Point(105, 129);
+            this.btnbillprocess.Name = "btnbillprocess";
+            this.btnbillprocess.Size = new System.Drawing.Size(145, 34);
+            this.btnbillprocess.TabIndex = 4;
+            this.btnbillprocess.Text = "Bill Calculate Process";
+            this.btnbillprocess.UseVisualStyleBackColor = true;
+            this.btnbillprocess.Click += new System.EventHandler(this.btnbillprocess_Click);
             // 
             // label2
             // 
@@ -80,24 +83,21 @@
             this.dtpToDate.Size = new System.Drawing.Size(200, 20);
             this.dtpToDate.TabIndex = 2;
             // 
-            // btnbillprocess
+            // label1
             // 
-            this.btnbillprocess.Location = new System.Drawing.Point(105, 129);
-            this.btnbillprocess.Name = "btnbillprocess";
-            this.btnbillprocess.Size = new System.Drawing.Size(145, 34);
-            this.btnbillprocess.TabIndex = 4;
-            this.btnbillprocess.Text = "Bill Calculate Process";
-            this.btnbillprocess.UseVisualStyleBackColor = true;
-            this.btnbillprocess.Click += new System.EventHandler(this.btnbillprocess_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "From Date:";
             // 
-            // btnViewInvoices
+            // dtpfromDate
             // 
-            this.btnViewInvoices.Location = new System.Drawing.Point(256, 129);
-            this.btnViewInvoices.Name = "btnViewInvoices";
-            this.btnViewInvoices.Size = new System.Drawing.Size(130, 34);
-            this.btnViewInvoices.TabIndex = 5;
-            this.btnViewInvoices.Text = "View Invoices";
-            this.btnViewInvoices.UseVisualStyleBackColor = true;
+            this.dtpfromDate.Location = new System.Drawing.Point(101, 34);
+            this.dtpfromDate.Name = "dtpfromDate";
+            this.dtpfromDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpfromDate.TabIndex = 0;
             // 
             // MeterBillCalculate
             // 
@@ -106,6 +106,7 @@
             this.ClientSize = new System.Drawing.Size(499, 262);
             this.Controls.Add(this.groupBox1);
             this.Name = "MeterBillCalculate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Bill Calculate";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

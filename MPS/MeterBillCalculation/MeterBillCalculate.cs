@@ -68,7 +68,7 @@ namespace MPS.MeterBillCalculation {
 
         private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect item) {
             decimal result = 0;
-
+            
             return result;
             }
 
