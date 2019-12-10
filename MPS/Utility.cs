@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MPS {
     public class Utility {
@@ -75,8 +76,51 @@ namespace MPS {
             // Step 6. Return the decrypted string in UTF8 format
             return UTF8.GetString(Results);
         }
+        public static void BindShop(ComboBox cboCompanyName, bool includeALL = false)
+        {
+            if (includeALL)
+            {
+                MBMSEntities entity = new MBMSEntities();
+                List<CompanyProfile> companyProfileList = new List<CompanyProfile>();
+
+               CompanyProfile companyProfile = new CompanyProfile();
+                companyProfile.CompanyName = "ALL";
+                companyProfile.CompanyProfileID = null;
+
+                var companys = entity.CompanyProfiles.ToList();
+                companyProfileList.Add(companyProfile);
+                companyProfileList.AddRange(companys);
+                cboCompanyName.DataSource = companyProfileList;
+                cboCompanyName.DisplayMember = "CompanyName";
+                cboCompanyName.ValueMember = "CompanyProfileID";
+
+                cboCompanyName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboCompanyName.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+            else
+            {
+                MBMSEntities entity = new MBMSEntities();
+                List<CompanyProfile> companyProfileList = new List<CompanyProfile>();
+                cboCompanyName.DataSource = companyProfileList;
+                cboCompanyName.DisplayMember = "CompanyName";
+                cboCompanyName.ValueMember = "CompanyProfileID";
+
+                cboCompanyName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                cboCompanyName.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+
+        }
         public static class SettingController
         {
+            public static CompanyProfile defaultCompanyProfile
+            {
+                get
+                {
+                    MBMSEntities mbmsentity = new MBMSEntities();
+                    CompanyProfile companyProfile = mbmsentity.CompanyProfiles.Where(x => x.Active == true).FirstOrDefault();
+                    return companyProfile;
+                }
+            }
             public static int DefaultNoOfCopies
             {
                 get
