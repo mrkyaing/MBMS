@@ -18,6 +18,7 @@ namespace MBMS.DAL
         public string BillCode7LayerID { get; set; }
         public decimal LowerLimit { get; set; }
         public decimal UpperLimit { get; set; }
+        public Nullable<decimal> RateUnit { get; set; }
         public decimal AmountPerUnit { get; set; }
         public bool Active { get; set; }
         public string CreatedUserID { get; set; }

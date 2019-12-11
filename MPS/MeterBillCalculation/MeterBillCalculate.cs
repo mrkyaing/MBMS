@@ -25,12 +25,12 @@ namespace MPS.MeterBillCalculation {
                 MessageBox.Show("There is no meter unit collection record!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
-            if (IsBillCalculateSuccess(dataList)) {
+            if (IsBillCalculateSuccess(dataList, dtpfromDate.Value, dtpToDate.Value)) {
                 MessageBox.Show("Meter bill process is complete successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
-        private bool IsBillCalculateSuccess(List<MBMS.DAL.MeterUnitCollect> dataList) {
+        private bool IsBillCalculateSuccess(List<MBMS.DAL.MeterUnitCollect> dataList, DateTime fromDate,DateTime toDate) {
             List<MeterBill> meterbillList = new List<MeterBill>();
             Random random = new Random();
             try {
@@ -40,10 +40,10 @@ namespace MPS.MeterBillCalculation {
                     mb.MeterBillCode = random.Next().ToString();
                     mb.InvoiceDate = DateTime.Now;
                     mb.LastBillPaidDate = DateTime.Now;
-                    mb.ServicesFees = 5000;
+                    mb.ServicesFees = 0;
                     mb.MeterFees =getMeterFeesAmountwith7LayerCode(item) ;
-                    mb.StreetLightFees = 750;
-                    mb.HorsePowerFees = 10000;
+                    mb.StreetLightFees = 0;
+                    mb.HorsePowerFees = 0;
                     mb.TotalFees =Convert.ToDecimal( (mb.ServicesFees+ mb.MeterFees+ mb.StreetLightFees + mb.HorsePowerFees));
                     mb.UsageUnit = item.TotalMeterUnit;
                     mb.PreviousMonthUnit = 0;
@@ -58,7 +58,7 @@ namespace MPS.MeterBillCalculation {
                     mb.CreatedUserID = UserID;
                     meterbillList.Add(mb);
                     }//end of foreach loop after adding Meter Bill List 
-                meterbillcalculateservice.MeterBillCalculate(meterbillList);
+                meterbillcalculateservice.MeterBillCalculate(meterbillList,fromDate,toDate);
                 }catch(Exception ex) {
                 MessageBox.Show("Error occur"+ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -66,9 +66,24 @@ namespace MPS.MeterBillCalculation {
             return true;
             }
 
-        private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect item) {
+        private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect meterUnitCollect) {
             decimal result = 0;
-            
+            decimal sumUnits = 0;
+            BillCode7Layer billCode7Layer = meterbillcalculateservice.GetBillCode7LayerByBillCode(Convert.ToInt64(meterUnitCollect.BillCode));
+            List<BillCode7LayerDetail> billCode7LayerDetailList = meterbillcalculateservice.GetBillCode7LayerDetailByBillCode7LayerID(billCode7Layer.BillCode7LayerID).OrderBy(y=>y.LowerLimit).ToList();
+            foreach(BillCode7LayerDetail item in billCode7LayerDetailList) {
+                if (meterUnitCollect.TotalMeterUnit > (sumUnits+item.RateUnit)) {
+                    result +=(decimal)(item.RateUnit * item.AmountPerUnit);
+                    sumUnits += (decimal)item.RateUnit;
+                    }
+                else {
+                    decimal diffUnits = meterUnitCollect.TotalMeterUnit - sumUnits;
+                    result += (decimal)diffUnits * item.AmountPerUnit;
+                    if((diffUnits+sumUnits)== meterUnitCollect.TotalMeterUnit) {
+                        return result;
+                        }
+                    }
+                }
             return result;
             }
 

@@ -50,8 +50,7 @@ namespace MPS.MeterUnitCollect {
         private void btncollectmeterunit_Click(object sender, EventArgs e) {
             string fromdate = dtpfromDate.Value.ToString("yyyyMMdd");
             string todate = dtptoDate.Value.ToString("yyyy-MM-dd");
-            this.GetMeterUnitData(fromdate,todate);   
-            
+            this.GetMeterUnitData(fromdate,todate);            
             }
         private bool SaveMeterUnitCollection(List<NodeMeter> data) {
             try {

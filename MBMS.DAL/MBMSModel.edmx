@@ -45,6 +45,7 @@
           <Property Name="BillCode7LayerID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="LowerLimit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UpperLimit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RateUnit" Type="decimal" Precision="18" Scale="2" />
           <Property Name="AmountPerUnit" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
           <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
@@ -905,6 +906,7 @@
           <Property Name="BillCode7LayerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="LowerLimit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UpperLimit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="RateUnit" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="AmountPerUnit" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1809,6 +1811,7 @@
                 <ScalarProperty Name="BillCode7LayerID" ColumnName="BillCode7LayerID" />
                 <ScalarProperty Name="LowerLimit" ColumnName="LowerLimit" />
                 <ScalarProperty Name="UpperLimit" ColumnName="UpperLimit" />
+                <ScalarProperty Name="RateUnit" ColumnName="RateUnit" />
                 <ScalarProperty Name="AmountPerUnit" ColumnName="AmountPerUnit" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
