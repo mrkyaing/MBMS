@@ -53,7 +53,9 @@ namespace MPS.MeterBillCalculation {
                 if (e.ColumnIndex ==20) {
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
                     MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
-                    MessageBox.Show(meterBillInvoice.TotalFees.ToString()+":"+ meterBillInvoice.MeterBillID);            
+                    UpdateMeterbillInvoiceRecrod meterbillinvoiceUI = new UpdateMeterbillInvoiceRecrod();
+                    meterbillinvoiceUI._vm= meterBillInvoice;
+                    meterbillinvoiceUI.Show();
                     }
                 }
             }

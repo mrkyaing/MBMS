@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MBMS.DAL;
 using System.Data.Objects;
 using MPS.ViewModels;
+using System.Data.Entity.Migrations;
 
 namespace MPS.BusinessLogic.MeterBillCalculationController {
     public class MeterBillCalculateController : IMeterBillCalculateServices {
@@ -69,6 +70,11 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
         public List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string TownshipID,string QuarterID) {
           //  List<Transformer> transformerList = mBMSEntities.Transformers.Where(x => x.QuarterID == QuarterID).ToList();
             return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime( x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();// || x.TransformerID.Contains(x.TransformerID)
+            }
+
+        public void UpdateMeterBill(MeterBill _meterbill) {
+            mBMSEntities.MeterBills.AddOrUpdate(_meterbill);
+            mBMSEntities.SaveChanges();
             }
         }
     }

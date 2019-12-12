@@ -103,6 +103,12 @@
     <Compile Include="MeterBillCalculation\MeterBillCalculate.Designer.cs">
       <DependentUpon>MeterBillCalculate.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeterBillCalculation\UpdateMeterbillInvoiceRecrod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterBillCalculation\UpdateMeterbillInvoiceRecrod.Designer.cs">
+      <DependentUpon>UpdateMeterbillInvoiceRecrod.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeterBillCalculation\ViewMeterBillInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MeterBillCalculation\MeterBillCalculate.resx">
       <DependentUpon>MeterBillCalculate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeterBillCalculation\UpdateMeterbillInvoiceRecrod.resx">
+      <DependentUpon>UpdateMeterbillInvoiceRecrod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeterBillCalculation\ViewMeterBillInvoice.resx">
       <DependentUpon>ViewMeterBillInvoice.cs</DependentUpon>
