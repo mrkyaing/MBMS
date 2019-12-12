@@ -109,5 +109,14 @@ namespace MPS.MeterBillCalculation {
             cboTownship.DataSource = meterbillcalculateservice.GetTownship();
             cboTownship.Text = "Select One";
             }
+
+        private void btnViewInvoices_Click(object sender, EventArgs e) {
+            ViewMeterBillInvoice _ViewMeterBillInvoice = new ViewMeterBillInvoice();
+            _ViewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
+            _ViewMeterBillInvoice.toDate = dtpToDate.Value.Date;
+            _ViewMeterBillInvoice.TownshipID = cboTownship.SelectedValue.ToString();
+            _ViewMeterBillInvoice.QuarterID = cboQuarter.SelectedValue.ToString();
+            _ViewMeterBillInvoice.Show();
+            }
         }
     }

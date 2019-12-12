@@ -24,16 +24,16 @@
         /// </summary>
         private void InitializeComponent() {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboQuarter = new System.Windows.Forms.ComboBox();
+            this.cboTownship = new System.Windows.Forms.ComboBox();
             this.btnViewInvoices = new System.Windows.Forms.Button();
             this.btnbillprocess = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
-            this.cboTownship = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboQuarter = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Calculation Process";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(94, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Quarter:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(94, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Township:";
+            // 
+            // cboQuarter
+            // 
+            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarter.FormattingEnabled = true;
+            this.cboQuarter.Location = new System.Drawing.Point(172, 166);
+            this.cboQuarter.Name = "cboQuarter";
+            this.cboQuarter.Size = new System.Drawing.Size(200, 22);
+            this.cboQuarter.TabIndex = 6;
+            // 
+            // cboTownship
+            // 
+            this.cboTownship.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTownship.FormattingEnabled = true;
+            this.cboTownship.Location = new System.Drawing.Point(172, 120);
+            this.cboTownship.Name = "cboTownship";
+            this.cboTownship.Size = new System.Drawing.Size(200, 22);
+            this.cboTownship.TabIndex = 6;
+            // 
             // btnViewInvoices
             // 
             this.btnViewInvoices.Location = new System.Drawing.Point(256, 217);
@@ -64,6 +100,7 @@
             this.btnViewInvoices.TabIndex = 5;
             this.btnViewInvoices.Text = "View Invoices";
             this.btnViewInvoices.UseVisualStyleBackColor = true;
+            this.btnViewInvoices.Click += new System.EventHandler(this.btnViewInvoices_Click);
             // 
             // btnbillprocess
             // 
@@ -106,42 +143,6 @@
             this.dtpfromDate.Name = "dtpfromDate";
             this.dtpfromDate.Size = new System.Drawing.Size(204, 20);
             this.dtpfromDate.TabIndex = 0;
-            // 
-            // cboTownship
-            // 
-            this.cboTownship.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTownship.FormattingEnabled = true;
-            this.cboTownship.Location = new System.Drawing.Point(172, 120);
-            this.cboTownship.Name = "cboTownship";
-            this.cboTownship.Size = new System.Drawing.Size(200, 22);
-            this.cboTownship.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Township:";
-            // 
-            // cboQuarter
-            // 
-            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboQuarter.FormattingEnabled = true;
-            this.cboQuarter.Location = new System.Drawing.Point(172, 166);
-            this.cboQuarter.Name = "cboQuarter";
-            this.cboQuarter.Size = new System.Drawing.Size(200, 22);
-            this.cboQuarter.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(94, 174);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Quarter:";
             // 
             // MeterBillCalculate
             // 

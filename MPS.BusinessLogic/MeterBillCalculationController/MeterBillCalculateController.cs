@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MBMS.DAL;
 using System.Data.Objects;
+using MPS.ViewModels;
 
 namespace MPS.BusinessLogic.MeterBillCalculationController {
     public class MeterBillCalculateController : IMeterBillCalculateServices {
@@ -18,6 +19,35 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
         public List<BillCode7LayerDetail> GetBillCode7LayerDetailByBillCode7LayerID(string BillCode7LayerID) {
             List<BillCode7LayerDetail> _billcode7LayerDetialList = mBMSEntities.BillCode7LayerDetail.Where(x => x.BillCode7LayerID == BillCode7LayerID && x.Active==true).ToList();
             return _billcode7LayerDetialList;
+            }
+
+        public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID) {
+            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x => x.InvoiceDate >= fromDate && 
+            x.InvoiceDate <= toDate).Select(y=>new MeterBillInvoiceVM {
+                MeterBillID=y.MeterBillID,
+                CustomerName=y.MeterUnitCollect.Customer.CustomerNameInEng,
+                QuarterName=y.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
+                TownshipName=y.MeterUnitCollect.Customer.Township.TownshipNameInEng,
+                MeterBillCode=y.MeterBillCode,
+                InvoiceDate=y.InvoiceDate,
+                LastBillPaidDate=y.LastBillPaidDate,
+                ServicesFees=y.ServicesFees,
+                MeterFees=y.MeterFees,
+                StreetLightFees=y.StreetLightFees,
+                TotalFees=y.TotalFees,
+                UsageUnit=y.UsageUnit,
+                CurrentMonthUnit=y.CurrentMonthUnit,
+                PreviousMonthUnit=y.PreviousMonthUnit,
+                AdvanceMoney=y.AdvanceMoney,
+                CreditAmount=y.CreditAmount,
+                Remark=y.Remark,
+                HorsePowerFees=y.HorsePowerFees,
+                AdditionalFees1=y.AdditionalFees1,
+                AdditionalFees2=y.AdditionalFees2,
+                AdditionalFees3=y.AdditionalFees3
+                }
+            ).ToList();
+            return data;
             }
 
         public List<Quarter> GetQuarter() {

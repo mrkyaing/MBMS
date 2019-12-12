@@ -79,6 +79,7 @@
     <Compile Include="UserManagementController\RoleController.cs" />
     <Compile Include="UserManagementController\UserController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MeterBillInvoiceVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MBMS.DAL\MBMS.DAL.csproj">
