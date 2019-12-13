@@ -36,14 +36,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPaid = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtpunishment = new System.Windows.Forms.TextBox();
+            this.txtAdvanceMoney = new System.Windows.Forms.TextBox();
             this.txtReceivedAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtChangeAmt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,9 +154,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtpunishment);
+            this.groupBox1.Controls.Add(this.txtAdvanceMoney);
+            this.groupBox1.Controls.Add(this.txtChangeAmt);
             this.groupBox1.Controls.Add(this.txtReceivedAmount);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.label7);
@@ -181,19 +181,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Payment Information";
             // 
-            // textBox2
+            // txtpunishment
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 223);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtpunishment.Location = new System.Drawing.Point(154, 223);
+            this.txtpunishment.Name = "txtpunishment";
+            this.txtpunishment.Size = new System.Drawing.Size(197, 20);
+            this.txtpunishment.TabIndex = 4;
             // 
-            // textBox1
+            // txtAdvanceMoney
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 260);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtAdvanceMoney.Location = new System.Drawing.Point(154, 260);
+            this.txtAdvanceMoney.Name = "txtAdvanceMoney";
+            this.txtAdvanceMoney.Size = new System.Drawing.Size(197, 20);
+            this.txtAdvanceMoney.TabIndex = 4;
             // 
             // txtReceivedAmount
             // 
@@ -201,6 +201,7 @@
             this.txtReceivedAmount.Name = "txtReceivedAmount";
             this.txtReceivedAmount.Size = new System.Drawing.Size(197, 20);
             this.txtReceivedAmount.TabIndex = 4;
+            this.txtReceivedAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceivedAmount_KeyDown);
             // 
             // label7
             // 
@@ -238,12 +239,12 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Change Amount:";
             // 
-            // textBox3
+            // txtChangeAmt
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 333);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtChangeAmt.Location = new System.Drawing.Point(154, 333);
+            this.txtChangeAmt.Name = "txtChangeAmt";
+            this.txtChangeAmt.Size = new System.Drawing.Size(197, 20);
+            this.txtChangeAmt.TabIndex = 4;
             // 
             // MeterBillPaymentByCash
             // 
@@ -277,11 +278,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtReceivedAmount;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAdvanceMoney;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtpunishment;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtChangeAmt;
         private System.Windows.Forms.Label label8;
         }
     }

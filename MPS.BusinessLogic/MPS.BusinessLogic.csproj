@@ -78,6 +78,8 @@
     <Compile Include="MeterUnitCollectionController\MeterUnitCollectionController.cs" />
     <Compile Include="PunishmentCustomerController\IPunishmentCustomerServices.cs" />
     <Compile Include="PunishmentCustomerController\PunishmentCustomerController.cs" />
+    <Compile Include="PunishmentRuleController\IPunishmentRuleServices.cs" />
+    <Compile Include="PunishmentRuleController\PunishmentRuleController.cs" />
     <Compile Include="UserManagementController\IRole.cs" />
     <Compile Include="UserManagementController\IUser.cs" />
     <Compile Include="UserManagementController\RoleController.cs" />
