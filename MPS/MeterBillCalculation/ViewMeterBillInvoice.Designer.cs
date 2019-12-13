@@ -26,10 +26,11 @@
             this.gvmeterbillinvoice = new System.Windows.Forms.DataGridView();
             this.btnPrint = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblfromDate = new System.Windows.Forms.Label();
-            this.lbltoDate = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtptoDate = new System.Windows.Forms.DateTimePicker();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.MeterBillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TownshipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,7 @@
             this.AdditonalFees2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdditonalFees3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Print = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvmeterbillinvoice)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +83,8 @@
             this.AdditonalFees1,
             this.AdditonalFees2,
             this.AdditonalFees3,
-            this.Edit});
+            this.Edit,
+            this.Print});
             this.gvmeterbillinvoice.Location = new System.Drawing.Point(-2, 192);
             this.gvmeterbillinvoice.Name = "gvmeterbillinvoice";
             this.gvmeterbillinvoice.ReadOnly = true;
@@ -95,13 +98,14 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(113, 23);
             this.btnPrint.TabIndex = 1;
-            this.btnPrint.Text = "Print";
+            this.btnPrint.Text = "Print All";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbltoDate);
-            this.groupBox1.Controls.Add(this.lblfromDate);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.dtptoDate);
+            this.groupBox1.Controls.Add(this.dtpFromDate);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(24, 2);
@@ -110,15 +114,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice Infromation";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "From Date:";
             // 
             // label2
             // 
@@ -129,23 +124,38 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "To Date:";
             // 
-            // lblfromDate
+            // label1
             // 
-            this.lblfromDate.AutoSize = true;
-            this.lblfromDate.Location = new System.Drawing.Point(166, 34);
-            this.lblfromDate.Name = "lblfromDate";
-            this.lblfromDate.Size = new System.Drawing.Size(28, 13);
-            this.lblfromDate.TabIndex = 3;
-            this.lblfromDate.Text = "XXX";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "From Date:";
             // 
-            // lbltoDate
+            // dtpFromDate
             // 
-            this.lbltoDate.AutoSize = true;
-            this.lbltoDate.Location = new System.Drawing.Point(166, 78);
-            this.lbltoDate.Name = "lbltoDate";
-            this.lbltoDate.Size = new System.Drawing.Size(28, 13);
-            this.lbltoDate.TabIndex = 3;
-            this.lbltoDate.Text = "XXX";
+            this.dtpFromDate.Location = new System.Drawing.Point(95, 34);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpFromDate.TabIndex = 4;
+            // 
+            // dtptoDate
+            // 
+            this.dtptoDate.Location = new System.Drawing.Point(95, 78);
+            this.dtptoDate.Name = "dtptoDate";
+            this.dtptoDate.Size = new System.Drawing.Size(200, 20);
+            this.dtptoDate.TabIndex = 4;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(95, 120);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(76, 30);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // MeterBillID
             // 
@@ -298,6 +308,15 @@
             this.Edit.Text = "Edit";
             this.Edit.UseColumnTextForLinkValue = true;
             // 
+            // Print
+            // 
+            this.Print.HeaderText = "Action";
+            this.Print.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
+            this.Print.Name = "Print";
+            this.Print.ReadOnly = true;
+            this.Print.Text = "Print";
+            this.Print.UseColumnTextForLinkValue = true;
+            // 
             // ViewMeterBillInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,8 +341,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lbltoDate;
-        private System.Windows.Forms.Label lblfromDate;
+        private System.Windows.Forms.DateTimePicker dtptoDate;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn MeterBillID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TownshipName;
@@ -345,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AdditonalFees2;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdditonalFees3;
         private System.Windows.Forms.DataGridViewLinkColumn Edit;
+        private System.Windows.Forms.DataGridViewLinkColumn Print;
         }
     }

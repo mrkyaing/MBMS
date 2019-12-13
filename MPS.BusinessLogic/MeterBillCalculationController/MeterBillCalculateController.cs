@@ -42,10 +42,16 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                 AdvanceMoney=y.AdvanceMoney,
                 CreditAmount=y.CreditAmount,
                 Remark=y.Remark,
+                isPaid=y.isPaid,
+                RecivedAmount=y.RecivedAmount,
                 HorsePowerFees=y.HorsePowerFees,
                 AdditionalFees1=y.AdditionalFees1,
                 AdditionalFees2=y.AdditionalFees2,
-                AdditionalFees3=y.AdditionalFees3
+                AdditionalFees3=y.AdditionalFees3,
+                MeterUnitCollectID=y.MeterUnitCollectID,
+                Active=y.Active,
+                CreatedUserID=y.CreatedUserID,
+                CreatedDate=y.CreatedDate
                 }
             ).ToList();
             return data;

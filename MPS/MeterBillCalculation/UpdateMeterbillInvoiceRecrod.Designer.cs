@@ -49,7 +49,7 @@
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -307,26 +307,27 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnPrint
+            // btnClose
             // 
-            this.btnPrint.Location = new System.Drawing.Point(224, 521);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(97, 26);
-            this.btnPrint.TabIndex = 2;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnClose.Location = new System.Drawing.Point(224, 521);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(97, 26);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // UpdateMeterbillInvoiceRecrod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 550);
-            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
             this.Name = "UpdateMeterbillInvoiceRecrod";
-            this.Text = "UpdateMeterbillInvoiceRecrod";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Update Meter bill InvoiceRecrod";
             this.Load += new System.EventHandler(this.UpdateMeterbillInvoiceRecrod_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -361,6 +362,6 @@
         private System.Windows.Forms.TextBox txtTotalFees;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnClose;
         }
     }

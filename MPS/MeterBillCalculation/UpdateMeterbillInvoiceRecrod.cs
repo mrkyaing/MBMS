@@ -89,18 +89,28 @@ namespace MPS.MeterBillCalculation {
                 MeterBill _mb = new MeterBill();
                 _mb.MeterBillID = _vm.MeterBillID;
                 _mb.InvoiceDate = _vm.InvoiceDate;
+                _mb.LastBillPaidDate = _vm.LastBillPaidDate;
                 _mb.MeterBillCode = _vm.MeterBillCode;
                 _mb.MeterFees =Convert.ToDecimal(txtMeterFees.Text);
                 _mb.ServicesFees = Convert.ToDecimal(txtServiceFees.Text);
+                _mb.TotalFees = Convert.ToDecimal(txtTotalFees.Text);
                 _mb.StreetLightFees = Convert.ToDecimal(txtStreetLightFees.Text);
+                _mb.UsageUnit = _vm.UsageUnit;
+                _mb.CurrentMonthUnit = _vm.CurrentMonthUnit;
+                _mb.PreviousMonthUnit = _vm.PreviousMonthUnit;
+                _vm.isPaid = _vm.isPaid;
+                _mb.Remark = _vm.Remark;
+                _mb.RecivedAmount = _vm.RecivedAmount;
                 _mb.HorsePowerFees = Convert.ToDecimal(txtHorsePowerFees.Text);
                 _mb.AdditionalFees1 = Convert.ToDecimal(txtAdditionalFees1.Text);
                 _mb.AdditionalFees2 = Convert.ToDecimal(txtAdditionalFees2.Text);
                 _mb.AdditionalFees3 = Convert.ToDecimal(txtAdditionalFees3.Text);
-                _mb.TotalFees = Convert.ToDecimal(txtTotalFees.Text);
+                _mb.MeterUnitCollectID = _vm.MeterUnitCollectID;
+                _mb.Active =true;
+                _mb.CreatedDate = _vm.CreatedDate;
+                _mb.CreatedUserID = _vm.CreatedUserID;
                 _services.UpdateMeterBill(_mb);
-                MessageBox.Show("Meter bill record is updated successfully.", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                MessageBox.Show("Meter bill record is updated successfully.", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);        
                 }
             catch(Exception ex) {
                 MessageBox.Show("Error occur" + ex.Message);
@@ -114,6 +124,10 @@ namespace MPS.MeterBillCalculation {
         private void txtServiceFees_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter)
                 this.ChangeTotalFeesAmount();
+            }
+
+        private void btnClose_Click(object sender, EventArgs e) {
+            this.Close();
             }
         }
     }

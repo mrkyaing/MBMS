@@ -25,30 +25,13 @@ namespace MPS.MeterBillCalculation {
 
         private void ViewMeterBillInvoice_Load(object sender, EventArgs e) {
             this.gvmeterbillinvoice.AutoGenerateColumns = false;
+            dtpFromDate.Value = fromDate;
+            dtptoDate.Value = toDate;
             this.gvmeterbillinvoice.DataSource = _services.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID);
             }
 
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0) {
-                ////delete function 
-                //if (e.ColumnIndex == 6)//do the delete Link action
-                //{
-                //    DialogResult result = MessageBox.Show(
-                //        "Are you sure  want to delete?", "Delete",
-                //        MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                //    if (result.Equals(DialogResult.OK)) {
-                //        DataGridViewRow row = gvum.Rows[e.RowIndex];//get the selected row's data and then 
-                //        UM um = (UM)row.DataBoundItem;//typeCast to UM Object 
-                //        if (uMController.Delete(um)) {
-                //            MessageBox.Show("Delete Success");
-                //            this.BindUMList();//calling the UM data binding method to bind the record to the GridView
-                //            }
-
-                //        else
-                //            MessageBox.Show("Error");
-                //        }
-
-                //    }
                 //Edit function
                 if (e.ColumnIndex ==20) {
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
@@ -56,8 +39,24 @@ namespace MPS.MeterBillCalculation {
                     UpdateMeterbillInvoiceRecrod meterbillinvoiceUI = new UpdateMeterbillInvoiceRecrod();
                     meterbillinvoiceUI._vm= meterBillInvoice;
                     meterbillinvoiceUI.Show();
+                    }//end of edit function
+                
+                //print function 
+                if (e.ColumnIndex ==21)//do the print Link action
+                {
+                    DialogResult result = MessageBox.Show(
+                        "Are you sure  want to print?", "printing",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.OK)) {
+                        DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];//get the selected row's data and then 
+                        MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
+                        }
                     }
                 }
+            }
+
+        private void btnSearch_Click(object sender, EventArgs e) {
+            this.gvmeterbillinvoice.DataSource = _services.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, TownshipID, QuarterID);
             }
         }
     }
