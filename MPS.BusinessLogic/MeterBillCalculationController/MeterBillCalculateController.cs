@@ -57,6 +57,48 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             return data;
             }
 
+        public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID, string CustomerID, string MeterBillCodeNo) {
+            List<MeterBillInvoiceVM> data =(from mb in mBMSEntities.MeterBills
+                                            join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
+                                            join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
+                                            where mb.InvoiceDate>=fromDate && mb.InvoiceDate<=toDate 
+                                           && custo.CustomerID==CustomerID 
+                                            && custo.TownshipID==TownshipID 
+                                           &&custo.QuarterID==QuarterID 
+                                          && mb.MeterBillCode==MeterBillCodeNo
+                                            select new MeterBillInvoiceVM {
+                    MeterBillID =mb.MeterBillID,
+                    CustomerName =custo.CustomerNameInEng,
+                    QuarterName =custo.Quarter.QuarterNameInEng,
+                    TownshipName =custo.Township.TownshipNameInEng,
+                    MeterBillCode =mb.MeterBillCode,
+                    InvoiceDate = mb.InvoiceDate,
+                    LastBillPaidDate = mb.LastBillPaidDate,
+                    ServicesFees = mb.ServicesFees,
+                    MeterFees = mb.MeterFees,
+                    StreetLightFees = mb.StreetLightFees,
+                    TotalFees =mb.TotalFees,
+                    UsageUnit = mb.UsageUnit,
+                    CurrentMonthUnit = mb.CurrentMonthUnit,
+                    PreviousMonthUnit = mb.PreviousMonthUnit,
+                    AdvanceMoney = mb.AdvanceMoney,
+                    CreditAmount = mb.CreditAmount,
+                    Remark = mb.Remark,
+                    isPaid = mb.isPaid,
+                    RecivedAmount = mb.RecivedAmount,
+                    HorsePowerFees = mb.HorsePowerFees,
+                    AdditionalFees1 =mb.AdditionalFees1,
+                    AdditionalFees2 = mb.AdditionalFees2,
+                    AdditionalFees3 = mb.AdditionalFees3,
+                    MeterUnitCollectID = mb.MeterUnitCollectID,
+                    Active = mb.Active,
+                    CreatedUserID = mb.CreatedUserID,
+                    CreatedDate = mb.CreatedDate
+                    }
+              ).ToList();
+            return data;
+            }
+
         public List<Quarter> GetQuarter() {
             return mBMSEntities.Quarters.Where(x => x.Active == true).ToList();
             }

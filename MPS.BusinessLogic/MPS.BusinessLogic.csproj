@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdvanceMoneyCustomerController\AdvanceMoneyCustomerController.cs" />
+    <Compile Include="AdvanceMoneyCustomerController\IAdvanceMoneyCustomerServices.cs" />
     <Compile Include="BillingController\BillCode7LayerController.cs" />
     <Compile Include="BillingController\IBillCode7Layer.cs" />
     <Compile Include="CompanyProfileController\CompanyProfileController.cs" />
@@ -74,6 +76,8 @@
     <Compile Include="MeterController\MeterController.cs" />
     <Compile Include="MeterUnitCollectionController\IMeterUnitCollections.cs" />
     <Compile Include="MeterUnitCollectionController\MeterUnitCollectionController.cs" />
+    <Compile Include="PunishmentCustomerController\IPunishmentCustomerServices.cs" />
+    <Compile Include="PunishmentCustomerController\PunishmentCustomerController.cs" />
     <Compile Include="UserManagementController\IRole.cs" />
     <Compile Include="UserManagementController\IUser.cs" />
     <Compile Include="UserManagementController\RoleController.cs" />
@@ -87,7 +91,9 @@
       <Name>MBMS.DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MeterBillPaymentController\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

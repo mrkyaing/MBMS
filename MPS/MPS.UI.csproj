@@ -115,6 +115,18 @@
     <Compile Include="MeterBillCalculation\ViewMeterBillInvoice.Designer.cs">
       <DependentUpon>ViewMeterBillInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeterBillPayment\MeterBillPaymentByCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterBillPayment\MeterBillPaymentByCash.Designer.cs">
+      <DependentUpon>MeterBillPaymentByCash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeterBillPayment\MeterBillPaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterBillPayment\MeterBillPaymentList.Designer.cs">
+      <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setting Setup\CompanyProfilefrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +286,12 @@
     <EmbeddedResource Include="MeterBillCalculation\ViewMeterBillInvoice.resx">
       <DependentUpon>ViewMeterBillInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MeterBillPayment\MeterBillPaymentByCash.resx">
+      <DependentUpon>MeterBillPaymentByCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeterBillPayment\MeterBillPaymentList.resx">
+      <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Setting Setup\CompanyProfilefrm.resx">
       <DependentUpon>CompanyProfilefrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,8 +386,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="AdvanceMoneyCustomer\" />
     <Folder Include="Importing\" />
     <Folder Include="Integrate with HHU\" />
+    <Folder Include="PunishmentCustomer\" />
     <Folder Include="Reports\" />
     <Folder Include="System\" />
   </ItemGroup>

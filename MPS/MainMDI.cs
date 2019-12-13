@@ -5,6 +5,7 @@ using MPS.Customer_Setup;
 using MPS.Master_Setup;
 using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
+using MPS.MeterBillPayment;
 using MPS.MeterUnitCollect;
 using MPS.Setting_Setup;
 using MPS.User_Management;
@@ -299,5 +300,12 @@ namespace MPS
             mbc.UserID = UserID;
             mbc.Show();
             }
+
+        private void meterBillPaymentToolStripMenuItem_Click(object sender, EventArgs e) {
+            MeterBillPaymentList mbp = new MeterBillPaymentList();
+            mbp.UserID = UserID;
+            mbp.Show();
+            
+        }
         }
 }

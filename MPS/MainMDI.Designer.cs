@@ -78,6 +78,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.meterBillPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -165,7 +166,8 @@
             this.billCode7LayerToolStripMenuItem,
             this.billCode7LayerListToolStripMenuItem,
             this.meterBillCollectToolStripMenuItem,
-            this.meterBillCalculationProcessToolStripMenuItem});
+            this.meterBillCalculationProcessToolStripMenuItem,
+            this.meterBillPaymentToolStripMenuItem});
             this.billingToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.billingToolStripMenuItem.Name = "billingToolStripMenuItem";
             this.billingToolStripMenuItem.Size = new System.Drawing.Size(54, 21);
@@ -477,15 +479,22 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
             this.toolStripStatusLabel1.Text = "User Name:";
             // 
             // tpUserName
             // 
             this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
             this.tpUserName.Name = "tpUserName";
-            this.tpUserName.Size = new System.Drawing.Size(65, 17);
+            this.tpUserName.Size = new System.Drawing.Size(59, 17);
             this.tpUserName.Text = "User Name";
+            // 
+            // meterBillPaymentToolStripMenuItem
+            // 
+            this.meterBillPaymentToolStripMenuItem.Name = "meterBillPaymentToolStripMenuItem";
+            this.meterBillPaymentToolStripMenuItem.Size = new System.Drawing.Size(236, 22);
+            this.meterBillPaymentToolStripMenuItem.Text = "Meter Bill Payment";
+            this.meterBillPaymentToolStripMenuItem.Click += new System.EventHandler(this.meterBillPaymentToolStripMenuItem_Click);
             // 
             // MainMDI
             // 
@@ -562,6 +571,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tpUserName;
         private System.Windows.Forms.ToolStripMenuItem meterBillCalculationProcessToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meterBillPaymentToolStripMenuItem;
         }
 }
 
