@@ -120,9 +120,15 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime( x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();// || x.TransformerID.Contains(x.TransformerID)
             }
 
-        public void UpdateMeterBill(MeterBill _meterbill) {
-            mBMSEntities.MeterBills.AddOrUpdate(_meterbill);
-            mBMSEntities.SaveChanges();
+        public bool UpdateMeterBill(MeterBill _meterbill) {
+            try {
+                mBMSEntities.MeterBills.AddOrUpdate(_meterbill);
+                mBMSEntities.SaveChanges();
+                }
+            catch (Exception) {
+                return false;
+                }
+            return true;
             }
         }
     }

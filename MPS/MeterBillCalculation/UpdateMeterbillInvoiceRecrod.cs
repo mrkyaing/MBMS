@@ -98,7 +98,7 @@ namespace MPS.MeterBillCalculation {
                 _mb.UsageUnit = _vm.UsageUnit;
                 _mb.CurrentMonthUnit = _vm.CurrentMonthUnit;
                 _mb.PreviousMonthUnit = _vm.PreviousMonthUnit;
-                _vm.isPaid = _vm.isPaid;
+                _mb.isPaid = _vm.isPaid;
                 _mb.Remark = _vm.Remark;
                 _mb.RecivedAmount = _vm.RecivedAmount;
                 _mb.HorsePowerFees = Convert.ToDecimal(txtHorsePowerFees.Text);
