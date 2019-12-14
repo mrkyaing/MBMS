@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillCalculation {
     public partial class UpdateMeterbillInvoiceRecrod : Form {
-        public MeterBillInvoiceVM _vm { get; set; }
-        IMeterBillCalculateServices _services;
+        public MeterBillInvoiceVM vm { get; set; }
+        IMeterBillCalculateServices mterBillCalculateServices;
         public UpdateMeterbillInvoiceRecrod() {
             InitializeComponent();
-            _services =new  MeterBillCalculateController();
+            mterBillCalculateServices =new  MeterBillCalculateController();
             }
 
         private void UpdateMeterbillInvoiceRecrod_Load(object sender, EventArgs e) {
@@ -25,18 +25,18 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void bindUpdatedData() {
-            this.txtCustomerName.Text = _vm.CustomerName;
-            txtQuarterName.Text = _vm.QuarterName;
-            txtTownshipName.Text = _vm.TownshipName;
-            txtBillCodeNo.Text = _vm.MeterBillCode;
-            txtMeterFees.Text = _vm.MeterFees.ToString();
-            txtServiceFees.Text = _vm.ServicesFees==null?"0.0": _vm.ServicesFees.ToString();
-            txtStreetLightFees.Text = _vm.StreetLightFees==null?"0.0": _vm.StreetLightFees.ToString();
-            txtHorsePowerFees.Text = _vm.HorsePowerFees==null?"0.0":_vm.HorsePowerFees.ToString();
-            txtAdditionalFees1.Text = _vm.AdditionalFees1==null?"0.0" :_vm.AdditionalFees1.ToString();
-            txtAdditionalFees2.Text = _vm.AdditionalFees2==null?"0.0": _vm.AdditionalFees2.ToString();
-            txtAdditionalFees3.Text = _vm.AdditionalFees3==null?"0.0": _vm.AdditionalFees3.ToString();
-            txtTotalFees.Text =_vm.TotalFees.ToString();
+            this.txtCustomerName.Text = vm.CustomerName;
+            txtQuarterName.Text = vm.QuarterName;
+            txtTownshipName.Text = vm.TownshipName;
+            txtBillCodeNo.Text = vm.MeterBillCode;
+            txtMeterFees.Text = vm.MeterFees.ToString();
+            txtServiceFees.Text = vm.ServicesFees==null?"0.0": vm.ServicesFees.ToString();
+            txtStreetLightFees.Text = vm.StreetLightFees==null?"0.0": vm.StreetLightFees.ToString();
+            txtHorsePowerFees.Text = vm.HorsePowerFees==null?"0.0":vm.HorsePowerFees.ToString();
+            txtAdditionalFees1.Text = vm.AdditionalFees1==null?"0.0" :vm.AdditionalFees1.ToString();
+            txtAdditionalFees2.Text = vm.AdditionalFees2==null?"0.0": vm.AdditionalFees2.ToString();
+            txtAdditionalFees3.Text = vm.AdditionalFees3==null?"0.0": vm.AdditionalFees3.ToString();
+            txtTotalFees.Text =vm.TotalFees.ToString();
             }
 
         private void txtServiceFees_TextChanged(object sender, EventArgs e) {
@@ -86,30 +86,30 @@ namespace MPS.MeterBillCalculation {
 
         private void btnUpdate_Click(object sender, EventArgs e) {
             try {
-                MeterBill _mb = new MeterBill();
-                _mb.MeterBillID = _vm.MeterBillID;
-                _mb.InvoiceDate = _vm.InvoiceDate;
-                _mb.LastBillPaidDate = _vm.LastBillPaidDate;
-                _mb.MeterBillCode = _vm.MeterBillCode;
-                _mb.MeterFees =Convert.ToDecimal(txtMeterFees.Text);
-                _mb.ServicesFees = Convert.ToDecimal(txtServiceFees.Text);
-                _mb.TotalFees = Convert.ToDecimal(txtTotalFees.Text);
-                _mb.StreetLightFees = Convert.ToDecimal(txtStreetLightFees.Text);
-                _mb.UsageUnit = _vm.UsageUnit;
-                _mb.CurrentMonthUnit = _vm.CurrentMonthUnit;
-                _mb.PreviousMonthUnit = _vm.PreviousMonthUnit;
-                _mb.isPaid = _vm.isPaid;
-                _mb.Remark = _vm.Remark;
-                _mb.RecivedAmount = _vm.RecivedAmount;
-                _mb.HorsePowerFees = Convert.ToDecimal(txtHorsePowerFees.Text);
-                _mb.AdditionalFees1 = Convert.ToDecimal(txtAdditionalFees1.Text);
-                _mb.AdditionalFees2 = Convert.ToDecimal(txtAdditionalFees2.Text);
-                _mb.AdditionalFees3 = Convert.ToDecimal(txtAdditionalFees3.Text);
-                _mb.MeterUnitCollectID = _vm.MeterUnitCollectID;
-                _mb.Active =true;
-                _mb.CreatedDate = _vm.CreatedDate;
-                _mb.CreatedUserID = _vm.CreatedUserID;
-                _services.UpdateMeterBill(_mb);
+                MeterBill mb = new MeterBill();
+                mb.MeterBillID = vm.MeterBillID;
+                mb.MeterBillCode = vm.MeterBillCode;
+                mb.InvoiceDate = vm.InvoiceDate;
+                mb.LastBillPaidDate = vm.LastBillPaidDate;
+                mb.ServicesFees = Convert.ToDecimal(txtServiceFees.Text);        
+                mb.MeterFees =Convert.ToDecimal(txtMeterFees.Text);
+                mb.StreetLightFees = Convert.ToDecimal(txtStreetLightFees.Text);      
+                mb.TotalFees = Convert.ToDecimal(txtTotalFees.Text);           
+                mb.UsageUnit = vm.UsageUnit;
+                mb.CurrentMonthUnit = vm.CurrentMonthUnit;
+                mb.PreviousMonthUnit = vm.PreviousMonthUnit;
+                mb.isPaid = vm.isPaid;
+                mb.Remark = vm.Remark;
+                mb.RecivedAmount = vm.RecivedAmount;
+                mb.HorsePowerFees = Convert.ToDecimal(txtHorsePowerFees.Text);
+                mb.AdditionalFees1 = Convert.ToDecimal(txtAdditionalFees1.Text);
+                mb.AdditionalFees2 = Convert.ToDecimal(txtAdditionalFees2.Text);
+                mb.AdditionalFees3 = Convert.ToDecimal(txtAdditionalFees3.Text);
+                mb.MeterUnitCollectID = vm.MeterUnitCollectID;
+                mb.Active =true;
+                mb.CreatedDate = vm.CreatedDate;
+                mb.CreatedUserID = vm.CreatedUserID;
+                mterBillCalculateServices.UpdateMeterBill(mb);
                 MessageBox.Show("Meter bill record is updated successfully.", "information", MessageBoxButtons.OK, MessageBoxIcon.Information);        
                 }
             catch(Exception ex) {

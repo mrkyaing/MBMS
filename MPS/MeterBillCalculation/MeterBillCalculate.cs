@@ -38,8 +38,8 @@ namespace MPS.MeterBillCalculation {
                     MeterBill mb = new MeterBill();
                     mb.MeterBillID = Guid.NewGuid().ToString();
                     mb.MeterBillCode = random.Next().ToString();
-                    mb.InvoiceDate = DateTime.Now;
-                    mb.LastBillPaidDate = DateTime.Now;
+                    mb.InvoiceDate = item.FromDate;
+                    mb.LastBillPaidDate = item.ToDate;
                     mb.ServicesFees = 0;
                     mb.MeterFees =getMeterFeesAmountwith7LayerCode(item) ;
                     mb.StreetLightFees = 0;

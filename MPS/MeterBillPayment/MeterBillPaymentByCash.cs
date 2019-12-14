@@ -97,18 +97,19 @@ namespace MPS.MeterBillPayment {
 
         private void BindMeterBillEntity(MeterBill mb) {
             mb.MeterBillID = vm.MeterBillID;
+            mb.MeterBillCode = vm.MeterBillCode;
             mb.InvoiceDate = vm.InvoiceDate;
             mb.LastBillPaidDate = vm.LastBillPaidDate;
-            mb.MeterBillCode = vm.MeterBillCode;
-            mb.MeterFees = vm.MeterFees;
-            mb.ServicesFees = vm.ServicesFees;
+            mb.ServicesFees = vm.ServicesFees;        
+            mb.MeterFees = vm.MeterFees;     
             mb.TotalFees = vm.TotalFees;
             mb.StreetLightFees = vm.StreetLightFees;
             mb.UsageUnit = vm.UsageUnit;
             mb.CurrentMonthUnit = vm.CurrentMonthUnit;
-            mb.PreviousMonthUnit = vm.PreviousMonthUnit;
-            mb.isPaid = true;
+            mb.PreviousMonthUnit = vm.PreviousMonthUnit;        
             mb.AdvanceMoney = Convert.ToDecimal(txtAdvanceMoney.Text);
+            mb.isPaid = true;
+            mb.Remark = vm.Remark;
             mb.RecivedAmount = Convert.ToDecimal(txtReceivedAmount.Text);
             mb.HorsePowerFees = vm.HorsePowerFees;
             mb.AdditionalFees1 = vm.AdditionalFees1;

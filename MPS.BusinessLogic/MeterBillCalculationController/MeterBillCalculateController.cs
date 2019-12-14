@@ -23,8 +23,8 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             }
 
         public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID) {
-            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x => x.InvoiceDate >= fromDate && 
-            x.InvoiceDate <= toDate).Select(y=>new MeterBillInvoiceVM {
+            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x =>EntityFunctions.TruncateTime( x.InvoiceDate) >= fromDate.Date &&
+            EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate.Date).Select(y=>new MeterBillInvoiceVM {
                 MeterBillID=y.MeterBillID,
                 CustomerName=y.MeterUnitCollect.Customer.CustomerNameInEng,
                 QuarterName=y.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,

@@ -37,7 +37,7 @@ namespace MPS.MeterBillCalculation {
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
                     MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
                     UpdateMeterbillInvoiceRecrod meterbillinvoiceUI = new UpdateMeterbillInvoiceRecrod();
-                    meterbillinvoiceUI._vm= meterBillInvoice;
+                    meterbillinvoiceUI.vm= meterBillInvoice;
                     meterbillinvoiceUI.Show();
                     }//end of edit function
                 
