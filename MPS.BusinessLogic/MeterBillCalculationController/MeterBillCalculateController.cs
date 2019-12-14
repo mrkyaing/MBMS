@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MBMS.DAL;
 using System.Data.Objects;
 using MPS.ViewModels;
@@ -23,8 +21,9 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             }
 
         public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID) {
-            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x =>EntityFunctions.TruncateTime( x.InvoiceDate) >= fromDate.Date &&
-            EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate.Date).Select(y=>new MeterBillInvoiceVM {
+            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x =>EntityFunctions.TruncateTime( x.InvoiceDate) >= fromDate.Date
+                                                                && EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate.Date).
+                                                                Select(y=>new MeterBillInvoiceVM {
                 MeterBillID=y.MeterBillID,
                 CustomerName=y.MeterUnitCollect.Customer.CustomerNameInEng,
                 QuarterName=y.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
@@ -62,10 +61,10 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                                             join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
                                             join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                                             where mb.InvoiceDate>=fromDate && mb.InvoiceDate<=toDate 
-                                           && custo.CustomerID==CustomerID 
+                                            && custo.CustomerID==CustomerID 
                                             && custo.TownshipID==TownshipID 
                                            &&custo.QuarterID==QuarterID 
-                                          && mb.MeterBillCode==MeterBillCodeNo
+                                           && mb.MeterBillCode==MeterBillCodeNo
                                             select new MeterBillInvoiceVM {
                     MeterBillID =mb.MeterBillID,
                     CustomerName =custo.CustomerNameInEng,
@@ -108,8 +107,8 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             }
 
         public void MeterBillCalculate(List<MeterBill> meterBillList, DateTime fromDate, DateTime toDate) {
-           foreach(MeterBill item in meterBillList) {
-                mBMSEntities.MeterBill_DeleteByFromDateToDate(fromDate,toDate);
+            mBMSEntities.MeterBill_DeleteByFromDateToDate(fromDate, toDate);
+            foreach (MeterBill item in meterBillList) {          
                 mBMSEntities.MeterBills.Add(item);
                 mBMSEntities.SaveChanges();
                 }
