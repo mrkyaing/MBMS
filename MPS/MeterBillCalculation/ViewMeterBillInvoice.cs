@@ -24,10 +24,10 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void ViewMeterBillInvoice_Load(object sender, EventArgs e) {
-            this.gvmeterbillinvoice.AutoGenerateColumns = false;
+            gvmeterbillinvoice.AutoGenerateColumns = false;
             dtpFromDate.Value = fromDate;
             dtptoDate.Value = toDate;
-            this.gvmeterbillinvoice.DataSource = meterBillCalculateServices.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID);
+            gvmeterbillinvoice.DataSource = meterBillCalculateServices.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID);
             }
 
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -39,8 +39,7 @@ namespace MPS.MeterBillCalculation {
                     UpdateMeterbillInvoiceRecrod meterbillinvoiceUI = new UpdateMeterbillInvoiceRecrod();
                     meterbillinvoiceUI.vm= meterBillInvoice;
                     meterbillinvoiceUI.Show();
-                    }//end of edit function
-                
+                    }//end of edit function              
                 //print function 
                 if (e.ColumnIndex ==21)//do the print Link action
                 {
@@ -61,7 +60,7 @@ namespace MPS.MeterBillCalculation {
                 MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
-            this.gvmeterbillinvoice.DataSource = data;
+            gvmeterbillinvoice.DataSource = data;
             }
         }
     }

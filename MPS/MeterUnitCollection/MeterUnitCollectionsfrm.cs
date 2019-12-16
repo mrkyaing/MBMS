@@ -13,6 +13,7 @@ namespace MPS.MeterUnitCollect {
         MBMSEntities mbmsEntities = new MBMSEntities();
         IMeterUnitCollections iMeterUnitColleciton = new MeterUnitCollectionController();
         public string UserID { get; set; }
+        List<NodeMeter> nodeMeterList = null;
         public MeterUnitCollectionsfrm() {
             InitializeComponent();
             BuildSQLiteConnection();
@@ -33,24 +34,17 @@ namespace MPS.MeterUnitCollect {
             //this.gvvillage.DataSource = vlist;           
             NodeMeterServices NodeMetersvc = new NodeMeterServices();
             string sqlCommand = string.Format("SELECT * FROM NodeMeter WHERE nod_bill_from>='{0}' AND nod_bill_to<='{1}' ", fromDate, toDate);
-            List<NodeMeter> data = NodeMetersvc.GetAll(sqlCommand).ToList();
-            this.gvnodemeter.DataSource = data;
-            if (data.Count ==0) {
+            nodeMeterList = NodeMetersvc.GetAll(sqlCommand).ToList();
+            this.gvnodemeter.DataSource = nodeMeterList;
+            if (nodeMeterList.Count ==0) {
                     MessageBox.Show("There is no data to collect.", "Infromation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;       
-                }
-            DialogResult result = MessageBox.Show("are you sure to collect all of meter unit data to the system?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (DialogResult.OK==result) {                        
-            if (SaveMeterUnitCollection(data)) {
-                MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }          
-            }
-           
+                }                 
             }
         private void btncollectmeterunit_Click(object sender, EventArgs e) {
             string fromdate = dtpfromDate.Value.ToString("yyyyMMdd");
             string todate = dtptoDate.Value.ToString("yyyy-MM-dd");
-            this.GetMeterUnitData(fromdate,todate);            
+            GetMeterUnitData(fromdate,todate);            
             }
         private bool SaveMeterUnitCollection(List<NodeMeter> data) {
             try {
@@ -135,5 +129,13 @@ namespace MPS.MeterUnitCollect {
             cboTownship.ValueMember = "TownshipID";
             }
         #endregion
+        private void btnSave_Click(object sender, EventArgs e) {
+            DialogResult result = MessageBox.Show("are you sure to collect all of meter unit data to the system?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (DialogResult.OK == result) {
+                if (SaveMeterUnitCollection(nodeMeterList)) {
+                    MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
