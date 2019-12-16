@@ -12,13 +12,17 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillCalculation {
     public partial class MeterBillCalculate : Form {
-        public String UserID { get; set; }
+
+        #region vairable & initialize Componemt
+        public string UserID { get; set; }
         IMeterBillCalculateServices meterbillcalculateservice;
         public MeterBillCalculate() {
             InitializeComponent();
             meterbillcalculateservice = new MeterBillCalculateController();
             }
+        #endregion
 
+        #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
             List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value,this.cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
             if (dataList.Count == 0) {
@@ -30,6 +34,17 @@ namespace MPS.MeterBillCalculation {
                 }
             }
 
+        private void btnViewInvoices_Click(object sender, EventArgs e) {
+            ViewMeterBillInvoice viewMeterBillInvoice = new ViewMeterBillInvoice();
+            viewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
+            viewMeterBillInvoice.toDate = dtpToDate.Value.Date;
+            viewMeterBillInvoice.TownshipID = cboTownship.SelectedValue.ToString();
+            viewMeterBillInvoice.QuarterID = cboQuarter.SelectedValue.ToString();
+            viewMeterBillInvoice.Show();
+            }
+        #endregion
+
+        #region Calculate Bill(IsBillCalculateSuccess Method)
         private bool IsBillCalculateSuccess(List<MBMS.DAL.MeterUnitCollect> dataList, DateTime fromDate,DateTime toDate) {
             List<MeterBill> meterbillList = new List<MeterBill>();
             Random random = new Random();
@@ -42,7 +57,7 @@ namespace MPS.MeterBillCalculation {
                     mb.LastBillPaidDate = item.ToDate;
                     mb.ServicesFees = 0;
                     mb.MeterFees =getMeterFeesAmountwith7LayerCode(item) ;
-                    mb.StreetLightFees = 0;
+                    mb.StreetLightFees =Utility.SettingController.StreetLightFees;
                     mb.HorsePowerFees = 0;
                     mb.TotalFees =Convert.ToDecimal( (mb.ServicesFees+ mb.MeterFees+ mb.StreetLightFees + mb.HorsePowerFees));
                     mb.UsageUnit = item.TotalMeterUnit;
@@ -65,7 +80,7 @@ namespace MPS.MeterBillCalculation {
                 }
             return true;
             }
-
+        //bill calculate with 7 Layer detail with Box Type
         private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect meterUnitCollect) {
             decimal result = 0;
             decimal sumUnits = 0;
@@ -90,7 +105,9 @@ namespace MPS.MeterBillCalculation {
         private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate,string townshipID,string QuaeterID) {
             return meterbillcalculateservice.MeterUnitCollect(fromdate,todate,townshipID,QuaeterID);
             }
+        #endregion
 
+        #region Page Load
         private void MeterBillCalculate_Load(object sender, EventArgs e) {
             bindTownshipData();
             bindQuarterData();
@@ -109,14 +126,7 @@ namespace MPS.MeterBillCalculation {
             cboTownship.DataSource = meterbillcalculateservice.GetTownship();
             cboTownship.Text = "Select One";
             }
-
-        private void btnViewInvoices_Click(object sender, EventArgs e) {
-            ViewMeterBillInvoice _ViewMeterBillInvoice = new ViewMeterBillInvoice();
-            _ViewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
-            _ViewMeterBillInvoice.toDate = dtpToDate.Value.Date;
-            _ViewMeterBillInvoice.TownshipID = cboTownship.SelectedValue.ToString();
-            _ViewMeterBillInvoice.QuarterID = cboQuarter.SelectedValue.ToString();
-            _ViewMeterBillInvoice.Show();
-            }
+        #endregion
+      
         }
     }
