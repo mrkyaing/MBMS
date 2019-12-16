@@ -29,6 +29,8 @@ namespace MPS.Meter_Setup
             FormRefresh();
             bindMeterBoxCode();
             bindMeterTypeCode();
+            bindTransformer();
+            bindPole();
 
         }
         public void bindMeterBoxCode()
@@ -55,6 +57,31 @@ namespace MPS.Meter_Setup
             cboMeterTypeCode.DisplayMember = "MeterTypeCode";
             cboMeterTypeCode.ValueMember = "MeterTypeID";
         }
+        public void bindPole()
+        {
+            List<Pole> poleList = new List<Pole>();
+            Pole pole = new Pole();
+            pole.PoleID = Convert.ToString(0);
+            pole.PoleNo = "Select";
+            poleList.Add(pole);
+            poleList.AddRange(mbsEntities.Poles.Where(x => x.Active == true).ToList());
+            cboPole.DataSource = poleList;
+            cboPole.DisplayMember = "PoleNo";
+            cboPole.ValueMember = "PoleID";
+        }
+        public void bindTransformer()
+        {
+            List<Transformer> transformerList = new List<Transformer>();
+            Transformer transformer = new Transformer();
+            transformer.TransformerID = Convert.ToString(0);
+            transformer.TransformerName = "Select";
+            transformerList.Add(transformer);
+            transformerList.AddRange(mbsEntities.Transformers.Where(x => x.Active == true).ToList());
+            cboTransformer.DataSource = transformerList;
+            cboTransformer.DisplayMember = "TransformerName";
+            cboTransformer.ValueMember = "TransformerID";
+        }
+
         public void FormRefresh()
         {
             dgvMeterList.AutoGenerateColumns = false;
@@ -63,8 +90,9 @@ namespace MPS.Meter_Setup
         public void LoadData()
         {
             meterList = (from m in mbsEntities.Meters
-                               where m.Active == true &&
-                               m.MeterNo == txtMeterNo.Text || m.Model == txtMeterModel.Text 
+                         where m.Active == true &&
+                         m.MeterNo == txtMeterNo.Text || m.MeterBox.Pole.PoleNo == cboPole.Text ||
+                         m.MeterBox.Pole.Transformer.TransformerName==cboTransformer.Text
                                || m.MeterBox.MeterBoxCode == cboMeterBoxCode.Text || m.MeterType.MeterTypeCode==cboMeterTypeCode.Text
                                 select m).ToList();
             foundDataBind();
@@ -164,7 +192,8 @@ namespace MPS.Meter_Setup
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            txtMeterModel.Text = string.Empty;
+            cboTransformer.SelectedIndex = 0;
+            cboPole.SelectedIndex = 0;
             txtMeterNo.Text = string.Empty;
             cboMeterBoxCode.SelectedIndex = 0;
             cboMeterTypeCode.SelectedIndex = 0;

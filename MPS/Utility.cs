@@ -152,6 +152,7 @@ namespace MPS {
                     mbmsEntities.SaveChanges();
                 }
             }
+
             public static string CompanyName
             {
                 get
@@ -298,6 +299,67 @@ namespace MPS {
                     {
                         currentSet = new Setting();
                         currentSet.Key = "company_address";
+                        currentSet.Value = value.ToString();
+                        mbmsEntities.Settings.Add(currentSet);
+                    }
+                    else
+                    {
+                        currentSet.Value = value.ToString();
+                    }
+                    mbmsEntities.SaveChanges();
+                }
+            }
+            public static int StreetLightFees
+            {
+                get
+                {
+                    MBMSEntities mbmsEntities = new MBMSEntities();
+                    Setting currentSet = mbmsEntities.Settings.FirstOrDefault(x => x.Key == "StreetLightFees");
+                    if (currentSet != null)
+                    {
+                        return Convert.ToInt32(currentSet.Value);
+                    }
+
+                    return 0;
+                }
+                set
+                {
+                    MBMSEntities mbmsEntities = new MBMSEntities();
+                    Setting currentSet = mbmsEntities.Settings.FirstOrDefault(x => x.Key == "StreetLightFees");
+                    if (currentSet == null)
+                    {
+                        currentSet = new Setting();
+                        currentSet.Key = "StreetLightFees";
+                        currentSet.Value = value.ToString();
+                        mbmsEntities.Settings.Add(currentSet);
+                    }
+                    else
+                    {
+                        currentSet.Value = value.ToString();
+                    }
+                    mbmsEntities.SaveChanges();
+                }
+            }
+            public static string ExpireDate
+            {
+                get
+                {
+                    MBMSEntities mbmsEntities = new MBMSEntities();
+                    Setting currentSet = mbmsEntities.Settings.FirstOrDefault(x => x.Key == "ExpireDate");
+                    if (currentSet != null)
+                    {
+                        return Convert.ToString(currentSet.Value);
+                    }
+                    return string.Empty;
+                }
+                set
+                {
+                    MBMSEntities mbmsEntities = new MBMSEntities();
+                    Setting currentSet = mbmsEntities.Settings.FirstOrDefault(x => x.Key == "ExpireDate");
+                    if (currentSet == null)
+                    {
+                        currentSet = new Setting();
+                        currentSet.Key = "ExpireDate";
                         currentSet.Value = value.ToString();
                         mbmsEntities.Settings.Add(currentSet);
                     }

@@ -17,6 +17,7 @@ namespace MPS.MeterBillPayment {
         MBMSEntities mBMSEntities = new MBMSEntities();
         public String UserID { get; set; }
         IMeterBillCalculateServices meterbillcalculateservice;
+        List<MeterBillInvoiceVM> data = null;
         public MeterBillPaymentList() {
             InitializeComponent();
             meterbillcalculateservice = new MeterBillCalculateController();
@@ -48,10 +49,20 @@ namespace MPS.MeterBillPayment {
                 }
 
             if (string.IsNullOrEmpty(txtCustomerCode.Text) && string.IsNullOrEmpty(txtCustomerName.Text) && string.IsNullOrEmpty(txtBillCodeNo.Text) && cboQuarter.SelectedIndex == 0 && cboTownship.SelectedIndex == 0) {
-                this.gvmeterbillinvoice.DataSource = meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
+                data = meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
+                if (data.Count == 0) {
+                    MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                    }
+                this.gvmeterbillinvoice.DataSource = data;
                 }
             else {
-                this.gvmeterbillinvoice.DataSource = meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString(), Customerid, txtCustomerCode.Text);
+                data= meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString(), Customerid, txtCustomerCode.Text);
+                if (data.Count == 0) {
+                    MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                    }
+                this.gvmeterbillinvoice.DataSource = data;
                 }           
            
             }

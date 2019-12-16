@@ -38,12 +38,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtpunishment = new System.Windows.Forms.TextBox();
             this.txtAdvanceMoney = new System.Windows.Forms.TextBox();
+            this.txtChangeAmt = new System.Windows.Forms.TextBox();
             this.txtReceivedAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtChangeAmt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,6 +195,13 @@
             this.txtAdvanceMoney.Size = new System.Drawing.Size(197, 20);
             this.txtAdvanceMoney.TabIndex = 4;
             // 
+            // txtChangeAmt
+            // 
+            this.txtChangeAmt.Location = new System.Drawing.Point(154, 333);
+            this.txtChangeAmt.Name = "txtChangeAmt";
+            this.txtChangeAmt.Size = new System.Drawing.Size(197, 20);
+            this.txtChangeAmt.TabIndex = 4;
+            // 
             // txtReceivedAmount
             // 
             this.txtReceivedAmount.Location = new System.Drawing.Point(154, 298);
@@ -221,15 +228,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Advance Money:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 298);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Reveived Amount:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -239,12 +237,14 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Change Amount:";
             // 
-            // txtChangeAmt
+            // label5
             // 
-            this.txtChangeAmt.Location = new System.Drawing.Point(154, 333);
-            this.txtChangeAmt.Name = "txtChangeAmt";
-            this.txtChangeAmt.Size = new System.Drawing.Size(197, 20);
-            this.txtChangeAmt.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 298);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Reveived Amount:";
             // 
             // MeterBillPaymentByCash
             // 
@@ -254,7 +254,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "MeterBillPaymentByCash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MeterBillPaymentByCash";
+            this.Text = "Meter Bill Payment By Cash";
             this.Load += new System.EventHandler(this.MeterBillPaymentByCash_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

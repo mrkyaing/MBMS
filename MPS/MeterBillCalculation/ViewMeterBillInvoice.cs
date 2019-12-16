@@ -17,17 +17,17 @@ namespace MPS.MeterBillCalculation {
         public DateTime toDate { get; set; }
         public string QuarterID { get; set; }
         public string TownshipID { get; set; }
-        IMeterBillCalculateServices _services;
+        IMeterBillCalculateServices meterBillCalculateServices;
         public ViewMeterBillInvoice() {
             InitializeComponent();
-            _services = new MeterBillCalculateController();
+            meterBillCalculateServices = new MeterBillCalculateController();
             }
 
         private void ViewMeterBillInvoice_Load(object sender, EventArgs e) {
             this.gvmeterbillinvoice.AutoGenerateColumns = false;
             dtpFromDate.Value = fromDate;
             dtptoDate.Value = toDate;
-            this.gvmeterbillinvoice.DataSource = _services.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID);
+            this.gvmeterbillinvoice.DataSource = meterBillCalculateServices.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID);
             }
 
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -56,7 +56,12 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-            this.gvmeterbillinvoice.DataSource = _services.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, TownshipID, QuarterID);
+         List<MeterBillInvoiceVM>   data=meterBillCalculateServices.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, TownshipID, QuarterID);
+            if (data.Count == 0) {
+                MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
+            this.gvmeterbillinvoice.DataSource = data;
             }
         }
     }

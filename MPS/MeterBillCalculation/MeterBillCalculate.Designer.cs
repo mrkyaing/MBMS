@@ -39,6 +39,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cboQuarter);
@@ -94,7 +97,7 @@
             // 
             // btnViewInvoices
             // 
-            this.btnViewInvoices.Location = new System.Drawing.Point(256, 217);
+            this.btnViewInvoices.Location = new System.Drawing.Point(287, 217);
             this.btnViewInvoices.Name = "btnViewInvoices";
             this.btnViewInvoices.Size = new System.Drawing.Size(130, 34);
             this.btnViewInvoices.TabIndex = 5;
@@ -104,7 +107,7 @@
             // 
             // btnbillprocess
             // 
-            this.btnbillprocess.Location = new System.Drawing.Point(105, 217);
+            this.btnbillprocess.Location = new System.Drawing.Point(136, 217);
             this.btnbillprocess.Name = "btnbillprocess";
             this.btnbillprocess.Size = new System.Drawing.Size(145, 34);
             this.btnbillprocess.TabIndex = 4;

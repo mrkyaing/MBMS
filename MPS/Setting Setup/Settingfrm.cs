@@ -43,6 +43,8 @@ namespace MPS.Setting_Setup
                 cboPrinter.Text = DefaultPrinter.A4Printer;
             }
             txtNoCopy.Text = SettingController.DefaultNoOfCopies.ToString();
+            txtStreetLightFees.Text = SettingController.StreetLightFees.ToString();
+            dtExpireDate.Value =Convert.ToDateTime( SettingController.ExpireDate);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -66,7 +68,9 @@ namespace MPS.Setting_Setup
                 SettingController.PhoneNo = lblPhoneNumber.Text;
                 SettingController.CompanyWebsite = lblWebsite.Text;
                 SettingController.CompanyAddress = lblAddress.Text;
-                SettingController.DefaultNoOfCopies =Convert.ToInt32( txtNoCopy.Text);           
+                SettingController.DefaultNoOfCopies =Convert.ToInt32( txtNoCopy.Text);
+                SettingController.ExpireDate = dtExpireDate.Value.ToString();
+                SettingController.StreetLightFees =Convert.ToInt32( txtStreetLightFees.Text);
                 mbmsEntities.SaveChanges();
                 MessageBox.Show("Successfully save Setting!");
                 }

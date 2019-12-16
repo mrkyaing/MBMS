@@ -420,7 +420,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "MeterBillPaymentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MeterBillPaymentUI";
+            this.Text = "Meter Bill Payment List";
             this.Load += new System.EventHandler(this.MeterBillPaymentUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
