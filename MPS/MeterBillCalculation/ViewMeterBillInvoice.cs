@@ -27,7 +27,7 @@ namespace MPS.MeterBillCalculation {
             gvmeterbillinvoice.AutoGenerateColumns = false;
             dtpFromDate.Value = fromDate;
             dtptoDate.Value = toDate;
-            gvmeterbillinvoice.DataSource = meterBillCalculateServices.GetmeterBillInvoices(fromDate, toDate, TownshipID, QuarterID,string.Empty,string.Empty);
+            gvmeterbillinvoice.DataSource = meterBillCalculateServices.GetmeterBillInvoices(fromDate, toDate, string.Empty, string.Empty, string.Empty,string.Empty);
             }
 
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -55,7 +55,7 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void btnSearch_Click(object sender, EventArgs e) {
-         List<MeterBillInvoiceVM>   data=meterBillCalculateServices.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, TownshipID, QuarterID,string.Empty,string.Empty);
+         List<MeterBillInvoiceVM>   data=meterBillCalculateServices.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, string.Empty, string.Empty, string.Empty,string.Empty);
             if (data.Count == 0) {
                 MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

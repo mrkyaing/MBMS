@@ -15,7 +15,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
        // int GetMeterLossessByMeterID(string meterID);
         List<BillCode7LayerDetail> GetBillCode7LayerDetailByBillCode7LayerID(string BillCode7LayerID);
         List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate,
-            string TownshipID, string QuarterID,string CustomerID,string MeterBillCodeNo);
+        string TownshipID, string QuarterID,string CustomerID,string MeterBillCodeNo);
         bool UpdateMeterBill(MeterBill _meterbill);
         }
     }

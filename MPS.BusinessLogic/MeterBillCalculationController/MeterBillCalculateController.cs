@@ -30,7 +30,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                         where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
                         && custo.TownshipID==TownshipID
-                        && custo.QuarterID==QuarterID
+                        && custo.QuarterID==QuarterID && mb.isPaid==false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
                             CustomerName = custo.CustomerNameInEng,
@@ -68,7 +68,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                         where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
                         &&( custo.TownshipID == TownshipID
-                        || custo.QuarterID == QuarterID)
+                        || custo.QuarterID == QuarterID) && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
                             CustomerName = custo.CustomerNameInEng,
@@ -106,7 +106,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
                         join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                         where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
-                        && custo.CustomerID== CustomerID
+                        && custo.CustomerID== CustomerID && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
                             CustomerName = custo.CustomerNameInEng,
@@ -142,7 +142,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             else if(fromDate.Date!=DateTime.MinValue&&toDate.Date!=DateTime.MinValue && MeterBillCodeNo!=string.Empty) {
                 data = (from mb in mBMSEntities.MeterBills
                         where (EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date)
-                       && mb.MeterBillCode==MeterBillCodeNo
+                       && mb.MeterBillCode==MeterBillCodeNo && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
                             CustomerName =mb.MeterUnitCollect.Customer.CustomerNameInEng,
@@ -177,7 +177,8 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             //get all data by date range
             else {
                 data = (from mb in mBMSEntities.MeterBills
-                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date &&EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
+                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date 
+                        &&EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
                             CustomerName = mb.MeterUnitCollect.Customer.CustomerNameInEng,

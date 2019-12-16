@@ -33,20 +33,15 @@ namespace MPS.Billing
             cboBillCodeType.Items.Add("Flat Type");
             cboBillCodeType.Items.Add("Block Type");
             cboBillCodeType.SelectedIndex = 0;
-            if (isEdit)
-            {
-                
+            if (isEdit) {               
                 BillCode7Layer billCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
                 txtBillCodeNo.Text =Convert.ToString( billCode7Layer.BillCode7LayerNo);
                 cboBillCodeType.Text = billCode7Layer.BillCodeLayerType;
-                BillCode7LayerDetail billCode7LayerDetail = mbsEntities.BillCode7LayerDetail.Where(x=>x.BillCode7LayerID == billCode7LayerID).SingleOrDefault();
-                
+                BillCode7LayerDetail billCode7LayerDetail = mbsEntities.BillCode7LayerDetail.Where(x=>x.BillCode7LayerID == billCode7LayerID).SingleOrDefault();            
                 gv7layer.DataSource = billCode7LayerDetail;
             }
             }
-
-        public bool checkValidation()
-        {
+        public bool checkValidation() {
             Boolean hasError = true;
             tooltip.RemoveAll();
             tooltip.IsBalloon = true;
