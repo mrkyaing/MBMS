@@ -49,7 +49,8 @@ namespace MPS.MeterBillCalculation {
             List<MeterBill> meterbillList = new List<MeterBill>();
             Random random = new Random();
             try {
-                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {                 
+                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {
+                  //  int meterLossess, meterMultiplier;               
                     MeterBill mb = new MeterBill();
                     mb.MeterBillID = Guid.NewGuid().ToString();
                     mb.MeterBillCode = random.Next().ToString();
@@ -60,6 +61,7 @@ namespace MPS.MeterBillCalculation {
                     mb.StreetLightFees =Utility.SettingController.StreetLightFees;
                     mb.HorsePowerFees = 0;
                     mb.TotalFees =Convert.ToDecimal( (mb.ServicesFees+ mb.MeterFees+ mb.StreetLightFees + mb.HorsePowerFees));
+                    //meterLossess+= meterbillcalculateservice.GetBillCode7LayerByBillCode
                     mb.UsageUnit = item.TotalMeterUnit;
                     mb.PreviousMonthUnit = 0;
                     mb.CurrentMonthUnit = (item.TotalMeterUnit - mb.PreviousMonthUnit);
