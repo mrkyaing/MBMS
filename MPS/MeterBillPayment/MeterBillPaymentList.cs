@@ -28,6 +28,7 @@ namespace MPS.MeterBillPayment {
             bindQuarterData();
             }
         private void bindQuarterData() {
+        
             cboQuarter.DisplayMember = "QuarterNameInMM";
             cboQuarter.ValueMember = "QuarterID";
             cboQuarter.DataSource = meterbillcalculateservice.GetQuarter();
@@ -35,6 +36,7 @@ namespace MPS.MeterBillPayment {
             }
 
         private void bindTownshipData() {
+          
             cboTownship.DisplayMember = "TownshipNameInMM";
             cboTownship.ValueMember = "TownshipID";
             cboTownship.DataSource = meterbillcalculateservice.GetTownship();
@@ -42,29 +44,40 @@ namespace MPS.MeterBillPayment {
             }
 
         private void btnSearch_Click(object sender, EventArgs e) {
+            data = new List<MeterBillInvoiceVM>();
+            this.gvmeterbillinvoice.DataSource=null;
             this.gvmeterbillinvoice.AutoGenerateColumns = false;
             string Customerid = string.Empty;
-            if (!string.IsNullOrEmpty(txtCustomerCode.Text)) {
-               Customerid= mBMSEntities.Customers.Where(x => x.Active == true && x.CustomerCode == txtCustomerCode.Text).SingleOrDefault().CustomerID;
+            string quarterid = string.Empty;
+            string townshipid = string.Empty;
+            if (cboQuarter.Text!= "Select One") quarterid = cboQuarter.SelectedValue.ToString();
+            if (cboTownship.Text!= "Select One") townshipid = cboTownship.SelectedValue.ToString();
+            if (!string.IsNullOrEmpty(txtCustomerName.Text)) {
+               Customer c= mBMSEntities.Customers.Where(x => x.Active == true && x.CustomerNameInEng.Equals(txtCustomerName.Text)).SingleOrDefault();
+                if (c == null) {
+                    MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                    }else Customerid = c.CustomerID;
                 }
-
-            if (string.IsNullOrEmpty(txtCustomerCode.Text) && string.IsNullOrEmpty(txtCustomerName.Text) && string.IsNullOrEmpty(txtBillCodeNo.Text) && cboQuarter.SelectedIndex == 0 && cboTownship.SelectedIndex == 0) {
-                data = meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
+        else if (!string.IsNullOrEmpty(txtCustomerCode.Text)) {
+                Customer c = mBMSEntities.Customers.Where(x => x.Active == true && x.CustomerCode == txtCustomerCode.Text).SingleOrDefault();
+                if (c == null) {
+                    MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                    }
+                else Customerid = c.CustomerID;
+                }
+            data = meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value,
+                    dtptoDate.Value,
+                   townshipid,
+                  quarterid,
+                    Customerid, 
+                    txtBillCodeNo.Text);
                 if (data.Count == 0) {
                     MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                     }
-                this.gvmeterbillinvoice.DataSource = data;
-                }
-            else {
-                data= meterbillcalculateservice.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value, cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString(), Customerid, txtCustomerCode.Text);
-                if (data.Count == 0) {
-                    MessageBox.Show("There is no data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                    }
-                this.gvmeterbillinvoice.DataSource = data;
-                }           
-           
+                this.gvmeterbillinvoice.DataSource = data;                                
             }
 
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -78,6 +91,17 @@ namespace MPS.MeterBillPayment {
                     paymentbycash.Show();
                     }//end of edit function
                 }
+            }
+
+        private void btnCancel_Click(object sender, EventArgs e) {
+            ClearControl();
+            }
+
+        private void ClearControl() {
+            dtpFromDate.Value =dtptoDate.Value= DateTime.Now;
+            cboTownship.Text =cboQuarter.Text= "Select One";
+            txtBillCodeNo.Text = txtCustomerCode.Text = txtCustomerName.Text = string.Empty;
+            gvmeterbillinvoice.DataSource = null;
             }
         }
     }

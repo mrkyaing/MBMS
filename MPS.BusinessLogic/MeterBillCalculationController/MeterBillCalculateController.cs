@@ -20,81 +20,195 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             return _billcode7LayerDetialList;
             }
 
-        public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID) {
-            List<MeterBillInvoiceVM> data=mBMSEntities.MeterBills.Where(x =>EntityFunctions.TruncateTime( x.InvoiceDate) >= fromDate.Date
-                                                                && EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate.Date && x.isPaid==false).
-                                                                Select(y=>new MeterBillInvoiceVM {
-                MeterBillID=y.MeterBillID,
-                CustomerName=y.MeterUnitCollect.Customer.CustomerNameInEng,
-                QuarterName=y.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
-                TownshipName=y.MeterUnitCollect.Customer.Township.TownshipNameInEng,
-                MeterBillCode=y.MeterBillCode,
-                InvoiceDate=y.InvoiceDate,
-                LastBillPaidDate=y.LastBillPaidDate,
-                ServicesFees=y.ServicesFees,
-                MeterFees=y.MeterFees,
-                StreetLightFees=y.StreetLightFees,
-                TotalFees=y.TotalFees,
-                UsageUnit=y.UsageUnit,
-                CurrentMonthUnit=y.CurrentMonthUnit,
-                PreviousMonthUnit=y.PreviousMonthUnit,
-                AdvanceMoney=y.AdvanceMoney,
-                CreditAmount=y.CreditAmount,
-                Remark=y.Remark,
-                isPaid=y.isPaid,
-                RecivedAmount=y.RecivedAmount,
-                HorsePowerFees=y.HorsePowerFees,
-                AdditionalFees1=y.AdditionalFees1,
-                AdditionalFees2=y.AdditionalFees2,
-                AdditionalFees3=y.AdditionalFees3,
-                MeterUnitCollectID=y.MeterUnitCollectID,
-                Active=y.Active,
-                CreatedUserID=y.CreatedUserID,
-                CreatedDate=y.CreatedDate
-                }
-            ).ToList();
-            return data;
-            }
-
+       
         public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID, string CustomerID, string MeterBillCodeNo) {
-            List<MeterBillInvoiceVM> data =(from mb in mBMSEntities.MeterBills
-                                            join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
-                                            join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
-                                            where mb.InvoiceDate>=fromDate && mb.InvoiceDate<=toDate 
-                                            && custo.CustomerID==CustomerID 
-                                            && custo.TownshipID==TownshipID 
-                                           &&custo.QuarterID==QuarterID 
-                                           && mb.MeterBillCode==MeterBillCodeNo
-                                            select new MeterBillInvoiceVM {
-                    MeterBillID =mb.MeterBillID,
-                    CustomerName =custo.CustomerNameInEng,
-                    QuarterName =custo.Quarter.QuarterNameInEng,
-                    TownshipName =custo.Township.TownshipNameInEng,
-                    MeterBillCode =mb.MeterBillCode,
-                    InvoiceDate = mb.InvoiceDate,
-                    LastBillPaidDate = mb.LastBillPaidDate,
-                    ServicesFees = mb.ServicesFees,
-                    MeterFees = mb.MeterFees,
-                    StreetLightFees = mb.StreetLightFees,
-                    TotalFees =mb.TotalFees,
-                    UsageUnit = mb.UsageUnit,
-                    CurrentMonthUnit = mb.CurrentMonthUnit,
-                    PreviousMonthUnit = mb.PreviousMonthUnit,
-                    AdvanceMoney = mb.AdvanceMoney,
-                    CreditAmount = mb.CreditAmount,
-                    Remark = mb.Remark,
-                    isPaid = mb.isPaid,
-                    RecivedAmount = mb.RecivedAmount,
-                    HorsePowerFees = mb.HorsePowerFees,
-                    AdditionalFees1 =mb.AdditionalFees1,
-                    AdditionalFees2 = mb.AdditionalFees2,
-                    AdditionalFees3 = mb.AdditionalFees3,
-                    MeterUnitCollectID = mb.MeterUnitCollectID,
-                    Active = mb.Active,
-                    CreatedUserID = mb.CreatedUserID,
-                    CreatedDate = mb.CreatedDate
-                    }
-              ).ToList();
+            List<MeterBillInvoiceVM> data = new List<MeterBillInvoiceVM>();
+            //get data by Quarter and Township id with date range
+            if (!string.IsNullOrEmpty(TownshipID) && !string.IsNullOrEmpty(QuarterID)) {
+                data = (from mb in mBMSEntities.MeterBills
+                        join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
+                        join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
+                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
+                        && custo.TownshipID==TownshipID
+                        && custo.QuarterID==QuarterID
+                        select new MeterBillInvoiceVM {
+                            MeterBillID = mb.MeterBillID,
+                            CustomerName = custo.CustomerNameInEng,
+                            QuarterName = custo.Quarter.QuarterNameInEng,
+                            TownshipName = custo.Township.TownshipNameInEng,
+                            MeterBillCode = mb.MeterBillCode,
+                            InvoiceDate = mb.InvoiceDate,
+                            LastBillPaidDate = mb.LastBillPaidDate,
+                            ServicesFees = mb.ServicesFees,
+                            MeterFees = mb.MeterFees,
+                            StreetLightFees = mb.StreetLightFees,
+                            TotalFees = mb.TotalFees,
+                            UsageUnit = mb.UsageUnit,
+                            CurrentMonthUnit = mb.CurrentMonthUnit,
+                            PreviousMonthUnit = mb.PreviousMonthUnit,
+                            AdvanceMoney = mb.AdvanceMoney,
+                            CreditAmount = mb.CreditAmount,
+                            Remark = mb.Remark,
+                            isPaid = mb.isPaid,
+                            RecivedAmount = mb.RecivedAmount,
+                            HorsePowerFees = mb.HorsePowerFees,
+                            AdditionalFees1 = mb.AdditionalFees1,
+                            AdditionalFees2 = mb.AdditionalFees2,
+                            AdditionalFees3 = mb.AdditionalFees3,
+                            MeterUnitCollectID = mb.MeterUnitCollectID,
+                            Active = mb.Active,
+                            CreatedUserID = mb.CreatedUserID,
+                            CreatedDate = mb.CreatedDate
+                            }
+             ).ToList();
+                }
+            if (!string.IsNullOrEmpty(TownshipID) || !string.IsNullOrEmpty(QuarterID)) {
+                data = (from mb in mBMSEntities.MeterBills
+                        join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
+                        join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
+                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
+                        &&( custo.TownshipID == TownshipID
+                        || custo.QuarterID == QuarterID)
+                        select new MeterBillInvoiceVM {
+                            MeterBillID = mb.MeterBillID,
+                            CustomerName = custo.CustomerNameInEng,
+                            QuarterName = custo.Quarter.QuarterNameInEng,
+                            TownshipName = custo.Township.TownshipNameInEng,
+                            MeterBillCode = mb.MeterBillCode,
+                            InvoiceDate = mb.InvoiceDate,
+                            LastBillPaidDate = mb.LastBillPaidDate,
+                            ServicesFees = mb.ServicesFees,
+                            MeterFees = mb.MeterFees,
+                            StreetLightFees = mb.StreetLightFees,
+                            TotalFees = mb.TotalFees,
+                            UsageUnit = mb.UsageUnit,
+                            CurrentMonthUnit = mb.CurrentMonthUnit,
+                            PreviousMonthUnit = mb.PreviousMonthUnit,
+                            AdvanceMoney = mb.AdvanceMoney,
+                            CreditAmount = mb.CreditAmount,
+                            Remark = mb.Remark,
+                            isPaid = mb.isPaid,
+                            RecivedAmount = mb.RecivedAmount,
+                            HorsePowerFees = mb.HorsePowerFees,
+                            AdditionalFees1 = mb.AdditionalFees1,
+                            AdditionalFees2 = mb.AdditionalFees2,
+                            AdditionalFees3 = mb.AdditionalFees3,
+                            MeterUnitCollectID = mb.MeterUnitCollectID,
+                            Active = mb.Active,
+                            CreatedUserID = mb.CreatedUserID,
+                            CreatedDate = mb.CreatedDate
+                            }
+             ).ToList();
+                }
+            //get data by customer id (code or name) and date range)
+            else if (! string.IsNullOrEmpty(CustomerID)) {
+                data = (from mb in mBMSEntities.MeterBills
+                        join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
+                        join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
+                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
+                        && custo.CustomerID== CustomerID
+                        select new MeterBillInvoiceVM {
+                            MeterBillID = mb.MeterBillID,
+                            CustomerName = custo.CustomerNameInEng,
+                            QuarterName = custo.Quarter.QuarterNameInEng,
+                            TownshipName = custo.Township.TownshipNameInEng,
+                            MeterBillCode = mb.MeterBillCode,
+                            InvoiceDate = mb.InvoiceDate,
+                            LastBillPaidDate = mb.LastBillPaidDate,
+                            ServicesFees = mb.ServicesFees,
+                            MeterFees = mb.MeterFees,
+                            StreetLightFees = mb.StreetLightFees,
+                            TotalFees = mb.TotalFees,
+                            UsageUnit = mb.UsageUnit,
+                            CurrentMonthUnit = mb.CurrentMonthUnit,
+                            PreviousMonthUnit = mb.PreviousMonthUnit,
+                            AdvanceMoney = mb.AdvanceMoney,
+                            CreditAmount = mb.CreditAmount,
+                            Remark = mb.Remark,
+                            isPaid = mb.isPaid,
+                            RecivedAmount = mb.RecivedAmount,
+                            HorsePowerFees = mb.HorsePowerFees,
+                            AdditionalFees1 = mb.AdditionalFees1,
+                            AdditionalFees2 = mb.AdditionalFees2,
+                            AdditionalFees3 = mb.AdditionalFees3,
+                            MeterUnitCollectID = mb.MeterUnitCollectID,
+                            Active = mb.Active,
+                            CreatedUserID = mb.CreatedUserID,
+                            CreatedDate = mb.CreatedDate
+                            }
+             ).ToList();
+                }
+            //get data by meter bill code no and data range
+            else if(fromDate.Date!=DateTime.MinValue&&toDate.Date!=DateTime.MinValue && MeterBillCodeNo!=string.Empty) {
+                data = (from mb in mBMSEntities.MeterBills
+                        where (EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date)
+                       && mb.MeterBillCode==MeterBillCodeNo
+                        select new MeterBillInvoiceVM {
+                            MeterBillID = mb.MeterBillID,
+                            CustomerName =mb.MeterUnitCollect.Customer.CustomerNameInEng,
+                            QuarterName = mb.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
+                            TownshipName = mb.MeterUnitCollect.Customer.Township.TownshipNameInEng,
+                            MeterBillCode = mb.MeterBillCode,
+                            InvoiceDate = mb.InvoiceDate,
+                            LastBillPaidDate = mb.LastBillPaidDate,
+                            ServicesFees = mb.ServicesFees,
+                            MeterFees = mb.MeterFees,
+                            StreetLightFees = mb.StreetLightFees,
+                            TotalFees = mb.TotalFees,
+                            UsageUnit = mb.UsageUnit,
+                            CurrentMonthUnit = mb.CurrentMonthUnit,
+                            PreviousMonthUnit = mb.PreviousMonthUnit,
+                            AdvanceMoney = mb.AdvanceMoney,
+                            CreditAmount = mb.CreditAmount,
+                            Remark = mb.Remark,
+                            isPaid = mb.isPaid,
+                            RecivedAmount = mb.RecivedAmount,
+                            HorsePowerFees = mb.HorsePowerFees,
+                            AdditionalFees1 = mb.AdditionalFees1,
+                            AdditionalFees2 = mb.AdditionalFees2,
+                            AdditionalFees3 = mb.AdditionalFees3,
+                            MeterUnitCollectID = mb.MeterUnitCollectID,
+                            Active = mb.Active,
+                            CreatedUserID = mb.CreatedUserID,
+                            CreatedDate = mb.CreatedDate
+                            }
+             ).ToList();
+                }
+            //get all data by date range
+            else {
+                data = (from mb in mBMSEntities.MeterBills
+                        where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date &&EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
+                        select new MeterBillInvoiceVM {
+                            MeterBillID = mb.MeterBillID,
+                            CustomerName = mb.MeterUnitCollect.Customer.CustomerNameInEng,
+                            QuarterName = mb.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
+                            TownshipName = mb.MeterUnitCollect.Customer.Township.TownshipNameInEng,
+                            MeterBillCode = mb.MeterBillCode,
+                            InvoiceDate = mb.InvoiceDate,
+                            LastBillPaidDate = mb.LastBillPaidDate,
+                            ServicesFees = mb.ServicesFees,
+                            MeterFees = mb.MeterFees,
+                            StreetLightFees = mb.StreetLightFees,
+                            TotalFees = mb.TotalFees,
+                            UsageUnit = mb.UsageUnit,
+                            CurrentMonthUnit = mb.CurrentMonthUnit,
+                            PreviousMonthUnit = mb.PreviousMonthUnit,
+                            AdvanceMoney = mb.AdvanceMoney,
+                            CreditAmount = mb.CreditAmount,
+                            Remark = mb.Remark,
+                            isPaid = mb.isPaid,
+                            RecivedAmount = mb.RecivedAmount,
+                            HorsePowerFees = mb.HorsePowerFees,
+                            AdditionalFees1 = mb.AdditionalFees1,
+                            AdditionalFees2 = mb.AdditionalFees2,
+                            AdditionalFees3 = mb.AdditionalFees3,
+                            MeterUnitCollectID = mb.MeterUnitCollectID,
+                            Active = mb.Active,
+                            CreatedUserID = mb.CreatedUserID,
+                            CreatedDate = mb.CreatedDate
+                            }
+             ).ToList();
+                }
             return data;
             }
 

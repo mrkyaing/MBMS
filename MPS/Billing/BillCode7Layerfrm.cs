@@ -35,12 +35,13 @@ namespace MPS.Billing
             cboBillCodeType.SelectedIndex = 0;
             if (isEdit)
             {
+                
                 BillCode7Layer billCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
                 txtBillCodeNo.Text =Convert.ToString( billCode7Layer.BillCode7LayerNo);
                 cboBillCodeType.Text = billCode7Layer.BillCodeLayerType;
-                //txtLowerLimit.Text = Convert.ToString(billCode7Layer.LowerLimit);
-                //txtUpperLimit.Text = Convert.ToString(billCode7Layer.UpperLimit);
-                //txtAmount.Text = Convert.ToString(billCode7Layer.AmountPerUnit);
+                BillCode7LayerDetail billCode7LayerDetail = mbsEntities.BillCode7LayerDetail.Where(x=>x.BillCode7LayerID == billCode7LayerID).SingleOrDefault();
+                
+                gv7layer.DataSource = billCode7LayerDetail;
             }
             }
 
@@ -85,9 +86,6 @@ namespace MPS.Billing
                  
                     updateBillCode7Layer.BillCode7LayerNo =Convert.ToInt64( txtBillCodeNo.Text);
                     updateBillCode7Layer.BillCodeLayerType = cboBillCodeType.Text;
-                    //updateBillCode7Layer.LowerLimit = Convert.ToDecimal(txtLowerLimit.Text);
-                    //updateBillCode7Layer.UpperLimit = Convert.ToDecimal(txtUpperLimit.Text);
-                    //updateBillCode7Layer.AmountPerUnit = Convert.ToDecimal(txtAmount.Text);
                     updateBillCode7Layer.UpdatedUserID = UserID;
                     updateBillCode7Layer.UpdatedDate = DateTime.Now;
                     billCode7LayerController.UpdateBillCode7Layer(updateBillCode7Layer);
