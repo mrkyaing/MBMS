@@ -127,6 +127,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(233, 25);
             this.txtAmount.TabIndex = 5;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // txtUpperLimit
             // 
@@ -136,6 +137,8 @@
             this.txtUpperLimit.Name = "txtUpperLimit";
             this.txtUpperLimit.Size = new System.Drawing.Size(233, 25);
             this.txtUpperLimit.TabIndex = 4;
+            this.txtUpperLimit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUpperLimit_KeyDown);
+            this.txtUpperLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUpperLimit_KeyPress);
             // 
             // txtLowerLimit
             // 
@@ -145,6 +148,7 @@
             this.txtLowerLimit.Name = "txtLowerLimit";
             this.txtLowerLimit.Size = new System.Drawing.Size(233, 25);
             this.txtLowerLimit.TabIndex = 3;
+            this.txtLowerLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLowerLimit_KeyPress);
             // 
             // txtBillCodeNo
             // 
@@ -320,6 +324,7 @@
             // 
             // txtRateUnit
             // 
+            this.txtRateUnit.Enabled = false;
             this.txtRateUnit.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRateUnit.Location = new System.Drawing.Point(232, 110);
             this.txtRateUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

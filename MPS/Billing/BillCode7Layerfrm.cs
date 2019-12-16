@@ -47,7 +47,6 @@ namespace MPS.Billing
         public bool checkValidation()
         {
             Boolean hasError = true;
-
             tooltip.RemoveAll();
             tooltip.IsBalloon = true;
             tooltip.ToolTipIcon = ToolTipIcon.Error;
@@ -152,44 +151,80 @@ namespace MPS.Billing
 
         private void txtBillCodeNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
-            {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
                 e.Handled = true;
             }
-
             // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
                 e.Handled = true;
             }
         }
 
      
-        private void btnAdd_Click(object sender, EventArgs e) {
-              if (txtLowerLimit.Text.Trim() == string.Empty) {
+        private void btnAdd_Click(object sender, EventArgs e) {        
+            string[] row = new string[] { txtLowerLimit.Text, txtUpperLimit.Text, txtRateUnit.Text,txtAmount.Text };
+            if (checkBillCode7LayerDetailRecord()) {
+                gv7layer.Rows.Add(row);
+                txtAmount.Text = txtLowerLimit.Text = txtUpperLimit.Text = txtRateUnit.Text = string.Empty;
+                }
+            }
+
+        private bool checkBillCode7LayerDetailRecord() {
+            tooltip.RemoveAll();
+            tooltip.IsBalloon = true;
+            tooltip.ToolTipIcon = ToolTipIcon.Error;
+            tooltip.ToolTipTitle = "Error";
+            if (txtLowerLimit.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtLowerLimit, "Error");
                 tooltip.Show("Please fill up Lower Limit !", txtLowerLimit);
-                return;
+                return false;
                 }
             else if (txtUpperLimit.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtUpperLimit, "Error");
                 tooltip.Show("Please fill up Upper Limit !", txtUpperLimit);
-                return;
+                return false;
+                }
+            else if (Convert.ToDecimal(txtLowerLimit.Text) > Convert.ToDecimal(txtUpperLimit.Text)) {
+                tooltip.SetToolTip(txtRateUnit, "Error");
+                tooltip.Show("Lower limit should not greater than upper limit !", txtRateUnit);
+                return false;
+                }
+          
+            else if (txtRateUnit.Text.Trim() == string.Empty) {
+                tooltip.SetToolTip(txtRateUnit, "Error");
+                tooltip.Show("Please define Rate Unit by filling up lower limit and upper limit !", txtRateUnit);
+                return false;
                 }
             else if (txtAmount.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtAmount, "Error");
-                tooltip.Show("Please fill up Amount !", txtAmount);
-                return;
+                tooltip.Show("Please fill up Amount Per Unit!", txtAmount);
+                return false;
                 }
-            else if (txtRateUnit.Text.Trim() == string.Empty) {
-                tooltip.SetToolTip(txtRateUnit, "Error");
-                tooltip.Show("Please fill up Rate Unit !", txtRateUnit);
-                return;
+            foreach(DataGridViewRow row in gv7layer.Rows) {
+              decimal lowerlimit = Convert.ToDecimal(row.Cells[0].Value);
+             decimal upperlimit= Convert.ToDecimal(row.Cells[1].Value);
+                if(Convert.ToDecimal(txtLowerLimit.Text)==lowerlimit || Convert.ToDecimal(txtUpperLimit.Text) == upperlimit) {
+                    tooltip.SetToolTip(txtLowerLimit, "Error");
+                    tooltip.Show("Lower  and Upper Limit are already defined.", txtLowerLimit);
+                    return false;
+                    }
+                else if (Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit) {
+                    tooltip.SetToolTip(txtLowerLimit, "Error");
+                    tooltip.Show("Lower Limit data are already defined.", txtLowerLimit);
+                    return false;
+                    }
+                else if (Convert.ToDecimal(txtLowerLimit.Text) >= upperlimit && Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit) {
+                    tooltip.SetToolTip(txtLowerLimit, "Error");
+                    tooltip.Show("Lower Limit data are already defined.", txtLowerLimit);
+                    return false;
+                    }
+                else if (Convert.ToDecimal(txtUpperLimit.Text) >= upperlimit && Convert.ToDecimal(txtUpperLimit.Text) <= upperlimit) {
+                    tooltip.SetToolTip(txtUpperLimit, "Error");
+                    tooltip.Show("Upper Limit data are already defined.", txtUpperLimit);
+                    return false;
+                    }
                 }
-            string[] row = new string[] { txtLowerLimit.Text, txtUpperLimit.Text, txtRateUnit.Text,txtAmount.Text };
-            gv7layer.Rows.Add(row);
-            txtAmount.Text = txtLowerLimit.Text = txtUpperLimit.Text = txtRateUnit.Text = string.Empty;
+            return true;
             }
 
         private void gv7layer_CellClick(object sender, DataGridViewCellEventArgs e) {
@@ -201,6 +236,53 @@ namespace MPS.Billing
                     //billCode7LayerDetailList.Remove(billCode7LayerDetail);
                     gv7layer.Rows.Remove(row);
                     }//end of delete function
+                }
+            }
+
+      
+
+        private void txtUpperLimit_KeyDown(object sender, KeyEventArgs e){
+            if (e.KeyCode == Keys.Enter) {
+                if(Convert.ToDecimal(txtLowerLimit.Text)> Convert.ToDecimal(txtUpperLimit.Text)) {
+                    MessageBox.Show("Lower Limit is greater than upper limit.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+              else  txtRateUnit.Text =Convert.ToString(Convert.ToDecimal(txtUpperLimit.Text)-(Convert.ToDecimal(txtLowerLimit.Text) - 1) );
+                }
+            }
+
+        private void txtLowerLimit_KeyPress(object sender, KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.')) {
+                e.Handled = true;
+                }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
+                e.Handled = true;
+                }
+            }
+
+        private void txtUpperLimit_KeyPress(object sender, KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.')) {
+                e.Handled = true;
+                }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
+                e.Handled = true;
+                }
+            }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.')) {
+                e.Handled = true;
+                }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
+                e.Handled = true;
                 }
             }
         }
