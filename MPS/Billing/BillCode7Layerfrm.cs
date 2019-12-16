@@ -121,14 +121,14 @@ namespace MPS.Billing
                     billCode7Layer.CreatedUserID = UserID;
                     billCode7Layer.CreatedDate = DateTime.Now;
                     billCode7LayerController.Save(billCode7Layer);
-                    foreach(DataGridViewRow dr in gv7layer.Rows) {
+                    foreach(DataGridViewRow row in gv7layer.Rows) {
                         BillCode7LayerDetail billCode7LayerDetail = new BillCode7LayerDetail();
                         billCode7LayerDetail.BillCode7LayerDetailID = Guid.NewGuid().ToString();
                         billCode7LayerDetail.BillCode7LayerID = billCode7Layer.BillCode7LayerID;
-                        billCode7LayerDetail.LowerLimit = Convert.ToDecimal(dr.Cells[0].Value);
-                        billCode7LayerDetail.UpperLimit = Convert.ToDecimal(dr.Cells[1].Value);
-                        billCode7LayerDetail.RateUnit = Convert.ToDecimal(dr.Cells[2].Value);
-                        billCode7LayerDetail.AmountPerUnit = Convert.ToDecimal(dr.Cells[3].Value);
+                        billCode7LayerDetail.LowerLimit = Convert.ToDecimal(row.Cells[0].Value);
+                        billCode7LayerDetail.UpperLimit = Convert.ToDecimal(row.Cells[1].Value);
+                        billCode7LayerDetail.RateUnit = Convert.ToDecimal(row.Cells[2].Value);
+                        billCode7LayerDetail.AmountPerUnit = Convert.ToDecimal(row.Cells[3].Value);
                         billCode7LayerDetail.Active = true;
                         billCode7LayerDetail.CreatedDate = DateTime.Now;
                         billCode7LayerDetail.CreatedUserID = UserID;
