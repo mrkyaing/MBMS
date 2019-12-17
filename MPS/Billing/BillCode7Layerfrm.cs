@@ -10,36 +10,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MPS.Billing
-{
-    public partial class BillCode7Layerfrm : Form
-    {
-       
-        public string billCode7LayerID { get; set; }         
+namespace MPS.Billing {
+    public partial class BillCode7Layerfrm : Form {
+
+        public string billCode7LayerID { get; set; }
         public string UserID { get; set; }
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbsEntities = new MBMSEntities();
         BillCode7Layer billCode7Layer = new BillCode7Layer();
+        public List<BillCode7LayerDetail> billCode7LayerDetailList { get; set; }
         BillCode7LayerController billCode7LayerController = new BillCode7LayerController();
         public Boolean isEdit { get; set; }
-        public BillCode7Layerfrm()
-        {
+        public BillCode7Layerfrm() {
             InitializeComponent();
-        }
+            }
 
-        private void BillCode7Layerfrm_Load(object sender, EventArgs e)
-        {
+        private void BillCode7Layerfrm_Load(object sender, EventArgs e) {
             gv7layer.AutoGenerateColumns = false;
             cboBillCodeType.Items.Add("Flat Type");
             cboBillCodeType.Items.Add("Block Type");
             cboBillCodeType.SelectedIndex = 0;
-            if (isEdit) {               
+            if (isEdit) {
                 BillCode7Layer billCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
-                txtBillCodeNo.Text =Convert.ToString( billCode7Layer.BillCode7LayerNo);
+                txtBillCodeNo.Text = Convert.ToString(billCode7Layer.BillCode7LayerNo);
                 cboBillCodeType.Text = billCode7Layer.BillCodeLayerType;
-                BillCode7LayerDetail billCode7LayerDetail = mbsEntities.BillCode7LayerDetail.Where(x=>x.BillCode7LayerID == billCode7LayerID).SingleOrDefault();            
-                gv7layer.DataSource = billCode7LayerDetail;
-            }
+                gv7layer.DataSource = billCode7LayerDetailList;
+                }
             }
         public bool checkValidation() {
             Boolean hasError = true;
@@ -48,38 +44,32 @@ namespace MPS.Billing
             tooltip.ToolTipIcon = ToolTipIcon.Error;
             tooltip.ToolTipTitle = "Error";
             //Validation
-            if (txtBillCodeNo.Text.Trim() == string.Empty)
-            {
+            if (txtBillCodeNo.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtBillCodeNo, "Error");
                 tooltip.Show("Please fill up Bill Code No !", txtBillCodeNo);
                 hasError = false;
-            }
-           
-            return hasError;
-        }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            
-            if (checkValidation())
-            {
-                if (isEdit)
-                {
-                    int editBillCodeNoCount = 0;
-                    long editbillCodeNo =Convert.ToInt64( txtBillCodeNo.Text);
-                    BillCode7Layer updateBillCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
-                    if (txtBillCodeNo.Text !=Convert.ToString( updateBillCode7Layer.BillCode7LayerNo))
-                    {
-                        editBillCodeNoCount = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerNo == editbillCodeNo && b.Active == true select b).ToList().Count;
-                    }
+                }
 
-                    if (editBillCodeNoCount > 0)
-                    {
+            return hasError;
+            }
+        private void btnSave_Click(object sender, EventArgs e) {
+
+            if (checkValidation()) {
+                if (isEdit) {
+                    int editBillCodeNoCount = 0;
+                    long editbillCodeNo = Convert.ToInt64(txtBillCodeNo.Text);
+                    BillCode7Layer updateBillCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
+                    if (txtBillCodeNo.Text != Convert.ToString(updateBillCode7Layer.BillCode7LayerNo)) {
+                        editBillCodeNoCount = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerNo == editbillCodeNo && b.Active == true select b).ToList().Count;
+                        }
+
+                    if (editBillCodeNoCount > 0) {
                         tooltip.SetToolTip(txtBillCodeNo, "Error");
                         tooltip.Show("Bill Code No is already exist!", txtBillCodeNo);
                         return;
-                    }
-                 
-                    updateBillCode7Layer.BillCode7LayerNo =Convert.ToInt64( txtBillCodeNo.Text);
+                        }
+
+                    updateBillCode7Layer.BillCode7LayerNo = Convert.ToInt64(txtBillCodeNo.Text);
                     updateBillCode7Layer.BillCodeLayerType = cboBillCodeType.Text;
                     updateBillCode7Layer.UpdatedUserID = UserID;
                     updateBillCode7Layer.UpdatedDate = DateTime.Now;
@@ -89,23 +79,21 @@ namespace MPS.Billing
                     BillCode7LayerList billcode7LayerListForm = new BillCode7LayerList();
                     billcode7LayerListForm.Show();
                     this.Close();
-                }
-                else
-                {
-                         
-                     if (gv7layer.Rows.Count == 0) {
+                    }
+                else {
+
+                    if (gv7layer.Rows.Count == 0) {
                         MessageBox.Show("please define 7 layers information firstly!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                         }
                     int billCodeNoCount = 0;
-                    long billCodeNo =Convert.ToInt64( txtBillCodeNo.Text);
+                    long billCodeNo = Convert.ToInt64(txtBillCodeNo.Text);
                     billCodeNoCount = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerNo == billCodeNo && b.Active == true select b).ToList().Count;
-                    if (billCodeNoCount > 0)
-                    {
+                    if (billCodeNoCount > 0) {
                         tooltip.SetToolTip(txtBillCodeNo, "Error");
                         tooltip.Show("Bill Code No is already exist!", txtBillCodeNo);
                         return;
-                    }
+                        }
                     billCode7Layer.BillCode7LayerID = Guid.NewGuid().ToString();
                     billCode7Layer.BillCode7LayerNo = Convert.ToInt64(txtBillCodeNo.Text);
                     billCode7Layer.BillCodeLayerType = cboBillCodeType.Text;
@@ -113,7 +101,7 @@ namespace MPS.Billing
                     billCode7Layer.CreatedUserID = UserID;
                     billCode7Layer.CreatedDate = DateTime.Now;
                     billCode7LayerController.Save(billCode7Layer);
-                    foreach(DataGridViewRow row in gv7layer.Rows) {
+                    foreach (DataGridViewRow row in gv7layer.Rows) {
                         BillCode7LayerDetail billCode7LayerDetail = new BillCode7LayerDetail();
                         billCode7LayerDetail.BillCode7LayerDetailID = Guid.NewGuid().ToString();
                         billCode7LayerDetail.BillCode7LayerID = billCode7Layer.BillCode7LayerID;
@@ -129,33 +117,31 @@ namespace MPS.Billing
                     mbsEntities.SaveChanges();
                     MessageBox.Show("Success", "Save Success");
                     Clear();
+                    }
                 }
             }
-        }
 
-        public void Clear()
-        {
+        public void Clear() {
             txtAmount.Text = string.Empty;
             txtBillCodeNo.Text = string.Empty;
             txtLowerLimit.Text = string.Empty;
             txtUpperLimit.Text = string.Empty;
             cboBillCodeType.SelectedIndex = 0;
-        }
+            }
 
-        private void txtBillCodeNo_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtBillCodeNo_KeyPress(object sender, KeyPressEventArgs e) {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
                 e.Handled = true;
-            }
+                }
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
                 e.Handled = true;
+                }
             }
-        }
 
-     
-        private void btnAdd_Click(object sender, EventArgs e) {        
-            string[] row = new string[] { txtLowerLimit.Text, txtUpperLimit.Text, txtRateUnit.Text,txtAmount.Text };
+
+        private void btnAdd_Click(object sender, EventArgs e) {
+            string[] row = new string[] { txtLowerLimit.Text, txtUpperLimit.Text, txtRateUnit.Text, txtAmount.Text };
             if (checkBillCode7LayerDetailRecord()) {
                 gv7layer.Rows.Add(row);
                 txtAmount.Text = txtLowerLimit.Text = txtUpperLimit.Text = txtRateUnit.Text = string.Empty;
@@ -182,7 +168,7 @@ namespace MPS.Billing
                 tooltip.Show("Lower limit should not greater than upper limit !", txtRateUnit);
                 return false;
                 }
-          
+
             else if (txtRateUnit.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtRateUnit, "Error");
                 tooltip.Show("Please define Rate Unit by filling up lower limit and upper limit !", txtRateUnit);
@@ -193,10 +179,10 @@ namespace MPS.Billing
                 tooltip.Show("Please fill up Amount Per Unit!", txtAmount);
                 return false;
                 }
-            foreach(DataGridViewRow row in gv7layer.Rows) {
-              decimal lowerlimit = Convert.ToDecimal(row.Cells[0].Value);
-             decimal upperlimit= Convert.ToDecimal(row.Cells[1].Value);
-                if(Convert.ToDecimal(txtLowerLimit.Text)==lowerlimit || Convert.ToDecimal(txtUpperLimit.Text) == upperlimit) {
+            foreach (DataGridViewRow row in gv7layer.Rows) {
+                decimal lowerlimit = Convert.ToDecimal(row.Cells[0].Value);
+                decimal upperlimit = Convert.ToDecimal(row.Cells[1].Value);
+                if (Convert.ToDecimal(txtLowerLimit.Text) == lowerlimit || Convert.ToDecimal(txtUpperLimit.Text) == upperlimit) {
                     tooltip.SetToolTip(txtLowerLimit, "Error");
                     tooltip.Show("Lower  and Upper Limit are already defined.", txtLowerLimit);
                     return false;
@@ -223,14 +209,44 @@ namespace MPS.Billing
         private void gv7layer_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0) {
                 //Delete function
-                if (e.ColumnIndex ==4) {
-                    DataGridViewRow row = gv7layer.Rows[e.RowIndex];
-                    //BillCode7LayerDetail billCode7LayerDetail = (BillCode7LayerDetail)row.DataBoundItem;//get the selected row's data 
-                    //billCode7LayerDetailList.Remove(billCode7LayerDetail);
-                    gv7layer.Rows.Remove(row);
+                if (e.ColumnIndex == 5) {
+                    DataGridViewRow row = gv7layer.Rows[e.RowIndex];              
+                    DialogResult comfirmYes = MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (DialogResult.Yes == comfirmYes) {
+                        if (isEdit) {
+                            BillCode7LayerDetail billCode7LayerDetail = (BillCode7LayerDetail)row.DataBoundItem;//get the selected row's data 
+                            billCode7LayerDetailList.Remove(billCode7LayerDetail);
+                            gv7layer.DataSource = billCode7LayerDetail;
+                            }
+                        else {
+                            gv7layer.Rows.RemoveAt(row.Index);
+                            }
+                        }                                 
                     }//end of delete function
                 }
-            }
+            //Edit function
+            if (e.ColumnIndex == 4) {
+                DataGridViewRow row = gv7layer.Rows[e.RowIndex];
+                BillCode7LayerDetail billCode7LayerDetail = (BillCode7LayerDetail)row.DataBoundItem;//get the selected row's data 
+                DialogResult comfirmYes = MessageBox.Show("Are you sure to edit?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult.Yes == comfirmYes) {
+                    gv7layer.Rows.RemoveAt(row.Index);
+                    if (isEdit) {
+                        txtLowerLimit.Text = billCode7LayerDetail.LowerLimit.ToString();
+                        txtUpperLimit.Text = billCode7LayerDetail.UpperLimit.ToString();
+                        txtRateUnit.Text = billCode7LayerDetail.RateUnit.ToString();
+                        txtAmount.Text = billCode7LayerDetail.AmountPerUnit.ToString();
+                        }
+                    else {
+                        txtLowerLimit.Text = Convert.ToString(row.Cells[0].Value);
+                        txtUpperLimit.Text = Convert.ToString(row.Cells[1].Value);
+                        txtRateUnit.Text = Convert.ToString(row.Cells[2].Value);
+                        txtAmount.Text = Convert.ToString(row.Cells[3].Value);
+                        }
+                    }              
+                }//end of Edit function
+            }//end of cell click
+        
 
       
 

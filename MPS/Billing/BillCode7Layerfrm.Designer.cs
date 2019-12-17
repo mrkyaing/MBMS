@@ -56,13 +56,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.gv7layer = new System.Windows.Forms.DataGridView();
+            this.gb7layer = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.LowerLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpperLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RateUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AmountPerUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.gb7layer = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.BillCode7LayerDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -372,49 +374,15 @@
             this.UpperLimit,
             this.RateUnit,
             this.AmountPerUnit,
-            this.Delete});
+            this.Edit,
+            this.Delete,
+            this.BillCode7LayerDetailID});
             this.gv7layer.Location = new System.Drawing.Point(18, 352);
             this.gv7layer.Name = "gv7layer";
             this.gv7layer.ReadOnly = true;
             this.gv7layer.Size = new System.Drawing.Size(540, 150);
             this.gv7layer.TabIndex = 25;
             this.gv7layer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv7layer_CellClick);
-            // 
-            // LowerLimit
-            // 
-            this.LowerLimit.DataPropertyName = "LowerLimit";
-            this.LowerLimit.HeaderText = "LowerLimit";
-            this.LowerLimit.Name = "LowerLimit";
-            this.LowerLimit.ReadOnly = true;
-            // 
-            // UpperLimit
-            // 
-            this.UpperLimit.DataPropertyName = "UpperLimit";
-            this.UpperLimit.HeaderText = "UpperLimit";
-            this.UpperLimit.Name = "UpperLimit";
-            this.UpperLimit.ReadOnly = true;
-            // 
-            // RateUnit
-            // 
-            this.RateUnit.DataPropertyName = "RateUnit";
-            this.RateUnit.HeaderText = "RateUnit";
-            this.RateUnit.Name = "RateUnit";
-            this.RateUnit.ReadOnly = true;
-            // 
-            // AmountPerUnit
-            // 
-            this.AmountPerUnit.DataPropertyName = "AmountPerUnit";
-            this.AmountPerUnit.HeaderText = "AmountPerUnit";
-            this.AmountPerUnit.Name = "AmountPerUnit";
-            this.AmountPerUnit.ReadOnly = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForLinkValue = true;
             // 
             // gb7layer
             // 
@@ -446,6 +414,60 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // LowerLimit
+            // 
+            this.LowerLimit.DataPropertyName = "LowerLimit";
+            this.LowerLimit.HeaderText = "LowerLimit";
+            this.LowerLimit.Name = "LowerLimit";
+            this.LowerLimit.ReadOnly = true;
+            // 
+            // UpperLimit
+            // 
+            this.UpperLimit.DataPropertyName = "UpperLimit";
+            this.UpperLimit.HeaderText = "UpperLimit";
+            this.UpperLimit.Name = "UpperLimit";
+            this.UpperLimit.ReadOnly = true;
+            // 
+            // RateUnit
+            // 
+            this.RateUnit.DataPropertyName = "RateUnit";
+            this.RateUnit.HeaderText = "RateUnit";
+            this.RateUnit.Name = "RateUnit";
+            this.RateUnit.ReadOnly = true;
+            // 
+            // AmountPerUnit
+            // 
+            this.AmountPerUnit.DataPropertyName = "AmountPerUnit";
+            this.AmountPerUnit.HeaderText = "AmountPerUnit";
+            this.AmountPerUnit.Name = "AmountPerUnit";
+            this.AmountPerUnit.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForLinkValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForLinkValue = true;
+            // 
+            // BillCode7LayerDetailID
+            // 
+            this.BillCode7LayerDetailID.DataPropertyName = "BillCode7LayerDetailID";
+            this.BillCode7LayerDetailID.HeaderText = "BillCode7LayerDetailID";
+            this.BillCode7LayerDetailID.Name = "BillCode7LayerDetailID";
+            this.BillCode7LayerDetailID.ReadOnly = true;
+            this.BillCode7LayerDetailID.Visible = false;
             // 
             // BillCode7Layerfrm
             // 
@@ -520,6 +542,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UpperLimit;
         private System.Windows.Forms.DataGridViewTextBoxColumn RateUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn AmountPerUnit;
+        private System.Windows.Forms.DataGridViewLinkColumn Edit;
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillCode7LayerDetailID;
         }
 }

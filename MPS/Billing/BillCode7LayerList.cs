@@ -60,8 +60,7 @@ namespace MPS.Billing
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
-                        DataGridViewRow row = dgvBillCode7LayerList.Rows[e.RowIndex];
-                     
+                        DataGridViewRow row = dgvBillCode7LayerList.Rows[e.RowIndex];               
                         billCode7LayerID = Convert.ToString(row.Cells[0].Value);
                         BillCode7Layer billCodeObj = (BillCode7Layer)row.DataBoundItem;
                         billCodeObj = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCodeObj.BillCode7LayerID select b).FirstOrDefault();
@@ -87,10 +86,13 @@ namespace MPS.Billing
                 else if (e.ColumnIndex == 6)
                 {
                     //EditBillCode7Layer
+                    string _billCode7LayerID;
                     BillCode7Layerfrm billcode7LayerForm = new BillCode7Layerfrm();
                     billcode7LayerForm.isEdit = true;
                     billcode7LayerForm.Text = "Edit BillCode";
-                    billcode7LayerForm.billCode7LayerID = Convert.ToString(dgvBillCode7LayerList.Rows[e.RowIndex].Cells[0].Value);
+                    _billCode7LayerID=Convert.ToString(dgvBillCode7LayerList.Rows[e.RowIndex].Cells[0].Value);
+                    billcode7LayerForm.billCode7LayerID = _billCode7LayerID;
+                    billcode7LayerForm.billCode7LayerDetailList=mbsEntities.BillCode7LayerDetail.Where(x => x.BillCode7LayerID == _billCode7LayerID && x.BillCode7Layer.Active == true && x.Active == true).OrderBy(y => y.LowerLimit).ToList();
                     billcode7LayerForm.UserID = UserID;
                     billcode7LayerForm.ShowDialog();
                     this.Close();
