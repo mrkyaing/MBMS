@@ -24,7 +24,7 @@ namespace MPS.MeterBillCalculation {
 
         #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
-            List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value,this.cboTownship.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
+            List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value,this.cbotransformer.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
             if (dataList.Count == 0) {
                 MessageBox.Show("There is no meter unit collection record!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -38,7 +38,7 @@ namespace MPS.MeterBillCalculation {
             ViewMeterBillInvoice viewMeterBillInvoice = new ViewMeterBillInvoice();
             viewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
             viewMeterBillInvoice.toDate = dtpToDate.Value.Date;
-            viewMeterBillInvoice.TownshipID = cboTownship.SelectedValue.ToString();
+            viewMeterBillInvoice.TransformerID = cbotransformer.SelectedValue.ToString();
             viewMeterBillInvoice.QuarterID = cboQuarter.SelectedValue.ToString();
             viewMeterBillInvoice.Show();
             }
@@ -87,31 +87,37 @@ namespace MPS.MeterBillCalculation {
             decimal result = 0;
             decimal sumUnits = 0;
             BillCode7Layer billCode7Layer = meterbillcalculateservice.GetBillCode7LayerByBillCode(Convert.ToInt64(meterUnitCollect.BillCode));
+
             List<BillCode7LayerDetail> billCode7LayerDetailList = meterbillcalculateservice.GetBillCode7LayerDetailByBillCode7LayerID(billCode7Layer.BillCode7LayerID).OrderBy(y=>y.LowerLimit).ToList();
             foreach(BillCode7LayerDetail item in billCode7LayerDetailList) {
-                if (meterUnitCollect.TotalMeterUnit > (sumUnits+item.RateUnit)) {
-                    result +=(decimal)(item.RateUnit * item.AmountPerUnit);
-                    sumUnits += (decimal)item.RateUnit;
-                    }
-                else {
-                    decimal diffUnits = meterUnitCollect.TotalMeterUnit - sumUnits;
-                    result += (decimal)diffUnits * item.AmountPerUnit;
-                    if((diffUnits+sumUnits)== meterUnitCollect.TotalMeterUnit) {
-                        return result;
+                if (billCode7Layer.BillCodeLayerType.Equals("Block Type")) {
+                    if (meterUnitCollect.TotalMeterUnit > (sumUnits + item.RateUnit)) {
+                        result += (decimal)(item.RateUnit * item.AmountPerUnit);
+                        sumUnits += (decimal)item.RateUnit;
                         }
+                    else {
+                        decimal diffUnits = meterUnitCollect.TotalMeterUnit - sumUnits;
+                        result += (decimal)diffUnits * item.AmountPerUnit;
+                        if ((diffUnits + sumUnits) == meterUnitCollect.TotalMeterUnit) {
+                            return result;
+                            }
+                        }//end of else 
+                    }//end of Block Type condition
+                else {
+                    result = meterUnitCollect.TotalMeterUnit * item.AmountPerUnit;
                     }
-                }
+                }//end of foreach loop
             return result;
-            }
+            }//end of method
 
-        private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate,string townshipID,string QuaeterID) {
-            return meterbillcalculateservice.MeterUnitCollect(fromdate,todate,townshipID,QuaeterID);
+        private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate,string TransformerID,string QuaeterID) {
+            return meterbillcalculateservice.MeterUnitCollect(fromdate,todate,TransformerID,QuaeterID);
             }
         #endregion
 
         #region Page Load
         private void MeterBillCalculate_Load(object sender, EventArgs e) {
-            bindTownshipData();
+            bindTransformerData();
             bindQuarterData();
             }
 
@@ -122,13 +128,25 @@ namespace MPS.MeterBillCalculation {
             cboQuarter.Text = "Select One";
             }
 
-        private void bindTownshipData() {
-            cboTownship.DisplayMember = "TownshipNameInMM";
-            cboTownship.ValueMember = "TownshipID";
-            cboTownship.DataSource = meterbillcalculateservice.GetTownship();
-            cboTownship.Text = "Select One";
+        private void bindTransformerData() {
+            cbotransformer.DisplayMember = "TransformerName";
+            cbotransformer.ValueMember = "TransformerID";
+            cbotransformer.DataSource = meterbillcalculateservice.GetTransformer();
+            cbotransformer.Text = "Select One";
             }
         #endregion
-      
+
+        private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
+            if(cboQuarter.SelectedIndex!= -1){
+                cbotransformer.DisplayMember = "TransformerName";
+                cbotransformer.ValueMember = "TransformerID";
+                List<Transformer> data = meterbillcalculateservice.GetTransformerByQuarterID(cboQuarter.SelectedValue.ToString());
+                if (data.Count != 0)
+                    cbotransformer.DataSource = data;
+                else { MessageBox.Show("There is no transformar data!" ,"Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    this.bindTransformerData(); }
+                }
+          
+            }
         }
     }

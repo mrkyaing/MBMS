@@ -48,13 +48,18 @@
             this.Print = new System.Windows.Forms.DataGridViewLinkColumn();
             this.btnPrint = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtptoDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboQuarter = new System.Windows.Forms.ComboBox();
+            this.cbotransformer = new System.Windows.Forms.ComboBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvmeterbillinvoice)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -266,8 +271,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cboQuarter);
+            this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.cbotransformer);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtptoDate);
             this.groupBox1.Controls.Add(this.dtpFromDate);
@@ -275,10 +285,21 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(24, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(519, 171);
+            this.groupBox1.Size = new System.Drawing.Size(735, 171);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Invoice Infromation";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(91, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "*";
             // 
             // btnSearch
             // 
@@ -290,6 +311,17 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(91, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "*";
             // 
             // dtptoDate
             // 
@@ -327,27 +359,55 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "From Date:";
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(91, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "*";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(365, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Quarter:";
             // 
-            // label5
+            // label3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(91, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "*";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(365, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Transformer :";
+            // 
+            // cboQuarter
+            // 
+            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarter.FormattingEnabled = true;
+            this.cboQuarter.Location = new System.Drawing.Point(477, 33);
+            this.cboQuarter.Name = "cboQuarter";
+            this.cboQuarter.Size = new System.Drawing.Size(245, 28);
+            this.cboQuarter.TabIndex = 8;
+            this.cboQuarter.SelectedIndexChanged += new System.EventHandler(this.cboQuarter_SelectedIndexChanged);
+            // 
+            // cbotransformer
+            // 
+            this.cbotransformer.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotransformer.FormattingEnabled = true;
+            this.cbotransformer.Location = new System.Drawing.Point(477, 81);
+            this.cbotransformer.Name = "cbotransformer";
+            this.cbotransformer.Size = new System.Drawing.Size(245, 28);
+            this.cbotransformer.TabIndex = 9;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(208, 120);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 30);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ViewMeterBillInvoice
             // 
@@ -400,5 +460,10 @@
         private System.Windows.Forms.DataGridViewLinkColumn Print;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboQuarter;
+        private System.Windows.Forms.ComboBox cbotransformer;
+        private System.Windows.Forms.Button btnCancel;
         }
     }

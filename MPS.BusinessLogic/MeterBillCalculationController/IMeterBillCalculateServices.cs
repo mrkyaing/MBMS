@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using MPS.ViewModels;
 namespace MPS.BusinessLogic.MeterBillCalculationController {
   public  interface IMeterBillCalculateServices {
-        List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string TownshipID,string QuarterID);
+        List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string transformerID,string QuarterID);
         void MeterBillCalculate(List<MeterBill> _meterBill,DateTime fromDate,DateTime toDate);
-        List<Township> GetTownship();
+        List<Transformer> GetTransformer();
+        List<Transformer> GetTransformerByQuarterID(string QuarterID);
         List<Quarter> GetQuarter();
         BillCode7Layer GetBillCode7LayerByBillCode(long billCodeNo);
        // int GetMeterLossessByMeterID(string meterID);
         List<BillCode7LayerDetail> GetBillCode7LayerDetailByBillCode7LayerID(string BillCode7LayerID);
         List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate,
-        string TownshipID, string QuarterID,string CustomerID,string MeterBillCodeNo);
+        string TransformerID, string QuarterID,string CustomerID,string MeterBillCodeNo);
         bool UpdateMeterBill(MeterBill _meterbill);
         }
     }

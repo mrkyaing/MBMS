@@ -21,15 +21,15 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             }
 
        
-        public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TownshipID, string QuarterID, string CustomerID, string MeterBillCodeNo) {
+        public List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate, string TransformerID, string QuarterID, string CustomerID, string MeterBillCodeNo) {
             List<MeterBillInvoiceVM> data = new List<MeterBillInvoiceVM>();
             //get data by Quarter and Township id with date range
-            if (!string.IsNullOrEmpty(TownshipID) && !string.IsNullOrEmpty(QuarterID)) {
+            if (!string.IsNullOrEmpty(TransformerID) && !string.IsNullOrEmpty(QuarterID)) {
                 data = (from mb in mBMSEntities.MeterBills
                         join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
                         join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                         where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
-                        && custo.TownshipID==TownshipID
+                        && mbu.TransformerID==TransformerID
                         && custo.QuarterID==QuarterID && mb.isPaid==false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
@@ -62,12 +62,12 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                             }
              ).ToList();
                 }
-            if (!string.IsNullOrEmpty(TownshipID) || !string.IsNullOrEmpty(QuarterID)) {
+          else  if (!string.IsNullOrEmpty(TransformerID) || !string.IsNullOrEmpty(QuarterID)) {
                 data = (from mb in mBMSEntities.MeterBills
                         join mbu in mBMSEntities.MeterUnitCollects on mb.MeterUnitCollectID equals mbu.MeterUnitCollectID
                         join custo in mBMSEntities.Customers on mbu.CustomerID equals custo.CustomerID
                         where EntityFunctions.TruncateTime(mb.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date
-                        &&( custo.TownshipID == TownshipID
+                        && (mbu.TransformerID == TransformerID 
                         || custo.QuarterID == QuarterID) && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
@@ -217,8 +217,12 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             return mBMSEntities.Quarters.Where(x => x.Active == true).ToList();
             }
 
-        public List<Township> GetTownship() {
-            return mBMSEntities.Townships.Where(x => x.Active == true).ToList();
+        public List<Transformer> GetTransformer() {
+            return mBMSEntities.Transformers.Where(x => x.Active == true).ToList();
+            }
+
+        public List<Transformer> GetTransformerByQuarterID(string QuarterID) {
+            return mBMSEntities.Transformers.Where(x => x.Active == true && x.QuarterID==QuarterID).ToList();
             }
 
         public void MeterBillCalculate(List<MeterBill> meterBillList, DateTime fromDate, DateTime toDate) {
@@ -229,9 +233,14 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                 }
             }
 
-        public List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string TownshipID,string QuarterID) {
-          //  List<Transformer> transformerList = mBMSEntities.Transformers.Where(x => x.QuarterID == QuarterID).ToList();
-            return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime( x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();// || x.TransformerID.Contains(x.TransformerID)
+        public List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string transformerID,string QuarterID) {
+            if (!string.IsNullOrEmpty(transformerID)) {
+                return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date && x.TransformerID==transformerID).ToList();
+                }
+            else {
+                return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();
+                }
+           
             }
 
         public bool UpdateMeterBill(MeterBill _meterbill) {

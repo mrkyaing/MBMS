@@ -39,7 +39,7 @@ namespace MPS.MeterBillPayment {
           
             cboTownship.DisplayMember = "TownshipNameInMM";
             cboTownship.ValueMember = "TownshipID";
-            cboTownship.DataSource = meterbillcalculateservice.GetTownship();
+            cboTownship.DataSource = meterbillcalculateservice.GetTransformer();
             cboTownship.Text = "Select One";
             }
 
