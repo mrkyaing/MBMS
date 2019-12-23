@@ -1,4 +1,5 @@
-﻿using MPS.Billing;
+﻿
+using MPS.Billing;
 using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
 
@@ -307,5 +308,9 @@ namespace MPS
             mbp.Show();
             
         }
+
+        private void advanceMoneyCustomerListToolStripMenuItem_Click(object sender, EventArgs e) {
+            new AdvanceMoneyCustomerUI().Show();
+            }
         }
 }

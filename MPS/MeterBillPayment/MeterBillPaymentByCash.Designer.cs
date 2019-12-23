@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPaid = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtpunishment = new System.Windows.Forms.TextBox();
             this.txtAdvanceMoney = new System.Windows.Forms.TextBox();
             this.txtChangeAmt = new System.Windows.Forms.TextBox();
@@ -44,14 +45,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.rdocashback = new System.Windows.Forms.RadioButton();
+            this.rdoadvancemoney = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(284, 393);
+            this.btnClose.Location = new System.Drawing.Point(284, 435);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 26);
             this.btnClose.TabIndex = 5;
@@ -157,7 +160,7 @@
             // btnPaid
             // 
             this.btnPaid.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPaid.Location = new System.Drawing.Point(181, 393);
+            this.btnPaid.Location = new System.Drawing.Point(181, 435);
             this.btnPaid.Name = "btnPaid";
             this.btnPaid.Size = new System.Drawing.Size(97, 26);
             this.btnPaid.TabIndex = 4;
@@ -167,6 +170,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdoadvancemoney);
+            this.groupBox1.Controls.Add(this.rdocashback);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtpunishment);
             this.groupBox1.Controls.Add(this.txtAdvanceMoney);
@@ -176,6 +181,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtTotalFees);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnPaid);
             this.groupBox1.Controls.Add(this.label5);
@@ -191,10 +197,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 430);
+            this.groupBox1.Size = new System.Drawing.Size(407, 467);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Payment Information";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(171, 321);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(17, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "*";
             // 
             // txtpunishment
             // 
@@ -269,22 +286,44 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Reveived Amount:";
             // 
-            // label10
+            // label9
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(171, 321);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 20);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "*";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(46, 391);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Change Status:";
+            // 
+            // rdocashback
+            // 
+            this.rdocashback.AutoSize = true;
+            this.rdocashback.Checked = true;
+            this.rdocashback.Location = new System.Drawing.Point(194, 391);
+            this.rdocashback.Name = "rdocashback";
+            this.rdocashback.Size = new System.Drawing.Size(88, 24);
+            this.rdocashback.TabIndex = 10;
+            this.rdocashback.TabStop = true;
+            this.rdocashback.Text = "cash back";
+            this.rdocashback.UseVisualStyleBackColor = true;
+            // 
+            // rdoadvancemoney
+            // 
+            this.rdoadvancemoney.AutoSize = true;
+            this.rdoadvancemoney.Location = new System.Drawing.Point(280, 391);
+            this.rdoadvancemoney.Name = "rdoadvancemoney";
+            this.rdoadvancemoney.Size = new System.Drawing.Size(121, 24);
+            this.rdoadvancemoney.TabIndex = 10;
+            this.rdoadvancemoney.TabStop = true;
+            this.rdoadvancemoney.Text = "advance money";
+            this.rdoadvancemoney.UseVisualStyleBackColor = true;
             // 
             // MeterBillPaymentByCash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 436);
+            this.ClientSize = new System.Drawing.Size(470, 485);
             this.Controls.Add(this.groupBox1);
             this.Name = "MeterBillPaymentByCash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -319,5 +358,8 @@
         private System.Windows.Forms.TextBox txtChangeAmt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton rdoadvancemoney;
+        private System.Windows.Forms.RadioButton rdocashback;
         }
     }

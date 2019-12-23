@@ -91,6 +91,12 @@
     <Compile Include="Billing\BillCode7LayerList.Designer.cs">
       <DependentUpon>BillCode7LayerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer Setup\AdvanceMoneyCustomerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer Setup\AdvanceMoneyCustomerUI.Designer.cs">
+      <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master Setup\TransformerDetailfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     <EmbeddedResource Include="Billing\BillCode7LayerList.resx">
       <DependentUpon>BillCode7LayerList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customer Setup\AdvanceMoneyCustomerUI.resx">
+      <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master Setup\TransformerDetailfrm.resx">
       <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,7 +395,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AdvanceMoneyCustomer\" />
     <Folder Include="Importing\" />
     <Folder Include="Integrate with HHU\" />
     <Folder Include="PunishmentCustomer\" />

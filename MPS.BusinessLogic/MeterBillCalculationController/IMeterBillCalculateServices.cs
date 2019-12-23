@@ -10,6 +10,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
         List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string transformerID,string QuarterID);
         void MeterBillCalculate(List<MeterBill> _meterBill,DateTime fromDate,DateTime toDate);
         List<Transformer> GetTransformer();
+        List<Township> GetTownship();
         List<Transformer> GetTransformerByQuarterID(string QuarterID);
         List<Quarter> GetQuarter();
         BillCode7Layer GetBillCode7LayerByBillCode(long billCodeNo);

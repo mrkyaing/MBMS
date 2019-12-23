@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillPayment {
     public partial class MeterBillPaymentByCash : Form {
-         string UserID { get; set; }
+      public string UserID { get; set; }
         public MeterBillInvoiceVM vm { get; set; }
         IMeterBillCalculateServices meterBillCalculateservices;
         IPunishmentRuleServices punishmentruleservices;
@@ -59,7 +59,7 @@ namespace MPS.MeterBillPayment {
             MeterBill mb = new MeterBill();
             BindMeterBillEntity(mb);        
             if (meterBillCalculateservices.UpdateMeterBill(mb)) {
-                if (Convert.ToDecimal(txtAdvanceMoney.Text)>0) {
+                if (rdoadvancemoney.Checked) {
                     AdvanceMoneyCustomer amc = new AdvanceMoneyCustomer();
                     BindAdvanceMoneyCustomerEntity(amc);
                     if (advanceMoneyCustomerServices.SaveAdvanceMoney(amc)) {
@@ -90,6 +90,7 @@ namespace MPS.MeterBillPayment {
             amc.AdvanceMoneyCustomerID = Guid.NewGuid().ToString();
             amc.MeterBillID = vm.MeterBillID;
             amc.ForMonth = vm.InvoiceDate;
+            amc.AdvanceMonthAmount =Convert.ToDecimal( txtChangeAmt.Text);
             amc.Active = true;
             amc.CreatedDate = DateTime.Now;
             amc.CreatedUserID = UserID;

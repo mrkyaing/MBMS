@@ -217,6 +217,10 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             return mBMSEntities.Quarters.Where(x => x.Active == true).ToList();
             }
 
+        public List<Township> GetTownship() {
+            return mBMSEntities.Townships.Where(x => x.Active == true).ToList();
+            }
+
         public List<Transformer> GetTransformer() {
             return mBMSEntities.Transformers.Where(x => x.Active == true).ToList();
             }

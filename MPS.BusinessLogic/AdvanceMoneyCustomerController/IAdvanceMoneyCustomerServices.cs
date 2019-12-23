@@ -8,5 +8,6 @@ using System.Threading.Tasks;
 namespace MPS.BusinessLogic.AdvanceMoneyCustomerController {
    public interface IAdvanceMoneyCustomerServices {
         bool SaveAdvanceMoney(AdvanceMoneyCustomer advanceMoneyCustomer);
+        List<AdvanceMoneyCustomer> GetAdvanceMoneyCustomer();
         }
     }

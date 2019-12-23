@@ -39,7 +39,7 @@ namespace MPS.MeterBillPayment {
           
             cboTownship.DisplayMember = "TownshipNameInMM";
             cboTownship.ValueMember = "TownshipID";
-            cboTownship.DataSource = meterbillcalculateservice.GetTransformer();
+            cboTownship.DataSource = meterbillcalculateservice.GetTownship();
             cboTownship.Text = "Select One";
             }
 
@@ -87,6 +87,7 @@ namespace MPS.MeterBillPayment {
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
                     MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
                     MeterBillPaymentByCash paymentbycash = new MeterBillPaymentByCash();
+                    paymentbycash.UserID = this.UserID;
                     paymentbycash.vm = meterBillInvoice;
                     paymentbycash.Show();
                     }//end of edit function
