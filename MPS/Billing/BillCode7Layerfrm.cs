@@ -34,7 +34,11 @@ namespace MPS.Billing {
                 BillCode7Layer billCode7Layer = (from b in mbsEntities.BillCode7Layer where b.BillCode7LayerID == billCode7LayerID select b).FirstOrDefault();
                 txtBillCodeNo.Text = Convert.ToString(billCode7Layer.BillCode7LayerNo);
                 cboBillCodeType.Text = billCode7Layer.BillCodeLayerType;
-                gv7layer.DataSource = billCode7LayerDetailList;
+                //adding data to the list            
+                foreach(var item in billCode7LayerDetailList) {
+                    string[] row = new string[] { item.LowerLimit.ToString(), item.UpperLimit.ToString(), item.RateUnit.ToString(),item.AmountPerUnit.ToString()};
+                    gv7layer.Rows.Add(row);
+                    }
                 }
             }
         public bool checkValidation() {
@@ -53,7 +57,6 @@ namespace MPS.Billing {
             return hasError;
             }
         private void btnSave_Click(object sender, EventArgs e) {
-
             if (checkValidation()) {
                 if (isEdit) {
                     int editBillCodeNoCount = 0;
@@ -74,6 +77,21 @@ namespace MPS.Billing {
                     updateBillCode7Layer.UpdatedUserID = UserID;
                     updateBillCode7Layer.UpdatedDate = DateTime.Now;
                     billCode7LayerController.UpdateBillCode7Layer(updateBillCode7Layer);
+                    mbsEntities.BillCode7LayerDetail_DeleteByBillCode7LayerID(billCode7LayerID);
+                    foreach (DataGridViewRow row in gv7layer.Rows) {
+                        BillCode7LayerDetail billCode7LayerDetail = new BillCode7LayerDetail();
+                        billCode7LayerDetail.BillCode7LayerDetailID = Guid.NewGuid().ToString();
+                        billCode7LayerDetail.BillCode7LayerID = billCode7LayerID;
+                        billCode7LayerDetail.LowerLimit = Convert.ToDecimal(row.Cells[0].Value);
+                        billCode7LayerDetail.UpperLimit = Convert.ToDecimal(row.Cells[1].Value);
+                        billCode7LayerDetail.RateUnit = Convert.ToDecimal(row.Cells[2].Value);
+                        billCode7LayerDetail.AmountPerUnit = Convert.ToDecimal(row.Cells[3].Value);
+                        billCode7LayerDetail.Active = true;
+                        billCode7LayerDetail.CreatedDate = DateTime.Now;
+                        billCode7LayerDetail.CreatedUserID = UserID;
+                        mbsEntities.BillCode7LayerDetail.Add(billCode7LayerDetail);
+                        }
+                    mbsEntities.SaveChanges();
                     MessageBox.Show("Successfully Update!", "Update");
                     Clear();
                     BillCode7LayerList billcode7LayerListForm = new BillCode7LayerList();
@@ -92,6 +110,7 @@ namespace MPS.Billing {
                     if (billCodeNoCount > 0) {
                         tooltip.SetToolTip(txtBillCodeNo, "Error");
                         tooltip.Show("Bill Code No is already exist!", txtBillCodeNo);
+                        MessageBox.Show("Bill Code No is already exist!","Error");
                         return;
                         }
                     billCode7Layer.BillCode7LayerID = Guid.NewGuid().ToString();
@@ -127,6 +146,7 @@ namespace MPS.Billing {
             txtLowerLimit.Text = string.Empty;
             txtUpperLimit.Text = string.Empty;
             cboBillCodeType.SelectedIndex = 0;
+            gv7layer.DataSource = null;
             }
 
         private void txtBillCodeNo_KeyPress(object sender, KeyPressEventArgs e) {
@@ -183,23 +203,20 @@ namespace MPS.Billing {
                 decimal lowerlimit = Convert.ToDecimal(row.Cells[0].Value);
                 decimal upperlimit = Convert.ToDecimal(row.Cells[1].Value);
                 if (Convert.ToDecimal(txtLowerLimit.Text) == lowerlimit || Convert.ToDecimal(txtUpperLimit.Text) == upperlimit) {
-                    tooltip.SetToolTip(txtLowerLimit, "Error");
-                    tooltip.Show("Lower  and Upper Limit are already defined.", txtLowerLimit);
+                    MessageBox.Show("Lower  or  Upper Limit are already defined", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                     }
-                else if (Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit) {
-                    tooltip.SetToolTip(txtLowerLimit, "Error");
-                    tooltip.Show("Lower Limit data are already defined.", txtLowerLimit);
+                if (Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit && Convert.ToDecimal(txtLowerLimit.Text)>=lowerlimit) {
+                    MessageBox.Show("Lower Limit data are already defined.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                     }
-                else if (Convert.ToDecimal(txtLowerLimit.Text) >= upperlimit && Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit) {
-                    tooltip.SetToolTip(txtLowerLimit, "Error");
-                    tooltip.Show("Lower Limit data are already defined.", txtLowerLimit);
+                if (Convert.ToDecimal(txtLowerLimit.Text) >= upperlimit && Convert.ToDecimal(txtLowerLimit.Text) <= upperlimit) {
+                    MessageBox.Show("Lower Limit data are already defined.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                     }
-                else if (Convert.ToDecimal(txtUpperLimit.Text) >= upperlimit && Convert.ToDecimal(txtUpperLimit.Text) <= upperlimit) {
-                    tooltip.SetToolTip(txtUpperLimit, "Error");
-                    tooltip.Show("Upper Limit data are already defined.", txtUpperLimit);
+                 if (Convert.ToDecimal(txtUpperLimit.Text) >= upperlimit && Convert.ToDecimal(txtUpperLimit.Text) <= upperlimit) {
+                    MessageBox.Show("Upper Limit data are already defined.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                     return false;
                     }
                 }
@@ -213,36 +230,20 @@ namespace MPS.Billing {
                     DataGridViewRow row = gv7layer.Rows[e.RowIndex];              
                     DialogResult comfirmYes = MessageBox.Show("Are you sure to delete?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (DialogResult.Yes == comfirmYes) {
-                        if (isEdit) {
-                            BillCode7LayerDetail billCode7LayerDetail = (BillCode7LayerDetail)row.DataBoundItem;//get the selected row's data 
-                            billCode7LayerDetailList.Remove(billCode7LayerDetail);
-                            gv7layer.DataSource = billCode7LayerDetail;
-                            }
-                        else {
-                            gv7layer.Rows.RemoveAt(row.Index);
-                            }
+                        gv7layer.Rows.RemoveAt(row.Index);
                         }                                 
                     }//end of delete function
                 }
             //Edit function
             if (e.ColumnIndex == 4) {
-                DataGridViewRow row = gv7layer.Rows[e.RowIndex];
-                BillCode7LayerDetail billCode7LayerDetail = (BillCode7LayerDetail)row.DataBoundItem;//get the selected row's data 
+                DataGridViewRow row = gv7layer.Rows[e.RowIndex];            
                 DialogResult comfirmYes = MessageBox.Show("Are you sure to edit?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult.Yes == comfirmYes) {
-                    gv7layer.Rows.RemoveAt(row.Index);
-                    if (isEdit) {
-                        txtLowerLimit.Text = billCode7LayerDetail.LowerLimit.ToString();
-                        txtUpperLimit.Text = billCode7LayerDetail.UpperLimit.ToString();
-                        txtRateUnit.Text = billCode7LayerDetail.RateUnit.ToString();
-                        txtAmount.Text = billCode7LayerDetail.AmountPerUnit.ToString();
-                        }
-                    else {
-                        txtLowerLimit.Text = Convert.ToString(row.Cells[0].Value);
-                        txtUpperLimit.Text = Convert.ToString(row.Cells[1].Value);
-                        txtRateUnit.Text = Convert.ToString(row.Cells[2].Value);
-                        txtAmount.Text = Convert.ToString(row.Cells[3].Value);
-                        }
+                    gv7layer.Rows.RemoveAt(row.Index);               
+                    txtLowerLimit.Text = Convert.ToString(row.Cells[0].Value);
+                    txtUpperLimit.Text = Convert.ToString(row.Cells[1].Value);
+                    txtRateUnit.Text = Convert.ToString(row.Cells[2].Value);
+                    txtAmount.Text = Convert.ToString(row.Cells[3].Value);                       
                     }              
                 }//end of Edit function
             }//end of cell click

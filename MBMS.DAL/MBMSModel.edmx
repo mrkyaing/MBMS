@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdvanceMoneyCustomer">
           <Key>
             <PropertyRef Name="AdvanceMoneyCustomerID" />
@@ -729,6 +729,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="BillCode7LayerDetail_DeleteByBillCode7LayerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="billCode7LayerID" Type="char" Mode="In" />
+        </Function>
         <Function Name="MeterBill_DeleteByFromDateToDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="FromDate" Type="datetime" Mode="In" />
           <Parameter Name="ToDate" Type="datetime" Mode="In" />
@@ -858,8 +861,7 @@
             <End Role="UserInRole" EntitySet="UserInRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1763,6 +1765,9 @@
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="BillCode7LayerDetail_DeleteByBillCode7LayerID">
+            <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -2230,6 +2235,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="MeterBill_DeleteByFromDateToDate" FunctionName="MBMSModel.Store.MeterBill_DeleteByFromDateToDate" />
           <FunctionImportMapping FunctionImportName="MeterUnitCollect_DeleteByCustomerIDFromDateToDate" FunctionName="MBMSModel.Store.MeterUnitCollect_DeleteByCustomerIDFromDateToDate" />
+          <FunctionImportMapping FunctionImportName="BillCode7LayerDetail_DeleteByBillCode7LayerID" FunctionName="MBMSModel.Store.BillCode7LayerDetail_DeleteByBillCode7LayerID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

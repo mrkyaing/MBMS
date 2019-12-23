@@ -30,10 +30,8 @@ namespace MPS.BusinessLogic.BillingController
         public void UpdateBillCode7Layer(BillCode7Layer bc)
         {
             BillCode7Layer billCode7Layer = mBMSEntities.BillCode7Layer.Where(x => x.BillCode7LayerID == bc.BillCode7LayerID).SingleOrDefault();
-            billCode7Layer.BillCode7LayerNo = bc.BillCode7LayerNo;
-          
-            billCode7Layer.BillCodeLayerType = bc.BillCodeLayerType;
-          
+            billCode7Layer.BillCode7LayerNo = bc.BillCode7LayerNo;      
+            billCode7Layer.BillCodeLayerType = bc.BillCodeLayerType;        
             billCode7Layer.UpdatedUserID = bc.UpdatedUserID;
             billCode7Layer.UpdatedDate = DateTime.Now;
             mBMSEntities.BillCode7Layer.AddOrUpdate(billCode7Layer); //requires using System.Data.Entity.Migrations;

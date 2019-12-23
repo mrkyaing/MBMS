@@ -80,5 +80,14 @@ namespace MBMS.DAL
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MeterUnitCollect_DeleteByCustomerIDFromDateToDate", customerIDParameter, fromDateParameter, toDateParameter);
         }
+    
+        public virtual int BillCode7LayerDetail_DeleteByBillCode7LayerID(string billCode7LayerID)
+        {
+            var billCode7LayerIDParameter = billCode7LayerID != null ?
+                new ObjectParameter("billCode7LayerID", billCode7LayerID) :
+                new ObjectParameter("billCode7LayerID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("BillCode7LayerDetail_DeleteByBillCode7LayerID", billCode7LayerIDParameter);
+        }
     }
 }
