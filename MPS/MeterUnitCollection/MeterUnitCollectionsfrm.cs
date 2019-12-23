@@ -4,6 +4,7 @@ using MPS.SQLiteHelper;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Objects;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -25,15 +26,21 @@ namespace MPS.MeterUnitCollect {
                 }
             }
         private void MeterUnitCollectionsfrm_Load(object sender, EventArgs e) {
-            bindTownship();
+            bindQuarter();
             bindTransformer();         
             }
-        private void GetMeterUnitData(string fromDate, string toDate) {
+        private void GetMeterUnitData(string fromDate, string toDate,string QuarterID) {
             //VillageServices svc = new VillageServices();
             //List<Villages> vlist = svc.GetAll().Where(x=>x.vlg_name== "Mawkanin").ToList();
             //this.gvvillage.DataSource = vlist;           
             NodeMeterServices NodeMetersvc = new NodeMeterServices();
-            string sqlCommand = string.Format("SELECT * FROM NodeMeter WHERE nod_bill_from>='{0}' AND nod_bill_to<='{1}' ", fromDate, toDate);
+            string sqlCommand = string.Empty;
+            if (string.IsNullOrEmpty(QuarterID)) {
+                sqlCommand = string.Format("SELECT * FROM NodeMeter WHERE nod_bill_from>='{0}' AND nod_bill_to<='{1}' ", fromDate, toDate);
+                }
+            else {
+                sqlCommand = string.Format("SELECT * FROM NodeMeter WHERE nod_bill_from>='{0}' AND nod_bill_to<='{1}' AND nod_village_code in (select vlg_code from Villages where vlg_code='{2}')", fromDate, toDate,QuarterID);
+                }
             nodeMeterList = NodeMetersvc.GetAll(sqlCommand).ToList();
             this.gvnodemeter.DataSource = nodeMeterList;
             if (nodeMeterList.Count ==0) {
@@ -44,9 +51,31 @@ namespace MPS.MeterUnitCollect {
         private void btncollectmeterunit_Click(object sender, EventArgs e) {
             string fromdate = dtpfromDate.Value.ToString("yyyyMMdd");
             string todate = dtptoDate.Value.ToString("yyyy-MM-dd");
-            GetMeterUnitData(fromdate,todate);            
+            string qCode = string.Empty;
+            string qid = cboQuarter.SelectedValue.ToString();
+            if (!cboQuarter.SelectedValue.Equals("0")) {
+                qCode = mbmsEntities.Quarters.Where(x => x.QuarterID == qid).SingleOrDefault().QuarterCode;
+                }
+            GetMeterUnitData(fromdate,todate,qCode);            
             }
         private bool SaveMeterUnitCollection(List<NodeMeter> data) {
+            DateTime fromDate = dtpfromDate.Value.Date;
+            DateTime toDate = dtptoDate.Value.Date;
+            string transformerId = string.Empty;
+            if(!cboTransformer.SelectedValue.Equals("0"))
+            transformerId = cboTransformer.SelectedValue.ToString();
+            bool checkData = false;
+            if (!string.IsNullOrEmpty(transformerId)) {
+                 checkData = mbmsEntities.MeterBills.Any(x => EntityFunctions.TruncateTime(x.InvoiceDate) >= fromDate && EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate 
+                 && x.MeterUnitCollect.TransformerID == transformerId);
+                }else {
+                 checkData = mbmsEntities.MeterBills.Any(x => EntityFunctions.TruncateTime(x.InvoiceDate) >= fromDate && EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate);
+                }
+           
+            if (checkData) {
+                MessageBox.Show("Bill Units can't re-collect because data is already calculated and printed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+                }
             try {
                 List<MBMS.DAL.MeterUnitCollect> meterUnitCollectList = new List<MBMS.DAL.MeterUnitCollect>();
                 foreach (NodeMeter item in data) {
@@ -95,7 +124,7 @@ namespace MPS.MeterUnitCollect {
         private void btnCancel_Click(object sender, EventArgs e) {
             this.dtpfromDate.Value = DateTime.Now;
             dtptoDate.Value = DateTime.Now;
-            cboTownship.SelectedIndex = 0;
+            cboQuarter.SelectedIndex = 0;
             cboTransformer.SelectedIndex = 0;
             this.Text = "Meter Unit Collections";
             this.gvnodemeter.DataSource = null;
@@ -115,18 +144,19 @@ namespace MPS.MeterUnitCollect {
             cboTransformer.DataSource = transformerList;
             cboTransformer.DisplayMember = "TransformerName";
             cboTransformer.ValueMember = "TransformerID";
-
+            
             }
-        private void bindTownship() {
-            List<Township> townshipList = new List<Township>();
-            Township township = new Township();
-            township.TownshipID = Convert.ToString(0);
-            township.TownshipNameInEng = "Select";
-            townshipList.Add(township);
-            townshipList.AddRange(mbmsEntities.Townships.Where(x => x.Active == true).OrderBy(x => x.TownshipNameInEng).ToList());
-            cboTownship.DataSource = townshipList;
-            cboTownship.DisplayMember = "TownshipNameInEng";
-            cboTownship.ValueMember = "TownshipID";
+        private void bindQuarter() {
+            List<Quarter> quarterList = new List<Quarter>();
+            Quarter q = new Quarter();
+            q.QuarterID = Convert.ToString(0);
+            q.QuarterNameInEng = "Select";
+            quarterList.Add(q);
+            quarterList.AddRange(mbmsEntities.Quarters.Where(x => x.Active == true).OrderBy(x => x.QuarterNameInEng).ToList());
+            cboQuarter.DataSource = quarterList;
+            cboQuarter.DisplayMember = "QuarterNameInEng";
+            cboQuarter.ValueMember = "QuarterID";
+            
             }
         #endregion
         private void btnSave_Click(object sender, EventArgs e) {
@@ -134,6 +164,19 @@ namespace MPS.MeterUnitCollect {
             if (DialogResult.OK == result) {
                 if (SaveMeterUnitCollection(nodeMeterList)) {
                     MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+
+        private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cboQuarter.SelectedIndex >0) {
+                string qid = cboQuarter.SelectedValue.ToString();
+                List<Transformer> data = mbmsEntities.Transformers.Where(x => x.Active == true && x.QuarterID==qid).OrderBy(x => x.TransformerName).ToList();
+                if(data.Count>0)
+                cboTransformer.DataSource = data;
+                else {
+                    MessageBox.Show("There is no transformer data.");
+                    this.bindTransformer();
                     }
                 }
             }

@@ -25,19 +25,19 @@
         private void InitializeComponent() {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.cboTransformer = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btncollectmeterunit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboTownship = new System.Windows.Forms.ComboBox();
+            this.cboQuarter = new System.Windows.Forms.ComboBox();
             this.dtptoDate = new System.Windows.Forms.DateTimePicker();
             this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.gvnodemeter = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvnodemeter)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.btncollectmeterunit);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cboTownship);
+            this.groupBox1.Controls.Add(this.cboQuarter);
             this.groupBox1.Controls.Add(this.dtptoDate);
             this.groupBox1.Controls.Add(this.dtpfromDate);
             this.groupBox1.Controls.Add(this.label2);
@@ -74,6 +74,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Meter Unit Collection Process";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(84, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(17, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "*";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -83,6 +94,17 @@
             this.label4.Size = new System.Drawing.Size(90, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Transformer :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(84, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "*";
             // 
             // cboTransformer
             // 
@@ -124,18 +146,19 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(15, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(63, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Township :";
+            this.label3.Text = "Quarter :";
             // 
-            // cboTownship
+            // cboQuarter
             // 
-            this.cboTownship.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTownship.FormattingEnabled = true;
-            this.cboTownship.Location = new System.Drawing.Point(107, 131);
-            this.cboTownship.Name = "cboTownship";
-            this.cboTownship.Size = new System.Drawing.Size(259, 28);
-            this.cboTownship.TabIndex = 2;
+            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarter.FormattingEnabled = true;
+            this.cboQuarter.Location = new System.Drawing.Point(107, 131);
+            this.cboQuarter.Name = "cboQuarter";
+            this.cboQuarter.Size = new System.Drawing.Size(259, 28);
+            this.cboQuarter.TabIndex = 2;
+            this.cboQuarter.SelectedIndexChanged += new System.EventHandler(this.cboQuarter_SelectedIndexChanged);
             // 
             // dtptoDate
             // 
@@ -184,28 +207,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(84, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "*";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(84, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "*";
-            // 
             // MeterUnitCollectionsfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +233,7 @@
         private System.Windows.Forms.DateTimePicker dtptoDate;
         private System.Windows.Forms.DateTimePicker dtpfromDate;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboTownship;
+        private System.Windows.Forms.ComboBox cboQuarter;
         private System.Windows.Forms.Button btncollectmeterunit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboTransformer;
