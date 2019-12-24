@@ -1,5 +1,6 @@
 ﻿using MBMS.DAL;
 using MPS.BusinessLogic.CustomerController;
+using MPS.BusinessLogic.MeterController;
 using MPS.Customer_Setup;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,11 @@ namespace MPS
 {
     public partial class Customerfrm : Form
     {
+        IMeter meterservice;
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbmsEntities = new MBMSEntities();
         public String UserID { get; set; }
+        public string MeterHistoryID { get; set; }
         public String customerID { get; set; }        
         public Boolean isEdit { get; set; }
         Customer customer = new Customer();
@@ -25,6 +28,7 @@ namespace MPS
         public Customerfrm()
         {
             InitializeComponent();
+            meterservice = new MeterController();
         }
 
         private void RegisterCustomer_Load(object sender, EventArgs e)
@@ -263,12 +267,14 @@ namespace MPS
                     updateCustomer.QuarterID = cboQuarterName.SelectedValue.ToString();
                     updateCustomer.TownshipID = cboTownshipName.SelectedValue.ToString();
                     updateCustomer.BillCode7LayerID = cboBillCodeNo.SelectedValue.ToString();
-                    updateCustomer.MeterID = cboMeterNo.SelectedValue.ToString();
-
-                   
+                    updateCustomer.MeterID = cboMeterNo.SelectedValue.ToString();              
                     customer.UpdatedUserID = UserID;
                     customer.UpdatedDate = DateTime.Now;
                     customerController.UpdateCustomer(updateCustomer);
+                    //updating the meter history 
+                    MeterHistory entity = new MeterHistory();
+                    entity.MeterID = updateCustomer.MeterID;
+                    meterservice.UpdateMeterHistory(entity);
                     MessageBox.Show("Successfully Updated Customer!", "Update");
                     Clear();
                     CustomerListfrm customerListForm = new CustomerListfrm();

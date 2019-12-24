@@ -62,5 +62,12 @@ namespace MPS.BusinessLogic.MeterController
             mBMSEntities.Meters.AddOrUpdate(meter); //requires using System.Data.Entity.Migrations;
             mBMSEntities.SaveChanges();
         }
-    }
+
+        public void UpdateMeterHistory(MeterHistory entity) {
+            MeterHistory meterhistory = mBMSEntities.MeterHistories.Where(x =>x.CustomerID== entity.CustomerID && x.MeterHistoryID==entity.MeterHistoryID).SingleOrDefault();
+            meterhistory.MeterID = entity.MeterID;
+            mBMSEntities.MeterHistories.AddOrUpdate(meterhistory); //requires using System.Data.Entity.Migrations;
+            mBMSEntities.SaveChanges();
+            }
+        }
 }

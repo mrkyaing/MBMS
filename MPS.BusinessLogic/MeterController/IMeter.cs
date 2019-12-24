@@ -13,5 +13,6 @@ namespace MPS.BusinessLogic.MeterController
         void UpdateMeter(Meter m);
         void DeletedMeter(Meter m);
         void RemoveMeter(MeterHistory meterhistoryEntity);
+        void UpdateMeterHistory(MeterHistory meterhistoryEntity);
     }
 }

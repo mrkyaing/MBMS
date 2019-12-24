@@ -52,6 +52,14 @@ namespace MPS.Meter_Setup {
                     meterservice.RemoveMeter(meterhistory);
                     meterservice.DeletedMeter(meter);
                     MessageBox.Show("Successfully removed Meter record'.", "Remove Success");
+                    //EditCustomer
+                    Customerfrm customerForm = new Customerfrm();
+                    customerForm.isEdit = true;
+                    customerForm.Text = "Edit Customer";
+                    customerForm.MeterHistoryID = meterhistory.MeterHistoryID;
+                    customerForm.customerID = customer.CustomerID;
+                    customerForm.UserID = meter.CreatedUserID;
+                    customerForm.ShowDialog();
                     }
                 catch (Exception ex) {
                     MessageBox.Show("Error Occur");
