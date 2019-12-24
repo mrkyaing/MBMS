@@ -51,6 +51,10 @@
         <AssociationConnector Association="MBMSModel.FK_User_Role" ManuallyRouted="false" />
         <AssociationConnector Association="MBMSModel.FK_UserInRole_Role" ManuallyRouted="false" />
         <AssociationConnector Association="MBMSModel.FK_UserInRole_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MBMSModel.MeterHistory" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MBMSModel.MeterLossesMultiplierChangeHistory" Width="1.5" PointX="14.25" PointY="21.625" />
+        <EntityTypeShape EntityType="MBMSModel.TransformerHistory" Width="1.5" PointX="12.375" PointY="0.75" />
+        <AssociationConnector Association="MBMSModel.FK_MeterLossesMultiplierChangeHistory_Meter" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

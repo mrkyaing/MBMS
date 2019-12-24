@@ -14,11 +14,16 @@ namespace MPS.BusinessLogic.MeterController
         public void DeletedMeter(Meter m)
         {
             Meter meter = mBMSEntities.Meters.Where(x => x.MeterID == m.MeterID).SingleOrDefault();
-            meter.Active = m.Active;
+            meter.Active = false;
             meter.DeletedDate = DateTime.Now;
             meter.DeletedUserID = m.DeletedUserID;
             mBMSEntities.SaveChanges();
         }
+
+        public void RemoveMeter(MeterHistory meterhistoryEntity) {
+            mBMSEntities.MeterHistories.Add(meterhistoryEntity);
+            mBMSEntities.SaveChanges();
+            }
 
         public void Save(Meter m)
         {

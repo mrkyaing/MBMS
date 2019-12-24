@@ -205,6 +205,35 @@
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="MeterHistory">
+          <Key>
+            <PropertyRef Name="MeterHistoryID" />
+          </Key>
+          <Property Name="MeterHistoryID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="OldMeterID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MeterID" Type="char" MaxLength="36" />
+          <Property Name="CustomerID" Type="char" MaxLength="36" />
+          <Property Name="RemovedDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MeterLossesMultiplierChangeHistory">
+          <Key>
+            <PropertyRef Name="MeterLossesMultiplierChangeHistoryID" />
+          </Key>
+          <Property Name="MeterLossesMultiplierChangeHistoryID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MeterID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Losses" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Multiplier" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="OldLosses" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="OldMultiplier" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="MeterType">
           <Key>
             <PropertyRef Name="MeterTypeID" />
@@ -380,6 +409,39 @@
             <PropertyRef Name="TransformerID" />
           </Key>
           <Property Name="TransformerID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="TransformerName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="QuarterID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="GPSX" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="GPSY" Type="decimal" Precision="18" Scale="5" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="DeletedUserID" Type="char" MaxLength="36" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="RatedOutputPower" Type="int" />
+          <Property Name="VoltageRatio" Type="int" />
+          <Property Name="VectorGroup" Type="nvarchar(max)" />
+          <Property Name="TypeofCooling" Type="nvarchar(max)" />
+          <Property Name="EfficiencyLoad" Type="int" />
+          <Property Name="ImpendanceVoltage" Type="int" />
+          <Property Name="NoloadLoss" Type="int" />
+          <Property Name="FullLoadLoss" Type="int" />
+          <Property Name="TappingRange" Type="nvarchar(max)" />
+          <Property Name="Maker" Type="nvarchar(max)" />
+          <Property Name="CountryOfOrgin" Type="nvarchar(max)" />
+          <Property Name="Standard" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TransformerHistory">
+          <Key>
+            <PropertyRef Name="TransformerID" />
+          </Key>
+          <Property Name="TransformerID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="OldTransformerName" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="TransformerName" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="Address" Type="nvarchar(max)" />
           <Property Name="Status" Type="nvarchar" MaxLength="256" Nullable="false" />
@@ -585,6 +647,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MeterLossesMultiplierChangeHistory_Meter">
+          <End Role="Meter" Type="Self.Meter" Multiplicity="1" />
+          <End Role="MeterLossesMultiplierChangeHistory" Type="Self.MeterLossesMultiplierChangeHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meter">
+              <PropertyRef Name="MeterID" />
+            </Principal>
+            <Dependent Role="MeterLossesMultiplierChangeHistory">
+              <PropertyRef Name="MeterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MeterUnitCollect_Customer">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="MeterUnitCollect" Type="Self.MeterUnitCollect" Multiplicity="*" />
@@ -751,6 +825,8 @@
           <EntitySet Name="Meter" EntityType="Self.Meter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MeterBill" EntityType="Self.MeterBill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MeterBox" EntityType="Self.MeterBox" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MeterHistory" EntityType="Self.MeterHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MeterLossesMultiplierChangeHistory" EntityType="Self.MeterLossesMultiplierChangeHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MeterType" EntityType="Self.MeterType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MeterUnitCollect" EntityType="Self.MeterUnitCollect" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pole" EntityType="Self.Pole" Schema="dbo" store:Type="Tables" />
@@ -762,6 +838,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Township" EntityType="Self.Township" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transformer" EntityType="Self.Transformer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransformerHistory" EntityType="Self.TransformerHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserInRole" EntityType="Self.UserInRole" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_AdvanceMoneyCustomer_MeterBill" Association="Self.FK_AdvanceMoneyCustomer_MeterBill">
@@ -811,6 +888,10 @@
           <AssociationSet Name="FK_MeterBox_Pole" Association="Self.FK_MeterBox_Pole">
             <End Role="Pole" EntitySet="Pole" />
             <End Role="MeterBox" EntitySet="MeterBox" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MeterLossesMultiplierChangeHistory_Meter" Association="Self.FK_MeterLossesMultiplierChangeHistory_Meter">
+            <End Role="Meter" EntitySet="Meter" />
+            <End Role="MeterLossesMultiplierChangeHistory" EntitySet="MeterLossesMultiplierChangeHistory" />
           </AssociationSet>
           <AssociationSet Name="FK_MeterUnitCollect_Customer" Association="Self.FK_MeterUnitCollect_Customer">
             <End Role="Customer" EntitySet="Customer" />
@@ -1030,6 +1111,7 @@
           <NavigationProperty Name="MeterBox" Relationship="Self.FK_Meter_MeterBox" FromRole="Meter" ToRole="MeterBox" />
           <NavigationProperty Name="MeterType" Relationship="Self.FK_Meter_MeterType" FromRole="Meter" ToRole="MeterType" />
           <NavigationProperty Name="MeterUnitCollects" Relationship="Self.FK_MeterUnitCollect_Meter" FromRole="Meter" ToRole="MeterUnitCollect" />
+          <NavigationProperty Name="MeterLossesMultiplierChangeHistories" Relationship="MBMSModel.FK_MeterLossesMultiplierChangeHistory_Meter" FromRole="Meter" ToRole="MeterLossesMultiplierChangeHistory" />
         </EntityType>
         <EntityType Name="MeterBill">
           <Key>
@@ -1766,9 +1848,91 @@
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="BillCode7LayerDetail_DeleteByBillCode7LayerID">
-            <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
+          <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="MeterHistories" EntityType="MBMSModel.MeterHistory" />
+          <EntitySet Name="MeterLossesMultiplierChangeHistories" EntityType="MBMSModel.MeterLossesMultiplierChangeHistory" />
+          <EntitySet Name="TransformerHistories" EntityType="MBMSModel.TransformerHistory" />
+          <AssociationSet Name="FK_MeterLossesMultiplierChangeHistory_Meter" Association="MBMSModel.FK_MeterLossesMultiplierChangeHistory_Meter">
+            <End Role="Meter" EntitySet="Meters" />
+            <End Role="MeterLossesMultiplierChangeHistory" EntitySet="MeterLossesMultiplierChangeHistories" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MeterHistory">
+          <Key>
+            <PropertyRef Name="MeterHistoryID" />
+          </Key>
+          <Property Name="MeterHistoryID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="OldMeterID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MeterID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CustomerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="RemovedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MeterLossesMultiplierChangeHistory">
+          <Key>
+            <PropertyRef Name="MeterLossesMultiplierChangeHistoryID" />
+          </Key>
+          <Property Name="MeterLossesMultiplierChangeHistoryID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MeterID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="Losses" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Multiplier" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="OldLosses" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="OldMultiplier" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="Meter" Relationship="MBMSModel.FK_MeterLossesMultiplierChangeHistory_Meter" FromRole="MeterLossesMultiplierChangeHistory" ToRole="Meter" />
+        </EntityType>
+        <EntityType Name="TransformerHistory">
+          <Key>
+            <PropertyRef Name="TransformerID" />
+          </Key>
+          <Property Name="TransformerID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="OldTransformerName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="TransformerName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="QuarterID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GPSX" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="GPSY" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="RatedOutputPower" Type="Int32" />
+          <Property Name="VoltageRatio" Type="Int32" />
+          <Property Name="VectorGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeofCooling" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EfficiencyLoad" Type="Int32" />
+          <Property Name="ImpendanceVoltage" Type="Int32" />
+          <Property Name="NoloadLoss" Type="Int32" />
+          <Property Name="FullLoadLoss" Type="Int32" />
+          <Property Name="TappingRange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Maker" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountryOfOrgin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_MeterLossesMultiplierChangeHistory_Meter">
+          <End Type="MBMSModel.Meter" Role="Meter" Multiplicity="1" />
+          <End Type="MBMSModel.MeterLossesMultiplierChangeHistory" Role="MeterLossesMultiplierChangeHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Meter">
+              <PropertyRef Name="MeterID" />
+            </Principal>
+            <Dependent Role="MeterLossesMultiplierChangeHistory">
+              <PropertyRef Name="MeterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2236,6 +2400,71 @@
           <FunctionImportMapping FunctionImportName="MeterBill_DeleteByFromDateToDate" FunctionName="MBMSModel.Store.MeterBill_DeleteByFromDateToDate" />
           <FunctionImportMapping FunctionImportName="MeterUnitCollect_DeleteByCustomerIDFromDateToDate" FunctionName="MBMSModel.Store.MeterUnitCollect_DeleteByCustomerIDFromDateToDate" />
           <FunctionImportMapping FunctionImportName="BillCode7LayerDetail_DeleteByBillCode7LayerID" FunctionName="MBMSModel.Store.BillCode7LayerDetail_DeleteByBillCode7LayerID" />
+          <EntitySetMapping Name="MeterHistories">
+            <EntityTypeMapping TypeName="MBMSModel.MeterHistory">
+              <MappingFragment StoreEntitySet="MeterHistory">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="RemovedDate" ColumnName="RemovedDate" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="MeterID" ColumnName="MeterID" />
+                <ScalarProperty Name="OldMeterID" ColumnName="OldMeterID" />
+                <ScalarProperty Name="MeterHistoryID" ColumnName="MeterHistoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MeterLossesMultiplierChangeHistories">
+            <EntityTypeMapping TypeName="MBMSModel.MeterLossesMultiplierChangeHistory">
+              <MappingFragment StoreEntitySet="MeterLossesMultiplierChangeHistory">
+                <ScalarProperty Name="OldMultiplier" ColumnName="OldMultiplier" />
+                <ScalarProperty Name="OldLosses" ColumnName="OldLosses" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Multiplier" ColumnName="Multiplier" />
+                <ScalarProperty Name="Losses" ColumnName="Losses" />
+                <ScalarProperty Name="MeterID" ColumnName="MeterID" />
+                <ScalarProperty Name="MeterLossesMultiplierChangeHistoryID" ColumnName="MeterLossesMultiplierChangeHistoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransformerHistories">
+            <EntityTypeMapping TypeName="MBMSModel.TransformerHistory">
+              <MappingFragment StoreEntitySet="TransformerHistory">
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="CountryOfOrgin" ColumnName="CountryOfOrgin" />
+                <ScalarProperty Name="Maker" ColumnName="Maker" />
+                <ScalarProperty Name="TappingRange" ColumnName="TappingRange" />
+                <ScalarProperty Name="FullLoadLoss" ColumnName="FullLoadLoss" />
+                <ScalarProperty Name="NoloadLoss" ColumnName="NoloadLoss" />
+                <ScalarProperty Name="ImpendanceVoltage" ColumnName="ImpendanceVoltage" />
+                <ScalarProperty Name="EfficiencyLoad" ColumnName="EfficiencyLoad" />
+                <ScalarProperty Name="TypeofCooling" ColumnName="TypeofCooling" />
+                <ScalarProperty Name="VectorGroup" ColumnName="VectorGroup" />
+                <ScalarProperty Name="VoltageRatio" ColumnName="VoltageRatio" />
+                <ScalarProperty Name="RatedOutputPower" ColumnName="RatedOutputPower" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="GPSY" ColumnName="GPSY" />
+                <ScalarProperty Name="GPSX" ColumnName="GPSX" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="QuarterID" ColumnName="QuarterID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="TransformerName" ColumnName="TransformerName" />
+                <ScalarProperty Name="OldTransformerName" ColumnName="OldTransformerName" />
+                <ScalarProperty Name="TransformerID" ColumnName="TransformerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

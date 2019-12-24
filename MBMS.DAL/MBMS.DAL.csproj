@@ -90,6 +90,12 @@
     <Compile Include="MeterBox.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MeterHistory.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeterLossesMultiplierChangeHistory.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MeterType.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
@@ -122,6 +128,9 @@
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Transformer.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransformerHistory.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">

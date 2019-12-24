@@ -12,5 +12,6 @@ namespace MPS.BusinessLogic.MeterController
         void Save(Meter m);
         void UpdateMeter(Meter m);
         void DeletedMeter(Meter m);
+        void RemoveMeter(MeterHistory meterhistoryEntity);
     }
 }

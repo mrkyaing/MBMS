@@ -103,6 +103,12 @@
     <Compile Include="Master Setup\TransformerDetailfrm.designer.cs">
       <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Meter Setup\MeterRemoveUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meter Setup\MeterRemoveUI.Designer.cs">
+      <DependentUpon>MeterRemoveUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeterBillCalculation\MeterBillCalculate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master Setup\TransformerDetailfrm.resx">
       <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meter Setup\MeterRemoveUI.resx">
+      <DependentUpon>MeterRemoveUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeterBillCalculation\MeterBillCalculate.resx">
       <DependentUpon>MeterBillCalculate.cs</DependentUpon>

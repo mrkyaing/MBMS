@@ -50,6 +50,9 @@ namespace MBMS.DAL
         public DbSet<Transformer> Transformers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserInRole> UserInRoles { get; set; }
+        public DbSet<MeterHistory> MeterHistories { get; set; }
+        public DbSet<MeterLossesMultiplierChangeHistory> MeterLossesMultiplierChangeHistories { get; set; }
+        public DbSet<TransformerHistory> TransformerHistories { get; set; }
     
         public virtual int MeterBill_DeleteByFromDateToDate(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {

@@ -85,16 +85,40 @@ namespace MPS.Meter_Setup
         public void FormRefresh()
         {
             dgvMeterList.AutoGenerateColumns = false;
-            dgvMeterList.DataSource = (from m in mbsEntities.Meters where m.Active == true orderby m.MeterNo descending select m).ToList();
-        }
+            meterList = (from m in mbsEntities.Meters where m.Active == true orderby m.MeterNo descending select m).ToList();
+            dgvMeterList.DataSource = meterList;
+            }
         public void LoadData()
         {
-            meterList = (from m in mbsEntities.Meters
-                         where m.Active == true &&
-                         m.MeterNo == txtMeterNo.Text || m.MeterBox.Pole.PoleNo == cboPole.Text ||
-                         m.MeterBox.Pole.Transformer.TransformerName==cboTransformer.Text
-                               || m.MeterBox.MeterBoxCode == cboMeterBoxCode.Text || m.MeterType.MeterTypeCode==cboMeterTypeCode.Text
-                                select m).ToList();
+            List<string> MeterIDList = new List<string>();
+            var data = mbsEntities.Customers.Where(x => x.Active == true).ToList();
+            foreach(var item in data) {
+                MeterIDList.Add(item.MeterID);
+                }
+            if (rdoregistermeter.Checked) {
+                meterList = (from m in mbsEntities.Meters
+                             where m.Active == true && MeterIDList.Any(meterid=>m.MeterID==meterid)
+                             select m).ToList();
+                }
+           else if (rdounregistermeter.Checked) {
+                meterList = (from m in mbsEntities.Meters
+                             where m.Active == true && !MeterIDList.Any(meterid => m.MeterID == meterid)
+                             select m).ToList();
+                }
+            else if (rdoremovedmeter.Checked) {
+                meterList = (from m in mbsEntities.Meters
+                                     join mh in mbsEntities.MeterHistories on m.MeterID equals mh.OldMeterID
+                             where mh.Active == true && m.Active==false
+                             select m).ToList();
+                }
+            else {
+                meterList = (from m in mbsEntities.Meters
+                             where m.Active == true &&
+                             m.MeterNo == txtMeterNo.Text || m.MeterBox.Pole.PoleNo == cboPole.Text ||
+                             m.MeterBox.Pole.Transformer.TransformerName == cboTransformer.Text
+                                   || m.MeterBox.MeterBoxCode == cboMeterBoxCode.Text || m.MeterType.MeterTypeCode == cboMeterTypeCode.Text
+                             select m).ToList();
+                }
             foundDataBind();
         }
         public void foundDataBind()
@@ -180,8 +204,19 @@ namespace MPS.Meter_Setup
                     meterForm.UserID = UserID;
                     meterForm.ShowDialog();
                     this.Close();
-
                 }
+                //remove funciton here
+                else if (e.ColumnIndex == 13) {
+                    DataGridViewRow row = dgvMeterList.Rows[e.RowIndex];
+                    Meter _meter = (Meter)row.DataBoundItem;
+                    if (rdounregistermeter.Checked||rdoremovedmeter.Checked) {
+                        MessageBox.Show("Unregister meter list or removed meter list can't remove","Access deined");
+                        return;
+                        }
+                    MeterRemoveUI meterremoveui = new MeterRemoveUI();
+                    meterremoveui.meter = _meter;
+                    meterremoveui.Show();
+                    }
             }
         }
 
@@ -199,5 +234,17 @@ namespace MPS.Meter_Setup
             cboMeterTypeCode.SelectedIndex = 0;
             FormRefresh();
         }
-    }
+
+        private void rdounregistermeter_CheckedChanged(object sender, EventArgs e) {
+            if (rdoregistermeter.Checked) {
+                rdounregistermeter.Checked = rdoremovedmeter.Checked = false;
+                }
+            else if (rdounregistermeter.Checked) {
+                rdoregistermeter.Checked = rdoremovedmeter.Checked = false;
+                }
+            else if (rdoremovedmeter.Checked) {
+                rdoregistermeter.Checked = rdounregistermeter.Checked = false;
+                }
+            }
+        }
 }
