@@ -56,7 +56,7 @@ namespace MPS.Meter_Setup {
                     Customerfrm customerForm = new Customerfrm();
                     customerForm.isEdit = true;
                     customerForm.Text = "Edit Customer";
-                    customerForm.MeterHistoryID = meterhistory.MeterHistoryID;
+                    customerForm.meterHistory = meterhistory;
                     customerForm.customerID = customer.CustomerID;
                     customerForm.UserID = meter.CreatedUserID;
                     customerForm.ShowDialog();

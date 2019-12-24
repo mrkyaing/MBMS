@@ -20,7 +20,7 @@ namespace MPS
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbmsEntities = new MBMSEntities();
         public String UserID { get; set; }
-        public string MeterHistoryID { get; set; }
+        public MeterHistory  meterHistory { get; set; }
         public String customerID { get; set; }        
         public Boolean isEdit { get; set; }
         Customer customer = new Customer();
@@ -271,10 +271,9 @@ namespace MPS
                     customer.UpdatedUserID = UserID;
                     customer.UpdatedDate = DateTime.Now;
                     customerController.UpdateCustomer(updateCustomer);
-                    //updating the meter history 
-                    MeterHistory entity = new MeterHistory();
-                    entity.MeterID = updateCustomer.MeterID;
-                    meterservice.UpdateMeterHistory(entity);
+                    //updating the meter history information
+                    meterHistory.MeterID = updateCustomer.MeterID;
+                    meterservice.UpdateMeterHistory(meterHistory);
                     MessageBox.Show("Successfully Updated Customer!", "Update");
                     Clear();
                     CustomerListfrm customerListForm = new CustomerListfrm();
