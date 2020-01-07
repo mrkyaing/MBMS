@@ -2,7 +2,7 @@
 using MPS.Billing;
 using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
-
+using MPS.Importing;
 using MPS.Master_Setup;
 using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
@@ -293,8 +293,9 @@ namespace MPS
 
         private void importExportCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ImportCustomerDatafrm importCustomerDataForm = new ImportCustomerDatafrm();
-            //importCustomerDataForm.Show();
+            CustomerImportingUI importCustomerDataForm = new CustomerImportingUI();
+            importCustomerDataForm.UserID = UserID;
+            importCustomerDataForm.Show();
         }
 
         private void meterBillCalculationProcessToolStripMenuItem_Click(object sender, EventArgs e) {

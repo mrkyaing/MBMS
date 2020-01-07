@@ -97,6 +97,12 @@
     <Compile Include="Customer Setup\AdvanceMoneyCustomerUI.Designer.cs">
       <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Importing\CustomerImportingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importing\CustomerImportingUI.Designer.cs">
+      <DependentUpon>CustomerImportingUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master Setup\TransformerDetailfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     <EmbeddedResource Include="Customer Setup\AdvanceMoneyCustomerUI.resx">
       <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Importing\CustomerImportingUI.resx">
+      <DependentUpon>CustomerImportingUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Master Setup\TransformerDetailfrm.resx">
       <DependentUpon>TransformerDetailfrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,7 +422,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Importing\" />
     <Folder Include="Integrate with HHU\" />
     <Folder Include="Reports\" />
     <Folder Include="System\" />
