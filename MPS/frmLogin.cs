@@ -44,7 +44,7 @@ namespace MPS
                 User user = new User();
                 user = (from u in mbsEntities.Users where u.UserName == txtUserName.Text  && u.Active == true select u).FirstOrDefault<User>();
                 if (user != null && Utility.DecryptString(user.Password, "scadmin@123") ==txtPassword.Text){
-                    //MessageBox.Show(this, "Login Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
                     string UserID = user.UserID;
                     string UserName = user.UserName;
                     this.Hide();     

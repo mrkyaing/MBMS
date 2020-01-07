@@ -17,8 +17,8 @@ namespace MBMS.DAL
         public Meter()
         {
             this.Customers = new HashSet<Customer>();
-            this.MeterUnitCollects = new HashSet<MeterUnitCollect>();
             this.MeterLossesMultiplierChangeHistories = new HashSet<MeterLossesMultiplierChangeHistory>();
+            this.MeterUnitCollects = new HashSet<MeterUnitCollect>();
         }
     
         public string MeterID { get; set; }
@@ -56,7 +56,7 @@ namespace MBMS.DAL
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual MeterBox MeterBox { get; set; }
         public virtual MeterType MeterType { get; set; }
-        public virtual ICollection<MeterUnitCollect> MeterUnitCollects { get; set; }
         public virtual ICollection<MeterLossesMultiplierChangeHistory> MeterLossesMultiplierChangeHistories { get; set; }
+        public virtual ICollection<MeterUnitCollect> MeterUnitCollects { get; set; }
     }
 }

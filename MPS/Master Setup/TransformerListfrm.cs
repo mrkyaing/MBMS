@@ -17,6 +17,7 @@ namespace MPS.Master_Setup
         MBMSEntities mbsEntities = new MBMSEntities();
         TransformerController transformerController = new TransformerController();
         private List<Transformer> transformerList = new List<Transformer>();
+        private List<TransformerHistory> transformerHistoryList = new List<TransformerHistory>();
         string TransformerID;
         public string UserID { get; set; }
         public TransformerListfrm()
@@ -28,6 +29,7 @@ namespace MPS.Master_Setup
         {
             bindQuarter();
             FormRefresh();
+            FormRefreshRemoveTransformer();
         }
         public void bindQuarter()
         {
@@ -46,6 +48,11 @@ namespace MPS.Master_Setup
             dgvTransformerList.AutoGenerateColumns = false;
             dgvTransformerList.DataSource = (from tf in mbsEntities.Transformers where tf.Active == true orderby tf.TransformerName descending select tf).ToList();
         }
+        public void FormRefreshRemoveTransformer()
+        {
+            dgvRemoveTransformerList.AutoGenerateColumns = false;
+            dgvRemoveTransformerList.DataSource = (from tf in mbsEntities.TransformerHistories where tf.Active == true orderby tf.OldTransformerName descending select tf).ToList();
+        }
         public void loadData()
         {
             transformerList = (from tf in mbsEntities.Transformers
@@ -55,26 +62,50 @@ namespace MPS.Master_Setup
             foundDataBind();
 
         }
+        public void RemoveLoadData()
+        {
+            transformerHistoryList = (from tf in mbsEntities.TransformerHistories
+                               where tf.Active == true &&
+                               tf.TransformerName == txtTransformerName.Text || tf.Model == txtTransformerModel.Text
+                               select tf).ToList();
+            foundDataBind();
+
+        }
         public void foundDataBind()
         {
+                dgvTransformerList.DataSource = "";
 
-            dgvTransformerList.DataSource = "";
+                if (transformerList.Count < 1)
+                {
+                    MessageBox.Show("No data Found", "Cannot find");
+                    dgvTransformerList.DataSource = "";
+                    return;
+                }
+                else
+                {
+                    dgvTransformerList.DataSource = transformerList;
+                }
+        }
+        public void removeDataBind()
+        {
+            dgvRemoveTransformerList.DataSource = "";
 
-            if (transformerList.Count < 1)
+            if (transformerHistoryList.Count < 1)
             {
                 MessageBox.Show("No data Found", "Cannot find");
-                dgvTransformerList.DataSource = "";
+                dgvRemoveTransformerList.DataSource = "";
                 return;
             }
             else
             {
-                dgvTransformerList.DataSource = transformerList;
+                dgvRemoveTransformerList.DataSource = transformerHistoryList;
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             loadData();
+            RemoveLoadData();
         }
 
         private void dgvTransformerList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -92,6 +123,7 @@ namespace MPS.Master_Setup
                 row.Cells[7].Value = transformer.Standard;
             }
         }
+        
 
         private void dgvTransformerList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -158,7 +190,8 @@ namespace MPS.Master_Setup
             txtTransformerModel.Text = string.Empty;
             txtTransformerName.Text = string.Empty;
             cboQuarterName.SelectedIndex = 0;
-            FormRefresh();            
+            FormRefresh();
+            FormRefreshRemoveTransformer();
         }
 
         private void btnAddNewTrans_Click(object sender, EventArgs e)
@@ -167,6 +200,49 @@ namespace MPS.Master_Setup
             transForm.UserID = UserID;
             transForm.Show();
             this.Close();
+        }
+
+        private void dgvRemoveTransformerList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvRemoveTransformerList.Rows)
+            {
+                TransformerHistory transformerhistory = (TransformerHistory)row.DataBoundItem;
+                row.Cells[0].Value = transformerhistory.TransformerID;
+                row.Cells[1].Value = transformerhistory.OldTransformerName;
+                row.Cells[2].Value = transformerhistory.TransformerName;
+                row.Cells[3].Value = transformerhistory.Model;
+                row.Cells[4].Value = transformerhistory.Maker;
+                row.Cells[5].Value = transformerhistory.CountryOfOrgin;
+                row.Cells[6].Value = transformerhistory.Status;
+                row.Cells[7].Value = transformerhistory.QuarterID;
+                row.Cells[8].Value = transformerhistory.Standard;
+            }
+        }
+
+        private void dgvRemoveTransformerList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == 9)
+                {
+                    //DeleteForTransformer
+                    DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (result.Equals(DialogResult.OK))
+                    {
+                        DataGridViewRow row = dgvRemoveTransformerList.Rows[e.RowIndex];                      
+                        TransformerID = Convert.ToString(row.Cells[0].Value);
+                        dgvRemoveTransformerList.DataSource = "";
+                        TransformerHistory removeTransformer = (from tf in mbsEntities.TransformerHistories where tf.TransformerID == TransformerID select tf).FirstOrDefault();
+                        removeTransformer.Active = false;
+                        removeTransformer.DeletedUserID = UserID;
+                        removeTransformer.DeletedDate = DateTime.Now;
+                        mbsEntities.SaveChanges();
+                        dgvRemoveTransformerList.DataSource = (from tf in mbsEntities.TransformerHistories where tf.Active == true orderby tf.TransformerName descending select tf).ToList();
+                        MessageBox.Show(this, "Successfully Deleted!", "Delete Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FormRefresh();
+                    }
+                }
+            }
         }
     }
 }

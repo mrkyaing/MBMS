@@ -37,6 +37,8 @@ namespace MBMS.DAL
         public DbSet<Meter> Meters { get; set; }
         public DbSet<MeterBill> MeterBills { get; set; }
         public DbSet<MeterBox> MeterBoxes { get; set; }
+        public DbSet<MeterHistory> MeterHistories { get; set; }
+        public DbSet<MeterLossesMultiplierChangeHistory> MeterLossesMultiplierChangeHistories { get; set; }
         public DbSet<MeterType> MeterTypes { get; set; }
         public DbSet<MeterUnitCollect> MeterUnitCollects { get; set; }
         public DbSet<Pole> Poles { get; set; }
@@ -48,11 +50,18 @@ namespace MBMS.DAL
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Township> Townships { get; set; }
         public DbSet<Transformer> Transformers { get; set; }
+        public DbSet<TransformerHistory> TransformerHistories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserInRole> UserInRoles { get; set; }
-        public DbSet<MeterHistory> MeterHistories { get; set; }
-        public DbSet<MeterLossesMultiplierChangeHistory> MeterLossesMultiplierChangeHistories { get; set; }
-        public DbSet<TransformerHistory> TransformerHistories { get; set; }
+    
+        public virtual int BillCode7LayerDetail_DeleteByBillCode7LayerID(string billCode7LayerID)
+        {
+            var billCode7LayerIDParameter = billCode7LayerID != null ?
+                new ObjectParameter("billCode7LayerID", billCode7LayerID) :
+                new ObjectParameter("billCode7LayerID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("BillCode7LayerDetail_DeleteByBillCode7LayerID", billCode7LayerIDParameter);
+        }
     
         public virtual int MeterBill_DeleteByFromDateToDate(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {
@@ -82,15 +91,6 @@ namespace MBMS.DAL
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MeterUnitCollect_DeleteByCustomerIDFromDateToDate", customerIDParameter, fromDateParameter, toDateParameter);
-        }
-    
-        public virtual int BillCode7LayerDetail_DeleteByBillCode7LayerID(string billCode7LayerID)
-        {
-            var billCode7LayerIDParameter = billCode7LayerID != null ?
-                new ObjectParameter("billCode7LayerID", billCode7LayerID) :
-                new ObjectParameter("billCode7LayerID", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("BillCode7LayerDetail_DeleteByBillCode7LayerID", billCode7LayerIDParameter);
         }
     }
 }

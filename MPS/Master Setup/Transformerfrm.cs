@@ -66,7 +66,10 @@ namespace MPS
                     TransformerName = (from tn in mbsEntities.Transformers where tn.TransformerName.Trim() == txtTransformerName.Text.Trim() && tn.TransformerID != TransformerID && tn.Active==true select tn).ToList().Count;
                     if (TransformerName == 0)
                     {
+                        string oldTransformerName;                        
                         Transformer updateTransformer = (from tf in mbsEntities.Transformers where tf.TransformerID == TransformerID select tf).FirstOrDefault();
+                        oldTransformerName = updateTransformer.TransformerName;              
+                       
                         updateTransformer.TransformerName = txtTransformerName.Text;
                         updateTransformer.Model = txtTransformerModel.Text;
                         updateTransformer.CountryOfOrgin = txtCountryOrgin.Text;
@@ -90,10 +93,42 @@ namespace MPS
                         {
                             updateTransformer.Status = "Disable";
                         }
+                        
+
                         updateTransformer.QuarterID = cboQuarterName.SelectedValue.ToString();
                         updateTransformer.UpdatedUserID = UserID;
                         updateTransformer.UpdateDate = DateTime.Now;
                         transformerController.UpdateTransformer(updateTransformer);
+                        if (oldTransformerName != txtTransformerName.Text)
+                        {                            
+                            TransformerHistory transformerHistory = new TransformerHistory();
+                            transformerHistory.TransformerID = Guid.NewGuid().ToString();
+                            transformerHistory.OldTransformerName = oldTransformerName;
+                            transformerHistory.TransformerName = updateTransformer.TransformerName;
+                            transformerHistory.Model = updateTransformer.Model;
+                            transformerHistory.CountryOfOrgin = updateTransformer.CountryOfOrgin;
+                            transformerHistory.FullLoadLoss = updateTransformer.FullLoadLoss;
+                            transformerHistory.ImpendanceVoltage = updateTransformer.ImpendanceVoltage;
+                            transformerHistory.EfficiencyLoad = updateTransformer.EfficiencyLoad;
+                            transformerHistory.TappingRange = updateTransformer.TappingRange;
+                            transformerHistory.TypeofCooling = updateTransformer.TypeofCooling;
+                            transformerHistory.VectorGroup = updateTransformer.VectorGroup;
+                            transformerHistory.VoltageRatio = updateTransformer.VoltageRatio;
+                            transformerHistory.Standard = updateTransformer.Standard;
+                            transformerHistory.NoloadLoss = updateTransformer.NoloadLoss;
+                            transformerHistory.RatedOutputPower = updateTransformer.RatedOutputPower;
+                            transformerHistory.Maker = updateTransformer.Maker;
+                            transformerHistory.GPSX = 0;
+                            transformerHistory.GPSY = 0;
+                            transformerHistory.Status = "Disable";
+                            transformerHistory.CreatedUserID = updateTransformer.UpdatedUserID;
+                            transformerHistory.CreatedDate = DateTime.Now;
+                            transformerHistory.QuarterID = updateTransformer.QuarterID;
+                            transformerHistory.Active = true;                         
+                            mbsEntities.TransformerHistories.Add(transformerHistory);
+                            mbsEntities.SaveChanges();
+                        }
+
                         MessageBox.Show("Successfully updated Transformer!", "Update");
                         Clear();
                         TransformerListfrm transformerListfrm = new TransformerListfrm();

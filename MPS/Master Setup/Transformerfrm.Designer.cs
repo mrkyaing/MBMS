@@ -82,10 +82,10 @@
             this.txtNoLoadLoss = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtFullLoadLoss = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.txtTappingRange = new System.Windows.Forms.TextBox();
+            this.txtFullLoadLoss = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -119,9 +119,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 19);
+            this.label1.Size = new System.Drawing.Size(115, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Transformer Name";
+            this.label1.Text = "Transformer Code";
             // 
             // txtTransformerName
             // 
@@ -692,15 +692,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Full Load Loss";
             // 
-            // txtFullLoadLoss
-            // 
-            this.txtFullLoadLoss.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullLoadLoss.Location = new System.Drawing.Point(265, 648);
-            this.txtFullLoadLoss.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFullLoadLoss.Name = "txtFullLoadLoss";
-            this.txtFullLoadLoss.Size = new System.Drawing.Size(233, 28);
-            this.txtFullLoadLoss.TabIndex = 16;
-            // 
             // panel17
             // 
             this.panel17.Controls.Add(this.label21);
@@ -728,6 +719,15 @@
             this.txtTappingRange.Name = "txtTappingRange";
             this.txtTappingRange.Size = new System.Drawing.Size(233, 28);
             this.txtTappingRange.TabIndex = 17;
+            // 
+            // txtFullLoadLoss
+            // 
+            this.txtFullLoadLoss.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullLoadLoss.Location = new System.Drawing.Point(265, 648);
+            this.txtFullLoadLoss.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFullLoadLoss.Name = "txtFullLoadLoss";
+            this.txtFullLoadLoss.Size = new System.Drawing.Size(233, 28);
+            this.txtFullLoadLoss.TabIndex = 16;
             // 
             // label22
             // 

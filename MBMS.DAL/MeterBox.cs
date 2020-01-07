@@ -22,7 +22,7 @@ namespace MBMS.DAL
         public string MeterBoxID { get; set; }
         public string MeterBoxCode { get; set; }
         public string PoleID { get; set; }
-        public int Box { get; set; }
+        public string Box { get; set; }
         public long AvailableInMBQty { get; set; }
         public bool Active { get; set; }
         public string CreatedUserID { get; set; }

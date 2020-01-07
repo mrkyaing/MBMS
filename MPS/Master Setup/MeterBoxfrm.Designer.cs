@@ -32,14 +32,11 @@
             this.txtMeterBoxCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMeterBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMeterBoxQty = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +46,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboPoleNo = new System.Windows.Forms.ComboBox();
             this.dgvMeterboxList = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQuarterName = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,12 +55,24 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSearchMeterBoxCode = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboSearchQuarterName = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cboSearchPoleNo = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterboxList)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -102,25 +113,6 @@
             this.txtMeterBox.Size = new System.Drawing.Size(233, 28);
             this.txtMeterBox.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Available in MeterBox Qty";
-            // 
-            // txtMeterBoxQty
-            // 
-            this.txtMeterBoxQty.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMeterBoxQty.Location = new System.Drawing.Point(261, 154);
-            this.txtMeterBoxQty.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMeterBoxQty.Name = "txtMeterBoxQty";
-            this.txtMeterBoxQty.Size = new System.Drawing.Size(233, 28);
-            this.txtMeterBoxQty.TabIndex = 4;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -136,7 +128,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(306, 289);
+            this.btnSave.Location = new System.Drawing.Point(272, 285);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 32);
@@ -148,7 +140,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(455, 289);
+            this.btnCancel.Location = new System.Drawing.Point(421, 285);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 32);
@@ -177,16 +169,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "*";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(174, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "*";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -201,7 +183,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(317, 258);
+            this.label9.Location = new System.Drawing.Point(283, 254);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 16);
             this.label9.TabIndex = 4;
@@ -218,9 +200,9 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxCode, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cboPoleNo, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxQty, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterBox, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(66, 43);
+            this.tableLayoutPanel1.Controls.Add(this.txtQuarterName, 1, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 39);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -233,7 +215,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Location = new System.Drawing.Point(3, 154);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -279,6 +260,7 @@
             this.cboPoleNo.Name = "cboPoleNo";
             this.cboPoleNo.Size = new System.Drawing.Size(233, 27);
             this.cboPoleNo.TabIndex = 2;
+            this.cboPoleNo.SelectedIndexChanged += new System.EventHandler(this.cboPoleNo_SelectedIndexChanged);
             // 
             // dgvMeterboxList
             // 
@@ -292,13 +274,33 @@
             this.Column4,
             this.Column6,
             this.Column7});
-            this.dgvMeterboxList.Location = new System.Drawing.Point(66, 363);
+            this.dgvMeterboxList.Location = new System.Drawing.Point(31, 157);
             this.dgvMeterboxList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMeterboxList.Name = "dgvMeterboxList";
-            this.dgvMeterboxList.Size = new System.Drawing.Size(644, 327);
+            this.dgvMeterboxList.Size = new System.Drawing.Size(644, 328);
             this.dgvMeterboxList.TabIndex = 8;
             this.dgvMeterboxList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeterboxList_CellClick);
             this.dgvMeterboxList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMeterboxList_DataBindingComplete);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Quarter Name ";
+            // 
+            // txtQuarterName
+            // 
+            this.txtQuarterName.Enabled = false;
+            this.txtQuarterName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuarterName.Location = new System.Drawing.Point(261, 154);
+            this.txtQuarterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtQuarterName.Name = "txtQuarterName";
+            this.txtQuarterName.Size = new System.Drawing.Size(233, 28);
+            this.txtQuarterName.TabIndex = 3;
             // 
             // Column1
             // 
@@ -310,6 +312,7 @@
             // 
             this.Column2.HeaderText = "Meter Box Code";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
             // 
             // Column5
             // 
@@ -323,8 +326,9 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Available in Meter Box Qty";
+            this.Column4.HeaderText = "Quarter Name";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 110;
             // 
             // Column6
             // 
@@ -340,16 +344,118 @@
             this.Column7.Text = "Delete";
             this.Column7.UseColumnTextForLinkValue = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.btnCancel);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(585, 363);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Register";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnRefresh);
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.txtSearchMeterBoxCode);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.dgvMeterboxList);
+            this.groupBox2.Controls.Add(this.cboSearchPoleNo);
+            this.groupBox2.Controls.Add(this.cboSearchQuarterName);
+            this.groupBox2.Location = new System.Drawing.Point(627, 37);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(712, 498);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search List";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(28, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 17);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Meter Box Code";
+            // 
+            // txtSearchMeterBoxCode
+            // 
+            this.txtSearchMeterBoxCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchMeterBoxCode.Location = new System.Drawing.Point(165, 38);
+            this.txtSearchMeterBoxCode.Name = "txtSearchMeterBoxCode";
+            this.txtSearchMeterBoxCode.Size = new System.Drawing.Size(187, 26);
+            this.txtSearchMeterBoxCode.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(420, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 17);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Pole No";
+            // 
+            // cboSearchQuarterName
+            // 
+            this.cboSearchQuarterName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSearchQuarterName.FormattingEnabled = true;
+            this.cboSearchQuarterName.Location = new System.Drawing.Point(165, 95);
+            this.cboSearchQuarterName.Name = "cboSearchQuarterName";
+            this.cboSearchQuarterName.Size = new System.Drawing.Size(187, 27);
+            this.cboSearchQuarterName.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(28, 99);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 17);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Quarter Name";
+            // 
+            // cboSearchPoleNo
+            // 
+            this.cboSearchPoleNo.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSearchPoleNo.FormattingEnabled = true;
+            this.cboSearchPoleNo.Location = new System.Drawing.Point(478, 37);
+            this.cboSearchPoleNo.Name = "cboSearchPoleNo";
+            this.cboSearchPoleNo.Size = new System.Drawing.Size(187, 27);
+            this.cboSearchPoleNo.TabIndex = 2;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(478, 95);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(86, 31);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(579, 93);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(86, 31);
+            this.btnRefresh.TabIndex = 11;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
             // MeterBoxfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 727);
-            this.Controls.Add(this.dgvMeterboxList);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(1375, 579);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MeterBoxfrm";
@@ -367,8 +473,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterboxList)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -378,14 +487,11 @@
         private System.Windows.Forms.TextBox txtMeterBoxCode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMeterBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMeterBoxQty;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -395,6 +501,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvMeterboxList;
         private System.Windows.Forms.ComboBox cboPoleNo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtQuarterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
@@ -402,5 +510,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearchMeterBoxCode;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboSearchPoleNo;
+        private System.Windows.Forms.ComboBox cboSearchQuarterName;
     }
 }

@@ -21,6 +21,7 @@ namespace MPS
         public Boolean isEdit { get; set; }
         MeterBox meterBox = new MeterBox();
         MeterBoxController meterBoxController = new MeterBoxController();
+        private List<MeterBox> meterBoxList = new List<MeterBox>();
         public MeterBoxfrm()
         {
             InitializeComponent();
@@ -30,6 +31,8 @@ namespace MPS
         {
             bindPole();
             FormRefresh();
+            bindSearchPole();bindSearchQuarterName();
+            txtMeterBox.MaxLength = 1;
         }
         public void bindPole()
         {
@@ -42,6 +45,30 @@ namespace MPS
             cboPoleNo.DataSource = poleList;
             cboPoleNo.DisplayMember = "PoleNo";
             cboPoleNo.ValueMember = "PoleID";
+        }
+        public void bindSearchPole()
+        {
+            List<Pole> poleList = new List<Pole>();
+            Pole pole = new Pole();
+            pole.PoleID = Convert.ToString(0);
+            pole.PoleNo = "Select";
+            poleList.Add(pole);
+            poleList.AddRange(mbmsEntities.Poles.Where(x => x.Active == true).OrderBy(x => x.PoleNo).ToList());
+            cboSearchPoleNo.DataSource = poleList;
+            cboSearchPoleNo.DisplayMember = "PoleNo";
+            cboSearchPoleNo.ValueMember = "PoleID";
+        }
+        public void bindSearchQuarterName()
+        {
+            List<Quarter> quarterList = new List<Quarter>();
+            Quarter quarter = new Quarter();
+            quarter.QuarterID = Convert.ToString(0);
+            quarter.QuarterNameInEng = "Select";
+            quarterList.Add(quarter);
+            quarterList.AddRange(mbmsEntities.Quarters.Where(x => x.Active == true).OrderBy(x => x.QuarterNameInEng).ToList());
+            cboSearchQuarterName.DataSource = quarterList;
+            cboSearchQuarterName.DisplayMember = "QuarterNameInEng";
+            cboSearchQuarterName.ValueMember = "QuarterID";
         }
         public bool checkValidation()
         {
@@ -72,15 +99,7 @@ namespace MPS
                 txtMeterBox.Focus();
                 hasError = false;
             }
-            else if (txtMeterBoxQty.Text.Trim() == string.Empty)
-            {
-                tooltip.SetToolTip(txtMeterBoxQty, "Error");
-                tooltip.Show("Please fill up Available MeterBox Qty!", txtMeterBoxQty);
-                txtMeterBoxQty.Focus();
-                hasError = false;
-            }
-
-
+           
             return hasError;
         }
 
@@ -106,8 +125,7 @@ namespace MPS
                     }
                     
                     updateMeterBox.MeterBoxCode = txtMeterBoxCode.Text;
-                    updateMeterBox.Box = Convert.ToInt32(txtMeterBox.Text);
-                    updateMeterBox.AvailableInMBQty = Convert.ToInt32(txtMeterBoxQty.Text);
+                    updateMeterBox.Box = txtMeterBox.Text;
                     updateMeterBox.PoleID = cboPoleNo.SelectedValue.ToString();
                     updateMeterBox.UpdatedUserID = UserID;
                     updateMeterBox.UpdatedDate = DateTime.Now;
@@ -131,8 +149,7 @@ namespace MPS
                     {
                         meterBox.MeterBoxID = Guid.NewGuid().ToString();
                         meterBox.MeterBoxCode = txtMeterBoxCode.Text;
-                        meterBox.Box = Convert.ToInt32(txtMeterBox.Text);
-                        meterBox.AvailableInMBQty = Convert.ToInt32(txtMeterBoxQty.Text);
+                        meterBox.Box = txtMeterBox.Text;
                         meterBox.PoleID = cboPoleNo.SelectedValue.ToString();
                         meterBox.Active = true;
                         meterBox.CreatedUserID = UserID;
@@ -154,7 +171,7 @@ namespace MPS
         {
             txtMeterBox.Text = string.Empty;
             txtMeterBoxCode.Text = string.Empty;
-            txtMeterBoxQty.Text = string.Empty;
+            txtQuarterName.Text = string.Empty;
             cboPoleNo.SelectedIndex = 0;
         }
         public void FormRefresh()
@@ -162,7 +179,31 @@ namespace MPS
             dgvMeterboxList.AutoGenerateColumns = false;
             dgvMeterboxList.DataSource = (from mb in mbmsEntities.MeterBoxes where mb.Active == true orderby mb.MeterBoxCode descending select mb).ToList();
         }
+        public void loadData()
+        {
+            meterBoxList = (from mb in mbmsEntities.MeterBoxes
+                        where mb.Active == true &&
+                        mb.Pole.PoleNo == cboSearchPoleNo.Text || mb.MeterBoxCode == txtSearchMeterBoxCode.Text || mb.Pole.Transformer.Quarter.QuarterNameInEng == cboSearchQuarterName.Text
+                        select mb).ToList();
+            foundDataBind();
 
+        }
+        public void foundDataBind()
+        {
+
+            dgvMeterboxList.DataSource = "";
+
+            if (meterBoxList.Count < 1)
+            {
+                MessageBox.Show("No data Found", "Cannot find");
+                dgvMeterboxList.DataSource = "";
+                return;
+            }
+            else
+            {
+                dgvMeterboxList.DataSource = meterBoxList;
+            }
+        }
         private void dgvMeterboxList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in dgvMeterboxList.Rows)
@@ -172,7 +213,7 @@ namespace MPS
                 row.Cells[1].Value = meterBox.MeterBoxCode;
                 row.Cells[2].Value = meterBox.Pole.PoleNo;
                 row.Cells[3].Value = meterBox.Box;
-                row.Cells[4].Value = meterBox.AvailableInMBQty;
+                row.Cells[4].Value = meterBox.Pole.Transformer.Quarter.QuarterNameInEng;
             }
         }
 
@@ -220,7 +261,7 @@ namespace MPS
                     txtMeterBoxCode.Text = Convert.ToString(row.Cells[1].Value);
                     cboPoleNo.Text = Convert.ToString(row.Cells[2].Value);
                     txtMeterBox.Text = Convert.ToString(row.Cells[3].Value);
-                    txtMeterBoxQty.Text = Convert.ToString(row.Cells[4].Value);
+                    txtQuarterName.Text = Convert.ToString(row.Cells[4].Value);
                     isEdit = true;
 
                 }
@@ -230,6 +271,21 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void cboPoleNo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mbmsEntities = new MBMSEntities();
+            if (cboPoleNo.SelectedIndex > 0)
+            {
+                string poleID = Convert.ToString(cboPoleNo.SelectedValue);
+                var PoleData = (from t in mbmsEntities.Poles where t.PoleID == poleID select t).FirstOrDefault();
+                txtQuarterName.Text = PoleData.Transformer.Quarter.QuarterNameInEng;
+            }
+            else
+            {
+                txtQuarterName.Text = string.Empty;
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ namespace MPS
         public Boolean isEdit { get; set; }
         Pole pole = new Pole();
         PoleController poleController = new PoleController();
+        private List<Pole> poleList = new List<Pole>();
 
         public Polefrm()
         {
@@ -29,6 +30,8 @@ namespace MPS
 
         private void Polefrm_Load(object sender, EventArgs e)
         {
+            bindSearchQuarterName();
+            bindSearchTransformer();
             bindTransformer();
             FormRefresh();
         }
@@ -43,6 +46,30 @@ namespace MPS
             cboTransformerName.DataSource = transList;
             cboTransformerName.DisplayMember = "TransformerName";
             cboTransformerName.ValueMember = "TransformerID";
+        }
+        public void bindSearchTransformer()
+        {
+            List<Transformer> transList = new List<Transformer>();
+            Transformer trans = new Transformer();
+            trans.TransformerID = Convert.ToString(0);
+            trans.TransformerName = "Select";
+            transList.Add(trans);
+            transList.AddRange(mbmsEntities.Transformers.Where(x => x.Active == true).OrderBy(x => x.TransformerName).ToList());
+            cboSearchTransformerName.DataSource = transList;
+            cboSearchTransformerName.DisplayMember = "TransformerName";
+            cboSearchTransformerName.ValueMember = "TransformerID";
+        }
+        public void bindSearchQuarterName()
+        {
+            List<Quarter> quarterList = new List<Quarter>();
+            Quarter quarter = new Quarter();
+            quarter.QuarterID = Convert.ToString(0);
+            quarter.QuarterNameInEng = "Select";
+            quarterList.Add(quarter);
+            quarterList.AddRange(mbmsEntities.Quarters.Where(x => x.Active == true).OrderBy(x => x.QuarterNameInEng).ToList());
+            cboSearchQuarterName.DataSource = quarterList;
+            cboSearchQuarterName.DisplayMember = "QuarterNameInEng";
+            cboSearchQuarterName.ValueMember = "QuarterID";
         }
         public bool checkValidation()
         {
@@ -143,6 +170,31 @@ namespace MPS
             txtGPSY.Text = string.Empty;
             cboTransformerName.SelectedIndex = 0;
         }
+        public void loadData()
+        {
+            poleList = (from p in mbmsEntities.Poles
+                               where p.Active == true &&
+                               p.PoleNo == txtSearchPoleName.Text || p.Transformer.TransformerName == cboSearchTransformerName.Text || p.Transformer.Quarter.QuarterNameInEng == cboSearchQuarterName.Text
+                               select p).ToList();
+            foundDataBind();
+
+        }
+        public void foundDataBind()
+        {
+
+            dgvPoleList.DataSource = "";
+
+            if (poleList.Count < 1)
+            {
+                MessageBox.Show("No data Found", "Cannot find");
+                dgvPoleList.DataSource = "";
+                return;
+            }
+            else
+            {
+                dgvPoleList.DataSource = poleList;
+            }
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -164,14 +216,16 @@ namespace MPS
                 row.Cells[2].Value = pole.GPSX;
                 row.Cells[3].Value = pole.GPSY;
                 row.Cells[4].Value = pole.Transformer.TransformerName;
-                     }
+                row.Cells[5].Value = pole.Transformer.Quarter.QuarterNameInEng;
+
+            }
         }
 
         private void dgvPoleList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
                     //DeleteForPole
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -202,7 +256,7 @@ namespace MPS
                     }
 
                 }
-                else if (e.ColumnIndex == 5)
+                else if (e.ColumnIndex == 6)
                 {
                     //EditPole
                     DataGridViewRow row = dgvPoleList.Rows[e.RowIndex];
@@ -211,6 +265,7 @@ namespace MPS
                     txtGPSX.Text = Convert.ToString(row.Cells[2].Value);
                     txtGPSY.Text = Convert.ToString(row.Cells[3].Value);
                     cboTransformerName.Text = Convert.ToString(row.Cells[4].Value);
+                    txtQuarterName.Text = Convert.ToString(row.Cells[5].Value);
                     isEdit = true;
 
                 }
@@ -246,6 +301,65 @@ namespace MPS
             {
                 if ((sender as TextBox).Text.IndexOf(e.KeyChar) != -1)
                     e.Handled = true;
+            }
+        }
+
+        private void txtPoleNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtGPSX_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtGPSY_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboTransformerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearchPoleName.Text = string.Empty;
+            cboSearchQuarterName.SelectedIndex = 0;
+            cboSearchTransformerName.SelectedIndex = 0;
+            FormRefresh();
+        }
+
+        private void cboTransformerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mbmsEntities = new MBMSEntities();
+            if (cboTransformerName.SelectedIndex > 0)
+            {
+                string transformerID =Convert.ToString( cboTransformerName.SelectedValue);
+                var transformerData = (from t in mbmsEntities.Transformers where t.TransformerID == transformerID select t).FirstOrDefault();
+                txtQuarterName.Text = transformerData.Quarter.QuarterNameInEng;
+            }else
+            {
+                txtQuarterName.Text = string.Empty;
             }
         }
     }
