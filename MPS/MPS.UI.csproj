@@ -139,6 +139,12 @@
     <Compile Include="MeterBillPayment\MeterBillPaymentList.Designer.cs">
       <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PunishmentCustomer\PunishmentCustomerListUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PunishmentCustomer\PunishmentCustomerListUI.Designer.cs">
+      <DependentUpon>PunishmentCustomerListUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setting Setup\CompanyProfilefrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     <EmbeddedResource Include="MeterBillPayment\MeterBillPaymentList.resx">
       <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PunishmentCustomer\PunishmentCustomerListUI.resx">
+      <DependentUpon>PunishmentCustomerListUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Setting Setup\CompanyProfilefrm.resx">
       <DependentUpon>CompanyProfilefrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,7 +415,6 @@
   <ItemGroup>
     <Folder Include="Importing\" />
     <Folder Include="Integrate with HHU\" />
-    <Folder Include="PunishmentCustomer\" />
     <Folder Include="Reports\" />
     <Folder Include="System\" />
   </ItemGroup>

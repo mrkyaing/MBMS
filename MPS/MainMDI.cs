@@ -8,6 +8,8 @@ using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
 using MPS.MeterBillPayment;
 using MPS.MeterUnitCollect;
+
+using MPS.PunishmentCustomerList;
 using MPS.Setting_Setup;
 using MPS.User_Management;
 using System;
@@ -319,6 +321,10 @@ namespace MPS
                 this.Hide();
                 new frmLogin().Show();
                 }
+            }
+
+        private void punishmentCustomerListToolStripMenuItem_Click(object sender, EventArgs e) {
+            new PunishmentCustomerListUI().Show();
             }
         }
 }

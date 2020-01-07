@@ -142,21 +142,21 @@
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addUserToolStripMenuItem.Text = "Add User ";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // userListToolStripMenuItem
             // 
             this.userListToolStripMenuItem.Name = "userListToolStripMenuItem";
-            this.userListToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.userListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.userListToolStripMenuItem.Text = "User List";
             this.userListToolStripMenuItem.Click += new System.EventHandler(this.userListToolStripMenuItem_Click);
             // 
             // roleManagementToolStripMenuItem
             // 
             this.roleManagementToolStripMenuItem.Name = "roleManagementToolStripMenuItem";
-            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.roleManagementToolStripMenuItem.Text = "Add Role";
             this.roleManagementToolStripMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem_Click);
             // 
@@ -240,6 +240,7 @@
             this.punishmentCustomerListToolStripMenuItem.Name = "punishmentCustomerListToolStripMenuItem";
             this.punishmentCustomerListToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
             this.punishmentCustomerListToolStripMenuItem.Text = "Punishment Customer List";
+            this.punishmentCustomerListToolStripMenuItem.Click += new System.EventHandler(this.punishmentCustomerListToolStripMenuItem_Click);
             // 
             // advanceMoneyCustomerListToolStripMenuItem
             // 
