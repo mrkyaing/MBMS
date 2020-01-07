@@ -21,8 +21,7 @@ namespace MBMS.DAL
     
         public string PunishmentRuleID { get; set; }
         public string PunishmentCode { get; set; }
-        public int FromDays { get; set; }
-        public int ToDays { get; set; }
+        public int ExceedMonth { get; set; }
         public decimal Amount { get; set; }
         public bool Active { get; set; }
         public string CreatedUserID { get; set; }

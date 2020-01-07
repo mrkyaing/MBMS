@@ -312,5 +312,13 @@ namespace MPS
         private void advanceMoneyCustomerListToolStripMenuItem_Click(object sender, EventArgs e) {
             new AdvanceMoneyCustomerUI().Show();
             }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e) {
+            DialogResult isExit = MessageBox.Show("Are you sure to logout?", "Logout",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (isExit == DialogResult.Yes) {
+                this.Hide();
+                new frmLogin().Show();
+                }
+            }
         }
 }

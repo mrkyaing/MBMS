@@ -45,16 +45,11 @@ namespace MPS
                 tooltip.Show("Please fill up Punishment Rule Code!", txtPunishmentCode);
                 hasError = false;
             }
-            else if (txtFromDay.Text == string.Empty)
+            
+            else if (txtExceedMonth.Text == string.Empty)
             {
-                tooltip.SetToolTip(txtFromDay, "Error");
-                tooltip.Show("Please fill up From Day!", txtFromDay);
-                hasError = false;
-            }
-            else if (txtToDay.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtToDay, "Error");
-                tooltip.Show("Please fill up To Day!", txtToDay);
+                tooltip.SetToolTip(txtExceedMonth, "Error");
+                tooltip.Show("Please fill up To ExceedMonth!", txtExceedMonth);
                 hasError = false;
             }
             else if (txtAmount.Text == string.Empty)
@@ -87,9 +82,8 @@ namespace MPS
                         return;
                     }
                     
-                    updatePunishmentRule.PunishmentCode = txtPunishmentCode.Text;
-                    updatePunishmentRule.FromDays =Convert.ToInt32( txtFromDay.Text);
-                    updatePunishmentRule.ToDays = Convert.ToInt32(txtToDay.Text);
+                    updatePunishmentRule.PunishmentCode = txtPunishmentCode.Text;          
+                    updatePunishmentRule.ExceedMonth = Convert.ToInt32(txtExceedMonth.Text);
                     updatePunishmentRule.Amount = Convert.ToDecimal(txtAmount.Text);
                     updatePunishmentRule.UpdatedUserID = UserID;
                     updatePunishmentRule.UpdatedDate = DateTime.Now;
@@ -110,9 +104,8 @@ namespace MPS
                         return;
                     }
                     punishmentRule.PunishmentRuleID = Guid.NewGuid().ToString();
-                    punishmentRule.PunishmentCode = txtPunishmentCode.Text;
-                    punishmentRule.FromDays = Convert.ToInt32(txtFromDay.Text);
-                    punishmentRule.ToDays = Convert.ToInt32(txtToDay.Text);
+                    punishmentRule.PunishmentCode = txtPunishmentCode.Text;             
+                    punishmentRule.ExceedMonth = Convert.ToInt32(txtExceedMonth.Text);
                     punishmentRule.Amount = Convert.ToDecimal(txtAmount.Text);
                     punishmentRule.Active = true;
                     punishmentRule.CreatedUserID = UserID;
@@ -127,12 +120,14 @@ namespace MPS
         public void Clear()
         {
             txtPunishmentCode.Text = string.Empty;
-            txtToDay.Text = string.Empty;
-            txtFromDay.Text = string.Empty; 
+            txtExceedMonth.Text = string.Empty;
+            txtExceedMonth.Text = string.Empty; 
             txtAmount.Text = string.Empty;
+            FormRefresh();
         }
         public void FormRefresh()
         {
+            this.btnSave.Text = "Save";
             dgvPunishmentRuleList.AutoGenerateColumns = false;
             dgvPunishmentRuleList.DataSource = (from p in mbmsEntities.PunishmentRules where p.Active == true orderby p.PunishmentCode descending select p).ToList();
         }
@@ -149,9 +144,8 @@ namespace MPS
                 PunishmentRule punishmentRule = (PunishmentRule)row.DataBoundItem;
                 row.Cells[0].Value = punishmentRule.PunishmentRuleID;
                 row.Cells[1].Value = punishmentRule.PunishmentCode;
-                row.Cells[2].Value = punishmentRule.FromDays;
-                row.Cells[3].Value = punishmentRule.ToDays;
-                row.Cells[4].Value = punishmentRule.Amount;
+                row.Cells[2].Value = punishmentRule.ExceedMonth;
+                row.Cells[3].Value = punishmentRule.Amount;
 
             }
         }
@@ -160,7 +154,7 @@ namespace MPS
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 5)
                 {
                     //DeleteForPunishmentRule
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -181,17 +175,16 @@ namespace MPS
                     }
 
                 }
-                else if (e.ColumnIndex == 5)
+                else if (e.ColumnIndex == 4)
                 {
                     //EditPunishmentRule
                     DataGridViewRow row = dgvPunishmentRuleList.Rows[e.RowIndex];
                     punishmentRuleID = Convert.ToString(row.Cells[0].Value);
                     txtPunishmentCode.Text = Convert.ToString(row.Cells[1].Value);
-                    txtFromDay.Text = Convert.ToString(row.Cells[2].Value);
-                    txtToDay.Text = Convert.ToString(row.Cells[3].Value);
-                    txtAmount.Text = Convert.ToString(row.Cells[4].Value);
+                    txtExceedMonth.Text = Convert.ToString(row.Cells[2].Value);
+                    txtAmount.Text = Convert.ToString(row.Cells[3].Value);
                     isEdit = true;
-
+                    this.btnSave.Text = "Update";
                 }
             }
         }

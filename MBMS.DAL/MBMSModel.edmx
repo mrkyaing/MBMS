@@ -318,8 +318,7 @@
           </Key>
           <Property Name="PunishmentRuleID" Type="char" MaxLength="36" Nullable="false" />
           <Property Name="PunishmentCode" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="FromDays" Type="int" Nullable="false" />
-          <Property Name="ToDays" Type="int" Nullable="false" />
+          <Property Name="ExceedMonth" Type="int" Nullable="false" />
           <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
           <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
@@ -1294,8 +1293,7 @@
           </Key>
           <Property Name="PunishmentRuleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="PunishmentCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FromDays" Type="Int32" Nullable="false" />
-          <Property Name="ToDays" Type="Int32" Nullable="false" />
+          <Property Name="ExceedMonth" Type="Int32" Nullable="false" />
           <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
@@ -2267,8 +2265,7 @@
               <MappingFragment StoreEntitySet="PunishmentRule">
                 <ScalarProperty Name="PunishmentRuleID" ColumnName="PunishmentRuleID" />
                 <ScalarProperty Name="PunishmentCode" ColumnName="PunishmentCode" />
-                <ScalarProperty Name="FromDays" ColumnName="FromDays" />
-                <ScalarProperty Name="ToDays" ColumnName="ToDays" />
+                <ScalarProperty Name="ExceedMonth" ColumnName="ExceedMonth" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />

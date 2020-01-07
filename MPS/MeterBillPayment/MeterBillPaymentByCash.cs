@@ -7,6 +7,7 @@ using MPS.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -41,15 +42,19 @@ namespace MPS.MeterBillPayment {
             txtTownshipName.Text = vm.TownshipName;
             txtBillCodeNo.Text = vm.MeterBillCode;    
             txtTotalFees.Text = vm.TotalFees.ToString();
-            pr= punishmentruleservices.getPunishment("Pr-001");
-            int datediff =(vm.InvoiceDate.Date - DateTime.Now.Date).Days;
-            if(datediff>=pr.FromDays && datediff <= pr.ToDays) {
+            pr= punishmentruleservices.getPunishment(ConfigurationManager.AppSettings["dafaultpunishmentrule"]);
+            int datediff = 0;
+            if (pr != null) {
+                datediff = (DateTime.Now.Date - vm.InvoiceDate.Date).Days / 30;
+                }
+           
+            if(datediff==pr.ExceedMonth) {
                 txtpunishment.Text = pr.Amount.ToString();
                 }else {
                 txtpunishment.Text = "0.0";
                 }
             txtAdvanceMoney.Text = "0.0";
-            
+            txtFinalTotalFees.Text = (Convert.ToDecimal(vm.TotalFees) + Convert.ToDecimal(txtpunishment.Text)).ToString();
             }
         private void btnClose_Click(object sender, EventArgs e) {
             this.Close();
@@ -84,6 +89,7 @@ namespace MPS.MeterBillPayment {
             pc.MeterBillID = vm.MeterBillID;
             pc.PunishmentRuleID = pr.PunishmentRuleID;
             pc.PunishmentAmount = Convert.ToDecimal(txtpunishment.Text);
+            pc.ForMonth = vm.InvoiceDate;
             }
 
         private void BindAdvanceMoneyCustomerEntity(AdvanceMoneyCustomer amc) {
@@ -102,8 +108,8 @@ namespace MPS.MeterBillPayment {
             mb.InvoiceDate = vm.InvoiceDate;
             mb.LastBillPaidDate = vm.LastBillPaidDate;
             mb.ServicesFees = vm.ServicesFees;        
-            mb.MeterFees = vm.MeterFees;     
-            mb.TotalFees = vm.TotalFees;
+            mb.MeterFees = vm.MeterFees;
+            mb.TotalFees = Convert.ToDecimal(txtFinalTotalFees.Text); //vm.TotalFees;
             mb.StreetLightFees = vm.StreetLightFees;
             mb.UsageUnit = vm.UsageUnit;
             mb.CurrentMonthUnit = vm.CurrentMonthUnit;
@@ -124,8 +130,20 @@ namespace MPS.MeterBillPayment {
 
         private void txtReceivedAmount_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                txtChangeAmt.Text = (Convert.ToDecimal(txtReceivedAmount.Text) - Convert.ToDecimal(txtTotalFees.Text)).ToString();
+                txtChangeAmt.Text = (Convert.ToDecimal(txtReceivedAmount.Text) - Convert.ToDecimal(txtFinalTotalFees.Text)).ToString();
                 }
             }
+
+
+        private void OnlyAllowforNumericKey_KeyPress(object sender, KeyPressEventArgs e) {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
+                e.Handled = true;
+                }
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
+                e.Handled = true;
+                }
+            }
+
         }
     }

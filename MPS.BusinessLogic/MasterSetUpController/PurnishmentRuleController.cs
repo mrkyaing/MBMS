@@ -32,9 +32,8 @@ namespace MPS.BusinessLogic.MasterSetUpController
         public void UpdatePurnishmentRule(PunishmentRule r)
         {
             PunishmentRule punishmentRule = mBMSEntities.PunishmentRules.Where(x => x.PunishmentRuleID == r.PunishmentRuleID).SingleOrDefault();
-            punishmentRule.PunishmentCode = r.PunishmentCode;
-            punishmentRule.FromDays = r.FromDays;
-            punishmentRule.ToDays = r.ToDays;
+            punishmentRule.PunishmentCode = r.PunishmentCode;    
+            punishmentRule.ExceedMonth = r.ExceedMonth;
             punishmentRule.Amount = r.Amount;
             punishmentRule.UpdatedUserID = r.UpdatedUserID;
             punishmentRule.UpdatedDate = DateTime.Now;
