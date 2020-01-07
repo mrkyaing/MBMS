@@ -27,6 +27,13 @@ namespace MPS.BusinessLogic.CustomerController
             mBMSEntities.SaveChanges();
         }
 
+        public void SaveRange(List<Customer> customerList) {
+           foreach(Customer c in customerList) {
+                mBMSEntities.Customers.Add(c);
+                mBMSEntities.SaveChanges();
+                }
+            }
+
         public void UpdateCustomer(Customer c)
         {
             Customer customer = mBMSEntities.Customers.Where(x => x.CustomerID == c.CustomerID).SingleOrDefault();

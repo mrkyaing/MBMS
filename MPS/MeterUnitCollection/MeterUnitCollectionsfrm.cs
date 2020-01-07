@@ -44,7 +44,7 @@ namespace MPS.MeterUnitCollect {
             nodeMeterList = NodeMetersvc.GetAll(sqlCommand).ToList();
             this.gvnodemeter.DataSource = nodeMeterList;
             if (nodeMeterList.Count ==0) {
-                    MessageBox.Show("There is no data to collect.", "Infromation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("There is no data to collect.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;       
                 }                 
             }

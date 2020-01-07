@@ -12,5 +12,7 @@ namespace MPS.BusinessLogic.CustomerController
         void Save(Customer c);
         void UpdateCustomer(Customer c);
         void DeleteCustomer(Customer c);
-    }
+
+        void SaveRange(List<Customer> customerList);
+        }
 }
