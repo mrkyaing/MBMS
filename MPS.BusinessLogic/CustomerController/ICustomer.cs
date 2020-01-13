@@ -12,7 +12,12 @@ namespace MPS.BusinessLogic.CustomerController
         void Save(Customer c);
         void UpdateCustomer(Customer c);
         void DeleteCustomer(Customer c);
-
         void SaveRange(List<Customer> customerList);
+        bool GetCustomerCustomerCode(string CustomerCode);
+        Township GetTownshipByTownshipCode(string townshipCode);
+        Quarter GetQuarterByQarterCode(string QarterCode);
+        Meter GetMeterByQarterNo(string MeterNo);
+        Ledger GetLedgerByLedgerCode(int LedgerCode);
+        BillCode7Layer GetBillCode7LayerByBillCodeNo(long BillCodeNo);
         }
 }

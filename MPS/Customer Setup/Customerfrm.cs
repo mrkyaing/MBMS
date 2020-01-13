@@ -272,8 +272,10 @@ namespace MPS
                     customer.UpdatedDate = DateTime.Now;
                     customerController.UpdateCustomer(updateCustomer);
                     //updating the meter history information
-                    meterHistory.MeterID = updateCustomer.MeterID;
-                    meterservice.UpdateMeterHistory(meterHistory);
+                    if(!cboMeterNo.SelectedValue.Equals(updateCustomer.MeterID)) {
+                        meterHistory.MeterID = updateCustomer.MeterID;
+                        meterservice.UpdateMeterHistory(meterHistory);
+                        }             
                     MessageBox.Show("Successfully Updated Customer!", "Update");
                     Clear();
                     CustomerListfrm customerListForm = new CustomerListfrm();

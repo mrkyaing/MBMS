@@ -21,6 +21,30 @@ namespace MPS.BusinessLogic.CustomerController
             mBMSEntities.SaveChanges();
         }
 
+        public BillCode7Layer GetBillCode7LayerByBillCodeNo(long BillCodeNo) {
+            return mBMSEntities.BillCode7Layer.Where(x => x.Active == true && x.BillCode7LayerNo == BillCodeNo).SingleOrDefault();
+            }
+
+        public bool GetCustomerCustomerCode(string CustomerCode) {
+            return mBMSEntities.Customers.Any(x => x.Active == true && x.CustomerCode == CustomerCode);
+            }
+
+        public Ledger GetLedgerByLedgerCode(int LedgerCode) {
+            return mBMSEntities.Ledgers.Where(x => x.Active == true && x.LedgerCode == LedgerCode).SingleOrDefault();
+            }
+
+        public Meter GetMeterByQarterNo(string MeterNo) {
+            return mBMSEntities.Meters.Where(x => x.Active == true && x.MeterNo == MeterNo).SingleOrDefault();
+            }
+
+        public Quarter GetQuarterByQarterCode(string QarterCode) {
+            return mBMSEntities.Quarters.Where(x => x.Active == true && x.QuarterCode == QarterCode).SingleOrDefault();
+            }
+
+        public Township GetTownshipByTownshipCode(string townshipCode) {
+            return mBMSEntities.Townships.Where(x => x.Active == true && x.TownshipCode == townshipCode).SingleOrDefault();              
+                    }
+
         public void Save(Customer c)
         {
             mBMSEntities.Customers.Add(c);
@@ -32,6 +56,7 @@ namespace MPS.BusinessLogic.CustomerController
                 mBMSEntities.Customers.Add(c);
                 mBMSEntities.SaveChanges();
                 }
+          
             }
 
         public void UpdateCustomer(Customer c)
