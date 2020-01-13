@@ -238,13 +238,14 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
             }
 
         public List<MeterUnitCollect> MeterUnitCollect(DateTime fromDate, DateTime toDate,string transformerID,string QuarterID) {
+            List<MeterUnitCollect> data;
             if (!string.IsNullOrEmpty(transformerID)) {
-                return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date && x.TransformerID==transformerID).ToList();
+                data= mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date && x.TransformerID==transformerID).ToList();
                 }
             else {
-                return mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();
+                data= mBMSEntities.MeterUnitCollects.Where(x => EntityFunctions.TruncateTime(x.FromDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.ToDate) <= toDate.Date).ToList();
                 }
-           
+            return data;
             }
 
         public bool UpdateMeterBill(MeterBill _meterbill) {

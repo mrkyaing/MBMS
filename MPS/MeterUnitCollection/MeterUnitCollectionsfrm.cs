@@ -59,6 +59,7 @@ namespace MPS.MeterUnitCollect {
             GetMeterUnitData(fromdate,todate,qCode);            
             }
         private bool SaveMeterUnitCollection(List<NodeMeter> data) {
+            ErrorList.Clear();
             DateTime fromDate = dtpfromDate.Value.Date;
             DateTime toDate = dtptoDate.Value.Date;
             string transformerId = string.Empty;
@@ -79,14 +80,14 @@ namespace MPS.MeterUnitCollect {
             try {
                 List<MBMS.DAL.MeterUnitCollect> meterUnitCollectList = new List<MBMS.DAL.MeterUnitCollect>();
                 foreach (NodeMeter item in data) {
-                    MBMS.DAL.MeterUnitCollect meterUnit = new MBMS.DAL.MeterUnitCollect();
-                    meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
+                    MBMS.DAL.MeterUnitCollect meterUnit = new MBMS.DAL.MeterUnitCollect();              
                     Customer customerinfo = mbmsEntities.Customers.Where(x => x.CustomerCode == item.nod_csm_id&&x.Active==true).SingleOrDefault();//eg >>450-050-545-450-TPYTR05-00000428
                     if (customerinfo == null) {
                         ErrorList.Append("Set customer record for :" + item.nod_csm_id);
                         MessageBox.Show(ErrorList.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                         }
+                    meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
                     meterUnit.CustomerID = customerinfo.CustomerID;
                     meterUnit.FromDate = dtpfromDate.Value;
                     meterUnit.ToDate = dtptoDate.Value;

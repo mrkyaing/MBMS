@@ -110,7 +110,8 @@ namespace MPS.MeterBillCalculation {
             }//end of method
 
         private List<MBMS.DAL.MeterUnitCollect> getMeterUnitCollect(DateTime fromdate, DateTime todate,string TransformerID,string QuaeterID) {
-            return meterbillcalculateservice.MeterUnitCollect(fromdate,todate,TransformerID,QuaeterID);
+            List < MBMS.DAL.MeterUnitCollect > data= meterbillcalculateservice.MeterUnitCollect(fromdate, todate, TransformerID, QuaeterID);
+            return data;
             }
         #endregion
 

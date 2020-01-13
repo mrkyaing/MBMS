@@ -407,6 +407,7 @@
       <DependentUpon>UserListfrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AppDb\POS01.db" />
+    <None Include="Importing\CustomerInformation.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
