@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="54bd1524e59a468a8ea90171ed269cde" Name="Diagram1">
+      <Diagram DiagramId="945196c2ab964c228503ab168e5abf79" Name="Diagram1">
         <EntityTypeShape EntityType="MBMSModel.AdvanceMoneyCustomer" Width="1.5" PointX="18.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.BillCode7Layer" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.BillCode7LayerDetail" Width="1.5" PointX="9.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.BillCode7LayerDetail" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.CompanyProfile" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.Customer" Width="1.5" PointX="9.75" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.Ledger" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />

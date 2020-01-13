@@ -87,7 +87,6 @@ namespace MPS.MeterBillCalculation {
             decimal result = 0;
             decimal sumUnits = 0;
             BillCode7Layer billCode7Layer = meterbillcalculateservice.GetBillCode7LayerByBillCode(Convert.ToInt64(meterUnitCollect.BillCode));
-
             List<BillCode7LayerDetail> billCode7LayerDetailList = meterbillcalculateservice.GetBillCode7LayerDetailByBillCode7LayerID(billCode7Layer.BillCode7LayerID).OrderBy(y=>y.LowerLimit).ToList();
             foreach(BillCode7LayerDetail item in billCode7LayerDetailList) {
                 if (billCode7Layer.BillCodeLayerType.Equals("Block Type")) {

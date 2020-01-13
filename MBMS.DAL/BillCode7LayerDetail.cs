@@ -27,6 +27,7 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public Nullable<bool> IsLastLayer { get; set; }
     
         public virtual BillCode7Layer BillCode7Layer { get; set; }
     }

@@ -54,6 +54,7 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="IsLastLayer" Type="bit" />
         </EntityType>
         <EntityType Name="CompanyProfile">
           <Key>
@@ -998,6 +999,7 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsLastLayer" Type="Boolean" />
           <NavigationProperty Name="BillCode7Layer" Relationship="Self.FK_BillCode7LayerDetail_BillCode7Layer" FromRole="BillCode7LayerDetail" ToRole="BillCode7Layer" />
         </EntityType>
         <EntityType Name="CompanyProfile">
@@ -1988,6 +1990,7 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="IsLastLayer" ColumnName="IsLastLayer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
