@@ -90,16 +90,13 @@ namespace MPS.MeterUnitCollect {
                         }
                     meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
                     meterUnit.CustomerID = customerinfo.CustomerID;
-                    meterUnit.FromDate = dtpfromDate.Value;
-                    meterUnit.ToDate = dtptoDate.Value;
-                    //string y = item.nod_bill_from;
-                    //string m = item.nod_bill_from;
-                    //string d = item.nod_bill_from;
-                    //MessageBox.Show(y.Substring(0, 4));
-                    //MessageBox.Show(m.Substring(5, 6));
-                    //MessageBox.Show(d.Substring(5, 7));
-                    //meterUnit.FromDate = Convert.ToDateTime(y.Substring(0,3)+"-"+m.Substring(3,5) + "-"+d.Substring(5, 7));
-                    //meterUnit.ToDate =Convert.ToDateTime(item.nod_bill_to);
+                    //meterUnit.FromDate = dtpfromDate.Value;
+                    //meterUnit.ToDate = dtptoDate.Value;
+                    string y = item.nod_bill_from;
+                    string m = item.nod_bill_from;
+                    string d = item.nod_bill_from;                                  
+                    meterUnit.FromDate = item.nod_bill_from==""?dtpfromDate.Value:Convert.ToDateTime(y.Substring(0, 4) + "-"+m.Substring(4, 2) + "-"+d.Substring(6, 2));
+                    meterUnit.ToDate = item.nod_bill_to==""?dtptoDate.Value:Convert.ToDateTime(item.nod_bill_to);
                     meterUnit.TotalMeterUnit = (decimal)item.nod_pres_eng;
                     meterUnit.BillMonth = (int)item.nod_bill_month;
                     Transformer transformer = mbmsEntities.Transformers.Where(x => x.QuarterID == customerinfo.QuarterID&&x.Active==true).SingleOrDefault();

@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvBillCode7LayerList = new System.Windows.Forms.DataGridView();
+            this.btnAddNewBillCode = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.btnAddNewBillCode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillCode7LayerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +50,6 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
             this.Column7,
             this.Column8});
             this.dgvBillCode7LayerList.Location = new System.Drawing.Point(37, 97);
@@ -60,6 +58,16 @@
             this.dgvBillCode7LayerList.TabIndex = 0;
             this.dgvBillCode7LayerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillCode7LayerList_CellClick);
             this.dgvBillCode7LayerList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvBillCode7LayerList_DataBindingComplete);
+            // 
+            // btnAddNewBillCode
+            // 
+            this.btnAddNewBillCode.Location = new System.Drawing.Point(644, 43);
+            this.btnAddNewBillCode.Name = "btnAddNewBillCode";
+            this.btnAddNewBillCode.Size = new System.Drawing.Size(137, 27);
+            this.btnAddNewBillCode.TabIndex = 1;
+            this.btnAddNewBillCode.Text = "Add New Bill Code";
+            this.btnAddNewBillCode.UseVisualStyleBackColor = true;
+            this.btnAddNewBillCode.Click += new System.EventHandler(this.btnAddNewBillCode_Click);
             // 
             // Column1
             // 
@@ -79,18 +87,13 @@
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Lower Limit";
+            this.Column4.HeaderText = "Created Date";
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Upper Limit";
+            this.Column5.HeaderText = "Created  User";
             this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Amount Per Unit";
-            this.Column6.Name = "Column6";
             // 
             // Column7
             // 
@@ -106,19 +109,9 @@
             this.Column8.Text = "Delete";
             this.Column8.UseColumnTextForLinkValue = true;
             // 
-            // btnAddNewBillCode
-            // 
-            this.btnAddNewBillCode.Location = new System.Drawing.Point(644, 43);
-            this.btnAddNewBillCode.Name = "btnAddNewBillCode";
-            this.btnAddNewBillCode.Size = new System.Drawing.Size(137, 27);
-            this.btnAddNewBillCode.TabIndex = 1;
-            this.btnAddNewBillCode.Text = "Add New Bill Code";
-            this.btnAddNewBillCode.UseVisualStyleBackColor = true;
-            this.btnAddNewBillCode.Click += new System.EventHandler(this.btnAddNewBillCode_Click);
-            // 
             // BillCode7LayerList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 476);
             this.Controls.Add(this.btnAddNewBillCode);
@@ -137,14 +130,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBillCode7LayerList;
+        private System.Windows.Forms.Button btnAddNewBillCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
         private System.Windows.Forms.DataGridViewLinkColumn Column8;
-        private System.Windows.Forms.Button btnAddNewBillCode;
-    }
+        }
 }

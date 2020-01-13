@@ -32,8 +32,8 @@ namespace MPS.Billing
                 row.Cells[0].Value = billCode7Layer.BillCode7LayerID;
                 row.Cells[1].Value = billCode7Layer.BillCode7LayerNo;
                 row.Cells[2].Value = billCode7Layer.BillCodeLayerType;
-                //row.Cells[3].Value = billCode7Layer.LowerLimit;
-                //row.Cells[4].Value = billCode7Layer.UpperLimit;
+                row.Cells[3].Value = billCode7Layer.CreatedDate;
+                row.Cells[4].Value = mbsEntities.Users.Where(x=>x.UserID== billCode7Layer.CreatedUserID).SingleOrDefault().UserName;
                 //row.Cells[5].Value = billCode7Layer.AmountPerUnit;
                      }
         }
@@ -54,7 +54,7 @@ namespace MPS.Billing
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 7)
+                if (e.ColumnIndex ==6)
                 {
                     //DeleteForBillCode7Layer
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -83,7 +83,7 @@ namespace MPS.Billing
                     }
 
                 }
-                else if (e.ColumnIndex == 6)
+                else if (e.ColumnIndex ==5)
                 {
                     //EditBillCode7Layer
                     string _billCode7LayerID;
