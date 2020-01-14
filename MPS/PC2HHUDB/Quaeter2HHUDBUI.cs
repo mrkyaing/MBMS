@@ -49,9 +49,9 @@ namespace MPS.PC2HHUDB {
                 foreach (Quarter q in qList) {
                     MPS.SQLiteHelper.Villages v= new MPS.SQLiteHelper.Villages();
                     v.vlg_code = q.QuarterCode;
-                    v.vlg_code = q.QuarterCode;
-                    v.vlg_code = q.QuarterCode;
-                    v.vlg_code = q.QuarterCode;
+                    v.vlg_address = q.Address;
+                    v.vlg_name = q.QuarterNameInEng;
+                    v.vlg_value = q.QuarterNameInMM;
                     sqlvillageList.Add(v);
                     }
                 try {
