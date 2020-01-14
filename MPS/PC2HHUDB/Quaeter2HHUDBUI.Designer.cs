@@ -45,7 +45,7 @@
             this.Column8});
             this.dgvQuarterList.Location = new System.Drawing.Point(44, 79);
             this.dgvQuarterList.Name = "dgvQuarterList";
-            this.dgvQuarterList.Size = new System.Drawing.Size(528, 171);
+            this.dgvQuarterList.Size = new System.Drawing.Size(524, 171);
             this.dgvQuarterList.TabIndex = 26;
             // 
             // Column2
@@ -81,9 +81,9 @@
             // 
             // btnSave2HHUDB
             // 
-            this.btnSave2HHUDB.Location = new System.Drawing.Point(44, 276);
+            this.btnSave2HHUDB.Location = new System.Drawing.Point(461, 42);
             this.btnSave2HHUDB.Name = "btnSave2HHUDB";
-            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 25);
+            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 31);
             this.btnSave2HHUDB.TabIndex = 27;
             this.btnSave2HHUDB.Text = "Save To HHU DB";
             this.btnSave2HHUDB.UseVisualStyleBackColor = true;
@@ -93,11 +93,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 313);
+            this.ClientSize = new System.Drawing.Size(585, 263);
             this.Controls.Add(this.btnSave2HHUDB);
             this.Controls.Add(this.dgvQuarterList);
             this.Name = "Quaeter2HHUDBUI";
-            this.Text = "Quaeter2HHUDBUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Querter(Village) 2 HHU DB";
             this.Load += new System.EventHandler(this.Quaeter2HHUDBUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuarterList)).EndInit();
             this.ResumeLayout(false);

@@ -145,6 +145,12 @@
     <Compile Include="MeterBillPayment\MeterBillPaymentList.Designer.cs">
       <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
     </Compile>
+    <Compile Include="PC2HHUDB\MeterList2HHUDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PC2HHUDB\MeterList2HHUDB.Designer.cs">
+      <DependentUpon>MeterList2HHUDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="PC2HHUDB\PolePC2HHUDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MeterBillPayment\MeterBillPaymentList.resx">
       <DependentUpon>MeterBillPaymentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PC2HHUDB\MeterList2HHUDB.resx">
+      <DependentUpon>MeterList2HHUDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PC2HHUDB\PolePC2HHUDB.resx">
       <DependentUpon>PolePC2HHUDB.cs</DependentUpon>
