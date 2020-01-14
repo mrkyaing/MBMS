@@ -25,7 +25,7 @@ namespace MPS.MeterBillCalculation {
         #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
             if (cboQuarter.Text == "Select One") {
-                MessageBox.Show("select quarter to calculate meter unit", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Select quarter to calculate meter bill", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
             if (meterbillcalculateservice.checkIsPaidStatusBeforeCalculate(dtpfromDate.Value, dtpToDate.Value)) {
