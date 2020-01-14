@@ -63,8 +63,10 @@
             this.addLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ledgerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.integrateWithHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hHUToPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCToHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hHUToPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meterDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importExportCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,8 +81,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.meterDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -382,6 +382,13 @@
             this.integrateWithHHUToolStripMenuItem.Size = new System.Drawing.Size(124, 21);
             this.integrateWithHHUToolStripMenuItem.Text = "Integrate with HHU";
             // 
+            // pCToHHUToolStripMenuItem
+            // 
+            this.pCToHHUToolStripMenuItem.Name = "pCToHHUToolStripMenuItem";
+            this.pCToHHUToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.pCToHHUToolStripMenuItem.Text = "Quarter data to HHU DB";
+            this.pCToHHUToolStripMenuItem.Click += new System.EventHandler(this.pCToHHUToolStripMenuItem_Click);
+            // 
             // hHUToPCToolStripMenuItem
             // 
             this.hHUToPCToolStripMenuItem.Name = "hHUToPCToolStripMenuItem";
@@ -389,11 +396,17 @@
             this.hHUToPCToolStripMenuItem.Text = "Pole data to HHU DB";
             this.hHUToPCToolStripMenuItem.Click += new System.EventHandler(this.hHUToPCToolStripMenuItem_Click);
             // 
-            // pCToHHUToolStripMenuItem
+            // meterDataToHHUDBToolStripMenuItem
             // 
-            this.pCToHHUToolStripMenuItem.Name = "pCToHHUToolStripMenuItem";
-            this.pCToHHUToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.pCToHHUToolStripMenuItem.Text = "Village data to HHU DB";
+            this.meterDataToHHUDBToolStripMenuItem.Name = "meterDataToHHUDBToolStripMenuItem";
+            this.meterDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.meterDataToHHUDBToolStripMenuItem.Text = "Meter data to HHU DB";
+            // 
+            // customerDataToHHUDBToolStripMenuItem
+            // 
+            this.customerDataToHHUDBToolStripMenuItem.Name = "customerDataToHHUDBToolStripMenuItem";
+            this.customerDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.customerDataToHHUDBToolStripMenuItem.Text = "Customer data to HHU DB";
             // 
             // importExportToolStripMenuItem
             // 
@@ -502,18 +515,6 @@
             this.tpUserName.Name = "tpUserName";
             this.tpUserName.Size = new System.Drawing.Size(65, 17);
             this.tpUserName.Text = "User Name";
-            // 
-            // meterDataToHHUDBToolStripMenuItem
-            // 
-            this.meterDataToHHUDBToolStripMenuItem.Name = "meterDataToHHUDBToolStripMenuItem";
-            this.meterDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.meterDataToHHUDBToolStripMenuItem.Text = "Meter data to HHU DB";
-            // 
-            // customerDataToHHUDBToolStripMenuItem
-            // 
-            this.customerDataToHHUDBToolStripMenuItem.Name = "customerDataToHHUDBToolStripMenuItem";
-            this.customerDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.customerDataToHHUDBToolStripMenuItem.Text = "Customer data to HHU DB";
             // 
             // MainMDI
             // 

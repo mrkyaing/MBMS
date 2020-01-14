@@ -151,6 +151,12 @@
     <Compile Include="PC2HHUDB\PolePC2HHUDB.Designer.cs">
       <DependentUpon>PolePC2HHUDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="PC2HHUDB\Quaeter2HHUDBUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PC2HHUDB\Quaeter2HHUDBUI.Designer.cs">
+      <DependentUpon>Quaeter2HHUDBUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="PunishmentCustomer\PunishmentCustomerListUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PC2HHUDB\PolePC2HHUDB.resx">
       <DependentUpon>PolePC2HHUDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PC2HHUDB\Quaeter2HHUDBUI.resx">
+      <DependentUpon>Quaeter2HHUDBUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PunishmentCustomer\PunishmentCustomerListUI.resx">
       <DependentUpon>PunishmentCustomerListUI.cs</DependentUpon>

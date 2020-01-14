@@ -8,6 +8,7 @@ using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
 using MPS.MeterBillPayment;
 using MPS.MeterUnitCollect;
+using MPS.PC2HHUDB;
 using MPS.PunishmentCustomerList;
 using MPS.Setting_Setup;
 using MPS.User_Management;
@@ -327,6 +328,10 @@ namespace MPS
 
         private void punishmentCustomerListToolStripMenuItem_Click(object sender, EventArgs e) {
             new PunishmentCustomerListUI().Show();
+            }
+
+        private void pCToHHUToolStripMenuItem_Click(object sender, EventArgs e) {
+            new Quaeter2HHUDBUI().Show(); 
             }
         }
 }
