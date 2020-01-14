@@ -10,6 +10,18 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
     public class MeterBillCalculateController : IMeterBillCalculateServices {
         MBMSEntities mBMSEntities = new MBMSEntities();
 
+        public bool checkAdvanceMoneyCustomerListBeforeCalculate(DateTime fromDate, DateTime toDate) {
+            return mBMSEntities.AdvanceMoneyCustomers.Any(x=>EntityFunctions.TruncateTime(x.ForMonth) >= fromDate.Date && EntityFunctions.TruncateTime(x.ForMonth) <= toDate.Date);
+            }
+
+        public bool checkIsPaidStatusBeforeCalculate(DateTime fromDate, DateTime toDate) {
+            return mBMSEntities.MeterBills.Any(x => x.isPaid == true && EntityFunctions.TruncateTime(x.InvoiceDate) >= fromDate.Date && EntityFunctions.TruncateTime(x.InvoiceDate) <= toDate.Date);
+            }
+
+        public bool checkPunishmentCustomerListBeforeCalculate(DateTime fromDate, DateTime toDate) {
+            return mBMSEntities.PunishmentCustomers.Any(x => EntityFunctions.TruncateTime(x.ForMonth) >= fromDate.Date && EntityFunctions.TruncateTime(x.ForMonth) <= toDate.Date);
+            }
+
         public BillCode7Layer GetBillCode7LayerByBillCode(long billCodeNo) {
             BillCode7Layer _billCode7Layer = mBMSEntities.BillCode7Layer.Where(x => x.BillCode7LayerNo == billCodeNo && x.Active==true).SingleOrDefault();
             return _billCode7Layer;

@@ -19,5 +19,8 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
         List<MeterBillInvoiceVM> GetmeterBillInvoices(DateTime fromDate, DateTime toDate,
         string TransformerID, string QuarterID,string CustomerID,string MeterBillCodeNo);
         bool UpdateMeterBill(MeterBill _meterbill);
+        bool checkIsPaidStatusBeforeCalculate(DateTime fromDate, DateTime toDate);
+        bool checkAdvanceMoneyCustomerListBeforeCalculate(DateTime fromDate, DateTime toDate);
+        bool checkPunishmentCustomerListBeforeCalculate(DateTime fromDate, DateTime toDate); 
         }
     }

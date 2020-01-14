@@ -24,6 +24,22 @@ namespace MPS.MeterBillCalculation {
 
         #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
+            if (cboQuarter.Text == "Select One") {
+                MessageBox.Show("select quarter to calculate meter unit", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
+            if (meterbillcalculateservice.checkIsPaidStatusBeforeCalculate(dtpfromDate.Value, dtpToDate.Value)) {
+                MessageBox.Show("Sorry :(  payment had paid can't re-process again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
+            if (meterbillcalculateservice.checkAdvanceMoneyCustomerListBeforeCalculate(dtpfromDate.Value, dtpToDate.Value)) {
+                MessageBox.Show("Sorry :(  check Advance Money Customer List Before Calculate.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
+            if (meterbillcalculateservice.checkPunishmentCustomerListBeforeCalculate(dtpfromDate.Value, dtpToDate.Value)) {
+                MessageBox.Show("Sorry :(  check Punishment Customer List Before Calculate", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
             List<MBMS.DAL.MeterUnitCollect> dataList = getMeterUnitCollect(dtpfromDate.Value, dtpToDate.Value,this.cbotransformer.SelectedValue.ToString(), cboQuarter.SelectedValue.ToString());
             if (dataList.Count == 0) {
                 MessageBox.Show("There is no meter unit collection record!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
