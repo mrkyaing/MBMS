@@ -90,8 +90,6 @@ namespace MPS.MeterUnitCollect {
                         }
                     meterUnit.MeterUnitCollectID = Guid.NewGuid().ToString();
                     meterUnit.CustomerID = customerinfo.CustomerID;
-                    //meterUnit.FromDate = dtpfromDate.Value;
-                    //meterUnit.ToDate = dtptoDate.Value;
                     string y = item.nod_bill_from;
                     string m = item.nod_bill_from;
                     string d = item.nod_bill_from;                                  

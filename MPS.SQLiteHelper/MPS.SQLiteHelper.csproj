@@ -57,10 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="SQLiteServices\PoleServices.cs" />
     <Compile Include="SQLiteTableModels\NodeMeter.cs" />
     <Compile Include="SQLiteServices\NodeMeterServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteServices\Storage.cs" />
+    <Compile Include="SQLiteTableModels\Poles.cs" />
     <Compile Include="SQLiteTableModels\Village.cs" />
     <Compile Include="SQLiteServices\VillageServices.cs" />
   </ItemGroup>

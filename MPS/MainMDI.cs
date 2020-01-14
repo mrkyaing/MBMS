@@ -8,7 +8,6 @@ using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
 using MPS.MeterBillPayment;
 using MPS.MeterUnitCollect;
-
 using MPS.PunishmentCustomerList;
 using MPS.Setting_Setup;
 using MPS.User_Management;
@@ -122,8 +121,10 @@ namespace MPS
 
         private void hHUToPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
+            PolePC2HHUDB poleui2hhudb = new PolePC2HHUDB();
+            poleui2hhudb.UserID = UserID;
+            poleui2hhudb.Show();
+            }
 
         private void roleManagementToolStripMenuItem_Click(object sender, EventArgs e)
         {

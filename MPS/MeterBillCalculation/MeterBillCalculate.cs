@@ -63,13 +63,13 @@ namespace MPS.MeterBillCalculation {
         #region Calculate Bill(IsBillCalculateSuccess Method)
         private bool IsBillCalculateSuccess(List<MBMS.DAL.MeterUnitCollect> dataList, DateTime fromDate,DateTime toDate) {
             List<MeterBill> meterbillList = new List<MeterBill>();
-            Random random = new Random();
+           // Random random = new Random();
             try {
                 foreach(MBMS.DAL.MeterUnitCollect item in dataList) {
                   //  int meterLossess, meterMultiplier;               
                     MeterBill mb = new MeterBill();
                     mb.MeterBillID = Guid.NewGuid().ToString();
-                    mb.MeterBillCode = random.Next().ToString();
+                    mb.MeterBillCode = item.Customer.Meter.MeterNo;// random.Next().ToString();
                     mb.InvoiceDate = item.FromDate;
                     mb.LastBillPaidDate = item.ToDate;
                     mb.ServicesFees = 0;
@@ -102,7 +102,7 @@ namespace MPS.MeterBillCalculation {
         private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect meterUnitCollect) {
             decimal result = 0;
             decimal sumUnits = 0;
-            BillCode7Layer billCode7Layer = meterbillcalculateservice.GetBillCode7LayerByBillCode(Convert.ToInt64(meterUnitCollect.BillCode));
+            BillCode7Layer billCode7Layer = meterbillcalculateservice.GetBillCode7LayerByBillCode(Convert.ToInt64(meterUnitCollect.Customer.BillCode7Layer.BillCode7LayerNo));
             List<BillCode7LayerDetail> billCode7LayerDetailList = meterbillcalculateservice.GetBillCode7LayerDetailByBillCode7LayerID(billCode7Layer.BillCode7LayerID).OrderBy(y=>y.LowerLimit).ToList();
             foreach(BillCode7LayerDetail item in billCode7LayerDetailList) {
                 if (billCode7Layer.BillCodeLayerType.Equals("Block Type")) {

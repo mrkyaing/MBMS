@@ -79,6 +79,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.meterDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerDataToHHUDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -142,21 +144,21 @@
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.addUserToolStripMenuItem.Text = "Add User ";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // userListToolStripMenuItem
             // 
             this.userListToolStripMenuItem.Name = "userListToolStripMenuItem";
-            this.userListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.userListToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.userListToolStripMenuItem.Text = "User List";
             this.userListToolStripMenuItem.Click += new System.EventHandler(this.userListToolStripMenuItem_Click);
             // 
             // roleManagementToolStripMenuItem
             // 
             this.roleManagementToolStripMenuItem.Name = "roleManagementToolStripMenuItem";
-            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.roleManagementToolStripMenuItem.Text = "Add Role";
             this.roleManagementToolStripMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem_Click);
             // 
@@ -371,8 +373,10 @@
             // integrateWithHHUToolStripMenuItem
             // 
             this.integrateWithHHUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pCToHHUToolStripMenuItem,
             this.hHUToPCToolStripMenuItem,
-            this.pCToHHUToolStripMenuItem});
+            this.meterDataToHHUDBToolStripMenuItem,
+            this.customerDataToHHUDBToolStripMenuItem});
             this.integrateWithHHUToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.integrateWithHHUToolStripMenuItem.Name = "integrateWithHHUToolStripMenuItem";
             this.integrateWithHHUToolStripMenuItem.Size = new System.Drawing.Size(124, 21);
@@ -381,15 +385,15 @@
             // hHUToPCToolStripMenuItem
             // 
             this.hHUToPCToolStripMenuItem.Name = "hHUToPCToolStripMenuItem";
-            this.hHUToPCToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.hHUToPCToolStripMenuItem.Text = "HHU To PC";
+            this.hHUToPCToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.hHUToPCToolStripMenuItem.Text = "Pole data to HHU DB";
             this.hHUToPCToolStripMenuItem.Click += new System.EventHandler(this.hHUToPCToolStripMenuItem_Click);
             // 
             // pCToHHUToolStripMenuItem
             // 
             this.pCToHHUToolStripMenuItem.Name = "pCToHHUToolStripMenuItem";
-            this.pCToHHUToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.pCToHHUToolStripMenuItem.Text = "PC To HHU";
+            this.pCToHHUToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.pCToHHUToolStripMenuItem.Text = "Village data to HHU DB";
             // 
             // importExportToolStripMenuItem
             // 
@@ -499,6 +503,18 @@
             this.tpUserName.Size = new System.Drawing.Size(65, 17);
             this.tpUserName.Text = "User Name";
             // 
+            // meterDataToHHUDBToolStripMenuItem
+            // 
+            this.meterDataToHHUDBToolStripMenuItem.Name = "meterDataToHHUDBToolStripMenuItem";
+            this.meterDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.meterDataToHHUDBToolStripMenuItem.Text = "Meter data to HHU DB";
+            // 
+            // customerDataToHHUDBToolStripMenuItem
+            // 
+            this.customerDataToHHUDBToolStripMenuItem.Name = "customerDataToHHUDBToolStripMenuItem";
+            this.customerDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.customerDataToHHUDBToolStripMenuItem.Text = "Customer data to HHU DB";
+            // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,6 +591,8 @@
         private System.Windows.Forms.ToolStripStatusLabel tpUserName;
         private System.Windows.Forms.ToolStripMenuItem meterBillCalculationProcessToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meterBillPaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meterDataToHHUDBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerDataToHHUDBToolStripMenuItem;
         }
 }
 
