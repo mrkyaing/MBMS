@@ -130,10 +130,24 @@ namespace MPS
         }
 
         private void btnSave2HHUDB_Click(object sender, EventArgs e) {
+            if (poleList.Count == 0) {
+                MessageBox.Show("There is no pole data to save HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (ok == DialogResult.OK) {
+            if (ok == DialogResult.Yes) {
                 PoleServices sqlitepoleservices = new PoleServices();
                 List<MPS.SQLiteHelper.Poles> sqlpoleList = new List<MPS.SQLiteHelper.Poles>();
+                string sqlCommand = string.Format("SELECT * FROM Poles");
+                var data = sqlitepoleservices.GetAll(sqlCommand);
+                foreach(var v in data) {
+                    foreach (Pole p in poleList) {
+                        if (p.PoleNo == v.pol_id) {
+                            MessageBox.Show("("+p.PoleNo+") Pole code already exists in HHU db file.", "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                            }
+                        }
+                        }
                 foreach (Pole p in poleList) {
                     MPS.SQLiteHelper.Poles pole = new MPS.SQLiteHelper.Poles();
                     pole.pol_id = p.PoleNo;

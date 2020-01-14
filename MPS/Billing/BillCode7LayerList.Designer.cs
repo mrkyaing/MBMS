@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvBillCode7LayerList = new System.Windows.Forms.DataGridView();
-            this.btnAddNewBillCode = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +36,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnAddNewBillCode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillCode7LayerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,20 +54,10 @@
             this.Column8});
             this.dgvBillCode7LayerList.Location = new System.Drawing.Point(37, 97);
             this.dgvBillCode7LayerList.Name = "dgvBillCode7LayerList";
-            this.dgvBillCode7LayerList.Size = new System.Drawing.Size(744, 350);
+            this.dgvBillCode7LayerList.Size = new System.Drawing.Size(643, 350);
             this.dgvBillCode7LayerList.TabIndex = 0;
             this.dgvBillCode7LayerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillCode7LayerList_CellClick);
             this.dgvBillCode7LayerList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvBillCode7LayerList_DataBindingComplete);
-            // 
-            // btnAddNewBillCode
-            // 
-            this.btnAddNewBillCode.Location = new System.Drawing.Point(644, 43);
-            this.btnAddNewBillCode.Name = "btnAddNewBillCode";
-            this.btnAddNewBillCode.Size = new System.Drawing.Size(137, 27);
-            this.btnAddNewBillCode.TabIndex = 1;
-            this.btnAddNewBillCode.Text = "Add New Bill Code";
-            this.btnAddNewBillCode.UseVisualStyleBackColor = true;
-            this.btnAddNewBillCode.Click += new System.EventHandler(this.btnAddNewBillCode_Click);
             // 
             // Column1
             // 
@@ -109,11 +99,21 @@
             this.Column8.Text = "Delete";
             this.Column8.UseColumnTextForLinkValue = true;
             // 
+            // btnAddNewBillCode
+            // 
+            this.btnAddNewBillCode.Location = new System.Drawing.Point(543, 43);
+            this.btnAddNewBillCode.Name = "btnAddNewBillCode";
+            this.btnAddNewBillCode.Size = new System.Drawing.Size(137, 27);
+            this.btnAddNewBillCode.TabIndex = 1;
+            this.btnAddNewBillCode.Text = "Add New Bill Code";
+            this.btnAddNewBillCode.UseVisualStyleBackColor = true;
+            this.btnAddNewBillCode.Click += new System.EventHandler(this.btnAddNewBillCode_Click);
+            // 
             // BillCode7LayerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 476);
+            this.ClientSize = new System.Drawing.Size(710, 476);
             this.Controls.Add(this.btnAddNewBillCode);
             this.Controls.Add(this.dgvBillCode7LayerList);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
