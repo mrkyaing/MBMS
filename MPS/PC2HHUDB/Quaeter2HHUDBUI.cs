@@ -16,6 +16,13 @@ namespace MPS.PC2HHUDB {
         List<Quarter> qList = new List<Quarter>();
         public Quaeter2HHUDBUI() {
             InitializeComponent();
+            BuildSQLiteConnection();
+            }
+        private void BuildSQLiteConnection() {
+            if (String.IsNullOrEmpty(Storage.ConnectionString)) {
+                Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                }
             }
 
         private void Quaeter2HHUDBUI_Load(object sender, EventArgs e) {
