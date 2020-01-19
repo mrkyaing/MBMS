@@ -18,13 +18,18 @@ namespace MPS.Customer_Setup
         MBMSEntities mbsEntities = new MBMSEntities();
         CustomerController customerController = new CustomerController();
         private List<Customer> customerList = new List<Customer>();
-        private List<Pole> poleList = new List<Pole>();
         public string UserID { get; set; }
         public CustomerList2HHUDB()
         {
             InitializeComponent();
-        }
-
+            BuildSQLiteConnection();
+            }
+        private void BuildSQLiteConnection() {
+            if (String.IsNullOrEmpty(Storage.ConnectionString)) {
+                Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                }
+            }
         private void dgvCustomerList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow row in dgvCustomerList.Rows)
@@ -46,8 +51,9 @@ namespace MPS.Customer_Setup
         }
         public void FormRefresh()
         {
+            customerList = (from c in mbsEntities.Customers where c.Active == true orderby c.CustomerCode descending select c).ToList();
             dgvCustomerList.AutoGenerateColumns = false;
-            dgvCustomerList.DataSource = (from c in mbsEntities.Customers where c.Active == true orderby c.CustomerCode descending select c).ToList();
+            dgvCustomerList.DataSource = customerList;
         }
 
         private void CustomerListfrm_Load(object sender, EventArgs e)
@@ -127,34 +133,38 @@ namespace MPS.Customer_Setup
 
         private void btnSave2HHUDB_Click(object sender, EventArgs e) {
 
-            if (poleList.Count == 0) {
+            if (this.customerList.Count == 0) {
                 MessageBox.Show("There is no Customers data to save HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
-                PoleServices sqlitepoleservices = new PoleServices();
-                List<MPS.SQLiteHelper.Poles> sqlpoleList = new List<MPS.SQLiteHelper.Poles>();
-                string sqlCommand = string.Format("SELECT * FROM Customers");
-                var data = sqlitepoleservices.GetAll(sqlCommand);
+                ConsumerMasterServices sqlitecustomerservices = new ConsumerMasterServices();
+                List<ConsumerMaster> sqlConsumerMasterList = new List<ConsumerMaster>();
+                string sqlCommand = string.Format("SELECT * FROM ConsumerMaster");
+                var data = sqlitecustomerservices.GetAll(sqlCommand);
                 foreach (var v in data) {
-                    foreach (Pole p in poleList) {
-                        if (p.PoleNo == v.pol_id) {
-                            MessageBox.Show("(" + p.PoleNo + ") Customer code already exists in HHU db file.", "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    foreach (Customer c in customerList) {
+                        if (c.CustomerCode == v.csm_id) {
+                            MessageBox.Show("(" + c.CustomerCode + ") Customer code already exists in HHU db file.", "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                             }
                         }
                     }
-                foreach (Pole p in poleList) {
-                    MPS.SQLiteHelper.Poles pole = new MPS.SQLiteHelper.Poles();
-                    pole.pol_id = p.PoleNo;
-                    pole.pol_gps_x = p.GPSX.ToString();
-                    pole.pol_gps_y = p.GPSY.ToString();
-                    pole.pol_etc1 = p.PoleNo;
-                    sqlpoleList.Add(pole);
+                foreach (Customer c in customerList) {
+                    ConsumerMaster consumer = new ConsumerMaster();
+                    consumer.csm_id = c.CustomerCode;
+                    consumer.csm_name = c.CustomerNameInEng;
+                    consumer.csm_village_code = c.Quarter.QuarterCode;
+                    consumer.csm_village_name = c.Quarter.QuarterNameInEng;
+                    consumer.csm_meter_id = c.Meter.MeterNo;
+                    consumer.csm_address_name = c.CustomerAddressInEng;
+                    consumer.csm_gps_h = c.CustomerAddressInEng;
+                    consumer.csm_gps_l = c.CustomerAddressInEng;
+                    sqlConsumerMasterList.Add(consumer);
                     }
                 try {
-                    sqlitepoleservices.AddRange(sqlpoleList);
+                    sqlitecustomerservices.AddRange(sqlConsumerMasterList);
                     MessageBox.Show("Customers data to HHU db file is successfully saved.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 catch (Exception ex) {
