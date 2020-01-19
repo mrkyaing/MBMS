@@ -408,6 +408,7 @@
             this.customerDataToHHUDBToolStripMenuItem.Name = "customerDataToHHUDBToolStripMenuItem";
             this.customerDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.customerDataToHHUDBToolStripMenuItem.Text = "Customer data to HHU DB";
+            this.customerDataToHHUDBToolStripMenuItem.Click += new System.EventHandler(this.customerDataToHHUDBToolStripMenuItem_Click);
             // 
             // importExportToolStripMenuItem
             // 

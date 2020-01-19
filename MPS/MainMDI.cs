@@ -337,5 +337,11 @@ namespace MPS
         private void meterDataToHHUDBToolStripMenuItem_Click(object sender, EventArgs e) {
             new MeterList2HHUDB().Show();
             }
+
+        private void customerDataToHHUDBToolStripMenuItem_Click(object sender, EventArgs e) {
+            CustomerList2HHUDB cdbui = new CustomerList2HHUDB();
+            cdbui.UserID = UserID;
+            cdbui.Show();
+            }
         }
 }
