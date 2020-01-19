@@ -401,6 +401,7 @@
             this.meterDataToHHUDBToolStripMenuItem.Name = "meterDataToHHUDBToolStripMenuItem";
             this.meterDataToHHUDBToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.meterDataToHHUDBToolStripMenuItem.Text = "Meter data to HHU DB";
+            this.meterDataToHHUDBToolStripMenuItem.Click += new System.EventHandler(this.meterDataToHHUDBToolStripMenuItem_Click);
             // 
             // customerDataToHHUDBToolStripMenuItem
             // 

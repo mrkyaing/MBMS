@@ -333,5 +333,9 @@ namespace MPS
         private void pCToHHUToolStripMenuItem_Click(object sender, EventArgs e) {
             new Quaeter2HHUDBUI().Show(); 
             }
+
+        private void meterDataToHHUDBToolStripMenuItem_Click(object sender, EventArgs e) {
+            new MeterList2HHUDB().Show();
+            }
         }
 }

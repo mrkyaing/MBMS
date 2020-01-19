@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Core.cs" />
     <Compile Include="SQLiteServices\PoleServices.cs" />
+    <Compile Include="SQLiteServices\MetersServices.cs" />
+    <Compile Include="SQLiteTableModels\Meters.cs" />
     <Compile Include="SQLiteTableModels\NodeMeter.cs" />
     <Compile Include="SQLiteServices\NodeMeterServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
