@@ -3,24 +3,18 @@ using MPS.BusinessLogic.CustomerController;
 using MPS.SQLiteHelper;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MPS.Customer_Setup
-{
+namespace MPS.Customer_Setup {
     public partial class CustomerList2HHUDB : Form
     {
         MBMSEntities mbsEntities = new MBMSEntities();
         CustomerController customerController = new CustomerController();
         private List<Customer> customerList = new List<Customer>();
         public string UserID { get; set; }
-        public CustomerList2HHUDB()
-        {
+        public CustomerList2HHUDB()  {
             InitializeComponent();
             BuildSQLiteConnection();
             }
@@ -46,7 +40,6 @@ namespace MPS.Customer_Setup
                 row.Cells[8].Value = customer.Meter.MeterNo;
                 row.Cells[9].Value = customer.Ledger.BookCode;
                 row.Cells[10].Value = customer.BillCode7Layer.BillCode7LayerNo;
-
             }
         }
         public void FormRefresh()

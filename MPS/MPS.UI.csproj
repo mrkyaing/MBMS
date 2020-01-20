@@ -97,6 +97,12 @@
     <Compile Include="Customer Setup\AdvanceMoneyCustomerUI.Designer.cs">
       <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Importing\MeterImportingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Importing\MeterImportingUI.Designer.cs">
+      <DependentUpon>MeterImportingUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Importing\CustomerImportingUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer Setup\AdvanceMoneyCustomerUI.resx">
       <DependentUpon>AdvanceMoneyCustomerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Importing\MeterImportingUI.resx">
+      <DependentUpon>MeterImportingUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Importing\CustomerImportingUI.resx">
       <DependentUpon>CustomerImportingUI.cs</DependentUpon>
