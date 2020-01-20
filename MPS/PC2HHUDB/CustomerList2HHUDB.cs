@@ -164,10 +164,8 @@ namespace MPS.Customer_Setup
                         MessageBox.Show("set Pole data for>" + c.CustomerCode, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                         }
-                    //consumer.csm_gps_h = p.GPSX.ToString();
-                    //consumer.csm_gps_l = p.GPSY.ToString();
-                    consumer.csm_gps_h =c.Quarter.Township.Quarters.Where(x=>x.QuarterID==c.QuarterID).Where(y=>y.p).
-                    consumer.csm_gps_l = p.GPSY.ToString();
+                    consumer.csm_gps_h = p.GPSX.ToString();
+                    consumer.csm_gps_l = p.GPSY.ToString();            
                     sqlConsumerMasterList.Add(consumer);
                     }
                 try {
