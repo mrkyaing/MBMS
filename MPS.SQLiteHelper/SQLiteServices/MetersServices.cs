@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace MPS.SQLiteHelper {
    public class MetersServices : BaseService<Meters> {
         public MetersServices() :base(Storage.ConnectionString){
-
             }
         }
     }
