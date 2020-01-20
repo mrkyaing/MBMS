@@ -83,7 +83,7 @@ namespace MPS.PC2HHUDB {
                     }
                 foreach (Meter m in meterList) {
                     MPS.SQLiteHelper.Meters meter = new MPS.SQLiteHelper.Meters();
-                    meter.mtr_id = m.MeterID;
+                    meter.mtr_id = m.MeterNo;
                     meter.mtr_inst = m.InstalledDate.ToString();
                     meter.mtr_make = m.ManufactureBy;
                     meter.mtr_model = m.Model.ToString() ;
@@ -93,8 +93,13 @@ namespace MPS.PC2HHUDB {
                         MessageBox.Show("set customer data for>"+m.MeterNo, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                         }
-                    meter.mtr_csm_id =
-                    meter.mtr_pole = m.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault().CustomerCode;
+                    meter.mtr_csm_id = m.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault().CustomerCode;
+                    Pole p = mbmsEntities.Poles.Where(x => x.Transformer.QuarterID == c.QuarterID).SingleOrDefault();
+                    if (p == null) {
+                        MessageBox.Show("set Pole data for>" + m.MeterNo, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                        }
+                    meter.mtr_pole = p.PoleNo;
                     sqlpoleList.Add(meter);
                     }
                 try {

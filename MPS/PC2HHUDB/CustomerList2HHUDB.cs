@@ -159,8 +159,13 @@ namespace MPS.Customer_Setup
                     consumer.csm_village_name = c.Quarter.QuarterNameInEng;
                     consumer.csm_meter_id = c.Meter.MeterNo;
                     consumer.csm_address_name = c.CustomerAddressInEng;
-                    consumer.csm_gps_h = c.CustomerAddressInEng;
-                    consumer.csm_gps_l = c.CustomerAddressInEng;
+                    Pole p = mbsEntities.Poles.Where(x => x.Transformer.QuarterID == c.QuarterID).SingleOrDefault();
+                    if (p == null) {
+                        MessageBox.Show("set Pole data for>" + c.CustomerCode, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                        }
+                    consumer.csm_gps_h = p.GPSX.ToString();
+                    consumer.csm_gps_l = p.GPSY.ToString();
                     sqlConsumerMasterList.Add(consumer);
                     }
                 try {
