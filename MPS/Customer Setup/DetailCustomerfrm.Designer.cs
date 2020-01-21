@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailCustomerfrm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCustomerCode = new System.Windows.Forms.Label();
@@ -105,7 +106,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Code:";
             // 
@@ -115,7 +116,7 @@
             this.lblCustomerCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerCode.Location = new System.Drawing.Point(200, 0);
             this.lblCustomerCode.Name = "lblCustomerCode";
-            this.lblCustomerCode.Size = new System.Drawing.Size(96, 17);
+            this.lblCustomerCode.Size = new System.Drawing.Size(86, 16);
             this.lblCustomerCode.TabIndex = 0;
             this.lblCustomerCode.Text = "Customer Code:";
             // 
@@ -125,7 +126,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 17);
+            this.label2.Size = new System.Drawing.Size(110, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Customer Name Eng:";
             // 
@@ -135,7 +136,7 @@
             this.lblCustomerNameEng.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerNameEng.Location = new System.Drawing.Point(200, 53);
             this.lblCustomerNameEng.Name = "lblCustomerNameEng";
-            this.lblCustomerNameEng.Size = new System.Drawing.Size(124, 17);
+            this.lblCustomerNameEng.Size = new System.Drawing.Size(110, 16);
             this.lblCustomerNameEng.TabIndex = 0;
             this.lblCustomerNameEng.Text = "Customer Name Eng:";
             // 
@@ -145,7 +146,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 17);
+            this.label4.Size = new System.Drawing.Size(116, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Customer Name MM:";
             // 
@@ -155,7 +156,7 @@
             this.lblCustomerNameMM.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerNameMM.Location = new System.Drawing.Point(200, 112);
             this.lblCustomerNameMM.Name = "lblCustomerNameMM";
-            this.lblCustomerNameMM.Size = new System.Drawing.Size(126, 17);
+            this.lblCustomerNameMM.Size = new System.Drawing.Size(116, 16);
             this.lblCustomerNameMM.TabIndex = 0;
             this.lblCustomerNameMM.Text = "Customer Name MM:";
             // 
@@ -165,7 +166,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "NRC:";
             // 
@@ -175,7 +176,7 @@
             this.lblNRC.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNRC.Location = new System.Drawing.Point(200, 168);
             this.lblNRC.Name = "lblNRC";
-            this.lblNRC.Size = new System.Drawing.Size(40, 17);
+            this.lblNRC.Size = new System.Drawing.Size(36, 16);
             this.lblNRC.TabIndex = 0;
             this.lblNRC.Text = "NRC:";
             // 
@@ -185,7 +186,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(42, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ph No:";
             // 
@@ -195,7 +196,7 @@
             this.lblPh.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPh.Location = new System.Drawing.Point(200, 219);
             this.lblPh.Name = "lblPh";
-            this.lblPh.Size = new System.Drawing.Size(46, 17);
+            this.lblPh.Size = new System.Drawing.Size(42, 16);
             this.lblPh.TabIndex = 0;
             this.lblPh.Text = "Ph No:";
             // 
@@ -205,7 +206,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 269);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 17);
+            this.label6.Size = new System.Drawing.Size(69, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Postal Code:";
             // 
@@ -215,7 +216,7 @@
             this.lblPostalCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPostalCode.Location = new System.Drawing.Point(200, 269);
             this.lblPostalCode.Name = "lblPostalCode";
-            this.lblPostalCode.Size = new System.Drawing.Size(77, 17);
+            this.lblPostalCode.Size = new System.Drawing.Size(69, 16);
             this.lblPostalCode.TabIndex = 0;
             this.lblPostalCode.Text = "Postal Code:";
             // 
@@ -225,7 +226,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 320);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 17);
+            this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 0;
             this.label7.Text = "Township Name:";
             // 
@@ -235,7 +236,7 @@
             this.lblTownshipName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTownshipName.Location = new System.Drawing.Point(200, 320);
             this.lblTownshipName.Name = "lblTownshipName";
-            this.lblTownshipName.Size = new System.Drawing.Size(102, 17);
+            this.lblTownshipName.Size = new System.Drawing.Size(92, 16);
             this.lblTownshipName.TabIndex = 0;
             this.lblTownshipName.Text = "Township Name:";
             // 
@@ -245,7 +246,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 368);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 17);
+            this.label8.Size = new System.Drawing.Size(79, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Quarter Name:";
             // 
@@ -255,7 +256,7 @@
             this.lblQuarterName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuarterName.Location = new System.Drawing.Point(200, 368);
             this.lblQuarterName.Name = "lblQuarterName";
-            this.lblQuarterName.Size = new System.Drawing.Size(88, 17);
+            this.lblQuarterName.Size = new System.Drawing.Size(79, 16);
             this.lblQuarterName.TabIndex = 0;
             this.lblQuarterName.Text = "Quarter Name:";
             // 
@@ -297,7 +298,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 17);
+            this.label9.Size = new System.Drawing.Size(72, 16);
             this.label9.TabIndex = 0;
             this.label9.Text = "Address Eng:";
             // 
@@ -307,7 +308,7 @@
             this.lblAddressEng.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddressEng.Location = new System.Drawing.Point(160, 0);
             this.lblAddressEng.Name = "lblAddressEng";
-            this.lblAddressEng.Size = new System.Drawing.Size(81, 17);
+            this.lblAddressEng.Size = new System.Drawing.Size(72, 16);
             this.lblAddressEng.TabIndex = 0;
             this.lblAddressEng.Text = "Address Eng:";
             // 
@@ -317,7 +318,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 66);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 17);
+            this.label10.Size = new System.Drawing.Size(78, 16);
             this.label10.TabIndex = 0;
             this.label10.Text = "Address MM:";
             // 
@@ -327,7 +328,7 @@
             this.lblAddressMM.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddressMM.Location = new System.Drawing.Point(160, 66);
             this.lblAddressMM.Name = "lblAddressMM";
-            this.lblAddressMM.Size = new System.Drawing.Size(83, 17);
+            this.lblAddressMM.Size = new System.Drawing.Size(78, 16);
             this.lblAddressMM.TabIndex = 0;
             this.lblAddressMM.Text = "Address MM:";
             // 
@@ -337,7 +338,7 @@
             this.meter.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.meter.Location = new System.Drawing.Point(3, 132);
             this.meter.Name = "meter";
-            this.meter.Size = new System.Drawing.Size(64, 17);
+            this.meter.Size = new System.Drawing.Size(59, 16);
             this.meter.TabIndex = 0;
             this.meter.Text = "Meter No:";
             // 
@@ -347,7 +348,7 @@
             this.lblMeterNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMeterNo.Location = new System.Drawing.Point(160, 132);
             this.lblMeterNo.Name = "lblMeterNo";
-            this.lblMeterNo.Size = new System.Drawing.Size(64, 17);
+            this.lblMeterNo.Size = new System.Drawing.Size(59, 16);
             this.lblMeterNo.TabIndex = 0;
             this.lblMeterNo.Text = "Meter No:";
             // 
@@ -357,7 +358,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 208);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 17);
+            this.label12.Size = new System.Drawing.Size(65, 16);
             this.label12.TabIndex = 0;
             this.label12.Text = "Book Code:";
             // 
@@ -367,7 +368,7 @@
             this.lblBookCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookCode.Location = new System.Drawing.Point(160, 208);
             this.lblBookCode.Name = "lblBookCode";
-            this.lblBookCode.Size = new System.Drawing.Size(74, 17);
+            this.lblBookCode.Size = new System.Drawing.Size(65, 16);
             this.lblBookCode.TabIndex = 0;
             this.lblBookCode.Text = "Book Code:";
             // 
@@ -377,7 +378,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 265);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 17);
+            this.label11.Size = new System.Drawing.Size(51, 16);
             this.label11.TabIndex = 0;
             this.label11.Text = "Page No:";
             // 
@@ -387,7 +388,7 @@
             this.lblPageNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNo.Location = new System.Drawing.Point(160, 265);
             this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(58, 17);
+            this.lblPageNo.Size = new System.Drawing.Size(51, 16);
             this.lblPageNo.TabIndex = 0;
             this.lblPageNo.Text = "Page No:";
             // 
@@ -397,7 +398,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(3, 311);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 17);
+            this.label13.Size = new System.Drawing.Size(50, 16);
             this.label13.TabIndex = 0;
             this.label13.Text = "Line No:";
             // 
@@ -407,7 +408,7 @@
             this.lblLineNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLineNo.Location = new System.Drawing.Point(160, 311);
             this.lblLineNo.Name = "lblLineNo";
-            this.lblLineNo.Size = new System.Drawing.Size(57, 17);
+            this.lblLineNo.Size = new System.Drawing.Size(50, 16);
             this.lblLineNo.TabIndex = 0;
             this.lblLineNo.Text = "Line No:";
             // 
@@ -417,7 +418,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 363);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 17);
+            this.label14.Size = new System.Drawing.Size(74, 16);
             this.label14.TabIndex = 0;
             this.label14.Text = "Bill Code No:";
             // 
@@ -427,7 +428,7 @@
             this.lblBillCodeNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBillCodeNo.Location = new System.Drawing.Point(160, 363);
             this.lblBillCodeNo.Name = "lblBillCodeNo";
-            this.lblBillCodeNo.Size = new System.Drawing.Size(85, 17);
+            this.lblBillCodeNo.Size = new System.Drawing.Size(74, 16);
             this.lblBillCodeNo.TabIndex = 0;
             this.lblBillCodeNo.Text = "Bill Code No:";
             // 
@@ -438,6 +439,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailCustomerfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Detail";

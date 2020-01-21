@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PunishmentCustomerListUI));
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -214,8 +215,9 @@
             this.ClientSize = new System.Drawing.Size(770, 479);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvpunishmentCustomer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PunishmentCustomerListUI";
-            this.Text = "PunishmentCustomerListUI";
+            this.Text = "Punishment Customer List";
             this.Load += new System.EventHandler(this.PunishmentCustomerListUI_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Quarterfrm));
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.dgvQuarterList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +61,6 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.txtAddress = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -75,7 +76,7 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(301, 422);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 16);
+            this.label11.Size = new System.Drawing.Size(102, 14);
             this.label11.TabIndex = 23;
             this.label11.Text = "* is Mandatory Field";
             // 
@@ -85,7 +86,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(129, 14);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 16);
+            this.label9.Size = new System.Drawing.Size(13, 14);
             this.label9.TabIndex = 21;
             this.label9.Text = "*";
             // 
@@ -95,7 +96,7 @@
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(156, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 16);
+            this.label8.Size = new System.Drawing.Size(13, 14);
             this.label8.TabIndex = 20;
             this.label8.Text = "*";
             // 
@@ -105,7 +106,7 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(156, 14);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 16);
+            this.label7.Size = new System.Drawing.Size(13, 14);
             this.label7.TabIndex = 19;
             this.label7.Text = "*";
             // 
@@ -115,7 +116,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(110, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 16);
+            this.label6.Size = new System.Drawing.Size(13, 14);
             this.label6.TabIndex = 18;
             this.label6.Text = "*";
             // 
@@ -152,7 +153,7 @@
             this.cboTownshipName.Location = new System.Drawing.Point(241, 199);
             this.cboTownshipName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(233, 27);
+            this.cboTownshipName.Size = new System.Drawing.Size(233, 25);
             this.cboTownshipName.TabIndex = 4;
             // 
             // txtQuarterNameMM
@@ -161,7 +162,7 @@
             this.txtQuarterNameMM.Location = new System.Drawing.Point(241, 126);
             this.txtQuarterNameMM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuarterNameMM.Name = "txtQuarterNameMM";
-            this.txtQuarterNameMM.Size = new System.Drawing.Size(233, 28);
+            this.txtQuarterNameMM.Size = new System.Drawing.Size(233, 25);
             this.txtQuarterNameMM.TabIndex = 3;
             // 
             // txtQuarterNameEng
@@ -170,7 +171,7 @@
             this.txtQuarterNameEng.Location = new System.Drawing.Point(241, 63);
             this.txtQuarterNameEng.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuarterNameEng.Name = "txtQuarterNameEng";
-            this.txtQuarterNameEng.Size = new System.Drawing.Size(233, 28);
+            this.txtQuarterNameEng.Size = new System.Drawing.Size(233, 25);
             this.txtQuarterNameEng.TabIndex = 2;
             // 
             // txtQuarterCode
@@ -179,7 +180,7 @@
             this.txtQuarterCode.Location = new System.Drawing.Point(241, 4);
             this.txtQuarterCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuarterCode.Name = "txtQuarterCode";
-            this.txtQuarterCode.Size = new System.Drawing.Size(233, 28);
+            this.txtQuarterCode.Size = new System.Drawing.Size(233, 25);
             this.txtQuarterCode.TabIndex = 1;
             // 
             // label5
@@ -188,7 +189,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(2, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 19);
+            this.label5.Size = new System.Drawing.Size(54, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Address";
             // 
@@ -198,7 +199,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(2, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 19);
+            this.label4.Size = new System.Drawing.Size(95, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Township Name";
             // 
@@ -208,7 +209,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(2, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 19);
+            this.label3.Size = new System.Drawing.Size(116, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Quarter Name (MM)";
             // 
@@ -218,7 +219,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(2, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 19);
+            this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Quarter Name (Eng)";
             // 
@@ -228,7 +229,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Quarter Code";
             // 
@@ -308,6 +309,14 @@
             this.panel1.Size = new System.Drawing.Size(230, 50);
             this.panel1.TabIndex = 0;
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(241, 258);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(233, 82);
+            this.txtAddress.TabIndex = 5;
+            // 
             // dgvQuarterList
             // 
             this.dgvQuarterList.AllowUserToAddRows = false;
@@ -376,24 +385,17 @@
             this.Column7.UseColumnTextForLinkValue = true;
             this.Column7.Width = 80;
             // 
-            // txtAddress
-            // 
-            this.txtAddress.Location = new System.Drawing.Point(241, 258);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(233, 82);
-            this.txtAddress.TabIndex = 5;
-            // 
             // Quarterfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(801, 835);
+            this.ClientSize = new System.Drawing.Size(801, 750);
             this.Controls.Add(this.dgvQuarterList);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Quarterfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillCode7Layerfrm));
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -56,8 +57,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.gv7layer = new System.Windows.Forms.DataGridView();
-            this.gb7layer = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.LowerLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpperLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RateUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +64,8 @@
             this.Edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Delete = new System.Windows.Forms.DataGridViewLinkColumn();
             this.BillCode7LayerDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gb7layer = new System.Windows.Forms.GroupBox();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -384,37 +385,6 @@
             this.gv7layer.TabIndex = 25;
             this.gv7layer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv7layer_CellClick);
             // 
-            // gb7layer
-            // 
-            this.gb7layer.Controls.Add(this.txtRateUnit);
-            this.gb7layer.Controls.Add(this.panel3);
-            this.gb7layer.Controls.Add(this.txtAmount);
-            this.gb7layer.Controls.Add(this.btnAdd);
-            this.gb7layer.Controls.Add(this.txtLowerLimit);
-            this.gb7layer.Controls.Add(this.txtUpperLimit);
-            this.gb7layer.Controls.Add(this.panel4);
-            this.gb7layer.Controls.Add(this.panel6);
-            this.gb7layer.Controls.Add(this.panel5);
-            this.gb7layer.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb7layer.Location = new System.Drawing.Point(12, 106);
-            this.gb7layer.Name = "gb7layer";
-            this.gb7layer.Size = new System.Drawing.Size(546, 226);
-            this.gb7layer.TabIndex = 27;
-            this.gb7layer.TabStop = false;
-            this.gb7layer.Text = "7 Layers Information";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(232, 187);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(72, 32);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // LowerLimit
             // 
             this.LowerLimit.DataPropertyName = "LowerLimit";
@@ -469,6 +439,37 @@
             this.BillCode7LayerDetailID.ReadOnly = true;
             this.BillCode7LayerDetailID.Visible = false;
             // 
+            // gb7layer
+            // 
+            this.gb7layer.Controls.Add(this.txtRateUnit);
+            this.gb7layer.Controls.Add(this.panel3);
+            this.gb7layer.Controls.Add(this.txtAmount);
+            this.gb7layer.Controls.Add(this.btnAdd);
+            this.gb7layer.Controls.Add(this.txtLowerLimit);
+            this.gb7layer.Controls.Add(this.txtUpperLimit);
+            this.gb7layer.Controls.Add(this.panel4);
+            this.gb7layer.Controls.Add(this.panel6);
+            this.gb7layer.Controls.Add(this.panel5);
+            this.gb7layer.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb7layer.Location = new System.Drawing.Point(12, 106);
+            this.gb7layer.Name = "gb7layer";
+            this.gb7layer.Size = new System.Drawing.Size(546, 226);
+            this.gb7layer.TabIndex = 27;
+            this.gb7layer.TabStop = false;
+            this.gb7layer.Text = "7 Layers Information";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(232, 187);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(72, 32);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // BillCode7Layerfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -481,6 +482,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gb7layer);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BillCode7Layerfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

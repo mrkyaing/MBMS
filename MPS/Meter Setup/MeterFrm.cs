@@ -19,7 +19,7 @@ namespace MPS.Meter_Setup
         public String UserID { get; set; }
         public String meterID { get; set; }
         public Boolean isEdit { get; set; }
-        Meter meter = new Meter();
+       
         MeterController meterController = new MeterController();
         public MeterFrm()
         {
@@ -32,6 +32,7 @@ namespace MPS.Meter_Setup
             bindMeterTypeCode();
             if (isEdit)
             {
+                btnSave.Text = "Update";
                 Meter meter = (from m in mbmsEntities.Meters where m.MeterID == meterID select m).FirstOrDefault();
                 txtMeterNo.Text = meter.MeterNo;
                  txtMeterModel.Text = meter.Model ;
@@ -243,6 +244,7 @@ namespace MPS.Meter_Setup
                 }
                 else
                 {
+                    Meter meter = new Meter();
                     int meterNoCount = 0;
                     meterNoCount = (from m in mbmsEntities.Meters where m.MeterNo == txtMeterNo.Text && m.Active == true select m).ToList().Count;
 
@@ -256,12 +258,12 @@ namespace MPS.Meter_Setup
                     meter.MeterNo = txtMeterNo.Text;
                     meter.Model = txtMeterModel.Text;
                     meter.InstalledDate = dtpInstallDate.Value.Date;
-                    meter.Losses = Convert.ToInt32(txtLosses.Text.Trim());
-                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text.Trim());
-                    meter.HP = Convert.ToInt32(txtHp.Text.Trim());
-                    meter.Voltage = Convert.ToInt32(txtVoltage.Text.Trim());
-                    meter.AMP = txtAMP.Text;
-                    meter.Standard = Convert.ToInt32(txtStandard.Text.Trim());
+                    meter.Losses = Convert.ToInt32(txtLosses.Text == "" ? "0" : txtLosses.Text);
+                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text == "" ? "0" : txtMultiplier.Text);
+                    meter.HP = Convert.ToInt32(txtHp.Text == "" ? "0" : txtHp.Text);
+                    meter.Voltage = Convert.ToInt32(txtVoltage.Text);
+                    meter.AMP = txtAMP.Text==""?"0":txtAMP.Text ;
+                    meter.Standard = Convert.ToInt32(txtStandard.Text ==""?"0" :txtStandard.Text);
                     if (rdoEnable.Checked == true)
                     {
                         meter.Status = "Enable";
@@ -273,14 +275,14 @@ namespace MPS.Meter_Setup
                     meter.Phrase = txtPhrase.Text;
                     meter.Wire = txtWire.Text;
                     meter.BasicCurrent = txtBasicCurrent.Text;
-                    meter.Constant = txtConstant.Text;
+                    meter.Constant = txtConstant.Text ==""?"0":txtConstant.Text;
                     meter.AvailableYear = Convert.ToInt32(txtAvailableYear.Text);
-                    meter.Class = txtClass.Text;
+                    meter.Class = txtClass.Text == "" ?"0" :txtClass.Text;
 
                     meter.iMax = Convert.ToInt32(txtiMax.Text);
-                    meter.KVA = Convert.ToInt32(txtKVA.Text);
+                    meter.KVA = Convert.ToInt32(txtKVA.Text ==""?"0" :txtKVA.Text);
                     meter.ManufactureBy = txtManufacture.Text;
-                    meter.Frequency = Convert.ToInt32(txtFrequency.Text);
+                    meter.Frequency = Convert.ToInt32(txtFrequency.Text == "" ? "0" :txtFrequency.Text);
                     meter.MeterBoxID = cboMeterBoxCode.SelectedValue.ToString();
                     meter.MeterBoxSequence = txtMeterBoxSequence.Text;
                     meter.MeterTypeID = cboMeterTypeCode.SelectedValue.ToString();

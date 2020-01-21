@@ -23,20 +23,21 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterList2HHUDB));
             this.dgvMeterList = new System.Windows.Forms.DataGridView();
+            this.MeterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSave2HHUDB = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtmetermodelsearch = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtmeternoSearch = new System.Windows.Forms.TextBox();
             this.cbometerBox = new System.Windows.Forms.ComboBox();
-            this.MeterNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtmetermodelsearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +55,25 @@
             this.dgvMeterList.Name = "dgvMeterList";
             this.dgvMeterList.Size = new System.Drawing.Size(561, 186);
             this.dgvMeterList.TabIndex = 12;
+            // 
+            // MeterNo
+            // 
+            this.MeterNo.DataPropertyName = "MeterNo";
+            this.MeterNo.HeaderText = "Meter No";
+            this.MeterNo.Name = "MeterNo";
+            this.MeterNo.Width = 90;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Model";
+            this.Column3.HeaderText = "Model";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "InstalledDate";
+            this.Column4.HeaderText = "Installed Date";
+            this.Column4.Name = "Column4";
             // 
             // groupBox2
             // 
@@ -114,6 +134,24 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Meter Box:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Model :";
+            // 
+            // txtmetermodelsearch
+            // 
+            this.txtmetermodelsearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmetermodelsearch.Location = new System.Drawing.Point(59, 76);
+            this.txtmetermodelsearch.Name = "txtmetermodelsearch";
+            this.txtmetermodelsearch.Size = new System.Drawing.Size(164, 23);
+            this.txtmetermodelsearch.TabIndex = 7;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -142,49 +180,13 @@
             this.cbometerBox.Size = new System.Drawing.Size(175, 25);
             this.cbometerBox.TabIndex = 8;
             // 
-            // MeterNo
-            // 
-            this.MeterNo.DataPropertyName = "MeterNo";
-            this.MeterNo.HeaderText = "Meter No";
-            this.MeterNo.Name = "MeterNo";
-            this.MeterNo.Width = 90;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Model";
-            this.Column3.HeaderText = "Model";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "InstalledDate";
-            this.Column4.HeaderText = "Installed Date";
-            this.Column4.Name = "Column4";
-            // 
-            // txtmetermodelsearch
-            // 
-            this.txtmetermodelsearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmetermodelsearch.Location = new System.Drawing.Point(59, 76);
-            this.txtmetermodelsearch.Name = "txtmetermodelsearch";
-            this.txtmetermodelsearch.Size = new System.Drawing.Size(164, 23);
-            this.txtmetermodelsearch.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Model :";
-            // 
             // MeterList2HHUDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 405);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterList2HHUDB";
             this.Text = "Meter List 2 HHU DB";
             this.Load += new System.EventHandler(this.MeterList2HHUDB_Load);

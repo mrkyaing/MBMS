@@ -23,7 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PolePC2HHUDB));
             this.dgvPoleList = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSave2HHUDB = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -34,11 +40,6 @@
             this.txtSearchPoleName = new System.Windows.Forms.TextBox();
             this.cboSearchQuarterName = new System.Windows.Forms.ComboBox();
             this.cboSearchTransformerName = new System.Windows.Forms.ComboBox();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoleList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +60,32 @@
             this.dgvPoleList.Size = new System.Drawing.Size(561, 186);
             this.dgvPoleList.TabIndex = 12;
             this.dgvPoleList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvPoleList_DataBindingComplete);
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Pole No";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 90;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "GPS-X";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "GPS-Y";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Transformer Name";
+            this.Column5.Name = "Column5";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Quarter Name";
+            this.Column8.Name = "Column8";
             // 
             // groupBox2
             // 
@@ -156,7 +183,6 @@
             this.cboSearchQuarterName.Name = "cboSearchQuarterName";
             this.cboSearchQuarterName.Size = new System.Drawing.Size(164, 25);
             this.cboSearchQuarterName.TabIndex = 9;
-
             // 
             // cboSearchTransformerName
             // 
@@ -167,33 +193,6 @@
             this.cboSearchTransformerName.Name = "cboSearchTransformerName";
             this.cboSearchTransformerName.Size = new System.Drawing.Size(175, 25);
             this.cboSearchTransformerName.TabIndex = 8;
-
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Pole No";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 90;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "GPS-X";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "GPS-Y";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Transformer Name";
-            this.Column5.Name = "Column5";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Quarter Name";
-            this.Column8.Name = "Column8";
             // 
             // PolePC2HHUDB
             // 
@@ -202,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(631, 407);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PolePC2HHUDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterBillPaymentList));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboQuarter = new System.Windows.Forms.ComboBox();
             this.cboTownship = new System.Windows.Forms.ComboBox();
@@ -419,6 +420,7 @@
             this.ClientSize = new System.Drawing.Size(1353, 406);
             this.Controls.Add(this.gvmeterbillinvoice);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterBillPaymentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Bill Payment List";

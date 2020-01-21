@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accountfrm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLedgerCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 19);
+            this.label1.Size = new System.Drawing.Size(76, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ledger Code";
             // 
@@ -74,7 +75,7 @@
             this.txtLedgerCode.Location = new System.Drawing.Point(195, 4);
             this.txtLedgerCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLedgerCode.Name = "txtLedgerCode";
-            this.txtLedgerCode.Size = new System.Drawing.Size(233, 28);
+            this.txtLedgerCode.Size = new System.Drawing.Size(233, 25);
             this.txtLedgerCode.TabIndex = 1;
             // 
             // label2
@@ -83,7 +84,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Book Code";
             // 
@@ -93,7 +94,7 @@
             this.txtBookCode.Location = new System.Drawing.Point(195, 55);
             this.txtBookCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBookCode.Name = "txtBookCode";
-            this.txtBookCode.Size = new System.Drawing.Size(233, 28);
+            this.txtBookCode.Size = new System.Drawing.Size(233, 25);
             this.txtBookCode.TabIndex = 2;
             // 
             // label4
@@ -102,7 +103,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 19);
+            this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Transformer Name";
             // 
@@ -113,7 +114,7 @@
             this.cboTransformerName.Location = new System.Drawing.Point(195, 101);
             this.cboTransformerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTransformerName.Name = "cboTransformerName";
-            this.cboTransformerName.Size = new System.Drawing.Size(233, 27);
+            this.cboTransformerName.Size = new System.Drawing.Size(233, 25);
             this.cboTransformerName.TabIndex = 3;
             // 
             // btnSave
@@ -148,7 +149,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(107, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 16);
+            this.label5.Size = new System.Drawing.Size(13, 14);
             this.label5.TabIndex = 4;
             this.label5.Text = "*";
             // 
@@ -158,7 +159,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(143, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 16);
+            this.label6.Size = new System.Drawing.Size(13, 14);
             this.label6.TabIndex = 4;
             this.label6.Text = "*";
             // 
@@ -168,7 +169,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(302, 210);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 16);
+            this.label9.Size = new System.Drawing.Size(102, 14);
             this.label9.TabIndex = 4;
             this.label9.Text = "* is Mandatory Field";
             // 
@@ -219,7 +220,7 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(97, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 16);
+            this.label7.Size = new System.Drawing.Size(13, 14);
             this.label7.TabIndex = 4;
             this.label7.Text = "*";
             // 
@@ -289,7 +290,7 @@
             // 
             // Accountfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 653);
             this.Controls.Add(this.dgvLedgerList);
@@ -298,6 +299,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Accountfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

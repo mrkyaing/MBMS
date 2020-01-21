@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterListfrm));
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cboMeterTypeCode = new System.Windows.Forms.ComboBox();
             this.cboMeterBoxCode = new System.Windows.Forms.ComboBox();
@@ -41,10 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cboTransformer = new System.Windows.Forms.ComboBox();
             this.dgvMeterList = new System.Windows.Forms.DataGridView();
-            this.rdounregistermeter = new System.Windows.Forms.RadioButton();
-            this.rdoregistermeter = new System.Windows.Forms.RadioButton();
-            this.rdoremovedmeter = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,13 +56,17 @@
             this.Column12 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Remove = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.rdounregistermeter = new System.Windows.Forms.RadioButton();
+            this.rdoregistermeter = new System.Windows.Forms.RadioButton();
+            this.rdoremovedmeter = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(942, 93);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 33);
@@ -76,73 +77,73 @@
             // 
             // cboMeterTypeCode
             // 
-            this.cboMeterTypeCode.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMeterTypeCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeterTypeCode.FormattingEnabled = true;
             this.cboMeterTypeCode.Location = new System.Drawing.Point(498, 99);
             this.cboMeterTypeCode.Name = "cboMeterTypeCode";
-            this.cboMeterTypeCode.Size = new System.Drawing.Size(176, 28);
+            this.cboMeterTypeCode.Size = new System.Drawing.Size(176, 24);
             this.cboMeterTypeCode.TabIndex = 23;
             // 
             // cboMeterBoxCode
             // 
-            this.cboMeterBoxCode.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMeterBoxCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeterBoxCode.FormattingEnabled = true;
             this.cboMeterBoxCode.Location = new System.Drawing.Point(498, 36);
             this.cboMeterBoxCode.Name = "cboMeterBoxCode";
-            this.cboMeterBoxCode.Size = new System.Drawing.Size(176, 28);
+            this.cboMeterBoxCode.Size = new System.Drawing.Size(176, 24);
             this.cboMeterBoxCode.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(375, 105);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 20);
+            this.label4.Size = new System.Drawing.Size(99, 16);
             this.label4.TabIndex = 19;
             this.label4.Text = "Meter Type Code:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(375, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 20;
             this.label3.Text = "MeterBox Code:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(35, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(32, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "Pole:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 20);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 22;
             this.label1.Text = "Meter No:";
             // 
             // txtMeterNo
             // 
-            this.txtMeterNo.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMeterNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMeterNo.Location = new System.Drawing.Point(104, 33);
             this.txtMeterNo.Name = "txtMeterNo";
-            this.txtMeterNo.Size = new System.Drawing.Size(176, 29);
+            this.txtMeterNo.Size = new System.Drawing.Size(176, 23);
             this.txtMeterNo.TabIndex = 18;
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(853, 105);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(112, 33);
@@ -153,30 +154,30 @@
             // 
             // cboPole
             // 
-            this.cboPole.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPole.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPole.FormattingEnabled = true;
             this.cboPole.Location = new System.Drawing.Point(104, 102);
             this.cboPole.Name = "cboPole";
-            this.cboPole.Size = new System.Drawing.Size(176, 28);
+            this.cboPole.Size = new System.Drawing.Size(176, 24);
             this.cboPole.TabIndex = 24;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(739, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 19;
             this.label5.Text = "Transformer:";
             // 
             // cboTransformer
             // 
-            this.cboTransformer.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTransformer.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTransformer.FormattingEnabled = true;
             this.cboTransformer.Location = new System.Drawing.Point(867, 36);
             this.cboTransformer.Name = "cboTransformer";
-            this.cboTransformer.Size = new System.Drawing.Size(176, 28);
+            this.cboTransformer.Size = new System.Drawing.Size(176, 24);
             this.cboTransformer.TabIndex = 23;
             // 
             // dgvMeterList
@@ -204,56 +205,6 @@
             this.dgvMeterList.TabIndex = 16;
             this.dgvMeterList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeterList_CellClick);
             this.dgvMeterList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMeterList_DataBindingComplete);
-            // 
-            // rdounregistermeter
-            // 
-            this.rdounregistermeter.AutoSize = true;
-            this.rdounregistermeter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdounregistermeter.Location = new System.Drawing.Point(75, 146);
-            this.rdounregistermeter.Name = "rdounregistermeter";
-            this.rdounregistermeter.Size = new System.Drawing.Size(156, 24);
-            this.rdounregistermeter.TabIndex = 27;
-            this.rdounregistermeter.Text = "Unregister Meter List";
-            this.rdounregistermeter.UseVisualStyleBackColor = true;
-            this.rdounregistermeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
-            // 
-            // rdoregistermeter
-            // 
-            this.rdoregistermeter.AutoSize = true;
-            this.rdoregistermeter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoregistermeter.Location = new System.Drawing.Point(238, 148);
-            this.rdoregistermeter.Name = "rdoregistermeter";
-            this.rdoregistermeter.Size = new System.Drawing.Size(143, 24);
-            this.rdoregistermeter.TabIndex = 27;
-            this.rdoregistermeter.Text = "Register Meter List";
-            this.rdoregistermeter.UseVisualStyleBackColor = true;
-            this.rdoregistermeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
-            // 
-            // rdoremovedmeter
-            // 
-            this.rdoremovedmeter.AutoSize = true;
-            this.rdoremovedmeter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoremovedmeter.Location = new System.Drawing.Point(387, 146);
-            this.rdoremovedmeter.Name = "rdoremovedmeter";
-            this.rdoremovedmeter.Size = new System.Drawing.Size(214, 24);
-            this.rdoremovedmeter.TabIndex = 27;
-            this.rdoremovedmeter.Text = "Removed/Damaged Meter List";
-            this.rdoremovedmeter.UseVisualStyleBackColor = true;
-            this.rdoremovedmeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rdounregistermeter);
-            this.groupBox1.Controls.Add(this.rdoregistermeter);
-            this.groupBox1.Controls.Add(this.rdoremovedmeter);
-            this.groupBox1.Controls.Add(this.btnRefresh);
-            this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(29, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1106, 176);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search By";
             // 
             // Column1
             // 
@@ -334,6 +285,56 @@
             this.Remove.Text = "Remove";
             this.Remove.UseColumnTextForLinkValue = true;
             // 
+            // rdounregistermeter
+            // 
+            this.rdounregistermeter.AutoSize = true;
+            this.rdounregistermeter.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdounregistermeter.Location = new System.Drawing.Point(75, 148);
+            this.rdounregistermeter.Name = "rdounregistermeter";
+            this.rdounregistermeter.Size = new System.Drawing.Size(131, 20);
+            this.rdounregistermeter.TabIndex = 27;
+            this.rdounregistermeter.Text = "Unregister Meter List";
+            this.rdounregistermeter.UseVisualStyleBackColor = true;
+            this.rdounregistermeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
+            // 
+            // rdoregistermeter
+            // 
+            this.rdoregistermeter.AutoSize = true;
+            this.rdoregistermeter.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoregistermeter.Location = new System.Drawing.Point(238, 148);
+            this.rdoregistermeter.Name = "rdoregistermeter";
+            this.rdoregistermeter.Size = new System.Drawing.Size(120, 20);
+            this.rdoregistermeter.TabIndex = 27;
+            this.rdoregistermeter.Text = "Register Meter List";
+            this.rdoregistermeter.UseVisualStyleBackColor = true;
+            this.rdoregistermeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
+            // 
+            // rdoremovedmeter
+            // 
+            this.rdoremovedmeter.AutoSize = true;
+            this.rdoremovedmeter.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoremovedmeter.Location = new System.Drawing.Point(387, 147);
+            this.rdoremovedmeter.Name = "rdoremovedmeter";
+            this.rdoremovedmeter.Size = new System.Drawing.Size(173, 20);
+            this.rdoremovedmeter.TabIndex = 27;
+            this.rdoremovedmeter.Text = "Removed/Damaged Meter List";
+            this.rdoremovedmeter.UseVisualStyleBackColor = true;
+            this.rdoremovedmeter.CheckedChanged += new System.EventHandler(this.rdounregistermeter_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdounregistermeter);
+            this.groupBox1.Controls.Add(this.rdoregistermeter);
+            this.groupBox1.Controls.Add(this.rdoremovedmeter);
+            this.groupBox1.Controls.Add(this.btnRefresh);
+            this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(29, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1106, 176);
+            this.groupBox1.TabIndex = 28;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search By";
+            // 
             // MeterListfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -352,6 +353,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterListfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter List";

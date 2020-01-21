@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customerfrm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
@@ -85,11 +86,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cboMeterNo = new System.Windows.Forms.ComboBox();
+            this.txtAddressMM = new System.Windows.Forms.TextBox();
+            this.txtAddressEng = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.txtAddressMM = new System.Windows.Forms.TextBox();
-            this.txtAddressEng = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -177,7 +178,7 @@
             this.label28.ForeColor = System.Drawing.Color.Red;
             this.label28.Location = new System.Drawing.Point(97, 4);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(15, 17);
+            this.label28.Size = new System.Drawing.Size(14, 16);
             this.label28.TabIndex = 1;
             this.label28.Text = "*";
             // 
@@ -187,7 +188,7 @@
             this.label30.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(5, 3);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(86, 19);
+            this.label30.Size = new System.Drawing.Size(75, 17);
             this.label30.TabIndex = 0;
             this.label30.Text = "Bill Code No";
             // 
@@ -206,7 +207,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(127, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 17);
+            this.label5.Size = new System.Drawing.Size(14, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "*";
             // 
@@ -216,7 +217,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(5, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 19);
+            this.label14.Size = new System.Drawing.Size(105, 17);
             this.label14.TabIndex = 0;
             this.label14.Text = "Page No / Line No";
             // 
@@ -235,7 +236,7 @@
             this.label26.ForeColor = System.Drawing.Color.Red;
             this.label26.Location = new System.Drawing.Point(103, 3);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(15, 17);
+            this.label26.Size = new System.Drawing.Size(14, 16);
             this.label26.TabIndex = 1;
             this.label26.Text = "*";
             // 
@@ -245,7 +246,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(5, 3);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 19);
+            this.label12.Size = new System.Drawing.Size(67, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "Book Code";
             // 
@@ -255,7 +256,7 @@
             this.cboBookCode.FormattingEnabled = true;
             this.cboBookCode.Location = new System.Drawing.Point(244, 493);
             this.cboBookCode.Name = "cboBookCode";
-            this.cboBookCode.Size = new System.Drawing.Size(200, 27);
+            this.cboBookCode.Size = new System.Drawing.Size(200, 25);
             this.cboBookCode.TabIndex = 12;
             this.cboBookCode.SelectedIndexChanged += new System.EventHandler(this.cboBookCode_SelectedIndexChanged);
             // 
@@ -273,7 +274,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(4, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 19);
+            this.label7.Size = new System.Drawing.Size(72, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Postal Code";
             // 
@@ -292,7 +293,7 @@
             this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(103, 5);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 17);
+            this.label23.Size = new System.Drawing.Size(14, 16);
             this.label23.TabIndex = 1;
             this.label23.Text = "*";
             // 
@@ -302,7 +303,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 19);
+            this.label9.Size = new System.Drawing.Size(92, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Address (MM) ";
             // 
@@ -321,7 +322,7 @@
             this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.Location = new System.Drawing.Point(96, 3);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(15, 17);
+            this.label22.Size = new System.Drawing.Size(14, 16);
             this.label22.TabIndex = 1;
             this.label22.Text = "*";
             // 
@@ -331,7 +332,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(3, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 19);
+            this.label8.Size = new System.Drawing.Size(89, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "Address (Eng) ";
             // 
@@ -340,7 +341,7 @@
             this.txtPost.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPost.Location = new System.Drawing.Point(244, 193);
             this.txtPost.Name = "txtPost";
-            this.txtPost.Size = new System.Drawing.Size(200, 28);
+            this.txtPost.Size = new System.Drawing.Size(200, 25);
             this.txtPost.TabIndex = 6;
             // 
             // panel6
@@ -358,7 +359,7 @@
             this.label20.ForeColor = System.Drawing.Color.Red;
             this.label20.Location = new System.Drawing.Point(87, 5);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 17);
+            this.label20.Size = new System.Drawing.Size(14, 16);
             this.label20.TabIndex = 1;
             this.label20.Text = "*";
             // 
@@ -368,7 +369,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(5, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Phone No ";
             // 
@@ -377,7 +378,7 @@
             this.txtPhone.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(244, 157);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(200, 28);
+            this.txtPhone.Size = new System.Drawing.Size(200, 25);
             this.txtPhone.TabIndex = 5;
             // 
             // panel4
@@ -395,7 +396,7 @@
             this.label18.ForeColor = System.Drawing.Color.Red;
             this.label18.Location = new System.Drawing.Point(49, 6);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 17);
+            this.label18.Size = new System.Drawing.Size(14, 16);
             this.label18.TabIndex = 1;
             this.label18.Text = "*";
             // 
@@ -405,7 +406,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 19);
+            this.label4.Size = new System.Drawing.Size(36, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "NRC ";
             // 
@@ -424,7 +425,7 @@
             this.label17.ForeColor = System.Drawing.Color.Red;
             this.label17.Location = new System.Drawing.Point(152, 6);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 17);
+            this.label17.Size = new System.Drawing.Size(14, 16);
             this.label17.TabIndex = 1;
             this.label17.Text = "*";
             // 
@@ -434,7 +435,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 19);
+            this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Customer Name (MM) ";
             // 
@@ -453,7 +454,7 @@
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.Location = new System.Drawing.Point(149, 8);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(15, 17);
+            this.label16.Size = new System.Drawing.Size(14, 16);
             this.label16.TabIndex = 1;
             this.label16.Text = "*";
             // 
@@ -463,7 +464,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 19);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Customer Name (Eng) ";
             // 
@@ -472,7 +473,7 @@
             this.txtCustomerCode.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerCode.Location = new System.Drawing.Point(244, 3);
             this.txtCustomerCode.Name = "txtCustomerCode";
-            this.txtCustomerCode.Size = new System.Drawing.Size(200, 28);
+            this.txtCustomerCode.Size = new System.Drawing.Size(200, 25);
             this.txtCustomerCode.TabIndex = 1;
             // 
             // txtCustomerNameEng
@@ -480,7 +481,7 @@
             this.txtCustomerNameEng.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerNameEng.Location = new System.Drawing.Point(244, 43);
             this.txtCustomerNameEng.Name = "txtCustomerNameEng";
-            this.txtCustomerNameEng.Size = new System.Drawing.Size(200, 28);
+            this.txtCustomerNameEng.Size = new System.Drawing.Size(200, 25);
             this.txtCustomerNameEng.TabIndex = 2;
             // 
             // txtCustomerNameMM
@@ -488,7 +489,7 @@
             this.txtCustomerNameMM.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerNameMM.Location = new System.Drawing.Point(244, 86);
             this.txtCustomerNameMM.Name = "txtCustomerNameMM";
-            this.txtCustomerNameMM.Size = new System.Drawing.Size(200, 28);
+            this.txtCustomerNameMM.Size = new System.Drawing.Size(200, 25);
             this.txtCustomerNameMM.TabIndex = 3;
             // 
             // txtNRC
@@ -496,7 +497,7 @@
             this.txtNRC.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNRC.Location = new System.Drawing.Point(244, 122);
             this.txtNRC.Name = "txtNRC";
-            this.txtNRC.Size = new System.Drawing.Size(200, 28);
+            this.txtNRC.Size = new System.Drawing.Size(200, 25);
             this.txtNRC.TabIndex = 4;
             // 
             // panel1
@@ -514,7 +515,7 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(103, 5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 17);
+            this.label15.Size = new System.Drawing.Size(14, 16);
             this.label15.TabIndex = 1;
             this.label15.Text = "*";
             // 
@@ -524,7 +525,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 19);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Code ";
             // 
@@ -543,7 +544,7 @@
             this.txtLineNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLineNo.Location = new System.Drawing.Point(130, 3);
             this.txtLineNo.Name = "txtLineNo";
-            this.txtLineNo.Size = new System.Drawing.Size(70, 26);
+            this.txtLineNo.Size = new System.Drawing.Size(70, 23);
             this.txtLineNo.TabIndex = 15;
             // 
             // txtPageNo
@@ -551,7 +552,7 @@
             this.txtPageNo.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPageNo.Location = new System.Drawing.Point(6, 4);
             this.txtPageNo.Name = "txtPageNo";
-            this.txtPageNo.Size = new System.Drawing.Size(70, 26);
+            this.txtPageNo.Size = new System.Drawing.Size(70, 23);
             this.txtPageNo.TabIndex = 15;
             // 
             // label19
@@ -560,7 +561,7 @@
             this.label19.Font = new System.Drawing.Font("Myanmar3", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(89, 5);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(15, 22);
+            this.label19.Size = new System.Drawing.Size(13, 19);
             this.label19.TabIndex = 1;
             this.label19.Text = "/";
             // 
@@ -570,7 +571,7 @@
             this.cboBillCodeNo.FormattingEnabled = true;
             this.cboBillCodeNo.Location = new System.Drawing.Point(244, 573);
             this.cboBillCodeNo.Name = "cboBillCodeNo";
-            this.cboBillCodeNo.Size = new System.Drawing.Size(218, 27);
+            this.cboBillCodeNo.Size = new System.Drawing.Size(218, 25);
             this.cboBillCodeNo.TabIndex = 15;
             // 
             // panel10
@@ -588,7 +589,7 @@
             this.label25.ForeColor = System.Drawing.Color.Red;
             this.label25.Location = new System.Drawing.Point(112, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(15, 17);
+            this.label25.Size = new System.Drawing.Size(14, 16);
             this.label25.TabIndex = 1;
             this.label25.Text = "*";
             // 
@@ -598,7 +599,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 19);
+            this.label11.Size = new System.Drawing.Size(95, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "Township Name";
             // 
@@ -608,7 +609,7 @@
             this.cboTownshipName.FormattingEnabled = true;
             this.cboTownshipName.Location = new System.Drawing.Point(244, 229);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(200, 27);
+            this.cboTownshipName.Size = new System.Drawing.Size(200, 25);
             this.cboTownshipName.TabIndex = 11;
             // 
             // panel11
@@ -626,7 +627,7 @@
             this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Location = new System.Drawing.Point(96, 6);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(15, 17);
+            this.label24.Size = new System.Drawing.Size(14, 16);
             this.label24.TabIndex = 1;
             this.label24.Text = "*";
             // 
@@ -636,7 +637,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(4, 4);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 19);
+            this.label10.Size = new System.Drawing.Size(81, 17);
             this.label10.TabIndex = 0;
             this.label10.Text = "Quarter Name";
             // 
@@ -646,7 +647,7 @@
             this.cboQuarterName.FormattingEnabled = true;
             this.cboQuarterName.Location = new System.Drawing.Point(244, 266);
             this.cboQuarterName.Name = "cboQuarterName";
-            this.cboQuarterName.Size = new System.Drawing.Size(200, 27);
+            this.cboQuarterName.Size = new System.Drawing.Size(200, 25);
             this.cboQuarterName.TabIndex = 10;
             // 
             // panel13
@@ -664,7 +665,7 @@
             this.label27.ForeColor = System.Drawing.Color.Red;
             this.label27.Location = new System.Drawing.Point(75, 5);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(15, 17);
+            this.label27.Size = new System.Drawing.Size(14, 16);
             this.label27.TabIndex = 1;
             this.label27.Text = "*";
             // 
@@ -674,7 +675,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(4, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 19);
+            this.label13.Size = new System.Drawing.Size(59, 17);
             this.label13.TabIndex = 0;
             this.label13.Text = "Meter No";
             // 
@@ -684,8 +685,24 @@
             this.cboMeterNo.FormattingEnabled = true;
             this.cboMeterNo.Location = new System.Drawing.Point(244, 452);
             this.cboMeterNo.Name = "cboMeterNo";
-            this.cboMeterNo.Size = new System.Drawing.Size(200, 27);
+            this.cboMeterNo.Size = new System.Drawing.Size(200, 25);
             this.cboMeterNo.TabIndex = 9;
+            // 
+            // txtAddressMM
+            // 
+            this.txtAddressMM.Location = new System.Drawing.Point(244, 379);
+            this.txtAddressMM.Multiline = true;
+            this.txtAddressMM.Name = "txtAddressMM";
+            this.txtAddressMM.Size = new System.Drawing.Size(200, 66);
+            this.txtAddressMM.TabIndex = 36;
+            // 
+            // txtAddressEng
+            // 
+            this.txtAddressEng.Location = new System.Drawing.Point(244, 305);
+            this.txtAddressEng.Multiline = true;
+            this.txtAddressEng.Name = "txtAddressEng";
+            this.txtAddressEng.Size = new System.Drawing.Size(200, 66);
+            this.txtAddressEng.TabIndex = 36;
             // 
             // btnSave
             // 
@@ -718,35 +735,20 @@
             this.label29.ForeColor = System.Drawing.Color.Red;
             this.label29.Location = new System.Drawing.Point(301, 660);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(121, 17);
+            this.label29.Size = new System.Drawing.Size(110, 16);
             this.label29.TabIndex = 3;
             this.label29.Text = "* is Mandatory Field";
-            // 
-            // txtAddressMM
-            // 
-            this.txtAddressMM.Location = new System.Drawing.Point(244, 379);
-            this.txtAddressMM.Multiline = true;
-            this.txtAddressMM.Name = "txtAddressMM";
-            this.txtAddressMM.Size = new System.Drawing.Size(200, 66);
-            this.txtAddressMM.TabIndex = 36;
-            // 
-            // txtAddressEng
-            // 
-            this.txtAddressEng.Location = new System.Drawing.Point(244, 305);
-            this.txtAddressEng.Multiline = true;
-            this.txtAddressEng.Name = "txtAddressEng";
-            this.txtAddressEng.Size = new System.Drawing.Size(200, 66);
-            this.txtAddressEng.TabIndex = 36;
             // 
             // Customerfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(633, 765);
+            this.ClientSize = new System.Drawing.Size(633, 750);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Customerfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Customer";

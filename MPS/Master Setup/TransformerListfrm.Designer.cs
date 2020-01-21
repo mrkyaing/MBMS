@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransformerListfrm));
             this.dgvTransformerList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -165,7 +166,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Transformer Code :";
             // 
@@ -174,7 +175,7 @@
             this.txtTransformerName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransformerName.Location = new System.Drawing.Point(138, 33);
             this.txtTransformerName.Name = "txtTransformerName";
-            this.txtTransformerName.Size = new System.Drawing.Size(198, 26);
+            this.txtTransformerName.Size = new System.Drawing.Size(198, 23);
             this.txtTransformerName.TabIndex = 2;
             // 
             // label2
@@ -183,7 +184,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(380, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 19);
+            this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Transformer Model :";
             // 
@@ -192,7 +193,7 @@
             this.txtTransformerModel.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTransformerModel.Location = new System.Drawing.Point(526, 33);
             this.txtTransformerModel.Name = "txtTransformerModel";
-            this.txtTransformerModel.Size = new System.Drawing.Size(198, 26);
+            this.txtTransformerModel.Size = new System.Drawing.Size(198, 23);
             this.txtTransformerModel.TabIndex = 2;
             // 
             // label3
@@ -201,7 +202,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(16, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 19);
+            this.label3.Size = new System.Drawing.Size(81, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Quarter Name";
             // 
@@ -211,7 +212,7 @@
             this.cboQuarterName.FormattingEnabled = true;
             this.cboQuarterName.Location = new System.Drawing.Point(138, 83);
             this.cboQuarterName.Name = "cboQuarterName";
-            this.cboQuarterName.Size = new System.Drawing.Size(198, 25);
+            this.cboQuarterName.Size = new System.Drawing.Size(198, 24);
             this.cboQuarterName.TabIndex = 3;
             // 
             // btnSearch
@@ -275,10 +276,10 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvTransformerList);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1022, 411);
+            this.tabPage1.Size = new System.Drawing.Size(1022, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Active Trasnformer";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -286,10 +287,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dgvRemoveTransformerList);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1022, 411);
+            this.tabPage2.Size = new System.Drawing.Size(1022, 414);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Remove Transformer";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -382,6 +383,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "TransformerListfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

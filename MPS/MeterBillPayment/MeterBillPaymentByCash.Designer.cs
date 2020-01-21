@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterBillPaymentByCash));
             this.btnClose = new System.Windows.Forms.Button();
             this.txtTotalFees = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPaid = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFinalTotalFees = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.rdoadvancemoney = new System.Windows.Forms.RadioButton();
             this.rdocashback = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,8 +51,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtFinalTotalFees = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,6 +207,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Payment Information";
             // 
+            // txtFinalTotalFees
+            // 
+            this.txtFinalTotalFees.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinalTotalFees.ForeColor = System.Drawing.Color.Red;
+            this.txtFinalTotalFees.Location = new System.Drawing.Point(203, 320);
+            this.txtFinalTotalFees.Name = "txtFinalTotalFees";
+            this.txtFinalTotalFees.ReadOnly = true;
+            this.txtFinalTotalFees.Size = new System.Drawing.Size(197, 29);
+            this.txtFinalTotalFees.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(46, 320);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Final Total Fees:";
+            // 
             // rdoadvancemoney
             // 
             this.rdoadvancemoney.AutoSize = true;
@@ -325,33 +347,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Reveived Amount:";
             // 
-            // txtFinalTotalFees
-            // 
-            this.txtFinalTotalFees.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFinalTotalFees.ForeColor = System.Drawing.Color.Red;
-            this.txtFinalTotalFees.Location = new System.Drawing.Point(203, 320);
-            this.txtFinalTotalFees.Name = "txtFinalTotalFees";
-            this.txtFinalTotalFees.ReadOnly = true;
-            this.txtFinalTotalFees.Size = new System.Drawing.Size(197, 29);
-            this.txtFinalTotalFees.TabIndex = 12;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(46, 320);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 20);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Final Total Fees:";
-            // 
             // MeterBillPaymentByCash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 527);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterBillPaymentByCash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Bill Payment By Cash";

@@ -23,9 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerImportingUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.gvCustomer = new System.Windows.Forms.DataGridView();
             this.ofdSelect = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
@@ -45,17 +46,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Importing Customer Information:";
             // 
-            // btnSelect
-            // 
-            this.btnSelect.Location = new System.Drawing.Point(53, 57);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(106, 35);
-            this.btnSelect.TabIndex = 0;
-            this.btnSelect.Text = "Select File";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(167, 57);
@@ -66,6 +56,17 @@
             this.btnSave.Text = "Save to System";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(53, 57);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(106, 35);
+            this.btnSelect.TabIndex = 0;
+            this.btnSelect.Text = "Select File";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // gvCustomer
             // 
@@ -89,6 +90,7 @@
             this.Controls.Add(this.gvCustomer);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Myanmar3", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerImportingUI";
             this.Text = "Customer Importing";

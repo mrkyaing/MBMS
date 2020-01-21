@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Townshipfrm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtTownshipCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@
             this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Township Code";
             // 
@@ -75,7 +76,7 @@
             this.txtTownshipCode.Location = new System.Drawing.Point(275, 4);
             this.txtTownshipCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtTownshipCode.Name = "txtTownshipCode";
-            this.txtTownshipCode.Size = new System.Drawing.Size(232, 28);
+            this.txtTownshipCode.Size = new System.Drawing.Size(232, 25);
             this.txtTownshipCode.TabIndex = 1;
             // 
             // label2
@@ -85,7 +86,7 @@
             this.label2.Location = new System.Drawing.Point(4, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 19);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Township Name (Eng)";
             // 
@@ -95,7 +96,7 @@
             this.txtTownshipNameEng.Location = new System.Drawing.Point(275, 80);
             this.txtTownshipNameEng.Margin = new System.Windows.Forms.Padding(4);
             this.txtTownshipNameEng.Name = "txtTownshipNameEng";
-            this.txtTownshipNameEng.Size = new System.Drawing.Size(232, 28);
+            this.txtTownshipNameEng.Size = new System.Drawing.Size(232, 25);
             this.txtTownshipNameEng.TabIndex = 2;
             // 
             // label3
@@ -105,7 +106,7 @@
             this.label3.Location = new System.Drawing.Point(4, 11);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 19);
+            this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Township Name (MM)";
             // 
@@ -115,7 +116,7 @@
             this.txtTowsshipNameMM.Location = new System.Drawing.Point(275, 154);
             this.txtTowsshipNameMM.Margin = new System.Windows.Forms.Padding(4);
             this.txtTowsshipNameMM.Name = "txtTowsshipNameMM";
-            this.txtTowsshipNameMM.Size = new System.Drawing.Size(232, 28);
+            this.txtTowsshipNameMM.Size = new System.Drawing.Size(232, 25);
             this.txtTowsshipNameMM.TabIndex = 3;
             // 
             // btnSave
@@ -151,7 +152,7 @@
             this.label4.Location = new System.Drawing.Point(167, 12);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 16);
+            this.label4.Size = new System.Drawing.Size(13, 14);
             this.label4.TabIndex = 3;
             this.label4.Text = "*";
             // 
@@ -162,7 +163,7 @@
             this.label7.Location = new System.Drawing.Point(337, 268);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 16);
+            this.label7.Size = new System.Drawing.Size(102, 14);
             this.label7.TabIndex = 3;
             this.label7.Text = "* is Mandatory Field";
             // 
@@ -173,7 +174,7 @@
             this.label6.Location = new System.Drawing.Point(123, 15);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 16);
+            this.label6.Size = new System.Drawing.Size(13, 14);
             this.label6.TabIndex = 3;
             this.label6.Text = "*";
             // 
@@ -215,7 +216,7 @@
             this.label9.Location = new System.Drawing.Point(167, 15);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 16);
+            this.label9.Size = new System.Drawing.Size(13, 14);
             this.label9.TabIndex = 3;
             this.label9.Text = "*";
             // 
@@ -298,15 +299,16 @@
             // 
             // Townshipfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 752);
+            this.ClientSize = new System.Drawing.Size(765, 750);
             this.Controls.Add(this.dgvTownship);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Townshipfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
