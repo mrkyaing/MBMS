@@ -112,6 +112,12 @@
     <Compile Include="Importing\CustomerImportingUI.Designer.cs">
       <DependentUpon>CustomerImportingUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ledger\LedgerSearchFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ledger\LedgerSearchFrm.designer.cs">
+      <DependentUpon>LedgerSearchFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Master Setup\TransformerDetailfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Importing\CustomerImportingUI.resx">
       <DependentUpon>CustomerImportingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ledger\LedgerSearchFrm.resx">
+      <DependentUpon>LedgerSearchFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Master Setup\TransformerDetailfrm.resx">
       <DependentUpon>TransformerDetailfrm.cs</DependentUpon>

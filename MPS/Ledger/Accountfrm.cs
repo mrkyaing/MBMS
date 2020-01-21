@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string ledgerID;
         public Boolean isEdit { get; set; }
-        Ledger ledger = new Ledger();
+        
         LedgerController ledgerController = new LedgerController();
         public Accountfrm()
         {
@@ -105,6 +105,7 @@ namespace MPS
                 }
                 else
                 {
+                    Ledger ledger = new Ledger();
                     int ledgerCodeCount = 0;
                     int ledgerCode =Convert.ToInt32( txtLedgerCode.Text);
                     ledgerCodeCount = (from l in mbmsEntities.Ledgers where l.LedgerCode == ledgerCode && l.Active == true select l).ToList().Count;
@@ -198,6 +199,7 @@ namespace MPS
                     txtBookCode.Text = Convert.ToString(row.Cells[2].Value);
                     cboTransformerName.Text = Convert.ToString(row.Cells[3].Value);
                     isEdit = true;
+                    btnSave.Text = "Update";
                 }
 
                 }
@@ -206,6 +208,30 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtLedgerCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtBookCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboTransformerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
         }
     }
 }
