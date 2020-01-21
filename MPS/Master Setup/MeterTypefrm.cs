@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string meterTypeID;
         public Boolean isEdit { get; set; }
-        MeterType meterType = new MeterType();
+       
         MeterTypeController meterTypeController = new MeterTypeController();
         public MeterTypefrm()
         {
@@ -86,6 +86,7 @@ namespace MPS
                 }
                 else
                 {
+                    MeterType meterType = new MeterType();
                     int meterTypeCount = 0;
                     meterTypeCount = (from m in mbmsEntities.MeterTypes where m.MeterTypeCode == txtMeterTypeCode.Text && m.Active == true select m).ToList().Count;
 
@@ -172,6 +173,7 @@ namespace MPS
                     txtMeterTypeCode.Text =Convert.ToString( row.Cells[1].Value);                        
                     txtMeterTypeDes.Text = Convert.ToString(row.Cells[2].Value);
                     isEdit = true;
+                    btnSave.Text = "Update";                   
 
                 }
             }
@@ -180,6 +182,22 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtMeterTypeCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtMeterTypeDes_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
         }
     }
 }

@@ -139,6 +139,7 @@ namespace MPS
                 }
                 else
                 {
+                    Pole pole = new Pole();
                     int poleNoCount = 0;
                     poleNoCount = (from p in mbmsEntities.Poles where p.PoleNo == txtPoleNo.Text && p.Active==true select p).ToList().Count;
 
@@ -267,6 +268,7 @@ namespace MPS
                     cboTransformerName.Text = Convert.ToString(row.Cells[4].Value);
                     txtQuarterName.Text = Convert.ToString(row.Cells[5].Value);
                     isEdit = true;
+                    btnSave.Text = "Update";
 
                 }
             }
@@ -322,7 +324,7 @@ namespace MPS
 
         private void txtGPSY_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+           if (e.KeyCode == Keys.Enter)
             {
                 btnSave_Click(this, new EventArgs());
             }

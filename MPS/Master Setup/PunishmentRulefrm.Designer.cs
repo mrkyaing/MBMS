@@ -62,55 +62,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 17);
+            this.label1.Size = new System.Drawing.Size(144, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Punishment Rule Code";
             // 
             // txtPunishmentCode
             // 
-            this.txtPunishmentCode.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPunishmentCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPunishmentCode.Location = new System.Drawing.Point(246, 4);
             this.txtPunishmentCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPunishmentCode.Name = "txtPunishmentCode";
-            this.txtPunishmentCode.Size = new System.Drawing.Size(233, 25);
+            this.txtPunishmentCode.Size = new System.Drawing.Size(233, 22);
             this.txtPunishmentCode.TabIndex = 1;
+            this.txtPunishmentCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPunishmentCode_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Exceed Month(s)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Amount";
             // 
             // txtAmount
             // 
-            this.txtAmount.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.Location = new System.Drawing.Point(246, 157);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(233, 25);
+            this.txtAmount.Size = new System.Drawing.Size(233, 22);
             this.txtAmount.TabIndex = 4;
+            this.txtAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAmount_KeyDown);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
             this.btnSave.Location = new System.Drawing.Point(314, 290);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -123,7 +125,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(456, 290);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
@@ -139,7 +141,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(171, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 14);
+            this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "*";
             // 
@@ -149,7 +151,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(310, 262);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 14);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 4;
             this.label9.Text = "* is Mandatory Field";
             // 
@@ -191,7 +193,7 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(71, 12);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(13, 14);
+            this.label15.Size = new System.Drawing.Size(11, 13);
             this.label15.TabIndex = 4;
             this.label15.Text = "*";
             // 
@@ -221,18 +223,19 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(111, 14);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 14);
+            this.label11.Size = new System.Drawing.Size(11, 13);
             this.label11.TabIndex = 4;
             this.label11.Text = "*";
             // 
             // txtExceedMonth
             // 
-            this.txtExceedMonth.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExceedMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExceedMonth.Location = new System.Drawing.Point(246, 86);
             this.txtExceedMonth.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtExceedMonth.Name = "txtExceedMonth";
-            this.txtExceedMonth.Size = new System.Drawing.Size(233, 25);
+            this.txtExceedMonth.Size = new System.Drawing.Size(233, 22);
             this.txtExceedMonth.TabIndex = 1;
+            this.txtExceedMonth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExceedMonth_KeyDown);
             // 
             // dgvPunishmentRuleList
             // 
@@ -292,7 +295,7 @@
             // 
             // PunishmentRulefrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 698);
             this.Controls.Add(this.dgvPunishmentRuleList);
@@ -300,7 +303,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PunishmentRulefrm";

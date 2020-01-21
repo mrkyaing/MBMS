@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string punishmentRuleID;
         public Boolean isEdit { get; set; }
-        PunishmentRule punishmentRule = new PunishmentRule();
+        
         PurnishmentRuleController punishmentRuleController = new PurnishmentRuleController();
         public PunishmentRulefrm()
         {
@@ -94,6 +94,7 @@ namespace MPS
                 }
                 else
                 {
+                    PunishmentRule punishmentRule = new PunishmentRule();
                     int punishmentRuleCount = 0;
                     punishmentRuleCount = (from p in mbmsEntities.PunishmentRules where p.PunishmentCode == txtPunishmentCode.Text && p.Active == true select p).ToList().Count;
 
@@ -186,6 +187,30 @@ namespace MPS
                     isEdit = true;
                     this.btnSave.Text = "Update";
                 }
+            }
+        }
+
+        private void txtPunishmentCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtExceedMonth_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
             }
         }
     }

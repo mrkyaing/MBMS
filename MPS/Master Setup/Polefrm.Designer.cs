@@ -86,40 +86,40 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pole No. ";
             // 
             // txtPoleNo
             // 
-            this.txtPoleNo.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPoleNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPoleNo.Location = new System.Drawing.Point(233, 4);
             this.txtPoleNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPoleNo.Name = "txtPoleNo";
-            this.txtPoleNo.Size = new System.Drawing.Size(223, 25);
+            this.txtPoleNo.Size = new System.Drawing.Size(223, 22);
             this.txtPoleNo.TabIndex = 1;
             this.txtPoleNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPoleNo_KeyDown);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "GPS  Latitude";
             // 
             // txtGPSX
             // 
-            this.txtGPSX.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGPSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGPSX.Location = new System.Drawing.Point(233, 52);
             this.txtGPSX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGPSX.Name = "txtGPSX";
-            this.txtGPSX.Size = new System.Drawing.Size(223, 25);
+            this.txtGPSX.Size = new System.Drawing.Size(223, 22);
             this.txtGPSX.TabIndex = 2;
             this.txtGPSX.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGPSX_KeyDown);
             this.txtGPSX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGPSX_KeyPress);
@@ -127,20 +127,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(2, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 17);
+            this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "GPS Longitude";
             // 
             // txtGPSY
             // 
-            this.txtGPSY.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGPSY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGPSY.Location = new System.Drawing.Point(233, 106);
             this.txtGPSY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGPSY.Name = "txtGPSY";
-            this.txtGPSY.Size = new System.Drawing.Size(223, 25);
+            this.txtGPSY.Size = new System.Drawing.Size(223, 22);
             this.txtGPSY.TabIndex = 3;
             this.txtGPSY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGPSY_KeyDown);
             this.txtGPSY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGPSY_KeyPress);
@@ -148,21 +148,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(2, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 17);
+            this.label4.Size = new System.Drawing.Size(121, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Transformer Name";
             // 
             // cboTransformerName
             // 
-            this.cboTransformerName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTransformerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTransformerName.FormattingEnabled = true;
             this.cboTransformerName.Location = new System.Drawing.Point(233, 155);
             this.cboTransformerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTransformerName.Name = "cboTransformerName";
-            this.cboTransformerName.Size = new System.Drawing.Size(223, 25);
+            this.cboTransformerName.Size = new System.Drawing.Size(223, 24);
             this.cboTransformerName.TabIndex = 4;
             this.cboTransformerName.SelectedIndexChanged += new System.EventHandler(this.cboTransformerName_SelectedIndexChanged);
             this.cboTransformerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTransformerName_KeyDown);
@@ -170,7 +170,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
             this.btnSave.Location = new System.Drawing.Point(256, 353);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -183,7 +183,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(405, 353);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
@@ -199,7 +199,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(66, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 14);
+            this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "*";
             // 
@@ -209,7 +209,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(99, 11);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 14);
+            this.label6.Size = new System.Drawing.Size(11, 13);
             this.label6.TabIndex = 4;
             this.label6.Text = "*";
             // 
@@ -219,7 +219,7 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(141, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 14);
+            this.label7.Size = new System.Drawing.Size(11, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "*";
             // 
@@ -229,7 +229,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(253, 319);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 14);
+            this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 4;
             this.label9.Text = "* is Mandatory Field";
             // 
@@ -273,10 +273,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(2, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 17);
+            this.label8.Size = new System.Drawing.Size(92, 16);
             this.label8.TabIndex = 0;
             this.label8.Text = "Quarter Name";
             // 
@@ -286,7 +286,7 @@
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(141, 12);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 14);
+            this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 4;
             this.label10.Text = "*";
             // 
@@ -316,7 +316,7 @@
             this.label12.ForeColor = System.Drawing.Color.Red;
             this.label12.Location = new System.Drawing.Point(99, 10);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 14);
+            this.label12.Size = new System.Drawing.Size(11, 13);
             this.label12.TabIndex = 4;
             this.label12.Text = "*";
             // 
@@ -343,14 +343,12 @@
             // txtQuarterName
             // 
             this.txtQuarterName.Enabled = false;
-            this.txtQuarterName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuarterName.Location = new System.Drawing.Point(233, 202);
             this.txtQuarterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuarterName.Name = "txtQuarterName";
-            this.txtQuarterName.Size = new System.Drawing.Size(223, 25);
+            this.txtQuarterName.Size = new System.Drawing.Size(223, 22);
             this.txtQuarterName.TabIndex = 20;
-            this.txtQuarterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGPSY_KeyDown);
-            this.txtQuarterName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGPSY_KeyPress);
             // 
             // dgvPoleList
             // 
@@ -475,71 +473,71 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(6, 105);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 16);
+            this.label14.Size = new System.Drawing.Size(85, 15);
             this.label14.TabIndex = 10;
             this.label14.Text = "Quarter Name";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(323, 43);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 16);
+            this.label13.Size = new System.Drawing.Size(111, 15);
             this.label13.TabIndex = 10;
             this.label13.Text = "Transformer Name";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 43);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 16);
+            this.label11.Size = new System.Drawing.Size(51, 15);
             this.label11.TabIndex = 10;
             this.label11.Text = "Pole No";
             // 
             // txtSearchPoleName
             // 
-            this.txtSearchPoleName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchPoleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchPoleName.Location = new System.Drawing.Point(120, 43);
             this.txtSearchPoleName.Name = "txtSearchPoleName";
-            this.txtSearchPoleName.Size = new System.Drawing.Size(164, 23);
+            this.txtSearchPoleName.Size = new System.Drawing.Size(164, 21);
             this.txtSearchPoleName.TabIndex = 7;
             // 
             // cboSearchQuarterName
             // 
-            this.cboSearchQuarterName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSearchQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearchQuarterName.FormattingEnabled = true;
             this.cboSearchQuarterName.Location = new System.Drawing.Point(120, 102);
             this.cboSearchQuarterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSearchQuarterName.Name = "cboSearchQuarterName";
-            this.cboSearchQuarterName.Size = new System.Drawing.Size(164, 25);
+            this.cboSearchQuarterName.Size = new System.Drawing.Size(164, 24);
             this.cboSearchQuarterName.TabIndex = 9;
             this.cboSearchQuarterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTransformerName_KeyDown);
             // 
             // cboSearchTransformerName
             // 
-            this.cboSearchTransformerName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSearchTransformerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearchTransformerName.FormattingEnabled = true;
             this.cboSearchTransformerName.Location = new System.Drawing.Point(467, 39);
             this.cboSearchTransformerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSearchTransformerName.Name = "cboSearchTransformerName";
-            this.cboSearchTransformerName.Size = new System.Drawing.Size(175, 25);
+            this.cboSearchTransformerName.Size = new System.Drawing.Size(175, 24);
             this.cboSearchTransformerName.TabIndex = 8;
             this.cboSearchTransformerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTransformerName_KeyDown);
             // 
             // Polefrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 602);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Polefrm";

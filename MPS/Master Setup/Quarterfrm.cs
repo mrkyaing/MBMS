@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string quarterID;
         public Boolean isEdit { get; set; }
-        Quarter quarter = new Quarter();
+        
         QuarterController quarterController = new QuarterController();
         public Quarterfrm()
         {
@@ -119,6 +119,7 @@ namespace MPS
                 }
                 else
                 {
+                    Quarter quarter = new Quarter();
                     int quarterCodeCount = 0, quarterNameEngCount=0, quarterNameMMCount=0;
                     quarterCodeCount = (from q in mbmsEntities.Quarters where q.QuarterCode == txtQuarterCode.Text && q.Active==true select q).ToList().Count;
                     quarterNameEngCount= (from q in mbmsEntities.Quarters where q.QuarterNameInEng == txtQuarterNameEng.Text && q.Active==true select q).ToList().Count;
@@ -259,6 +260,7 @@ namespace MPS
                     cboTownshipName.Text = Convert.ToString(row.Cells[4].Value);
                     txtAddress.Text = Convert.ToString(row.Cells[5].Value);
                     isEdit = true;
+                    btnSave.Text = "Update";
 
                 }
             }
@@ -267,6 +269,46 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtQuarterCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtQuarterNameEng_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtQuarterNameMM_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboTownshipName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
         }
     }
 }

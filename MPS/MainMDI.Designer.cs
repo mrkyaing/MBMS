@@ -531,7 +531,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Myanmar Power Spectrum Meter Billing Management Sytem";
+            this.Text = "Meter Billing Management Sytem";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMDI_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMDI_FormClosed);

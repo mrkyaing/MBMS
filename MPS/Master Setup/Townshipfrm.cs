@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string TownshipID;
         public Boolean isEdit { get; set; }
-        Township township = new Township();
+        
         TownshipController townshipController = new TownshipController();
         public Townshipfrm()
         {
@@ -113,6 +113,7 @@ namespace MPS
                 }
                 else
                 {
+                    Township township = new Township();
                     int townshipCodeCount=0, townshipNameEng=0, townshipNameMM=0;
                     townshipCodeCount = (from t in mbmsEntities.Townships where t.TownshipCode == txtTownshipCode.Text  && t.Active==true select t).ToList().Count;
                     townshipNameEng = (from t in mbmsEntities.Townships where t.TownshipNameInEng == txtTownshipNameEng.Text && t.Active==true select t).ToList().Count;
@@ -227,7 +228,7 @@ namespace MPS
                     txtTownshipNameEng.Text = Convert.ToString(row.Cells[2].Value);
                     txtTowsshipNameMM.Text = Convert.ToString(row.Cells[3].Value);
                     isEdit = true;
-
+                    btnSave.Text = "Update";
                 }
             }
         }
@@ -235,6 +236,30 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtTownshipCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtTownshipNameEng_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtTowsshipNameMM_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
         }
     }
 }

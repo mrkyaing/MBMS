@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string meterBoxID;
         public Boolean isEdit { get; set; }
-        MeterBox meterBox = new MeterBox();
+        
         MeterBoxController meterBoxController = new MeterBoxController();
         private List<MeterBox> meterBoxList = new List<MeterBox>();
         public MeterBoxfrm()
@@ -136,6 +136,7 @@ namespace MPS
                 }
                 else
                 {
+                    MeterBox meterBox = new MeterBox();
                     int meterBoxCodeCount = 0;
                     meterBoxCodeCount = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxCode == txtMeterBoxCode.Text && mb.Active == true select mb).ToList().Count;
 
@@ -263,7 +264,7 @@ namespace MPS
                     txtMeterBox.Text = Convert.ToString(row.Cells[3].Value);
                     txtQuarterName.Text = Convert.ToString(row.Cells[4].Value);
                     isEdit = true;
-
+                    btnSave.Text = "Update";
                 }
             }
         }
@@ -286,6 +287,75 @@ namespace MPS
             {
                 txtQuarterName.Text = string.Empty;
             }
+        }
+
+        private void txtMeterBoxCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboPoleNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtMeterBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtQuarterName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtSearchMeterBoxCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void cboSearchQuarterName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboSearchPoleNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearchMeterBoxCode.Text = string.Empty;
+            cboSearchPoleNo.SelectedIndex = 0;
+            cboSearchQuarterName.SelectedIndex = 0;
+            FormRefresh();
         }
     }
 }

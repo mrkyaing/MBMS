@@ -793,7 +793,8 @@
             // Transformerfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(662, 750);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(652, 750);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label26);
@@ -809,7 +810,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Transformerfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tapping Range";
+            this.Text = "Transformer Registration";
             this.Load += new System.EventHandler(this.Transformerfrm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

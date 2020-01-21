@@ -19,7 +19,7 @@ namespace MPS
         public string UserID { get; set; }
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbsEntities = new MBMSEntities();
-        Transformer transformer = new Transformer();
+        
         TransformerController transformerController = new TransformerController();
         public Boolean isEdit { get; set; }
         public Transformerfrm()
@@ -148,20 +148,21 @@ namespace MPS
                     TransformerName = (from tn in mbsEntities.Transformers where tn.TransformerName.Trim() == txtTransformerName.Text.Trim() && tn.Active==true select tn).ToList().Count;
                     if (TransformerName == 0)
                     {
+                        Transformer transformer = new Transformer();
                         transformer.TransformerID = Guid.NewGuid().ToString();
                         transformer.TransformerName = txtTransformerName.Text;
                         transformer.Model = txtTransformerModel.Text;
                         transformer.CountryOfOrgin = txtCountryOrgin.Text;
-                        transformer.FullLoadLoss = Convert.ToInt32(txtFullLoadLoss.Text);
-                        transformer.ImpendanceVoltage = Convert.ToInt32(txtImpedanceVoltage.Text);
-                        transformer.EfficiencyLoad = Convert.ToInt32(txtEfficiency.Text);
-                        transformer.TappingRange = txtTappingRange.Text;
-                        transformer.TypeofCooling = txtTypeOfCooling.Text;
+                        transformer.FullLoadLoss = Convert.ToInt32(txtFullLoadLoss.Text==""?"0":txtFullLoadLoss.Text) ;
+                        transformer.ImpendanceVoltage = Convert.ToInt32(txtImpedanceVoltage.Text==""?"0":txtImpedanceVoltage.Text);
+                        transformer.EfficiencyLoad = Convert.ToInt32(txtEfficiency.Text=="" ?"0":txtEfficiency.Text);
+                        transformer.TappingRange = txtTappingRange.Text==""?"0":txtTappingRange.Text;
+                        transformer.TypeofCooling = txtTypeOfCooling.Text==""?"0":txtTypeOfCooling.Text;
                         transformer.VectorGroup = txtVectorGroup.Text;
-                        transformer.VoltageRatio = Convert.ToInt32(txtVoltageRatio.Text);
-                        transformer.Standard = txtStandard.Text;
-                        transformer.NoloadLoss = Convert.ToInt32(txtNoLoadLoss.Text);
-                        transformer.RatedOutputPower = Convert.ToInt32(txtRatedPower.Text);
+                        transformer.VoltageRatio = Convert.ToInt32(txtVoltageRatio.Text=="" ?"0":txtVoltageRatio.Text);
+                        transformer.Standard = txtStandard.Text =="" ?"0":txtStandard.Text;
+                        transformer.NoloadLoss = Convert.ToInt32(txtNoLoadLoss.Text =="" ?"0":txtNoLoadLoss.Text);
+                        transformer.RatedOutputPower = Convert.ToInt32(txtRatedPower.Text ==""?"0":txtRatedPower.Text);
                         transformer.Maker = txtmaker.Text;
                         if (rdoEnable.Checked == true)
                         {
@@ -226,6 +227,7 @@ namespace MPS
             bindQuarter();
             if (isEdit)
             {
+                btnSave.Text = "Update";
                 Transformer transformer = (from tf in mbsEntities.Transformers where tf.TransformerID == TransformerID select tf).FirstOrDefault();
                 txtTransformerName.Text = transformer.TransformerName;
                 txtTransformerModel.Text = transformer.Model;
