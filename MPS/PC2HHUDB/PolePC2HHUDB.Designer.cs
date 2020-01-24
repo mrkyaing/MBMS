@@ -114,7 +114,7 @@
             // 
             // btnSave2HHUDB
             // 
-            this.btnSave2HHUDB.Location = new System.Drawing.Point(477, 96);
+            this.btnSave2HHUDB.Location = new System.Drawing.Point(477, 107);
             this.btnSave2HHUDB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave2HHUDB.Name = "btnSave2HHUDB";
             this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 24);
@@ -125,7 +125,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(382, 94);
+            this.btnRefresh.Location = new System.Drawing.Point(382, 105);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(89, 27);
@@ -136,7 +136,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(287, 94);
+            this.btnSearch.Location = new System.Drawing.Point(287, 105);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(89, 27);
@@ -207,21 +207,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(303, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(43, 14);
             this.label2.TabIndex = 36;
             this.label2.Text = "Db File:";
             // 
             // cbofileName
             // 
-            this.cbofileName.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbofileName.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbofileName.FormattingEnabled = true;
             this.cbofileName.Location = new System.Drawing.Point(382, 70);
             this.cbofileName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 28);
+            this.cbofileName.Size = new System.Drawing.Size(191, 22);
             this.cbofileName.TabIndex = 35;
             // 
             // PolePC2HHUDB

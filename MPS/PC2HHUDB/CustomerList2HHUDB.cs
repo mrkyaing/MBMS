@@ -125,7 +125,7 @@ namespace MPS.Customer_Setup {
         {
             txtCustomerCode.Text = string.Empty;
             txtCustomerName.Text = string.Empty;
-            cboTownshipName.SelectedIndex = 0;
+           cbofileName.SelectedIndex= cboTownshipName.SelectedIndex = 0;
             FormRefresh();
         }
 

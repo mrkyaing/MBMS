@@ -137,7 +137,8 @@ namespace MPS
             txtSearchPoleName.Text = string.Empty;
             cboSearchQuarterName.SelectedIndex = 0;
             cboSearchTransformerName.SelectedIndex = 0;
-            FormRefresh();
+            cbofileName.SelectedIndex = 0;
+           FormRefresh();
         }
 
         private void btnSave2HHUDB_Click(object sender, EventArgs e) {

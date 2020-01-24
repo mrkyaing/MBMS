@@ -80,7 +80,8 @@ namespace MPS.PC2HHUDB {
 
         private void btnRefresh_Click(object sender, EventArgs e) {
             txtQuarterCode.Text = string.Empty;
-            FormRefresh();
+            cbofileName.SelectedIndex = 0;
+           FormRefresh();
             }
 
         private void btnSearch_Click(object sender, EventArgs e) {

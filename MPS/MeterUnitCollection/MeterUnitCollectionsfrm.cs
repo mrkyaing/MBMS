@@ -143,7 +143,7 @@ namespace MPS.MeterUnitCollect {
             this.dtpfromDate.Value = DateTime.Now;
             dtptoDate.Value = DateTime.Now;
             cboQuarter.SelectedIndex = 0;
-            cboTransformer.SelectedIndex = 0;
+            cbofileName.SelectedIndex = cboTransformer.SelectedIndex = 0;
             this.Text = "Meter Unit Collections";
             this.gvnodemeter.DataSource = null;
             this.gvnodemeter.Refresh();

@@ -69,7 +69,8 @@ namespace MPS.PC2HHUDB {
         private void btnRefresh_Click(object sender, EventArgs e) {
             getMeterList();
             bindMeterBoxList();
-            this.txtmeternoSearch.Text = txtmetermodelsearch.Text = string.Empty;
+            cbofileName.SelectedIndex = 0;
+           this.txtmeternoSearch.Text = txtmetermodelsearch.Text = string.Empty;
             }
 
         private void btnSave2HHUDB_Click(object sender, EventArgs e) {
