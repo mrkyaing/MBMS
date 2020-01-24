@@ -482,7 +482,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Integrate with HHU\" />
     <Folder Include="Reports\" />
     <Folder Include="System\" />
   </ItemGroup>

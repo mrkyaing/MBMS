@@ -104,7 +104,9 @@
             this.groupBox2.Controls.Add(this.dgvPoleList);
             this.groupBox2.Controls.Add(this.cboSearchTransformerName);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Size = new System.Drawing.Size(600, 350);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
@@ -113,8 +115,9 @@
             // btnSave2HHUDB
             // 
             this.btnSave2HHUDB.Location = new System.Drawing.Point(477, 96);
+            this.btnSave2HHUDB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave2HHUDB.Name = "btnSave2HHUDB";
-            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 25);
+            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 24);
             this.btnSave2HHUDB.TabIndex = 11;
             this.btnSave2HHUDB.Text = "Save To HHU DB";
             this.btnSave2HHUDB.UseVisualStyleBackColor = true;
@@ -123,6 +126,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(382, 94);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(89, 27);
             this.btnRefresh.TabIndex = 11;
@@ -133,6 +137,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(287, 94);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(89, 27);
             this.btnSearch.TabIndex = 10;
@@ -174,6 +179,7 @@
             // 
             this.txtSearchPoleName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchPoleName.Location = new System.Drawing.Point(88, 41);
+            this.txtSearchPoleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchPoleName.Name = "txtSearchPoleName";
             this.txtSearchPoleName.Size = new System.Drawing.Size(164, 23);
             this.txtSearchPoleName.TabIndex = 7;
@@ -192,7 +198,7 @@
             // 
             this.cboSearchTransformerName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearchTransformerName.FormattingEnabled = true;
-            this.cboSearchTransformerName.Location = new System.Drawing.Point(382, 39);
+            this.cboSearchTransformerName.Location = new System.Drawing.Point(382, 38);
             this.cboSearchTransformerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSearchTransformerName.Name = "cboSearchTransformerName";
             this.cboSearchTransformerName.Size = new System.Drawing.Size(192, 25);
@@ -201,19 +207,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(303, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 36;
-            this.label2.Text = "File Name:";
+            this.label2.Text = "Db File:";
             // 
             // cbofileName
             // 
+            this.cbofileName.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbofileName.FormattingEnabled = true;
             this.cbofileName.Location = new System.Drawing.Point(382, 70);
+            this.cbofileName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 22);
+            this.cbofileName.Size = new System.Drawing.Size(191, 28);
             this.cbofileName.TabIndex = 35;
             // 
             // PolePC2HHUDB
@@ -222,7 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 372);
             this.Controls.Add(this.groupBox2);
-            this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PolePC2HHUDB";

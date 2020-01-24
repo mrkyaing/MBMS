@@ -29,6 +29,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbofileName = new System.Windows.Forms.ComboBox();
             this.btnSave2HHUDB = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtmeternoSearch = new System.Windows.Forms.TextBox();
             this.cbometerBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbofileName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,10 +52,10 @@
             this.MeterNo,
             this.Column3,
             this.Column4});
-            this.dgvMeterList.Location = new System.Drawing.Point(23, 173);
+            this.dgvMeterList.Location = new System.Drawing.Point(23, 186);
             this.dgvMeterList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMeterList.Name = "dgvMeterList";
-            this.dgvMeterList.Size = new System.Drawing.Size(561, 186);
+            this.dgvMeterList.Size = new System.Drawing.Size(561, 200);
             this.dgvMeterList.TabIndex = 12;
             // 
             // MeterNo
@@ -91,18 +91,37 @@
             this.groupBox2.Controls.Add(this.txtmeternoSearch);
             this.groupBox2.Controls.Add(this.dgvMeterList);
             this.groupBox2.Controls.Add(this.cbometerBox);
-            this.groupBox2.Location = new System.Drawing.Point(16, 10);
+            this.groupBox2.Location = new System.Drawing.Point(16, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(600, 392);
+            this.groupBox2.Size = new System.Drawing.Size(600, 422);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pole data to HHU Database file.";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(284, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Db File:";
+            // 
+            // cbofileName
+            // 
+            this.cbofileName.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbofileName.FormattingEnabled = true;
+            this.cbofileName.Location = new System.Drawing.Point(363, 60);
+            this.cbofileName.Name = "cbofileName";
+            this.cbofileName.Size = new System.Drawing.Size(191, 25);
+            this.cbofileName.TabIndex = 33;
+            // 
             // btnSave2HHUDB
             // 
-            this.btnSave2HHUDB.Location = new System.Drawing.Point(477, 96);
+            this.btnSave2HHUDB.Location = new System.Drawing.Point(477, 104);
             this.btnSave2HHUDB.Name = "btnSave2HHUDB";
-            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 25);
+            this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 27);
             this.btnSave2HHUDB.TabIndex = 11;
             this.btnSave2HHUDB.Text = "Save To HHU DB";
             this.btnSave2HHUDB.UseVisualStyleBackColor = true;
@@ -110,9 +129,9 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(382, 94);
+            this.btnRefresh.Location = new System.Drawing.Point(382, 101);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(89, 27);
+            this.btnRefresh.Size = new System.Drawing.Size(89, 29);
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -120,9 +139,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(287, 94);
+            this.btnSearch.Location = new System.Drawing.Point(287, 101);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(89, 27);
+            this.btnSearch.Size = new System.Drawing.Size(89, 29);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -132,7 +151,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(4, 115);
+            this.label13.Location = new System.Drawing.Point(4, 124);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 10;
@@ -142,7 +161,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 78);
+            this.label1.Location = new System.Drawing.Point(6, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 10;
@@ -151,7 +170,7 @@
             // txtmetermodelsearch
             // 
             this.txtmetermodelsearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmetermodelsearch.Location = new System.Drawing.Point(74, 76);
+            this.txtmetermodelsearch.Location = new System.Drawing.Point(74, 82);
             this.txtmetermodelsearch.Name = "txtmetermodelsearch";
             this.txtmetermodelsearch.Size = new System.Drawing.Size(164, 23);
             this.txtmetermodelsearch.TabIndex = 7;
@@ -160,7 +179,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 43);
+            this.label11.Location = new System.Drawing.Point(6, 46);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 16);
             this.label11.TabIndex = 10;
@@ -169,7 +188,7 @@
             // txtmeternoSearch
             // 
             this.txtmeternoSearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmeternoSearch.Location = new System.Drawing.Point(74, 41);
+            this.txtmeternoSearch.Location = new System.Drawing.Point(74, 44);
             this.txtmeternoSearch.Name = "txtmeternoSearch";
             this.txtmeternoSearch.Size = new System.Drawing.Size(164, 23);
             this.txtmeternoSearch.TabIndex = 7;
@@ -178,36 +197,19 @@
             // 
             this.cbometerBox.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbometerBox.FormattingEnabled = true;
-            this.cbometerBox.Location = new System.Drawing.Point(73, 106);
+            this.cbometerBox.Location = new System.Drawing.Point(73, 114);
             this.cbometerBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbometerBox.Name = "cbometerBox";
             this.cbometerBox.Size = new System.Drawing.Size(175, 25);
             this.cbometerBox.TabIndex = 8;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(284, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "File Name:";
-            // 
-            // cbofileName
-            // 
-            this.cbofileName.FormattingEnabled = true;
-            this.cbofileName.Location = new System.Drawing.Point(363, 56);
-            this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 21);
-            this.cbofileName.TabIndex = 33;
-            // 
             // MeterList2HHUDB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 405);
+            this.ClientSize = new System.Drawing.Size(642, 436);
             this.Controls.Add(this.groupBox2);
+            this.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterList2HHUDB";
             this.Text = "Meter List 2 HHU DB";
