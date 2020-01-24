@@ -15,6 +15,7 @@ namespace MPS.MeterBillCalculation {
 
         #region vairable & initialize Componemt
         public string UserID { get; set; }
+        public int meterMultiplier { get; set; }
         IMeterBillCalculateServices meterbillcalculateservice;
         public MeterBillCalculate() {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace MPS.MeterBillCalculation {
 
         #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
-            if (cboQuarter.Text == "Select One") {
+            if (cboQuarter.Text .Equals( "Select One")) {
                 MessageBox.Show("Select quarter to calculate meter bill", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
@@ -63,22 +64,22 @@ namespace MPS.MeterBillCalculation {
         #region Calculate Bill(IsBillCalculateSuccess Method)
         private bool IsBillCalculateSuccess(List<MBMS.DAL.MeterUnitCollect> dataList, DateTime fromDate,DateTime toDate) {
             List<MeterBill> meterbillList = new List<MeterBill>();
-           // Random random = new Random();
             try {
-                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {
-                  //  int meterLossess, meterMultiplier;               
+                foreach(MBMS.DAL.MeterUnitCollect item in dataList) {                           
                     MeterBill mb = new MeterBill();
                     mb.MeterBillID = Guid.NewGuid().ToString();
-                    mb.MeterBillCode = item.Customer.Meter.MeterNo;// random.Next().ToString();
+                    mb.MeterBillCode = item.Customer.Meter.MeterNo;
                     mb.InvoiceDate = item.FromDate;
                     mb.LastBillPaidDate = item.ToDate;
                     mb.ServicesFees = 0;
+                    //getting multiplier value from customer's meter  value
+                   meterMultiplier=(int)item.Customer.Meter.Multiplier;
                     mb.MeterFees =getMeterFeesAmountwith7LayerCode(item) ;
                     mb.StreetLightFees =Utility.SettingController.StreetLightFees;
                     mb.HorsePowerFees = 0;
                     mb.TotalFees =Convert.ToDecimal( (mb.ServicesFees+ mb.MeterFees+ mb.StreetLightFees + mb.HorsePowerFees));
-                    //meterLossess+= meterbillcalculateservice.GetBillCode7LayerByBillCode
-                    mb.UsageUnit = item.TotalMeterUnit;
+                    //multiply totol meter unit with multiplier value
+                    mb.UsageUnit = (item.TotalMeterUnit* meterMultiplier);
                     mb.PreviousMonthUnit = 0;
                     mb.CurrentMonthUnit = (item.TotalMeterUnit - mb.PreviousMonthUnit);
                     mb.AdvanceMoney = 0;
@@ -98,7 +99,7 @@ namespace MPS.MeterBillCalculation {
                 }
             return true;
             }
-        //bill calculate with 7 Layer detail with Box Type
+        //bill calculate with 7 Layer detail with Box Type(Flat or Block Type)
         private decimal getMeterFeesAmountwith7LayerCode(MBMS.DAL.MeterUnitCollect meterUnitCollect) {
             decimal result = 0;
             decimal sumUnits = 0;
@@ -106,7 +107,8 @@ namespace MPS.MeterBillCalculation {
             List<BillCode7LayerDetail> billCode7LayerDetailList = meterbillcalculateservice.GetBillCode7LayerDetailByBillCode7LayerID(billCode7Layer.BillCode7LayerID).OrderBy(y=>y.LowerLimit).ToList();
             foreach(BillCode7LayerDetail item in billCode7LayerDetailList) {
                 if (billCode7Layer.BillCodeLayerType.Equals("Block Type")) {
-                    if (meterUnitCollect.TotalMeterUnit > (sumUnits + item.RateUnit)) {
+                    //before calculate the value,multiply totol meter unit with multiplier value
+                    if ((meterUnitCollect.TotalMeterUnit* meterMultiplier) > (sumUnits + item.RateUnit)) {
                         result += (decimal)(item.RateUnit * item.AmountPerUnit);
                         sumUnits += (decimal)item.RateUnit;
                         }
