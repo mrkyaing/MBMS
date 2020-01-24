@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +15,16 @@ namespace MPS.PC2HHUDB {
     public partial class Quaeter2HHUDBUI : Form {
         MBMSEntities mbmsEntities = new MBMSEntities();
         List<Quarter> qList = new List<Quarter>();
+        public string sqlitedbPath { get; set; }
         public Quaeter2HHUDBUI() {
             InitializeComponent();
-            BuildSQLiteConnection();
+            getFileList();
             }
         private void BuildSQLiteConnection() {
+            sqlitedbPath = System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
                 Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", sqlitedbPath));
                 }
             }
 
@@ -38,9 +41,14 @@ namespace MPS.PC2HHUDB {
             if (qList.Count == 0) {
                 MessageBox.Show("There is no Villages(Quarter) data to save HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+                }         
+                if (cbofileName.SelectedItem.Equals("Select One")) {
+                MessageBox.Show("Select HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
+                BuildSQLiteConnection();
                 VillageServices sqlitevillage = new VillageServices();
                 List<MPS.SQLiteHelper.Villages> sqlvillageList = new List<MPS.SQLiteHelper.Villages>();
                 string sqlCommand = string.Format("SELECT * FROM Villages");
@@ -70,5 +78,26 @@ namespace MPS.PC2HHUDB {
                     }
                 }
             }
+
+        private void btnRefresh_Click(object sender, EventArgs e) {
+            txtQuarterCode.Text = string.Empty;
+            FormRefresh();
+            }
+
+        private void btnSearch_Click(object sender, EventArgs e) {
+            dgvQuarterList.AutoGenerateColumns = false;
+            qList = (from q in mbmsEntities.Quarters where q.Active == true && q.QuarterCode==txtQuarterCode.Text orderby q.QuarterCode descending select q).ToList();
+            dgvQuarterList.DataSource = qList;
+            }
+        private void getFileList() {
+            this.cbofileName.Items.Add("Select One");
+            this.cbofileName.SelectedIndex = 0;
+            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);//Assuming Test is your Folder
+            FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
+            foreach (FileInfo file in Files) {
+              this.cbofileName.Items.Add(file.Name );    
+                }
+            }
+     
         }
     }

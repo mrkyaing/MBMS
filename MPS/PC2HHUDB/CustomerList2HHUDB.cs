@@ -16,7 +16,7 @@ namespace MPS.Customer_Setup {
         public string UserID { get; set; }
         public CustomerList2HHUDB()  {
             InitializeComponent();
-            BuildSQLiteConnection();
+         
             }
         private void BuildSQLiteConnection() {
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
@@ -132,6 +132,7 @@ namespace MPS.Customer_Setup {
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
+                BuildSQLiteConnection();
                 ConsumerMasterServices sqlitecustomerservices = new ConsumerMasterServices();
                 List<ConsumerMaster> sqlConsumerMasterList = new List<ConsumerMaster>();
                 string sqlCommand = string.Format("SELECT * FROM ConsumerMaster");

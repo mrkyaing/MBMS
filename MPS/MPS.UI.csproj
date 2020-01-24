@@ -464,6 +464,7 @@
       <DependentUpon>UserListfrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AppDb\POS01.db" />
+    <None Include="AppDb\POS12.db" />
     <None Include="Importing\CustomerInformation.xlsx" />
     <None Include="Importing\MeterInformation.xlsx" />
     <None Include="packages.config" />

@@ -3,6 +3,7 @@ using MPS.Billing;
 using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
 using MPS.Importing;
+using MPS.Ledger_Setup;
 using MPS.Master_Setup;
 using MPS.Meter_Setup;
 using MPS.MeterBillCalculation;
@@ -342,6 +343,10 @@ namespace MPS
             CustomerList2HHUDB cdbui = new CustomerList2HHUDB();
             cdbui.UserID = UserID;
             cdbui.Show();
+            }
+
+        private void ledgerListToolStripMenuItem_Click(object sender, EventArgs e) {
+            new LedgerSearchFrm().Show();
             }
         }
 }

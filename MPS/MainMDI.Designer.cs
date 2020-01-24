@@ -361,15 +361,16 @@
             // addLedgerToolStripMenuItem
             // 
             this.addLedgerToolStripMenuItem.Name = "addLedgerToolStripMenuItem";
-            this.addLedgerToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.addLedgerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addLedgerToolStripMenuItem.Text = "Add Ledger";
             this.addLedgerToolStripMenuItem.Click += new System.EventHandler(this.addLedgerToolStripMenuItem_Click);
             // 
             // ledgerListToolStripMenuItem
             // 
             this.ledgerListToolStripMenuItem.Name = "ledgerListToolStripMenuItem";
-            this.ledgerListToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.ledgerListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ledgerListToolStripMenuItem.Text = "Ledger List";
+            this.ledgerListToolStripMenuItem.Click += new System.EventHandler(this.ledgerListToolStripMenuItem_Click);
             // 
             // integrateWithHHUToolStripMenuItem
             // 

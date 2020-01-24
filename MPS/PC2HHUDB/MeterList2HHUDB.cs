@@ -16,7 +16,7 @@ namespace MPS.PC2HHUDB {
         List<Meter> meterList = new List<Meter>();
         public MeterList2HHUDB() {
             InitializeComponent();
-            BuildSQLiteConnection();
+       
             }
         private void BuildSQLiteConnection() {
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
@@ -69,6 +69,7 @@ namespace MPS.PC2HHUDB {
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
+                BuildSQLiteConnection();
                 MetersServices sqlitemetersservices = new MetersServices();
                 List<MPS.SQLiteHelper.Meters> sqlpoleList = new List<MPS.SQLiteHelper.Meters>();
                 string sqlCommand = string.Format("SELECT * FROM Meters");

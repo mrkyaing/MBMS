@@ -23,7 +23,7 @@ namespace MPS
         public PolePC2HHUDB()
         {
             InitializeComponent();
-            BuildSQLiteConnection();
+         
             }
         private void BuildSQLiteConnection() {
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
@@ -136,6 +136,7 @@ namespace MPS
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
+                BuildSQLiteConnection();
                 PoleServices sqlitepoleservices = new PoleServices();
                 List<MPS.SQLiteHelper.Poles> sqlpoleList = new List<MPS.SQLiteHelper.Poles>();
                 string sqlCommand = string.Format("SELECT * FROM Poles");
