@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,22 @@ namespace MPS.PC2HHUDB {
         List<Meter> meterList = new List<Meter>();
         public MeterList2HHUDB() {
             InitializeComponent();
-       
+            getDbFileList();
+            }
+        private void getDbFileList() {
+            this.cbofileName.Items.Add("Select One");
+            this.cbofileName.SelectedIndex = 0;
+            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
+            FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
+            foreach (FileInfo file in Files) {
+                this.cbofileName.Items.Add(file.Name);
+                }
             }
         private void BuildSQLiteConnection() {
+            string sqlitedbPath = System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
                 Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", sqlitedbPath));
                 }
             }
         private void MeterList2HHUDB_Load(object sender, EventArgs e) {
@@ -67,6 +78,10 @@ namespace MPS.PC2HHUDB {
                 MessageBox.Show("There is no Meter data to save HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
                 }
+            if (cbofileName.SelectedItem.Equals("Select One")) {
+                MessageBox.Show("Select HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ok == DialogResult.Yes) {
                 BuildSQLiteConnection();
@@ -89,12 +104,12 @@ namespace MPS.PC2HHUDB {
                     meter.mtr_make = m.ManufactureBy;
                     meter.mtr_model = m.Model.ToString() ;
                     meter.mtr_create = m.CreatedDate.ToString();
-                    Customer c= m.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault();
+                    Customer c= mbmsEntities.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault();
                     if (c == null) {
                         MessageBox.Show("set customer data for>"+m.MeterNo, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                         }
-                    meter.mtr_csm_id = m.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault().CustomerCode;
+                    meter.mtr_csm_id = mbmsEntities.Customers.Where(x => x.MeterID == m.MeterID).SingleOrDefault().CustomerCode;
                     Pole p = mbmsEntities.Poles.Where(x => x.Transformer.QuarterID == c.QuarterID).SingleOrDefault();
                     if (p == null) {
                         MessageBox.Show("set Pole data for>" + m.MeterNo, "information", MessageBoxButtons.OK, MessageBoxIcon.Warning);

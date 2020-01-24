@@ -46,6 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboTownshipName = new System.Windows.Forms.ComboBox();
             this.btnSave2HHUDB = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbofileName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +160,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(379, 23);
+            this.label2.Location = new System.Drawing.Point(57, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 1;
@@ -167,7 +169,7 @@
             // txtCustomerName
             // 
             this.txtCustomerName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(481, 19);
+            this.txtCustomerName.Location = new System.Drawing.Point(159, 48);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(166, 23);
             this.txtCustomerName.TabIndex = 2;
@@ -196,7 +198,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(758, 22);
+            this.label4.Location = new System.Drawing.Point(334, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 1;
@@ -206,9 +208,9 @@
             // 
             this.cboTownshipName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTownshipName.FormattingEnabled = true;
-            this.cboTownshipName.Location = new System.Drawing.Point(863, 19);
+            this.cboTownshipName.Location = new System.Drawing.Point(439, 18);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(163, 24);
+            this.cboTownshipName.Size = new System.Drawing.Size(184, 24);
             this.cboTownshipName.TabIndex = 3;
             // 
             // btnSave2HHUDB
@@ -221,10 +223,30 @@
             this.btnSave2HHUDB.UseVisualStyleBackColor = true;
             this.btnSave2HHUDB.Click += new System.EventHandler(this.btnSave2HHUDB_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(353, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "File Name:";
+            // 
+            // cbofileName
+            // 
+            this.cbofileName.FormattingEnabled = true;
+            this.cbofileName.Location = new System.Drawing.Point(432, 50);
+            this.cbofileName.Name = "cbofileName";
+            this.cbofileName.Size = new System.Drawing.Size(191, 22);
+            this.cbofileName.TabIndex = 33;
+            // 
             // CustomerList2HHUDB
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1147, 505);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbofileName);
             this.Controls.Add(this.btnSave2HHUDB);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnSearch);
@@ -271,5 +293,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewLinkColumn Column12;
         private System.Windows.Forms.Button btnSave2HHUDB;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbofileName;
         }
     }

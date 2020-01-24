@@ -40,6 +40,8 @@
             this.txtSearchPoleName = new System.Windows.Forms.TextBox();
             this.cboSearchQuarterName = new System.Windows.Forms.ComboBox();
             this.cboSearchTransformerName = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbofileName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoleList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.Column4,
             this.Column5,
             this.Column8});
-            this.dgvPoleList.Location = new System.Drawing.Point(23, 173);
+            this.dgvPoleList.Location = new System.Drawing.Point(23, 147);
             this.dgvPoleList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPoleList.Name = "dgvPoleList";
             this.dgvPoleList.Size = new System.Drawing.Size(561, 186);
@@ -89,6 +91,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cbofileName);
             this.groupBox2.Controls.Add(this.btnSave2HHUDB);
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.btnSearch);
@@ -101,7 +105,7 @@
             this.groupBox2.Controls.Add(this.cboSearchTransformerName);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(600, 392);
+            this.groupBox2.Size = new System.Drawing.Size(600, 350);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pole data to HHU Database file.";
@@ -169,7 +173,7 @@
             // txtSearchPoleName
             // 
             this.txtSearchPoleName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchPoleName.Location = new System.Drawing.Point(59, 41);
+            this.txtSearchPoleName.Location = new System.Drawing.Point(88, 41);
             this.txtSearchPoleName.Name = "txtSearchPoleName";
             this.txtSearchPoleName.Size = new System.Drawing.Size(164, 23);
             this.txtSearchPoleName.TabIndex = 7;
@@ -188,17 +192,35 @@
             // 
             this.cboSearchTransformerName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearchTransformerName.FormattingEnabled = true;
-            this.cboSearchTransformerName.Location = new System.Drawing.Point(399, 39);
+            this.cboSearchTransformerName.Location = new System.Drawing.Point(382, 39);
             this.cboSearchTransformerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboSearchTransformerName.Name = "cboSearchTransformerName";
-            this.cboSearchTransformerName.Size = new System.Drawing.Size(175, 25);
+            this.cboSearchTransformerName.Size = new System.Drawing.Size(192, 25);
             this.cboSearchTransformerName.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(303, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "File Name:";
+            // 
+            // cbofileName
+            // 
+            this.cbofileName.FormattingEnabled = true;
+            this.cbofileName.Location = new System.Drawing.Point(382, 70);
+            this.cbofileName.Name = "cbofileName";
+            this.cbofileName.Size = new System.Drawing.Size(191, 22);
+            this.cbofileName.TabIndex = 35;
             // 
             // PolePC2HHUDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 407);
+            this.ClientSize = new System.Drawing.Size(631, 372);
             this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -231,5 +253,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbofileName;
         }
     }

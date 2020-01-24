@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Objects;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -18,12 +19,22 @@ namespace MPS.MeterUnitCollect {
         List<NodeMeter> nodeMeterList = null;
         public MeterUnitCollectionsfrm() {
             InitializeComponent();
-            BuildSQLiteConnection();
+            getDbFileList();
+            }
+        private void getDbFileList() {
+            this.cbofileName.Items.Add("Select One");
+            this.cbofileName.SelectedIndex = 0;
+            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
+            FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
+            foreach (FileInfo file in Files) {
+                this.cbofileName.Items.Add(file.Name);
+                }
             }
         private void BuildSQLiteConnection() {
+            string sqlitedbPath = System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
                 Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", sqlitedbPath));
                 }
             }
         private void MeterUnitCollectionsfrm_Load(object sender, EventArgs e) {
@@ -31,9 +42,7 @@ namespace MPS.MeterUnitCollect {
             bindTransformer();         
             }
         private void GetMeterUnitData(string fromDate, string toDate,string QuarterID) {
-            //VillageServices svc = new VillageServices();
-            //List<Villages> vlist = svc.GetAll().Where(x=>x.vlg_name== "Mawkanin").ToList();
-            //this.gvvillage.DataSource = vlist;           
+            this.BuildSQLiteConnection();      
             NodeMeterServices NodeMetersvc = new NodeMeterServices();
             string sqlCommand = string.Empty;
             if (string.IsNullOrEmpty(QuarterID)) {
@@ -56,6 +65,10 @@ namespace MPS.MeterUnitCollect {
             string qid = cboQuarter.SelectedValue.ToString();
             if (!cboQuarter.SelectedValue.Equals("0")) {
                 qCode = mbmsEntities.Quarters.Where(x => x.QuarterID == qid).SingleOrDefault().QuarterCode;
+                }
+            if (cbofileName.SelectedItem.Equals("Select One")) {
+                MessageBox.Show("Select HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
                 }
             GetMeterUnitData(fromdate,todate,qCode);            
             }

@@ -15,13 +15,12 @@ namespace MPS.PC2HHUDB {
     public partial class Quaeter2HHUDBUI : Form {
         MBMSEntities mbmsEntities = new MBMSEntities();
         List<Quarter> qList = new List<Quarter>();
-        public string sqlitedbPath { get; set; }
         public Quaeter2HHUDBUI() {
             InitializeComponent();
-            getFileList();
+            getDbFileList();
             }
         private void BuildSQLiteConnection() {
-            sqlitedbPath = System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
+              string sqlitedbPath= System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
                 Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
                 System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", sqlitedbPath));
@@ -89,15 +88,14 @@ namespace MPS.PC2HHUDB {
             qList = (from q in mbmsEntities.Quarters where q.Active == true && q.QuarterCode==txtQuarterCode.Text orderby q.QuarterCode descending select q).ToList();
             dgvQuarterList.DataSource = qList;
             }
-        private void getFileList() {
+        private void getDbFileList() {
             this.cbofileName.Items.Add("Select One");
             this.cbofileName.SelectedIndex = 0;
-            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);//Assuming Test is your Folder
+            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
             FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
             foreach (FileInfo file in Files) {
               this.cbofileName.Items.Add(file.Name );    
                 }
-            }
-     
+            }   
         }
     }

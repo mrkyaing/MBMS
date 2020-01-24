@@ -39,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gvnodemeter = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbofileName = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvnodemeter)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +57,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.cbofileName);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
@@ -70,7 +74,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(78, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 265);
+            this.groupBox1.Size = new System.Drawing.Size(472, 292);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Meter Unit Collection Process";
@@ -120,7 +124,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(254, 223);
+            this.btnCancel.Location = new System.Drawing.Point(254, 249);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 30);
             this.btnCancel.TabIndex = 2;
@@ -133,7 +137,7 @@
             this.btncollectmeterunit.BackColor = System.Drawing.Color.DodgerBlue;
             this.btncollectmeterunit.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncollectmeterunit.ForeColor = System.Drawing.Color.Black;
-            this.btncollectmeterunit.Location = new System.Drawing.Point(100, 223);
+            this.btncollectmeterunit.Location = new System.Drawing.Point(100, 249);
             this.btncollectmeterunit.Name = "btncollectmeterunit";
             this.btncollectmeterunit.Size = new System.Drawing.Size(145, 30);
             this.btncollectmeterunit.TabIndex = 2;
@@ -190,7 +194,7 @@
             // gvnodemeter
             // 
             this.gvnodemeter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvnodemeter.Location = new System.Drawing.Point(78, 283);
+            this.gvnodemeter.Location = new System.Drawing.Point(78, 310);
             this.gvnodemeter.Name = "gvnodemeter";
             this.gvnodemeter.Size = new System.Drawing.Size(472, 211);
             this.gvnodemeter.TabIndex = 6;
@@ -200,7 +204,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(178, 500);
+            this.btnSave.Location = new System.Drawing.Point(178, 527);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(145, 30);
             this.btnSave.TabIndex = 2;
@@ -208,11 +212,30 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(22, 218);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "File Name:";
+            // 
+            // cbofileName
+            // 
+            this.cbofileName.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbofileName.FormattingEnabled = true;
+            this.cbofileName.Location = new System.Drawing.Point(107, 210);
+            this.cbofileName.Name = "cbofileName";
+            this.cbofileName.Size = new System.Drawing.Size(258, 28);
+            this.cbofileName.TabIndex = 37;
+            // 
             // MeterUnitCollectionsfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 525);
+            this.ClientSize = new System.Drawing.Size(616, 569);
             this.Controls.Add(this.gvnodemeter);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
@@ -244,5 +267,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbofileName;
         }
     }

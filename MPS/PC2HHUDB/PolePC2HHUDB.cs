@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,12 +24,22 @@ namespace MPS
         public PolePC2HHUDB()
         {
             InitializeComponent();
-         
+            getDbFileList();
+            }
+        private void getDbFileList() {
+            this.cbofileName.Items.Add("Select One");
+            this.cbofileName.SelectedIndex = 0;
+            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
+            FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
+            foreach (FileInfo file in Files) {
+                this.cbofileName.Items.Add(file.Name);
+                }
             }
         private void BuildSQLiteConnection() {
+            string sqlitedbPath = System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"] + cbofileName.SelectedItem;
             if (String.IsNullOrEmpty(Storage.ConnectionString)) {
                 Storage.ConnectionString = string.Format("Data Source={0};Version=3;", System.IO.Path.GetDirectoryName(
-                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", System.Configuration.ConfigurationManager.AppSettings["DatabaseFile"]));
+                System.Reflection.Assembly.GetEntryAssembly().Location).Replace(@"\bin\Debug", sqlitedbPath));
                 }
             }
 
@@ -132,6 +143,10 @@ namespace MPS
         private void btnSave2HHUDB_Click(object sender, EventArgs e) {
             if (poleList.Count == 0) {
                 MessageBox.Show("There is no pole data to save HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+                }
+            if (cbofileName.SelectedItem.Equals("Select One")) {
+                MessageBox.Show("Select HHU db file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
                 }
             DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

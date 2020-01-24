@@ -38,6 +38,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtmeternoSearch = new System.Windows.Forms.TextBox();
             this.cbometerBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbofileName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterList)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +79,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.cbofileName);
             this.groupBox2.Controls.Add(this.btnSave2HHUDB);
             this.groupBox2.Controls.Add(this.btnRefresh);
             this.groupBox2.Controls.Add(this.btnSearch);
@@ -128,7 +132,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(277, 43);
+            this.label13.Location = new System.Drawing.Point(4, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 10;
@@ -147,7 +151,7 @@
             // txtmetermodelsearch
             // 
             this.txtmetermodelsearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmetermodelsearch.Location = new System.Drawing.Point(59, 76);
+            this.txtmetermodelsearch.Location = new System.Drawing.Point(74, 76);
             this.txtmetermodelsearch.Name = "txtmetermodelsearch";
             this.txtmetermodelsearch.Size = new System.Drawing.Size(164, 23);
             this.txtmetermodelsearch.TabIndex = 7;
@@ -165,7 +169,7 @@
             // txtmeternoSearch
             // 
             this.txtmeternoSearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmeternoSearch.Location = new System.Drawing.Point(59, 41);
+            this.txtmeternoSearch.Location = new System.Drawing.Point(74, 41);
             this.txtmeternoSearch.Name = "txtmeternoSearch";
             this.txtmeternoSearch.Size = new System.Drawing.Size(164, 23);
             this.txtmeternoSearch.TabIndex = 7;
@@ -174,11 +178,29 @@
             // 
             this.cbometerBox.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbometerBox.FormattingEnabled = true;
-            this.cbometerBox.Location = new System.Drawing.Point(399, 39);
+            this.cbometerBox.Location = new System.Drawing.Point(73, 106);
             this.cbometerBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbometerBox.Name = "cbometerBox";
             this.cbometerBox.Size = new System.Drawing.Size(175, 25);
             this.cbometerBox.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(284, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "File Name:";
+            // 
+            // cbofileName
+            // 
+            this.cbofileName.FormattingEnabled = true;
+            this.cbofileName.Location = new System.Drawing.Point(363, 56);
+            this.cbofileName.Name = "cbofileName";
+            this.cbofileName.Size = new System.Drawing.Size(191, 21);
+            this.cbofileName.TabIndex = 33;
             // 
             // MeterList2HHUDB
             // 
@@ -212,5 +234,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtmetermodelsearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbofileName;
         }
     }
