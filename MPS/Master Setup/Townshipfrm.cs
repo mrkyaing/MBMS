@@ -108,6 +108,8 @@ namespace MPS
                     updateTownship.UpdatedDate = DateTime.Now;
                     townshipController.UpdatedByTownshipID(updateTownship);
                     MessageBox.Show("Successfully updated Township!", "Update");
+                    isEdit = false;
+                    btnSave.Text = "Save";
                     Clear();
                     FormRefresh();
                 }

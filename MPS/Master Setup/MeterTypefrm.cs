@@ -81,6 +81,8 @@ namespace MPS
                     updateMeterType.UpdatedDate = DateTime.Now;
                     meterTypeController.UpdateMeterType(updateMeterType);
                     MessageBox.Show("Successfully updated Meter Type!", "Update");
+                    isEdit = false;
+                    btnSave.Text = "Save";
                     Clear();
                     FormRefresh();
                 }

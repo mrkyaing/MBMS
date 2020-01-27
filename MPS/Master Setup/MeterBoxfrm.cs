@@ -30,9 +30,17 @@ namespace MPS
         private void MeterBoxfrm_Load(object sender, EventArgs e)
         {
             bindPole();
+            bindMeterBoxName();
             FormRefresh();
             bindSearchPole();bindSearchQuarterName();
             txtMeterBox.MaxLength = 1;
+        }
+        public void bindMeterBoxName()
+        {
+            cboMeterBoxName.Items.Add("Single Box");
+            cboMeterBoxName.Items.Add("Three Phase Box");
+            cboMeterBoxName.Items.Add("Single Phase 4 Unit Box");
+            cboMeterBoxName.SelectedIndex = 0;
         }
         public void bindPole()
         {
@@ -46,6 +54,7 @@ namespace MPS
             cboPoleNo.DisplayMember = "PoleNo";
             cboPoleNo.ValueMember = "PoleID";
         }
+
         public void bindSearchPole()
         {
             List<Pole> poleList = new List<Pole>();
@@ -98,8 +107,8 @@ namespace MPS
                 tooltip.Show("Please fill up MeterBox!", txtMeterBox);
                 txtMeterBox.Focus();
                 hasError = false;
-            }
-           
+            }            
+
             return hasError;
         }
 
@@ -110,48 +119,68 @@ namespace MPS
             {
                 if (isEdit)
                 {
-                    int editMeterBoxCount = 0 ;
+                    int editMeterBoxCodeCount = 0 ; int editMeterBoxCount = 0;
                     MeterBox updateMeterBox = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxID == meterBoxID select mb).FirstOrDefault();
                     if (txtMeterBoxCode.Text != updateMeterBox.MeterBoxCode)
                     {
-                        editMeterBoxCount = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxCode == txtMeterBoxCode.Text && mb.Active == true select mb).ToList().Count;
+                        editMeterBoxCodeCount = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxCode == txtMeterBoxCode.Text && mb.Active == true select mb).ToList().Count;
+                    }
+                    if (txtMeterBox.Text != updateMeterBox.Box)
+                    {
+                        editMeterBoxCount = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxCode == txtMeterBox.Text &&mb.Pole.PoleNo==cboPoleNo.Text && mb.Active == true select mb).ToList().Count;
                     }
 
-                    if (editMeterBoxCount > 0)
+                    if (editMeterBoxCodeCount > 0)
                     {
                         tooltip.SetToolTip(txtMeterBoxCode, "Error");
                         tooltip.Show("Meter Box Code is already exist!", txtMeterBoxCode);
                         return;
                     }
-                    
+                    if (editMeterBoxCount > 0)
+                    {
+                        tooltip.SetToolTip(txtMeterBox, "Error");
+                        tooltip.Show("Meter Box is already exist!", txtMeterBox);
+                        return;
+                    }
+
                     updateMeterBox.MeterBoxCode = txtMeterBoxCode.Text;
                     updateMeterBox.Box = txtMeterBox.Text;
                     updateMeterBox.PoleID = cboPoleNo.SelectedValue.ToString();
+                    updateMeterBox.MeterBoxName = cboMeterBoxName.Text.ToString();
                     updateMeterBox.UpdatedUserID = UserID;
                     updateMeterBox.UpdatedDate = DateTime.Now;
                     meterBoxController.UpdateMeterBox(updateMeterBox);
                     MessageBox.Show("Successfully updated Meterbox!", "Update");
-                    Clear();
+                    isEdit = false;
+                    btnSave.Text = "Save";
+                    Clear();                                      
                     FormRefresh();
                 }
                 else
                 {
                     MeterBox meterBox = new MeterBox();
-                    int meterBoxCodeCount = 0;
+                    int meterBoxCodeCount = 0;int meterBoxCount = 0;
                     meterBoxCodeCount = (from mb in mbmsEntities.MeterBoxes where mb.MeterBoxCode == txtMeterBoxCode.Text && mb.Active == true select mb).ToList().Count;
-
+                    meterBoxCount= (from mb in mbmsEntities.MeterBoxes where mb.Box == txtMeterBox.Text &&mb.Pole.PoleNo==cboPoleNo.Text && mb.Active == true select mb).ToList().Count;
                     if (meterBoxCodeCount > 0)
                     {
                         tooltip.SetToolTip(txtMeterBoxCode, "Error");
                         tooltip.Show("Meter Box Code is already exist!", txtMeterBoxCode);
                         return;
                     }
+                    if (meterBoxCount > 0)
+                    {
+                        tooltip.SetToolTip(txtMeterBox, "Error");
+                        tooltip.Show("Meter Box is already exist!", txtMeterBox);
+                        return;
+                    }
                     try
                     {
                         meterBox.MeterBoxID = Guid.NewGuid().ToString();
                         meterBox.MeterBoxCode = txtMeterBoxCode.Text;
-                        meterBox.Box = txtMeterBox.Text;
+                        meterBox.Box = txtMeterBox.SelectedText;
                         meterBox.PoleID = cboPoleNo.SelectedValue.ToString();
+                        meterBox.MeterBoxName = cboMeterBoxName.Text;
                         meterBox.Active = true;
                         meterBox.CreatedUserID = UserID;
                         meterBox.CreatedDate = DateTime.Now;
@@ -174,6 +203,7 @@ namespace MPS
             txtMeterBoxCode.Text = string.Empty;
             txtQuarterName.Text = string.Empty;
             cboPoleNo.SelectedIndex = 0;
+            cboMeterBoxName.SelectedIndex = 0;
         }
         public void FormRefresh()
         {
@@ -213,8 +243,10 @@ namespace MPS
                 row.Cells[0].Value = meterBox.MeterBoxID;
                 row.Cells[1].Value = meterBox.MeterBoxCode;
                 row.Cells[2].Value = meterBox.Pole.PoleNo;
-                row.Cells[3].Value = meterBox.Box;
-                row.Cells[4].Value = meterBox.Pole.Transformer.Quarter.QuarterNameInEng;
+                row.Cells[3].Value = meterBox.Pole.Transformer.Quarter.QuarterNameInEng;
+                row.Cells[4].Value = meterBox.MeterBoxName;
+                row.Cells[5].Value = meterBox.Box;
+                
             }
         }
 
@@ -222,7 +254,7 @@ namespace MPS
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 6)
+                if (e.ColumnIndex == 7)
                 {
                     //DeleteForMeterBox
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -254,15 +286,16 @@ namespace MPS
                     }
 
                 }
-                else if (e.ColumnIndex == 5)
+                else if (e.ColumnIndex == 6)
                 {
                     //EditMeterBox
                     DataGridViewRow row = dgvMeterboxList.Rows[e.RowIndex];
                     meterBoxID = Convert.ToString(row.Cells[0].Value);
                     txtMeterBoxCode.Text = Convert.ToString(row.Cells[1].Value);
                     cboPoleNo.Text = Convert.ToString(row.Cells[2].Value);
-                    txtMeterBox.Text = Convert.ToString(row.Cells[3].Value);
-                    txtQuarterName.Text = Convert.ToString(row.Cells[4].Value);
+                    txtQuarterName.Text = Convert.ToString(row.Cells[3].Value);
+                    cboMeterBoxName.Text = Convert.ToString(row.Cells[4].Value);
+                    txtMeterBox.Text = Convert.ToString(row.Cells[5].Value);                    
                     isEdit = true;
                     btnSave.Text = "Update";
                 }

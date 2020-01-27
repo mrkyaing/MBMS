@@ -528,7 +528,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(73, 7);
+            this.label18.Location = new System.Drawing.Point(93, 7);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 1;
@@ -540,9 +540,9 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 17);
+            this.label1.Size = new System.Drawing.Size(94, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Meter No";
+            this.label1.Text = "Meter Serial No:";
             // 
             // panel7
             // 
@@ -603,7 +603,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtMeterNo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterModel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dtpInstallDate, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel11, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel19, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel20, 1, 4);
@@ -622,6 +621,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxSequence, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.panel18, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.cboMeterTypeCode, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(56, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 12;

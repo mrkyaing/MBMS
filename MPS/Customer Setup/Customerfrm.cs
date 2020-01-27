@@ -23,7 +23,8 @@ namespace MPS
         public MeterHistory  meterHistory { get; set; }
         public String customerID { get; set; }        
         public Boolean isEdit { get; set; }
-        Customer customer = new Customer();
+        string townsipCode;
+        
         CustomerController customerController = new CustomerController();
         public Customerfrm()
         {
@@ -44,6 +45,7 @@ namespace MPS
             {
                 if (isEdit)
                 {
+                    btnSave.Text = "Update";
                     Customer customer = (from c in mbmsEntities.Customers where c.CustomerID == customerID select c).FirstOrDefault();
                     txtAddressEng.Text = customer.CustomerAddressInEng;
                     txtAddressMM.Text = customer.CustomerAddressInMM;
@@ -229,6 +231,12 @@ namespace MPS
             {
                 if (isEdit)
                 {
+                    int editBookCode = 0; int editPageNo = 0; int editLineNo = 0; int editLineCount = 0;
+                    int editMeterCount = 0;
+                    editBookCode = Convert.ToInt32(cboBookCode.Text);
+                    editLineNo = Convert.ToInt32(txtLineNo.Text);
+                    editPageNo = Convert.ToInt32(txtPageNo.Text);
+
                     int editCustomerCodeCount = 0, editNRCCount = 0;
                     Customer updateCustomer = (from c in mbmsEntities.Customers where c.CustomerID == customerID select c).FirstOrDefault();
                     if (txtCustomerCode.Text != updateCustomer.CustomerCode)
@@ -238,6 +246,14 @@ namespace MPS
                     if (txtNRC.Text != updateCustomer.NRC)
                     {
                         editNRCCount = (from c in mbmsEntities.Customers where c.NRC == txtNRC.Text && c.Active == true select c).ToList().Count;
+                    }
+                    if (editLineNo != updateCustomer.LineNo)
+                    {
+                        editLineCount = (from c in mbmsEntities.Customers where (c.Ledger.BookCode == editBookCode && c.LineNo == editLineNo && c.PageNo == editPageNo) && c.Active == true select c).ToList().Count;
+                    }
+                    if (cboMeterNo.SelectedText != updateCustomer.Meter.MeterNo)
+                    {
+                        editMeterCount= (from c in mbmsEntities.Customers where c.Meter.MeterNo == cboMeterNo.SelectedText && c.Active == true select c).ToList().Count;
                     }
 
                     if (editCustomerCodeCount > 0)
@@ -252,7 +268,19 @@ namespace MPS
                         tooltip.Show("NRC is already exist!", txtNRC);
                         return;
                     }
-
+                    if (editLineCount > 0)
+                    {
+                        tooltip.SetToolTip(txtLineNo, "Error");
+                        tooltip.Show("Line No is already used!", txtLineNo);
+                        return;
+                    } 
+                    if (editMeterCount > 0)
+                    {
+                        tooltip.SetToolTip(cboMeterNo, "Error");
+                        tooltip.Show("Meter Serial No is already used!", cboMeterNo);
+                        return;
+                    }
+                    string oldMeterNo = updateCustomer.Meter.MeterNo;
                     updateCustomer.CustomerCode = txtCustomerCode.Text;
                     updateCustomer.CustomerNameInEng = txtCustomerNameEng.Text;
                     updateCustomer.CustomerNameInMM = txtCustomerNameMM.Text;
@@ -267,12 +295,12 @@ namespace MPS
                     updateCustomer.QuarterID = cboQuarterName.SelectedValue.ToString();
                     updateCustomer.TownshipID = cboTownshipName.SelectedValue.ToString();
                     updateCustomer.BillCode7LayerID = cboBillCodeNo.SelectedValue.ToString();
-                    updateCustomer.MeterID = cboMeterNo.SelectedValue.ToString();              
-                    customer.UpdatedUserID = UserID;
-                    customer.UpdatedDate = DateTime.Now;
+                    updateCustomer.MeterID = cboMeterNo.SelectedValue.ToString();
+                    updateCustomer.UpdatedUserID = UserID;
+                    updateCustomer.UpdatedDate = DateTime.Now;
                     customerController.UpdateCustomer(updateCustomer);
                     //updating the meter history information
-                    if(!cboMeterNo.SelectedValue.Equals(updateCustomer.MeterID)) {
+                    if(!cboMeterNo.Text.Equals(oldMeterNo) && meterHistory !=null) {
                         meterHistory.MeterID = updateCustomer.MeterID;
                         meterservice.UpdateMeterHistory(meterHistory);
                         }             
@@ -284,9 +312,18 @@ namespace MPS
                 }
                 else
                 {
+                    Customer customer = new Customer();
                     int customerCodeCount = 0, nrcCount=0;
                     customerCodeCount = (from c in mbmsEntities.Customers where c.CustomerCode == txtCustomerCode.Text && c.Active == true select c).ToList().Count;
                     nrcCount = (from c in mbmsEntities.Customers where c.NRC == txtNRC.Text && c.Active == true select c).ToList().Count;
+                    int bookCode = 0; int pageNo = 0; int lineNo = 0; int lineCount = 0;
+                    bookCode = Convert.ToInt32(cboBookCode.Text);
+                    lineNo = Convert.ToInt32(txtLineNo.Text);
+                    pageNo = Convert.ToInt32(txtPageNo.Text);
+
+                    lineCount = (from c in mbmsEntities.Customers where (c.Ledger.BookCode == bookCode && c.PageNo == pageNo && c.LineNo == lineNo) && c.Active == true select c).ToList().Count;
+
+
                     if (customerCodeCount > 0)
                     {
                         tooltip.SetToolTip(txtCustomerCode, "Error");
@@ -297,6 +334,12 @@ namespace MPS
                     {
                         tooltip.SetToolTip(txtNRC, "Error");
                         tooltip.Show("Customer NRC is already exist!", txtNRC);
+                        return;
+                    }
+                    if (lineCount > 0)
+                    {
+                        tooltip.SetToolTip(txtLineNo, "Error");
+                        tooltip.Show("Line No is already used!", txtLineNo);
                         return;
                     }
                     customer.CustomerID = Guid.NewGuid().ToString();
@@ -354,6 +397,100 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void txtCustomerCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtCustomerNameEng_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtCustomerNameMM_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtNRC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboTownshipName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboBillCodeNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSave_Click(this, new EventArgs());
+            }
+        }
+
+        private void cboTownshipName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!isEdit)
+            {
+                if (cboTownshipName.SelectedIndex > 0)
+                {
+                    mbmsEntities = new MBMSEntities();
+                    string townshipID = Convert.ToString(cboTownshipName.SelectedValue);
+                    List<Quarter> quarterList = new List<Quarter>();
+                    Quarter quarter = new Quarter();
+                    quarter.QuarterID = Convert.ToString(0);
+                    quarter.QuarterNameInEng = "Select";
+                    quarterList.Add(quarter);
+                    quarterList.AddRange(mbmsEntities.Quarters.Where(x => x.Active == true && x.TownshipID == townshipID).OrderBy(x => x.QuarterNameInEng).ToList());
+                    cboQuarterName.DataSource = quarterList;
+                    cboQuarterName.DisplayMember = "QuarterNameInEng";
+                    cboQuarterName.ValueMember = "QuarterID";
+                    var towshipData = (from t in mbmsEntities.Townships where t.TownshipID == townshipID select t).FirstOrDefault();
+                    txtCustomerCode.Text = towshipData.TownshipCode;
+                    townsipCode = txtCustomerCode.Text;
+                }
+            }
+        }
+
+        private void cboQuarterName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!isEdit)
+            {
+                if (cboQuarterName.SelectedIndex > 0)
+                {
+                    mbmsEntities = new MBMSEntities();
+                    string quarterID = Convert.ToString(cboQuarterName.SelectedValue);
+                    var quarterData = (from q in mbmsEntities.Quarters where q.QuarterID == quarterID select q).FirstOrDefault();
+                    txtCustomerCode.Text = townsipCode+"-" + quarterData.QuarterCode;
+                }
+            }
         }
     }
 }

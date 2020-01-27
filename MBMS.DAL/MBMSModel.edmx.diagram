@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="945196c2ab964c228503ab168e5abf79" Name="Diagram1">
+      <Diagram DiagramId="9e376bf818ca4dcaa5b3a2d16d51f4fa" Name="Diagram1">
         <EntityTypeShape EntityType="MBMSModel.AdvanceMoneyCustomer" Width="1.5" PointX="18.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.BillCode7Layer" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.BillCode7LayerDetail" Width="1.5" PointX="9.75" PointY="6.375" IsExpanded="true" />
@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="MBMSModel.Ledger" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.Meter" Width="1.5" PointX="12" PointY="18" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.MeterBill" Width="1.5" PointX="16.5" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MBMSModel.MeterBox" Width="1.5" PointX="9.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MBMSModel.MeterBox" Width="1.5" PointX="9.75" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.MeterHistory" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.MeterLossesMultiplierChangeHistory" Width="1.5" PointX="14.25" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="MBMSModel.MeterType" Width="1.5" PointX="9.75" PointY="25.375" IsExpanded="true" />

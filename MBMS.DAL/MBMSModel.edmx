@@ -205,6 +205,7 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="MeterBoxName" Type="nvarchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="MeterHistory">
           <Key>
@@ -1167,6 +1168,7 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="MeterBoxName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Meters" Relationship="Self.FK_Meter_MeterBox" FromRole="MeterBox" ToRole="Meter" />
           <NavigationProperty Name="Pole" Relationship="Self.FK_MeterBox_Pole" FromRole="MeterBox" ToRole="Pole" />
         </EntityType>
@@ -2147,6 +2149,7 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="MeterBoxName" ColumnName="MeterBoxName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

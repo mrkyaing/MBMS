@@ -19,7 +19,7 @@ namespace MPS
         public String UserID { get; set; }
         string quarterID;
         public Boolean isEdit { get; set; }
-        
+        private List<Quarter> quarterList = new List<Quarter>();
         QuarterController quarterController = new QuarterController();
         public Quarterfrm()
         {
@@ -114,6 +114,8 @@ namespace MPS
                     updateQuarter.UpdatedDate = DateTime.Now;
                     quarterController.UpdateByQuarter(updateQuarter);
                     MessageBox.Show("Successfully updated Quarter! Please check it in 'Quarter List'.", "Update");
+                    isEdit = false;
+                    btnSave.Text = "Save";
                     Clear();
                     FormRefresh();
                 }
@@ -152,7 +154,7 @@ namespace MPS
                     quarter.CreatedUserID = UserID;
                     quarter.CreatedDate = DateTime.Now;
                     quarterController.Save(quarter);
-                    MessageBox.Show("Success", "Save Success");
+                    MessageBox.Show("Successfully registered Quarter! Please check it in 'Quarter List'.", "Save Success");
                     Clear();
                     FormRefresh();
                 }
@@ -166,6 +168,31 @@ namespace MPS
             txtQuarterNameMM.Text = string.Empty;
             cboTownshipName.SelectedIndex = 0;
            
+        }
+        public void loadData()
+        {
+            quarterList = (from q in mbmsEntities.Quarters
+                            where q.Active == true &&
+                            q.Township.TownshipNameInEng == cboSearchTownshipName.Text || q.QuarterCode == txtSearchQuarterCode.Text || q.QuarterNameInEng == txtSearchQuarterName.Text
+                            select q).ToList();
+            foundDataBind();
+
+        }
+        public void foundDataBind()
+        {
+
+            dgvQuarterList.DataSource = "";
+
+            if (quarterList.Count < 1)
+            {
+                MessageBox.Show("No data Found", "Cannot find");
+                dgvQuarterList.DataSource = "";
+                return;
+            }
+            else
+            {
+                dgvQuarterList.DataSource = quarterList;
+            }
         }
 
         private void Quarterfrm_Load(object sender, EventArgs e)
@@ -187,6 +214,9 @@ namespace MPS
             cboTownshipName.DataSource = townshipList;
             cboTownshipName.DisplayMember = "TownshipNameInEng";
             cboTownshipName.ValueMember = "TownshipID";
+            cboSearchTownshipName.DataSource = townshipList;
+            cboSearchTownshipName.DisplayMember = "TownshipNameInEng";
+            cboSearchTownshipName.ValueMember = "TownshipID";
         }
         public void FormRefresh()
         {
@@ -309,6 +339,20 @@ namespace MPS
             {
                 btnSave_Click(this, new EventArgs());
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cboSearchTownshipName.SelectedIndex = 0;
+            txtSearchQuarterCode.Text = string.Empty;
+            txtSearchQuarterName.Text = string.Empty;
+            FormRefresh();
+            
         }
     }
 }

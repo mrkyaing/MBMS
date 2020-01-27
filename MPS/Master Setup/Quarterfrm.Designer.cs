@@ -61,6 +61,15 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSearchQuarterCode = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtSearchQuarterName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboSearchTownshipName = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -68,13 +77,14 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuarterList)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(301, 422);
+            this.label11.Location = new System.Drawing.Point(255, 422);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(99, 13);
             this.label11.TabIndex = 23;
@@ -123,7 +133,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(444, 469);
+            this.btnCancel.Location = new System.Drawing.Point(398, 469);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 32);
@@ -137,7 +147,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(304, 469);
+            this.btnSave.Location = new System.Drawing.Point(258, 469);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 32);
@@ -252,7 +262,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtQuarterNameMM, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cboTownshipName, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtAddress, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(64, 48);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(18, 48);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -335,9 +345,9 @@
             this.Column8,
             this.Column6,
             this.Column7});
-            this.dgvQuarterList.Location = new System.Drawing.Point(64, 549);
+            this.dgvQuarterList.Location = new System.Drawing.Point(18, 133);
             this.dgvQuarterList.Name = "dgvQuarterList";
-            this.dgvQuarterList.Size = new System.Drawing.Size(685, 251);
+            this.dgvQuarterList.Size = new System.Drawing.Size(731, 320);
             this.dgvQuarterList.TabIndex = 25;
             this.dgvQuarterList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQuarterList_CellClick);
             this.dgvQuarterList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvQuarterList_DataBindingComplete);
@@ -390,11 +400,110 @@
             this.Column7.UseColumnTextForLinkValue = true;
             this.Column7.Width = 80;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtSearchQuarterName);
+            this.groupBox1.Controls.Add(this.dgvQuarterList);
+            this.groupBox1.Controls.Add(this.txtSearchQuarterCode);
+            this.groupBox1.Controls.Add(this.cboSearchTownshipName);
+            this.groupBox1.Location = new System.Drawing.Point(535, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(774, 475);
+            this.groupBox1.TabIndex = 26;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search Quarter";
+            // 
+            // txtSearchQuarterCode
+            // 
+            this.txtSearchQuarterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchQuarterCode.Location = new System.Drawing.Point(127, 37);
+            this.txtSearchQuarterCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchQuarterCode.Name = "txtSearchQuarterCode";
+            this.txtSearchQuarterCode.Size = new System.Drawing.Size(148, 22);
+            this.txtSearchQuarterCode.TabIndex = 1;
+            this.txtSearchQuarterCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 38);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 16);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Quarter Code";
+            // 
+            // txtSearchQuarterName
+            // 
+            this.txtSearchQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchQuarterName.Location = new System.Drawing.Point(426, 36);
+            this.txtSearchQuarterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchQuarterName.Name = "txtSearchQuarterName";
+            this.txtSearchQuarterName.Size = new System.Drawing.Size(167, 22);
+            this.txtSearchQuarterName.TabIndex = 1;
+            this.txtSearchQuarterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(332, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 16);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Quarter Name";
+            // 
+            // cboSearchTownshipName
+            // 
+            this.cboSearchTownshipName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboSearchTownshipName.FormattingEnabled = true;
+            this.cboSearchTownshipName.Location = new System.Drawing.Point(127, 88);
+            this.cboSearchTownshipName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cboSearchTownshipName.Name = "cboSearchTownshipName";
+            this.cboSearchTownshipName.Size = new System.Drawing.Size(149, 24);
+            this.cboSearchTownshipName.TabIndex = 4;
+            this.cboSearchTownshipName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTownshipName_KeyDown);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 16);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Township Name";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(426, 88);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(518, 88);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 26;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Quarterfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(801, 750);
-            this.Controls.Add(this.dgvQuarterList);
+            this.ClientSize = new System.Drawing.Size(1342, 566);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnCancel);
@@ -419,6 +528,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuarterList)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +569,14 @@
         private System.Windows.Forms.DataGridViewLinkColumn Column6;
         private System.Windows.Forms.DataGridViewLinkColumn Column7;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtSearchQuarterName;
+        private System.Windows.Forms.TextBox txtSearchQuarterCode;
+        private System.Windows.Forms.ComboBox cboSearchTownshipName;
     }
 }

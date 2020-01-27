@@ -49,13 +49,6 @@
             this.cboPoleNo = new System.Windows.Forms.ComboBox();
             this.txtQuarterName = new System.Windows.Forms.TextBox();
             this.dgvMeterboxList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -66,6 +59,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cboSearchPoleNo = new System.Windows.Forms.ComboBox();
             this.cboSearchQuarterName = new System.Windows.Forms.ComboBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cboMeterBoxName = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +79,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterboxList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +115,7 @@
             // txtMeterBox
             // 
             this.txtMeterBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMeterBox.Location = new System.Drawing.Point(261, 108);
+            this.txtMeterBox.Location = new System.Drawing.Point(261, 207);
             this.txtMeterBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMeterBox.Name = "txtMeterBox";
             this.txtMeterBox.Size = new System.Drawing.Size(233, 22);
@@ -131,7 +137,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(272, 285);
+            this.btnSave.Location = new System.Drawing.Point(279, 344);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 32);
@@ -143,7 +149,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(421, 285);
+            this.btnCancel.Location = new System.Drawing.Point(428, 344);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 32);
@@ -186,7 +192,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(283, 254);
+            this.label9.Location = new System.Drawing.Point(290, 313);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 13);
             this.label9.TabIndex = 4;
@@ -197,32 +203,35 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtQuarterName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtMeterBoxCode, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.cboPoleNo, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtMeterBox, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtQuarterName, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtMeterBox, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cboMeterBoxName, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(32, 39);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.19048F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.80952F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.38095F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.61905F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 198);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 250);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(3, 154);
+            this.panel4.Location = new System.Drawing.Point(3, 106);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(233, 40);
+            this.panel4.Size = new System.Drawing.Size(233, 39);
             this.panel4.TabIndex = 8;
             // 
             // label3
@@ -239,7 +248,7 @@
             // 
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 108);
+            this.panel3.Location = new System.Drawing.Point(3, 207);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(233, 38);
@@ -252,7 +261,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 57);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 43);
+            this.panel2.Size = new System.Drawing.Size(233, 41);
             this.panel2.TabIndex = 1;
             // 
             // panel1
@@ -280,7 +289,7 @@
             // 
             this.txtQuarterName.Enabled = false;
             this.txtQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuarterName.Location = new System.Drawing.Point(261, 154);
+            this.txtQuarterName.Location = new System.Drawing.Point(261, 106);
             this.txtQuarterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtQuarterName.Name = "txtQuarterName";
             this.txtQuarterName.Size = new System.Drawing.Size(233, 22);
@@ -295,59 +304,18 @@
             this.Column1,
             this.Column2,
             this.Column5,
-            this.Column3,
             this.Column4,
+            this.Column8,
+            this.Column3,
             this.Column6,
             this.Column7});
-            this.dgvMeterboxList.Location = new System.Drawing.Point(31, 157);
+            this.dgvMeterboxList.Location = new System.Drawing.Point(6, 154);
             this.dgvMeterboxList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMeterboxList.Name = "dgvMeterboxList";
-            this.dgvMeterboxList.Size = new System.Drawing.Size(644, 328);
+            this.dgvMeterboxList.Size = new System.Drawing.Size(700, 328);
             this.dgvMeterboxList.TabIndex = 8;
             this.dgvMeterboxList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMeterboxList_CellClick);
             this.dgvMeterboxList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvMeterboxList_DataBindingComplete);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Meter Box Code";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pole Name";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Meter Box";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Quarter Name";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "";
-            this.Column6.Name = "Column6";
-            this.Column6.Text = "Edit";
-            this.Column6.UseColumnTextForLinkValue = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
-            this.Column7.Text = "Delete";
-            this.Column7.UseColumnTextForLinkValue = true;
             // 
             // groupBox1
             // 
@@ -357,7 +325,7 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(585, 363);
+            this.groupBox1.Size = new System.Drawing.Size(585, 431);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Register";
@@ -459,10 +427,98 @@
             this.cboSearchQuarterName.TabIndex = 2;
             this.cboSearchQuarterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboSearchQuarterName_KeyDown);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Location = new System.Drawing.Point(3, 153);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(233, 38);
+            this.panel5.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(107, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(11, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 16);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Meter Box Name";
+            // 
+            // cboMeterBoxName
+            // 
+            this.cboMeterBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMeterBoxName.FormattingEnabled = true;
+            this.cboMeterBoxName.Location = new System.Drawing.Point(261, 152);
+            this.cboMeterBoxName.Name = "cboMeterBoxName";
+            this.cboMeterBoxName.Size = new System.Drawing.Size(233, 24);
+            this.cboMeterBoxName.TabIndex = 2;
+            this.cboMeterBoxName.SelectedIndexChanged += new System.EventHandler(this.cboPoleNo_SelectedIndexChanged);
+            this.cboMeterBoxName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboPoleNo_KeyDown);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Meter Box Code";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Pole Name";
+            this.Column5.Name = "Column5";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Quarter Name";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 110;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Meter Box Name";
+            this.Column8.Name = "Column8";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Meter Box";
+            this.Column3.Name = "Column3";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "";
+            this.Column6.Name = "Column6";
+            this.Column6.Text = "Edit";
+            this.Column6.UseColumnTextForLinkValue = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            this.Column7.Text = "Delete";
+            this.Column7.UseColumnTextForLinkValue = true;
+            // 
             // MeterBoxfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1370, 579);
+            this.ClientSize = new System.Drawing.Size(1370, 566);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -487,6 +543,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -513,13 +571,6 @@
         private System.Windows.Forms.ComboBox cboPoleNo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQuarterName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewLinkColumn Column6;
-        private System.Windows.Forms.DataGridViewLinkColumn Column7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnRefresh;
@@ -530,5 +581,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cboSearchPoleNo;
         private System.Windows.Forms.ComboBox cboSearchQuarterName;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cboMeterBoxName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewLinkColumn Column6;
+        private System.Windows.Forms.DataGridViewLinkColumn Column7;
     }
 }

@@ -31,6 +31,7 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public string MeterBoxName { get; set; }
     
         public virtual ICollection<Meter> Meters { get; set; }
         public virtual Pole Pole { get; set; }

@@ -89,6 +89,8 @@ namespace MPS
                     updatePunishmentRule.UpdatedDate = DateTime.Now;
                     punishmentRuleController.UpdatePurnishmentRule(updatePunishmentRule);
                     MessageBox.Show("Successfully updated Punishment Rule!", "Update");
+                    isEdit = false;
+                    btnSave.Text = "Save";
                     Clear();
                     FormRefresh();
                 }

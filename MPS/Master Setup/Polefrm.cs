@@ -86,18 +86,7 @@ namespace MPS
                 tooltip.Show("Please fill up Pole No!", txtPoleNo);
                 hasError = false;
             }
-            else if (txtGPSX.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtGPSX, "Error");
-                tooltip.Show("Please fill up Pole GPS-X!", txtGPSX);
-                hasError = false;
-            }
-            else if (txtGPSY.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtGPSY, "Error");
-                tooltip.Show("Please fill up Pole GPS-Y!", txtGPSY);
-                hasError = false;
-            }
+            
             else if (cboTransformerName.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboTransformerName, "Error");
@@ -134,6 +123,8 @@ namespace MPS
                     updatePole.UpdatedDate = DateTime.Now;
                     poleController.UpdatePole(updatePole);
                     MessageBox.Show("Successfully updated Pole!", "Update");
+                    isEdit = false;
+                    btnSave.Text = "Save";
                     Clear();
                     FormRefresh();
                 }
