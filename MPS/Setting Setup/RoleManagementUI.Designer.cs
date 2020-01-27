@@ -104,16 +104,17 @@
             // 
             this.cboUserRole.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUserRole.FormattingEnabled = true;
-            this.cboUserRole.Location = new System.Drawing.Point(145, 4);
+            this.cboUserRole.Location = new System.Drawing.Point(144, 10);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(200, 25);
             this.cboUserRole.TabIndex = 6;
+            this.cboUserRole.SelectedIndexChanged += new System.EventHandler(this.cboUserRole_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(359, 9);
+            this.label11.Location = new System.Drawing.Point(358, 15);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 14);
             this.label11.TabIndex = 10;
@@ -145,7 +146,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(101, 11);
+            this.label10.Location = new System.Drawing.Point(100, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(13, 14);
             this.label10.TabIndex = 4;
@@ -155,7 +156,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 9);
+            this.label4.Location = new System.Drawing.Point(30, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 0;

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MPS.Setting_Setup {
     public partial class RoleManagementUI : Form {
-        MBMSEntities mbmsEntityies = new MBMSEntities();
+        MBMSEntities mbmsEntities = new MBMSEntities();
         RoleController roleController = new RoleController();
         public String UserID { get; set; }
         public RoleManagementUI() {
@@ -28,7 +28,7 @@ namespace MPS.Setting_Setup {
             role.RoleID = Convert.ToString(0);
             role.RoleName = "Select";
             roleList.Add(role);
-            roleList.AddRange(mbmsEntityies.Roles.Where(x => x.Active == true).ToList());
+            roleList.AddRange(mbmsEntities.Roles.Where(x => x.Active == true).ToList());
             cboUserRole.DataSource = roleList;
             cboUserRole.DisplayMember = "RoleName";
             cboUserRole.ValueMember = "RoleID";
@@ -85,6 +85,17 @@ namespace MPS.Setting_Setup {
 
         private void btnCancel_Click(object sender, EventArgs e) {
             chkaddcustomer.Checked = chkeditdeletecustomer.Checked = chkviewcustomerlist.Checked = false;
+            cboUserRole.SelectedIndex = 0;
+            }
+
+        private void cboUserRole_SelectedIndexChanged(object sender, EventArgs e) {
+            string roleID = cboUserRole.SelectedValue.ToString();
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach(RoleManagement item in rolemgtList) {
+                if (item.RoleFeatureName.Equals("CustomerView")) chkviewcustomerlist.Checked = item.IsAllowed;
+                if (item.RoleFeatureName.Equals("CustomerAdd")) chkaddcustomer.Checked = item.IsAllowed;
+                if (item.RoleFeatureName.Equals("CustomerEditOrDelete")) chkeditdeletecustomer.Checked = item.IsAllowed;
+                }
             }
         }
     }
