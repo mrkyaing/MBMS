@@ -33,6 +33,7 @@ namespace MBMS.DAL
         public Nullable<System.DateTime> UpdatedDate { get; set; }
         public string DeletedUserID { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public string FullName { get; set; }
     
         public virtual Role Role { get; set; }
         public virtual ICollection<UserInRole> UserInRoles { get; set; }

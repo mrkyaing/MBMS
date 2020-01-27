@@ -128,6 +128,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -138,6 +139,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label10
             // 
@@ -798,27 +800,27 @@
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(5, 317);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(45, 13);
+            this.label30.Size = new System.Drawing.Size(49, 13);
             this.label30.TabIndex = 46;
-            this.label30.Text = "Village";
+            this.label30.Text = "Quarter";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(5, 338);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(74, 19);
+            this.label31.Size = new System.Drawing.Size(82, 19);
             this.label31.TabIndex = 40;
-            this.label31.Text = "View Village";
+            this.label31.Text = "View Quarter";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(5, 359);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(69, 19);
+            this.label32.Size = new System.Drawing.Size(77, 19);
             this.label32.TabIndex = 46;
-            this.label32.Text = "Add Village";
+            this.label32.Text = "Add Quarter";
             // 
             // chkviewvillage
             // 
@@ -843,9 +845,9 @@
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(5, 380);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(109, 19);
+            this.label33.Size = new System.Drawing.Size(117, 19);
             this.label33.TabIndex = 40;
-            this.label33.Text = "Edit/Delete Village";
+            this.label33.Text = "Edit/Delete Quarter";
             // 
             // chkeditdeletevillage
             // 

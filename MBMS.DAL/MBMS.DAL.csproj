@@ -118,6 +118,9 @@
     <Compile Include="Role.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="RoleManagement.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Setting.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>

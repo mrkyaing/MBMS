@@ -88,6 +88,7 @@
     <Compile Include="ViewModels\PunishmentCustomerVM.cs" />
     <Compile Include="ViewModels\AdvanceMoneyCustomerVM.cs" />
     <Compile Include="ViewModels\MeterBillInvoiceVM.cs" />
+    <Compile Include="ViewModels\RoleManagementViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MBMS.DAL\MBMS.DAL.csproj">

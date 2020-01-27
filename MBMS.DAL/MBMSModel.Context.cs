@@ -46,6 +46,7 @@ namespace MBMS.DAL
         public DbSet<PunishmentRule> PunishmentRules { get; set; }
         public DbSet<Quarter> Quarters { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<RoleManagement> RoleManagements { get; set; }
         public DbSet<Setting> Settings { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Township> Townships { get; set; }
@@ -91,6 +92,15 @@ namespace MBMS.DAL
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MeterUnitCollect_DeleteByCustomerIDFromDateToDate", customerIDParameter, fromDateParameter, toDateParameter);
+        }
+    
+        public virtual int RoleManagement_DeleteByRoleID(string roleID)
+        {
+            var roleIDParameter = roleID != null ?
+                new ObjectParameter("RoleID", roleID) :
+                new ObjectParameter("RoleID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RoleManagement_DeleteByRoleID", roleIDParameter);
         }
     }
 }

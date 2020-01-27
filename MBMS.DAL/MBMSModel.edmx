@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdvanceMoneyCustomer">
           <Key>
             <PropertyRef Name="AdvanceMoneyCustomerID" />
@@ -103,6 +103,7 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="SMDNo" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Ledger">
           <Key>
@@ -363,6 +364,20 @@
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="RoleManagement">
+          <Key>
+            <PropertyRef Name="RoleManagementID" />
+          </Key>
+          <Property Name="RoleManagementID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="RoleFeatureName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RoleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="IsAllowed" Type="bit" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CratedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="Setting">
           <Key>
             <PropertyRef Name="SettingID" />
@@ -488,6 +503,7 @@
           <Property Name="UpdatedDate" Type="datetime" />
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="FullName" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="UserInRole">
           <Key>
@@ -816,6 +832,9 @@
           <Parameter Name="FromDate" Type="datetime" Mode="In" />
           <Parameter Name="ToDate" Type="datetime" Mode="In" />
         </Function>
+        <Function Name="RoleManagement_DeleteByRoleID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RoleID" Type="char" Mode="In" />
+        </Function>
         <EntityContainer Name="MBMSModelStoreContainer">
           <EntitySet Name="AdvanceMoneyCustomer" EntityType="Self.AdvanceMoneyCustomer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BillCode7Layer" EntityType="Self.BillCode7Layer" Schema="dbo" store:Type="Tables" />
@@ -835,6 +854,7 @@
           <EntitySet Name="PunishmentRule" EntityType="Self.PunishmentRule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Quarter" EntityType="Self.Quarter" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleManagement" EntityType="Self.RoleManagement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Township" EntityType="Self.Township" Schema="dbo" store:Type="Tables" />
@@ -943,8 +963,7 @@
             <End Role="UserInRole" EntitySet="UserInRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1050,6 +1069,7 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="SMDNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BillCode7Layer" Relationship="Self.FK_Customer_BillCode7Layer" FromRole="Customer" ToRole="BillCode7Layer" />
           <NavigationProperty Name="Ledger" Relationship="Self.FK_Customer_Ledger" FromRole="Customer" ToRole="Ledger" />
           <NavigationProperty Name="Meter" Relationship="Self.FK_Customer_Meter" FromRole="Customer" ToRole="Meter" />
@@ -1346,6 +1366,20 @@
           <NavigationProperty Name="Users" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
           <NavigationProperty Name="UserInRoles" Relationship="Self.FK_UserInRole_Role" FromRole="Role" ToRole="UserInRole" />
         </EntityType>
+        <EntityType Name="RoleManagement">
+          <Key>
+            <PropertyRef Name="RoleManagementID" />
+          </Key>
+          <Property Name="RoleManagementID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RoleFeatureName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="IsAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CratedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="Setting">
           <Key>
             <PropertyRef Name="SettingID" />
@@ -1477,6 +1511,7 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="UserInRoles" Relationship="Self.FK_UserInRole_User" FromRole="User" ToRole="UserInRole" />
         </EntityType>
@@ -1816,6 +1851,7 @@
           <EntitySet Name="PunishmentRules" EntityType="Self.PunishmentRule" />
           <EntitySet Name="Quarters" EntityType="Self.Quarter" />
           <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="RoleManagements" EntityType="Self.RoleManagement" />
           <EntitySet Name="Settings" EntityType="Self.Setting" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Townships" EntityType="Self.Township" />
@@ -1924,7 +1960,7 @@
             <End Role="UserInRole" EntitySet="UserInRoles" />
           </AssociationSet>
           <FunctionImport Name="BillCode7LayerDetail_DeleteByBillCode7LayerID">
-            <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
+          <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MeterBill_DeleteByFromDateToDate">
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
@@ -1934,6 +1970,9 @@
             <Parameter Name="CustomerID" Mode="In" Type="String" />
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="RoleManagement_DeleteByRoleID">
+            <Parameter Name="RoleID" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
       </Schema>
@@ -2043,6 +2082,7 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="SMDNo" ColumnName="SMDNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2318,6 +2358,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RoleManagements">
+            <EntityTypeMapping TypeName="MBMSModel.RoleManagement">
+              <MappingFragment StoreEntitySet="RoleManagement">
+                <ScalarProperty Name="RoleManagementID" ColumnName="RoleManagementID" />
+                <ScalarProperty Name="RoleFeatureName" ColumnName="RoleFeatureName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="IsAllowed" ColumnName="IsAllowed" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CratedDate" ColumnName="CratedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Settings">
             <EntityTypeMapping TypeName="MBMSModel.Setting">
               <MappingFragment StoreEntitySet="Setting">
@@ -2447,6 +2502,7 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2469,6 +2525,7 @@
           <FunctionImportMapping FunctionImportName="BillCode7LayerDetail_DeleteByBillCode7LayerID" FunctionName="MBMSModel.Store.BillCode7LayerDetail_DeleteByBillCode7LayerID" />
           <FunctionImportMapping FunctionImportName="MeterBill_DeleteByFromDateToDate" FunctionName="MBMSModel.Store.MeterBill_DeleteByFromDateToDate" />
           <FunctionImportMapping FunctionImportName="MeterUnitCollect_DeleteByCustomerIDFromDateToDate" FunctionName="MBMSModel.Store.MeterUnitCollect_DeleteByCustomerIDFromDateToDate" />
+          <FunctionImportMapping FunctionImportName="RoleManagement_DeleteByRoleID" FunctionName="MBMSModel.Store.RoleManagement_DeleteByRoleID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
