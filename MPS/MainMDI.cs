@@ -1,4 +1,5 @@
 ﻿
+using MBMS.DAL;
 using MPS.Billing;
 using MPS.CompanyProfileSetup;
 using MPS.Customer_Setup;
@@ -14,13 +15,6 @@ using MPS.PunishmentCustomerList;
 using MPS.Setting_Setup;
 using MPS.User_Management;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MPS
@@ -28,6 +22,7 @@ namespace MPS
     public partial class MainMDI : Form
     {
         public string UserID { get; set; }
+        public Role role { get; set; }
         public string UserName { get; set; }
         private int childFormNumber = 0;
 
@@ -43,74 +38,9 @@ namespace MPS
             childForm.Text = "Window " + childFormNumber++;
             childForm.Show();
         }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
-
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
-        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
         }
 
         private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,7 +68,33 @@ namespace MPS
         private void MainMDI_Load(object sender, EventArgs e)
         {
              tpUserName.Text = UserName;
+            MenuPermission(role.RoleLevel);
         }
+        public void MenuPermission(string roleName) {
+            if (!roleName.Equals("Admin")) {
+                // MenuVisiableEnable(false);
+                //Remove sub Menu  items
+                userManagementToolStripMenuItem.DropDownItems.RemoveAt(3);//mgt role 
+                userManagementToolStripMenuItem.DropDownItems.RemoveAt(0);//add user
+
+                billingToolStripMenuItem.DropDownItems.RemoveAt(0);//add bill code 7 layer 
+
+                customerToolStripMenuItem.DropDownItems.RemoveAt(0);//add customer 
+
+                meterToolStripMenuItem.DropDownItems.RemoveAt(0);//add meter 
+
+                masterSetupToolStripMenuItem.DropDownItems.RemoveAt(7);//punishment rule setup
+                }
+            }
+
+        private void MenuVisiableEnable(bool b) {
+            // Main Menu Visibility                
+           billingToolStripMenuItem.Visible = b;
+          customerToolStripMenuItem.Visible = b;
+          masterSetupToolStripMenuItem.Visible = b;
+          meterToolStripMenuItem.Visible = b;
+          ledgerToolStripMenuItem.Visible = b;        
+            }
 
         private void userListToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -347,6 +303,12 @@ namespace MPS
 
         private void ledgerListToolStripMenuItem_Click(object sender, EventArgs e) {
             new LedgerSearchFrm().Show();
+            }
+
+        private void roleManagementToolStripMenuItem1_Click(object sender, EventArgs e) {
+            RoleManagementUI rolemgtui = new RoleManagementUI();
+            rolemgtui.UserID = UserID;
+            rolemgtui.Show();
             }
         }
 }

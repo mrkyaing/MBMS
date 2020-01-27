@@ -292,6 +292,12 @@
     <Compile Include="MeterUnitCollection\MeterUnitCollectionsfrm.designer.cs">
       <DependentUpon>MeterUnitCollectionsfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting Setup\RoleManagementUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting Setup\RoleManagementUI.Designer.cs">
+      <DependentUpon>RoleManagementUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Setting Setup\Settingfrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MeterUnitCollection\MeterUnitCollectionsfrm.resx">
       <DependentUpon>MeterUnitCollectionsfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting Setup\RoleManagementUI.resx">
+      <DependentUpon>RoleManagementUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Setting Setup\Settingfrm.resx">
       <DependentUpon>Settingfrm.cs</DependentUpon>

@@ -43,12 +43,13 @@ namespace MPS
             if (!hasError) {
                 User user = new User();
                 user = (from u in mbsEntities.Users where u.UserName == txtUserName.Text  && u.Active == true select u).FirstOrDefault<User>();
-                if (user != null && Utility.DecryptString(user.Password, "scadmin@123") ==txtPassword.Text){
-                   
+                if (user != null && Utility.DecryptString(user.Password, "scadmin@123") ==txtPassword.Text){                 
                     string UserID = user.UserID;
                     string UserName = user.UserName;
                     this.Hide();     
                     MainMDI mainForm = new MainMDI();
+                    Role r = mbsEntities.Roles.Where(x => x.Active == true && x.RoleID == user.RoleID).SingleOrDefault();
+                    mainForm.role = r;
                     mainForm.UserID = UserID;
                     mainForm.UserName = UserName;
                     mainForm.Show();
@@ -59,7 +60,7 @@ namespace MPS
                 }
             }
         }
-
+      
         private void btnCancel_Click(object sender, EventArgs e)
         {
             txtUserName.Text = string.Empty;

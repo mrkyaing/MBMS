@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMDI));
-            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roleManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addroleManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billCode7LayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.billCode7LayerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,8 +49,8 @@
             this.punishmentCustomerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advanceMoneyCustomerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterSetupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.QuarterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.townshipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuarterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meterTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transformerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transformeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +62,6 @@
             this.meterListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ledgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ledgerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.integrateWithHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCToHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hHUToPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,17 +77,19 @@
             this.configurationSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuStrip.SuspendLayout();
+            this.mgtroleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip
+            // MainMenu
             // 
-            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MainMenu.Font = new System.Drawing.Font("Myanmar3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.systemToolStripMenuItem,
             this.userManagementToolStripMenuItem,
             this.billingToolStripMenuItem,
@@ -100,13 +101,12 @@
             this.importExportToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.settingToolStripMenuItem,
-            this.logoutToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1370, 25);
-            this.menuStrip.TabIndex = 0;
-            this.menuStrip.Text = "MenuStrip";
+            this.logoutToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(1370, 25);
+            this.MainMenu.TabIndex = 0;
+            this.MainMenu.Text = "MenuStrip";
             // 
             // systemToolStripMenuItem
             // 
@@ -136,7 +136,8 @@
             this.userManagementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem,
             this.userListToolStripMenuItem,
-            this.roleManagementToolStripMenuItem});
+            this.addroleManagementToolStripMenuItem,
+            this.mgtroleMenuItem});
             this.userManagementToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userManagementToolStripMenuItem.Name = "userManagementToolStripMenuItem";
             this.userManagementToolStripMenuItem.Size = new System.Drawing.Size(118, 21);
@@ -145,23 +146,23 @@
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.addUserToolStripMenuItem.Text = "Add User ";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // userListToolStripMenuItem
             // 
             this.userListToolStripMenuItem.Name = "userListToolStripMenuItem";
-            this.userListToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.userListToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.userListToolStripMenuItem.Text = "User List";
             this.userListToolStripMenuItem.Click += new System.EventHandler(this.userListToolStripMenuItem_Click);
             // 
-            // roleManagementToolStripMenuItem
+            // addroleManagementToolStripMenuItem
             // 
-            this.roleManagementToolStripMenuItem.Name = "roleManagementToolStripMenuItem";
-            this.roleManagementToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.roleManagementToolStripMenuItem.Text = "Add Role";
-            this.roleManagementToolStripMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem_Click);
+            this.addroleManagementToolStripMenuItem.Name = "addroleManagementToolStripMenuItem";
+            this.addroleManagementToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.addroleManagementToolStripMenuItem.Text = "Add Role";
+            this.addroleManagementToolStripMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem_Click);
             // 
             // billingToolStripMenuItem
             // 
@@ -255,8 +256,8 @@
             // masterSetupToolStripMenuItem
             // 
             this.masterSetupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.QuarterToolStripMenuItem,
             this.townshipToolStripMenuItem,
+            this.QuarterToolStripMenuItem,
             this.meterTypeToolStripMenuItem,
             this.transformerToolStripMenuItem,
             this.transformeListToolStripMenuItem,
@@ -268,19 +269,19 @@
             this.masterSetupToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
             this.masterSetupToolStripMenuItem.Text = "Master Setup";
             // 
-            // QuarterToolStripMenuItem
-            // 
-            this.QuarterToolStripMenuItem.Name = "QuarterToolStripMenuItem";
-            this.QuarterToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.QuarterToolStripMenuItem.Text = "Quarter";
-            this.QuarterToolStripMenuItem.Click += new System.EventHandler(this.QuarterToolStripMenuItem_Click);
-            // 
             // townshipToolStripMenuItem
             // 
             this.townshipToolStripMenuItem.Name = "townshipToolStripMenuItem";
             this.townshipToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.townshipToolStripMenuItem.Text = "Township";
             this.townshipToolStripMenuItem.Click += new System.EventHandler(this.townshipToolStripMenuItem_Click);
+            // 
+            // QuarterToolStripMenuItem
+            // 
+            this.QuarterToolStripMenuItem.Name = "QuarterToolStripMenuItem";
+            this.QuarterToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.QuarterToolStripMenuItem.Text = "Quarter";
+            this.QuarterToolStripMenuItem.Click += new System.EventHandler(this.QuarterToolStripMenuItem_Click);
             // 
             // meterTypeToolStripMenuItem
             // 
@@ -351,8 +352,7 @@
             // ledgerToolStripMenuItem
             // 
             this.ledgerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addLedgerToolStripMenuItem,
-            this.ledgerListToolStripMenuItem});
+            this.addLedgerToolStripMenuItem});
             this.ledgerToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ledgerToolStripMenuItem.Name = "ledgerToolStripMenuItem";
             this.ledgerToolStripMenuItem.Size = new System.Drawing.Size(57, 21);
@@ -364,13 +364,6 @@
             this.addLedgerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addLedgerToolStripMenuItem.Text = "Add Ledger";
             this.addLedgerToolStripMenuItem.Click += new System.EventHandler(this.addLedgerToolStripMenuItem_Click);
-            // 
-            // ledgerListToolStripMenuItem
-            // 
-            this.ledgerListToolStripMenuItem.Name = "ledgerListToolStripMenuItem";
-            this.ledgerListToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ledgerListToolStripMenuItem.Text = "Ledger List";
-            this.ledgerListToolStripMenuItem.Click += new System.EventHandler(this.ledgerListToolStripMenuItem_Click);
             // 
             // integrateWithHHUToolStripMenuItem
             // 
@@ -489,13 +482,6 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -520,16 +506,23 @@
             this.tpUserName.Size = new System.Drawing.Size(65, 17);
             this.tpUserName.Text = "User Name";
             // 
+            // mgtroleMenuItem
+            // 
+            this.mgtroleMenuItem.Name = "mgtroleMenuItem";
+            this.mgtroleMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.mgtroleMenuItem.Text = "Role Management";
+            this.mgtroleMenuItem.Click += new System.EventHandler(this.roleManagementToolStripMenuItem1_Click);
+            // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 573);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.MainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MainMenuStrip = this.menuStrip;
+            this.MainMenuStrip = this.MainMenu;
             this.Name = "MainMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Billing Management Sytem";
@@ -537,8 +530,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMDI_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMDI_FormClosed);
             this.Load += new System.EventHandler(this.MainMDI_Load);
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -546,12 +539,12 @@
 
         }
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem roleManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addroleManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billCode7LayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
@@ -570,7 +563,6 @@
         private System.Windows.Forms.ToolStripMenuItem meterListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ledgerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addLedgerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ledgerListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem integrateWithHHUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hHUToPCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pCToHHUToolStripMenuItem;
@@ -583,7 +575,6 @@
         private System.Windows.Forms.ToolStripMenuItem configurationSettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem versionInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billCode7LayerListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddNewCustomerToolStripMenuItem;
@@ -599,6 +590,7 @@
         private System.Windows.Forms.ToolStripMenuItem meterBillPaymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem meterDataToHHUDBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerDataToHHUDBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mgtroleMenuItem;
         }
 }
 
