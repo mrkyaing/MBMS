@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customerfrm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSMDSerial = new System.Windows.Forms.TextBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
             this.txtCustomerCode = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
@@ -91,10 +94,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtSMDSerial = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -110,7 +111,6 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -170,6 +170,32 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 678);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // txtSMDSerial
+            // 
+            this.txtSMDSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSMDSerial.Location = new System.Drawing.Point(244, 640);
+            this.txtSMDSerial.Name = "txtSMDSerial";
+            this.txtSMDSerial.Size = new System.Drawing.Size(241, 22);
+            this.txtSMDSerial.TabIndex = 37;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.label31);
+            this.panel16.Location = new System.Drawing.Point(3, 640);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(200, 26);
+            this.panel16.TabIndex = 36;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(5, 3);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(100, 16);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "SMD Serial No:";
             // 
             // txtCustomerCode
             // 
@@ -756,36 +782,10 @@
             this.label29.TabIndex = 3;
             this.label29.Text = "* is Mandatory Field";
             // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.label31);
-            this.panel16.Location = new System.Drawing.Point(3, 640);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(200, 26);
-            this.panel16.TabIndex = 36;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(5, 3);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(100, 16);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "SMD Serial No:";
-            // 
-            // txtSMDSerial
-            // 
-            this.txtSMDSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSMDSerial.Location = new System.Drawing.Point(244, 640);
-            this.txtSMDSerial.Name = "txtSMDSerial";
-            this.txtSMDSerial.Size = new System.Drawing.Size(241, 22);
-            this.txtSMDSerial.TabIndex = 37;
-            // 
             // Customerfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(585, 750);
+            this.ClientSize = new System.Drawing.Size(585, 742);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -798,6 +798,8 @@
             this.Load += new System.EventHandler(this.RegisterCustomer_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -828,8 +830,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

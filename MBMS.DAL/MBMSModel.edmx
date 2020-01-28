@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MBMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AdvanceMoneyCustomer">
           <Key>
             <PropertyRef Name="AdvanceMoneyCustomerID" />
@@ -393,6 +393,19 @@
           <Property Name="DeletedUserID" Type="char" MaxLength="36" />
           <Property Name="DeletedDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="StreetLightFees">
+          <Key>
+            <PropertyRef Name="StreetLightFeesID" />
+          </Key>
+          <Property Name="StreetLightFeesID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="QuarterID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="CreatedUserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedUserID" Type="char" MaxLength="36" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -772,6 +785,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StreetLightFees_Quarter">
+          <End Role="Quarter" Type="Self.Quarter" Multiplicity="1" />
+          <End Role="StreetLightFees" Type="Self.StreetLightFees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quarter">
+              <PropertyRef Name="QuarterID" />
+            </Principal>
+            <Dependent Role="StreetLightFees">
+              <PropertyRef Name="QuarterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Transformer_Quarter">
           <End Role="Quarter" Type="Self.Quarter" Multiplicity="1" />
           <End Role="Transformer" Type="Self.Transformer" Multiplicity="*" />
@@ -856,6 +881,7 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoleManagement" EntityType="Self.RoleManagement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StreetLightFees" EntityType="Self.StreetLightFees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Township" EntityType="Self.Township" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transformer" EntityType="Self.Transformer" Schema="dbo" store:Type="Tables" />
@@ -946,6 +972,10 @@
             <End Role="Township" EntitySet="Township" />
             <End Role="Quarter" EntitySet="Quarter" />
           </AssociationSet>
+          <AssociationSet Name="FK_StreetLightFees_Quarter" Association="Self.FK_StreetLightFees_Quarter">
+            <End Role="Quarter" EntitySet="Quarter" />
+            <End Role="StreetLightFees" EntitySet="StreetLightFees" />
+          </AssociationSet>
           <AssociationSet Name="FK_Transformer_Quarter" Association="Self.FK_Transformer_Quarter">
             <End Role="Quarter" EntitySet="Quarter" />
             <End Role="Transformer" EntitySet="Transformer" />
@@ -963,7 +993,8 @@
             <End Role="UserInRole" EntitySet="UserInRole" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MBMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1347,6 +1378,7 @@
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_Quarter" FromRole="Quarter" ToRole="Customer" />
           <NavigationProperty Name="Township" Relationship="Self.FK_Quarter_Township" FromRole="Quarter" ToRole="Township" />
+          <NavigationProperty Name="StreetLightFees" Relationship="Self.FK_StreetLightFees_Quarter" FromRole="Quarter" ToRole="StreetLightFees" />
           <NavigationProperty Name="Transformers" Relationship="Self.FK_Transformer_Quarter" FromRole="Quarter" ToRole="Transformer" />
         </EntityType>
         <EntityType Name="Role">
@@ -1394,6 +1426,20 @@
           <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
           <Property Name="DeletedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="StreetLightFee">
+          <Key>
+            <PropertyRef Name="StreetLightFeesID" />
+          </Key>
+          <Property Name="StreetLightFeesID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="QuarterID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedUserID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Quarter" Relationship="Self.FK_StreetLightFees_Quarter" FromRole="StreetLightFees" ToRole="Quarter" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1784,6 +1830,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StreetLightFees_Quarter">
+          <End Role="Quarter" Type="Self.Quarter" Multiplicity="1" />
+          <End Role="StreetLightFees" Type="Self.StreetLightFee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quarter">
+              <PropertyRef Name="QuarterID" />
+            </Principal>
+            <Dependent Role="StreetLightFees">
+              <PropertyRef Name="QuarterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Transformer_Quarter">
           <End Role="Quarter" Type="Self.Quarter" Multiplicity="1" />
           <End Role="Transformer" Type="Self.Transformer" Multiplicity="*" />
@@ -1853,6 +1911,7 @@
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="RoleManagements" EntityType="Self.RoleManagement" />
           <EntitySet Name="Settings" EntityType="Self.Setting" />
+          <EntitySet Name="StreetLightFees" EntityType="Self.StreetLightFee" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Townships" EntityType="Self.Township" />
           <EntitySet Name="Transformers" EntityType="Self.Transformer" />
@@ -1943,6 +2002,10 @@
             <End Role="Township" EntitySet="Townships" />
             <End Role="Quarter" EntitySet="Quarters" />
           </AssociationSet>
+          <AssociationSet Name="FK_StreetLightFees_Quarter" Association="Self.FK_StreetLightFees_Quarter">
+            <End Role="Quarter" EntitySet="Quarters" />
+            <End Role="StreetLightFees" EntitySet="StreetLightFees" />
+          </AssociationSet>
           <AssociationSet Name="FK_Transformer_Quarter" Association="Self.FK_Transformer_Quarter">
             <End Role="Quarter" EntitySet="Quarters" />
             <End Role="Transformer" EntitySet="Transformers" />
@@ -1960,7 +2023,7 @@
             <End Role="UserInRole" EntitySet="UserInRoles" />
           </AssociationSet>
           <FunctionImport Name="BillCode7LayerDetail_DeleteByBillCode7LayerID">
-          <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
+            <Parameter Name="billCode7LayerID" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="MeterBill_DeleteByFromDateToDate">
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
@@ -2386,6 +2449,20 @@
                 <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="DeletedUserID" ColumnName="DeletedUserID" />
                 <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StreetLightFees">
+            <EntityTypeMapping TypeName="MBMSModel.StreetLightFee">
+              <MappingFragment StoreEntitySet="StreetLightFees">
+                <ScalarProperty Name="StreetLightFeesID" ColumnName="StreetLightFeesID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="QuarterID" ColumnName="QuarterID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedUserID" ColumnName="CreatedUserID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="UpdatedUserID" ColumnName="UpdatedUserID" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

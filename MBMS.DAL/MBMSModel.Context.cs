@@ -48,6 +48,7 @@ namespace MBMS.DAL
         public DbSet<Role> Roles { get; set; }
         public DbSet<RoleManagement> RoleManagements { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<StreetLightFee> StreetLightFees { get; set; }
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<Township> Townships { get; set; }
         public DbSet<Transformer> Transformers { get; set; }

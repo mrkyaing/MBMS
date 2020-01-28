@@ -54,6 +54,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtStreetLightFees = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblstreetlightfeescustom = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -199,6 +200,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblstreetlightfeescustom);
             this.groupBox2.Controls.Add(this.tableLayoutPanel2);
             this.groupBox2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(21, 290);
@@ -327,6 +329,17 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblstreetlightfeescustom
+            // 
+            this.lblstreetlightfeescustom.AutoSize = true;
+            this.lblstreetlightfeescustom.Location = new System.Drawing.Point(565, 251);
+            this.lblstreetlightfeescustom.Name = "lblstreetlightfeescustom";
+            this.lblstreetlightfeescustom.Size = new System.Drawing.Size(81, 16);
+            this.lblstreetlightfeescustom.TabIndex = 1;
+            this.lblstreetlightfeescustom.TabStop = true;
+            this.lblstreetlightfeescustom.Text = "Define Custom";
+            this.lblstreetlightfeescustom.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblstreetlightfeescustom_LinkClicked);
+            // 
             // Settingfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -344,6 +357,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
@@ -377,5 +391,6 @@
         private System.Windows.Forms.DateTimePicker dtExpireDate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtStreetLightFees;
-    }
+        private System.Windows.Forms.LinkLabel lblstreetlightfeescustom;
+        }
 }

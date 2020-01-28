@@ -17,6 +17,7 @@ namespace MBMS.DAL
         public Quarter()
         {
             this.Customers = new HashSet<Customer>();
+            this.StreetLightFees = new HashSet<StreetLightFee>();
             this.Transformers = new HashSet<Transformer>();
         }
     
@@ -36,6 +37,7 @@ namespace MBMS.DAL
     
         public virtual ICollection<Customer> Customers { get; set; }
         public virtual Township Township { get; set; }
+        public virtual ICollection<StreetLightFee> StreetLightFees { get; set; }
         public virtual ICollection<Transformer> Transformers { get; set; }
     }
 }

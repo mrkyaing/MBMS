@@ -124,6 +124,9 @@
     <Compile Include="Setting.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="StreetLightFee.cs">
+      <DependentUpon>MBMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>MBMSModel.tt</DependentUpon>
     </Compile>

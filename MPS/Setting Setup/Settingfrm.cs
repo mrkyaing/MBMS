@@ -75,5 +75,10 @@ namespace MPS.Setting_Setup
                 MessageBox.Show("Successfully save Setting!");
                 }
         }
+
+        private void lblstreetlightfeescustom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            StreetLightFeesUI slfui = new StreetLightFeesUI();
+            slfui.Show();
+            }
         }
 }
