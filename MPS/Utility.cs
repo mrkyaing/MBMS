@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MPS {
@@ -103,14 +102,12 @@ namespace MPS {
                 cboCompanyName.DataSource = companyProfileList;
                 cboCompanyName.DisplayMember = "CompanyName";
                 cboCompanyName.ValueMember = "CompanyProfileID";
-
                 cboCompanyName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cboCompanyName.AutoCompleteSource = AutoCompleteSource.ListItems;
             }
 
         }
-        public static class SettingController
-        {
+        public static class SettingController{
             public static CompanyProfile defaultCompanyProfile
             {
                 get
@@ -151,7 +148,6 @@ namespace MPS {
                     mbmsEntities.SaveChanges();
                 }
             }
-
             public static string CompanyName
             {
                 get
@@ -214,7 +210,6 @@ namespace MPS {
                     mbmsEntities.SaveChanges();
                 }
             }
-
             public static string CompanyEmail
             {
                 get
@@ -369,7 +364,7 @@ namespace MPS {
                     mbmsEntities.SaveChanges();
                 }
             }
-        }
+        }//end of Setting Controller
 
         public static class DefaultPrinter {
         public static string A4Printer
@@ -403,7 +398,7 @@ namespace MPS {
                 mbmsEntities.SaveChanges();
             }
         }
-    }
+            }//end of DefaultPrinter
 
-    }
+        }
     }
