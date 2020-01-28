@@ -72,7 +72,7 @@ namespace MPS.MeterBillCalculation {
             List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
             foreach (RoleManagement item in rolemgtList) {
                 //bill payment Menu Permission 
-                if (item.RoleFeatureName.Equals("BillPaymentEditOrDelete") && item.IsAllowed) IsAllowed=item.IsAllowed;
+                if (item.RoleFeatureName.Equals("BillProcessEditOrDelete") && item.IsAllowed) IsAllowed=item.IsAllowed;
                 }
             return IsAllowed;
                 }

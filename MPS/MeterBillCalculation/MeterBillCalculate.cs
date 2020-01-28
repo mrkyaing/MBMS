@@ -56,7 +56,7 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void btnViewInvoices_Click(object sender, EventArgs e) {
-            if (!CheckingRoleManagementFeature("BillPaymentView")) {
+            if (!CheckingRoleManagementFeature("BillProcessView")) {
                 MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
