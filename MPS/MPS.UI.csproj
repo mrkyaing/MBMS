@@ -492,7 +492,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Reports\" />
-    <Folder Include="System\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MBMS.DAL\MBMS.DAL.csproj">

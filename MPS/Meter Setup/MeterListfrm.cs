@@ -161,6 +161,10 @@ namespace MPS.Meter_Setup
                 if (e.ColumnIndex == 12)
                 {
                     //DeleteForMeter
+                    if (!CheckingRoleManagementFeature("MeterEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
@@ -189,6 +193,10 @@ namespace MPS.Meter_Setup
                 }
                 else if (e.ColumnIndex==10)
                 {
+                    if (!CheckingRoleManagementFeature("MeterView")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DetailMeterfrm detailmeterForm = new DetailMeterfrm();
                     detailmeterForm.meterID = Convert.ToString(dgvMeterList.Rows[e.RowIndex].Cells[0].Value);
                     detailmeterForm.ShowDialog();
@@ -197,6 +205,10 @@ namespace MPS.Meter_Setup
                 else if (e.ColumnIndex ==11)
                 {
                     //EditMeter
+                    if (!CheckingRoleManagementFeature("MeterEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     MeterFrm meterForm = new MeterFrm();
                     meterForm.isEdit = true;
                     meterForm.Text = "Edit Meter";
@@ -207,6 +219,10 @@ namespace MPS.Meter_Setup
                 }
                 //remove funciton here
                 else if (e.ColumnIndex == 13) {
+                    if (!CheckingRoleManagementFeature("MeterEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DataGridViewRow row = dgvMeterList.Rows[e.RowIndex];
                     Meter _meter = (Meter)row.DataBoundItem;
                     if (rdounregistermeter.Checked||rdoremovedmeter.Checked) {
@@ -224,7 +240,18 @@ namespace MPS.Meter_Setup
         {
             LoadData();
         }
-
+        #region Data Permision for Role Mgt
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
+            }
+        #endregion
         private void btnEdit_Click(object sender, EventArgs e)
         {
             cboTransformer.SelectedIndex = 0;

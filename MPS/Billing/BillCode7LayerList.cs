@@ -57,6 +57,11 @@ namespace MPS.Billing
                 if (e.ColumnIndex ==6)
                 {
                     //DeleteForBillCode7Layer
+                    if (!CheckingRoleManagementFeature("BillCodeLayerEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
+
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
@@ -86,6 +91,10 @@ namespace MPS.Billing
                 else if (e.ColumnIndex ==5)
                 {
                     //EditBillCode7Layer
+                    if (!CheckingRoleManagementFeature("BillCodeLayerEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     string _billCode7LayerID;
                     BillCode7Layerfrm billcode7LayerForm = new BillCode7Layerfrm();
                     billcode7LayerForm.isEdit = true;
@@ -103,10 +112,24 @@ namespace MPS.Billing
         
         private void btnAddNewBillCode_Click(object sender, EventArgs e)
         {
+            if (!CheckingRoleManagementFeature("BillCodeLayerAdd")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             BillCode7Layerfrm billcode7LayerForm = new BillCode7Layerfrm();
             billcode7LayerForm.UserID = UserID;
             billcode7LayerForm.Show();
             this.Close();
         }
-    }
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
+            }
+        }
 }

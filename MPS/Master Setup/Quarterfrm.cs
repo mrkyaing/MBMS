@@ -60,9 +60,24 @@ namespace MPS
             }
             return hasError;
         }
-
+        #region Data Permision for Role Mgt
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
+            }
+        #endregion
         private void btnSave_Click(object sender, EventArgs e)
-        {            
+        {
+            if (!CheckingRoleManagementFeature("QuarterAdd")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             if (checkValidation())
             {
                 if (isEdit)
@@ -245,6 +260,10 @@ namespace MPS
                 if (e.ColumnIndex == 7)
                 {
                     //DeleteForQuarter
+                    if (!CheckingRoleManagementFeature("QuarterEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
@@ -282,6 +301,10 @@ namespace MPS
                 else if (e.ColumnIndex == 6)
                 {
                     //EditQuarter
+                    if (!CheckingRoleManagementFeature("QuarterEditOrDelete")) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DataGridViewRow row = dgvQuarterList.Rows[e.RowIndex];
                     quarterID = Convert.ToString(row.Cells[0].Value);
                     txtQuarterCode.Text = Convert.ToString(row.Cells[1].Value);

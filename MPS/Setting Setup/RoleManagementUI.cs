@@ -76,7 +76,7 @@ namespace MPS.Setting_Setup {
                     roleController.SaveRoleMgtByRoleID("Quarter", "Add", roleID, chkaddvillage.Checked, UserID);
                     roleController.SaveRoleMgtByRoleID("Quarter", "View", roleID, chkviewvillage.Checked, UserID);
                     //Punishment
-                    roleController.SaveRoleMgtByRoleID("Punishment", "Add", roleID, chkviewPunishmentRule.Checked, UserID);
+                    roleController.SaveRoleMgtByRoleID("Punishment", "Edit", roleID, chkEditDeletePunishmentRule.Checked, UserID);
                    
 
                     MessageBox.Show("Successfully saved ", "Infromation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,7 +133,7 @@ namespace MPS.Setting_Setup {
                 if (item.RoleFeatureName.Equals("QuarterAdd")) chkaddvillage.Checked = item.IsAllowed;
                 if (item.RoleFeatureName.Equals("QuarterView")) chkviewvillage.Checked = item.IsAllowed;
                 //Punishment
-                if (item.RoleFeatureName.Equals("PunishmentAdd")) chkviewPunishmentRule.Checked = item.IsAllowed;
+                if (item.RoleFeatureName.Equals("PunishmentAdd")) chkEditDeletePunishmentRule.Checked = item.IsAllowed;
                 //bill code 7 Layer
                 if (item.RoleFeatureName.Equals("BillCodeLayerEditOrDelete")) chkeditdeletebillcodelayer.Checked = item.IsAllowed;
                 if (item.RoleFeatureName.Equals("BillCodeLayerAdd")) chkaddbillcodelayer.Checked = item.IsAllowed;
@@ -150,7 +150,7 @@ namespace MPS.Setting_Setup {
             chkeditdeleterole.Checked = chkaddrole.Checked = chkviewrole.Checked = v;
             chkeditdeletemeterbox.Checked = chkaddmeterbox.Checked = chkviewmeterbox.Checked = v;
             chkeditdeletevillage.Checked = chkaddvillage.Checked = chkviewvillage.Checked = v;
-            chkviewPunishmentRule.Checked = chkeditdeletebillcodelayer.Checked = chkaddbillcodelayer.Checked = chkviewbillcodelayerlist.Checked = v;
+            chkEditDeletePunishmentRule.Checked = chkeditdeletebillcodelayer.Checked = chkaddbillcodelayer.Checked = chkviewbillcodelayerlist.Checked = v;
             }
         }
     }

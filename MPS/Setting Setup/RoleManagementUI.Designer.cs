@@ -31,9 +31,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbLayOutBOSetUp = new System.Windows.Forms.TableLayoutPanel();
+            this.label26 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.chkViewBillUnit = new System.Windows.Forms.CheckBox();
+            this.chkcollectbillunit = new System.Windows.Forms.CheckBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -48,22 +51,20 @@
             this.chkviewcustomerlist = new System.Windows.Forms.CheckBox();
             this.chkeditdeletecustomer = new System.Windows.Forms.CheckBox();
             this.chkaddcustomer = new System.Windows.Forms.CheckBox();
-            this.chkviewmeterlist = new System.Windows.Forms.CheckBox();
-            this.chkaddmeter = new System.Windows.Forms.CheckBox();
-            this.label136 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
             this.label117 = new System.Windows.Forms.Label();
             this.chkviewbillcodelayerlist = new System.Windows.Forms.CheckBox();
             this.chkaddbillcodelayer = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.chkcollectbillunit = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chkeditdeletebillcodelayer = new System.Windows.Forms.CheckBox();
+            this.label136 = new System.Windows.Forms.Label();
+            this.chkviewmeterlist = new System.Windows.Forms.CheckBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.chkaddmeter = new System.Windows.Forms.CheckBox();
+            this.lblCity = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.chkeditdeletemeter = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -94,8 +95,7 @@
             this.chkeditdeletevillage = new System.Windows.Forms.CheckBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.chkeditdeletemeter = new System.Windows.Forms.CheckBox();
-            this.chkviewPunishmentRule = new System.Windows.Forms.CheckBox();
+            this.chkEditDeletePunishmentRule = new System.Windows.Forms.CheckBox();
             this.tbLayOutBOSetUp.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -236,6 +236,17 @@
             this.tbLayOutBOSetUp.Size = new System.Drawing.Size(400, 542);
             this.tbLayOutBOSetUp.TabIndex = 76;
             // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label26.Location = new System.Drawing.Point(279, 2);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(116, 18);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Is Allow Or Not";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -255,6 +266,15 @@
             this.label12.TabIndex = 32;
             this.label12.Text = "View Bill Unit List";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 19);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Collect Bill Unit";
+            // 
             // chkViewBillUnit
             // 
             this.chkViewBillUnit.AutoSize = true;
@@ -263,6 +283,15 @@
             this.chkViewBillUnit.Size = new System.Drawing.Size(15, 13);
             this.chkViewBillUnit.TabIndex = 33;
             this.chkViewBillUnit.UseVisualStyleBackColor = true;
+            // 
+            // chkcollectbillunit
+            // 
+            this.chkcollectbillunit.AutoSize = true;
+            this.chkcollectbillunit.Location = new System.Drawing.Point(279, 68);
+            this.chkcollectbillunit.Name = "chkcollectbillunit";
+            this.chkcollectbillunit.Size = new System.Drawing.Size(15, 13);
+            this.chkcollectbillunit.TabIndex = 36;
+            this.chkcollectbillunit.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -392,52 +421,6 @@
             this.chkaddcustomer.TabIndex = 44;
             this.chkaddcustomer.UseVisualStyleBackColor = true;
             // 
-            // chkviewmeterlist
-            // 
-            this.chkviewmeterlist.AutoSize = true;
-            this.chkviewmeterlist.Location = new System.Drawing.Point(279, 488);
-            this.chkviewmeterlist.Name = "chkviewmeterlist";
-            this.chkviewmeterlist.Size = new System.Drawing.Size(15, 14);
-            this.chkviewmeterlist.TabIndex = 75;
-            this.chkviewmeterlist.UseVisualStyleBackColor = true;
-            // 
-            // chkaddmeter
-            // 
-            this.chkaddmeter.AutoSize = true;
-            this.chkaddmeter.Location = new System.Drawing.Point(279, 467);
-            this.chkaddmeter.Name = "chkaddmeter";
-            this.chkaddmeter.Size = new System.Drawing.Size(15, 13);
-            this.chkaddmeter.TabIndex = 61;
-            this.chkaddmeter.UseVisualStyleBackColor = true;
-            // 
-            // label136
-            // 
-            this.label136.AutoSize = true;
-            this.label136.Location = new System.Drawing.Point(5, 485);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(94, 20);
-            this.label136.TabIndex = 74;
-            this.label136.Text = "View Meter List";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(5, 464);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(67, 19);
-            this.label86.TabIndex = 60;
-            this.label86.Text = "Add Meter";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(5, 422);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(39, 13);
-            this.lblCity.TabIndex = 73;
-            this.lblCity.Text = "Meter";
-            // 
             // label115
             // 
             this.label115.AutoSize = true;
@@ -484,35 +467,6 @@
             this.chkaddbillcodelayer.TabIndex = 47;
             this.chkaddbillcodelayer.UseVisualStyleBackColor = true;
             // 
-            // label26
-            // 
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(279, 2);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(116, 18);
-            this.label26.TabIndex = 8;
-            this.label26.Text = "Is Allow Or Not";
-            // 
-            // chkcollectbillunit
-            // 
-            this.chkcollectbillunit.AutoSize = true;
-            this.chkcollectbillunit.Location = new System.Drawing.Point(279, 68);
-            this.chkcollectbillunit.Name = "chkcollectbillunit";
-            this.chkcollectbillunit.Size = new System.Drawing.Size(15, 13);
-            this.chkcollectbillunit.TabIndex = 36;
-            this.chkcollectbillunit.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 19);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Collect Bill Unit";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -531,6 +485,52 @@
             this.chkeditdeletebillcodelayer.TabIndex = 47;
             this.chkeditdeletebillcodelayer.UseVisualStyleBackColor = true;
             // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(5, 485);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(94, 20);
+            this.label136.TabIndex = 74;
+            this.label136.Text = "View Meter List";
+            // 
+            // chkviewmeterlist
+            // 
+            this.chkviewmeterlist.AutoSize = true;
+            this.chkviewmeterlist.Location = new System.Drawing.Point(279, 488);
+            this.chkviewmeterlist.Name = "chkviewmeterlist";
+            this.chkviewmeterlist.Size = new System.Drawing.Size(15, 14);
+            this.chkviewmeterlist.TabIndex = 75;
+            this.chkviewmeterlist.UseVisualStyleBackColor = true;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(5, 464);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(67, 19);
+            this.label86.TabIndex = 60;
+            this.label86.Text = "Add Meter";
+            // 
+            // chkaddmeter
+            // 
+            this.chkaddmeter.AutoSize = true;
+            this.chkaddmeter.Location = new System.Drawing.Point(279, 467);
+            this.chkaddmeter.Name = "chkaddmeter";
+            this.chkaddmeter.Size = new System.Drawing.Size(15, 13);
+            this.chkaddmeter.TabIndex = 61;
+            this.chkaddmeter.UseVisualStyleBackColor = true;
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(5, 422);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(39, 13);
+            this.lblCity.TabIndex = 73;
+            this.lblCity.Text = "Meter";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -539,6 +539,15 @@
             this.label5.Size = new System.Drawing.Size(107, 19);
             this.label5.TabIndex = 40;
             this.label5.Text = "Edit/Delete Meter";
+            // 
+            // chkeditdeletemeter
+            // 
+            this.chkeditdeletemeter.AutoSize = true;
+            this.chkeditdeletemeter.Location = new System.Drawing.Point(279, 446);
+            this.chkeditdeletemeter.Name = "chkeditdeletemeter";
+            this.chkeditdeletemeter.Size = new System.Drawing.Size(15, 13);
+            this.chkeditdeletemeter.TabIndex = 61;
+            this.chkeditdeletemeter.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -576,7 +585,7 @@
             this.tableLayoutPanel1.Controls.Add(this.chkeditdeletevillage, 1, 18);
             this.tableLayoutPanel1.Controls.Add(this.label36, 0, 20);
             this.tableLayoutPanel1.Controls.Add(this.label37, 0, 21);
-            this.tableLayoutPanel1.Controls.Add(this.chkviewPunishmentRule, 1, 21);
+            this.tableLayoutPanel1.Controls.Add(this.chkEditDeletePunishmentRule, 1, 21);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Zawgyi-One", 9F);
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(492, 47);
@@ -874,27 +883,18 @@
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(5, 443);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(131, 19);
+            this.label37.Size = new System.Drawing.Size(166, 19);
             this.label37.TabIndex = 40;
-            this.label37.Text = "View Punishment Rule";
+            this.label37.Text = "Edit/Delete Punishment Rule";
             // 
-            // chkeditdeletemeter
+            // chkEditDeletePunishmentRule
             // 
-            this.chkeditdeletemeter.AutoSize = true;
-            this.chkeditdeletemeter.Location = new System.Drawing.Point(279, 446);
-            this.chkeditdeletemeter.Name = "chkeditdeletemeter";
-            this.chkeditdeletemeter.Size = new System.Drawing.Size(15, 13);
-            this.chkeditdeletemeter.TabIndex = 61;
-            this.chkeditdeletemeter.UseVisualStyleBackColor = true;
-            // 
-            // chkviewPunishmentRule
-            // 
-            this.chkviewPunishmentRule.AutoSize = true;
-            this.chkviewPunishmentRule.Location = new System.Drawing.Point(279, 446);
-            this.chkviewPunishmentRule.Name = "chkviewPunishmentRule";
-            this.chkviewPunishmentRule.Size = new System.Drawing.Size(15, 13);
-            this.chkviewPunishmentRule.TabIndex = 61;
-            this.chkviewPunishmentRule.UseVisualStyleBackColor = true;
+            this.chkEditDeletePunishmentRule.AutoSize = true;
+            this.chkEditDeletePunishmentRule.Location = new System.Drawing.Point(279, 446);
+            this.chkEditDeletePunishmentRule.Name = "chkEditDeletePunishmentRule";
+            this.chkEditDeletePunishmentRule.Size = new System.Drawing.Size(15, 13);
+            this.chkEditDeletePunishmentRule.TabIndex = 61;
+            this.chkEditDeletePunishmentRule.UseVisualStyleBackColor = true;
             // 
             // RoleManagementUI
             // 
@@ -997,6 +997,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.CheckBox chkeditdeletemeter;
-        private System.Windows.Forms.CheckBox chkviewPunishmentRule;
+        private System.Windows.Forms.CheckBox chkEditDeletePunishmentRule;
         }
     }

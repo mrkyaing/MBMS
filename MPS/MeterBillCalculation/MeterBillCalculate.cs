@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillCalculation {
     public partial class MeterBillCalculate : Form {
-
+        MBMSEntities mbmsEntities = new MBMSEntities();
         #region vairable & initialize Componemt
         public string UserID { get; set; }
         public int meterMultiplier { get; set; }
@@ -25,6 +25,10 @@ namespace MPS.MeterBillCalculation {
 
         #region Click Event
         private void btnbillprocess_Click(object sender, EventArgs e) {
+            if (!CheckingRoleManagementFeature("BillProcessEditOrDelete")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             if (cboQuarter.Text .Equals( "Select One")) {
                 MessageBox.Show("Select quarter to calculate meter bill", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -52,6 +56,11 @@ namespace MPS.MeterBillCalculation {
             }
 
         private void btnViewInvoices_Click(object sender, EventArgs e) {
+            if (!CheckingRoleManagementFeature("BillPaymentView")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
+            
             ViewMeterBillInvoice viewMeterBillInvoice = new ViewMeterBillInvoice();
             viewMeterBillInvoice.UserID = UserID;
             viewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
@@ -152,6 +161,19 @@ namespace MPS.MeterBillCalculation {
             cbotransformer.ValueMember = "TransformerID";
             cbotransformer.DataSource = meterbillcalculateservice.GetTransformer();
             cbotransformer.Text = "Select One";
+            }
+        #endregion
+
+        #region Data Permision for Role Mgt
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
             }
         #endregion
 

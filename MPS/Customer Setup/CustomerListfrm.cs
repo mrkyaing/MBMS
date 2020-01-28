@@ -99,6 +99,10 @@ namespace MPS.Customer_Setup
                 if (e.ColumnIndex == 13)
                 {
                     //DeleteForCustomer
+                    if (!CheckingRoleManagementFeature("CustomerEditOrDelete")) {
+                        MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
@@ -120,6 +124,10 @@ namespace MPS.Customer_Setup
                 }
                 else if (e.ColumnIndex == 11)
                 {
+                    if (!CheckingRoleManagementFeature("CustomerView")) {
+                        MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DetailCustomerfrm  detailCustomerForm = new DetailCustomerfrm();
                     detailCustomerForm.customerID = Convert.ToString(dgvCustomerList.Rows[e.RowIndex].Cells[0].Value);
                     detailCustomerForm.ShowDialog();
@@ -128,6 +136,10 @@ namespace MPS.Customer_Setup
                 else if (e.ColumnIndex == 12)
                 {
                     //EditCustomer
+                    if (!CheckingRoleManagementFeature("CustomerEditOrDelete")) {
+                        MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     Customerfrm customerForm = new Customerfrm();
                     customerForm.isEdit = true;
                     customerForm.Text = "Edit Customer";
@@ -139,7 +151,16 @@ namespace MPS.Customer_Setup
                 }
             }
         }
-
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
+            }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -155,6 +176,10 @@ namespace MPS.Customer_Setup
 
         private void btnAddNewCustomer_Click(object sender, EventArgs e)
         {
+            if (!CheckingRoleManagementFeature("CustomerAdd")) {
+                MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             Customerfrm customerForm = new Customerfrm();
             customerForm.Show();
         }

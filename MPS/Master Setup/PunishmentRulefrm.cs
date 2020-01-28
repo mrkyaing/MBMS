@@ -25,7 +25,18 @@ namespace MPS
         {
             InitializeComponent();
         }
-
+        #region Data Permision for Role Mgt
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
+            }
+        #endregion
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
@@ -160,6 +171,10 @@ namespace MPS
                 if (e.ColumnIndex == 5)
                 {
                     //DeleteForPunishmentRule
+                    if (!CheckingRoleManagementFeature("PunishmentEditOrDelete")) {
+                        MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK))
                     {
@@ -181,6 +196,10 @@ namespace MPS
                 else if (e.ColumnIndex == 4)
                 {
                     //EditPunishmentRule
+                    if (!CheckingRoleManagementFeature("PunishmentEditOrDelete")) {
+                        MessageBox.Show("Access Denied for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DataGridViewRow row = dgvPunishmentRuleList.Rows[e.RowIndex];
                     punishmentRuleID = Convert.ToString(row.Cells[0].Value);
                     txtPunishmentCode.Text = Convert.ToString(row.Cells[1].Value);

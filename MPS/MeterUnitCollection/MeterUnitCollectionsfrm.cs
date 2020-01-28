@@ -59,6 +59,10 @@ namespace MPS.MeterUnitCollect {
                 }                 
             }
         private void btncollectmeterunit_Click(object sender, EventArgs e) {
+            if (!CheckingRoleManagementFeature("BillUnitCollectView")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             string fromdate = dtpfromDate.Value.ToString("yyyyMMdd");
             string todate = dtptoDate.Value.ToString("yyyy-MM-dd");
             string qCode = string.Empty;
@@ -178,12 +182,26 @@ namespace MPS.MeterUnitCollect {
             }
         #endregion
         private void btnSave_Click(object sender, EventArgs e) {
+            if (!CheckingRoleManagementFeature("BillUnitCollectEditOrDelete")) {
+                MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
             DialogResult result = MessageBox.Show("are you sure to collect all of meter unit data to the system?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (DialogResult.OK == result) {
                 if (SaveMeterUnitCollection(nodeMeterList)) {
                     MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        private bool CheckingRoleManagementFeature(string ProgramName) {
+            bool IsAllowed = false;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill payment Menu Permission CustomerView
+                if (item.RoleFeatureName.Equals(ProgramName) && item.IsAllowed) IsAllowed = item.IsAllowed;
+                }
+            return IsAllowed;
             }
 
         private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
