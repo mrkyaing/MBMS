@@ -53,6 +53,7 @@ namespace MPS.MeterBillCalculation {
 
         private void btnViewInvoices_Click(object sender, EventArgs e) {
             ViewMeterBillInvoice viewMeterBillInvoice = new ViewMeterBillInvoice();
+            viewMeterBillInvoice.UserID = UserID;
             viewMeterBillInvoice.fromDate = dtpfromDate.Value.Date;
             viewMeterBillInvoice.toDate = dtpToDate.Value.Date;
             viewMeterBillInvoice.TransformerID = cbotransformer.SelectedValue.ToString();

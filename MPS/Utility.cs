@@ -9,7 +9,6 @@ using System.Windows.Forms;
 
 namespace MPS {
     public class Utility {
-
         /// <summary>
         /// Decrypt the input string ( Eg: EncryptString("ABC", string.Empty); )  
         /// </summary>

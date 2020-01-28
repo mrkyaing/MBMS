@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillCalculation {
     public partial class ViewMeterBillInvoice : Form {
+        public string UserID { get; set; }
         MBMSEntities mbmsEntities = new MBMSEntities();
         IMeterBillCalculateServices meterbillcalculateservice;
         public DateTime fromDate { get; set; }
@@ -67,10 +68,10 @@ namespace MPS.MeterBillCalculation {
 
         private bool CheckingRoleManagementFeature() {
             bool IsAllowed=false;
-            string roleID = mbmsEntities.Users.Where(x => x.Active == true).SingleOrDefault().RoleID;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID==UserID).SingleOrDefault().RoleID;
             List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
             foreach (RoleManagement item in rolemgtList) {
-                //bill pay ment 
+                //bill payment Menu Permission 
                 if (item.RoleFeatureName.Equals("BillPaymentEditOrDelete") && item.IsAllowed) IsAllowed=item.IsAllowed;
                 }
             return IsAllowed;
