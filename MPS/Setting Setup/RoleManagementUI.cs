@@ -135,7 +135,6 @@ namespace MPS.Setting_Setup {
                 //Punishment
                 if (item.RoleFeatureName.Equals("PunishmentAdd")) chkviewPunishmentRule.Checked = item.IsAllowed;
                 //bill code 7 Layer
-                //Bill Code  Layer
                 if (item.RoleFeatureName.Equals("BillCodeLayerEditOrDelete")) chkeditdeletebillcodelayer.Checked = item.IsAllowed;
                 if (item.RoleFeatureName.Equals("BillCodeLayerAdd")) chkaddbillcodelayer.Checked = item.IsAllowed;
                 if (item.RoleFeatureName.Equals("BillCodeLayerView")) chkviewbillcodelayerlist.Checked = item.IsAllowed;

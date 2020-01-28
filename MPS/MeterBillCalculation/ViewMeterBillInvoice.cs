@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace MPS.MeterBillCalculation {
     public partial class ViewMeterBillInvoice : Form {
+        MBMSEntities mbmsEntities = new MBMSEntities();
         IMeterBillCalculateServices meterbillcalculateservice;
         public DateTime fromDate { get; set; }
         public DateTime toDate { get; set; }
@@ -40,6 +41,10 @@ namespace MPS.MeterBillCalculation {
             if (e.RowIndex >= 0) {
                 //Edit function
                 if (e.ColumnIndex ==20) {
+                    if (!CheckingRoleManagementFeature()) {
+                        MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                        }
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
                     MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
                     UpdateMeterbillInvoiceRecrod meterbillinvoiceUI = new UpdateMeterbillInvoiceRecrod();
@@ -59,6 +64,17 @@ namespace MPS.MeterBillCalculation {
                     }
                 }
             }
+
+        private bool CheckingRoleManagementFeature() {
+            bool IsAllowed=false;
+            string roleID = mbmsEntities.Users.Where(x => x.Active == true).SingleOrDefault().RoleID;
+            List<RoleManagement> rolemgtList = mbmsEntities.RoleManagements.Where(x => x.Active == true && x.RoleID == roleID).ToList();
+            foreach (RoleManagement item in rolemgtList) {
+                //bill pay ment 
+                if (item.RoleFeatureName.Equals("BillPaymentEditOrDelete") && item.IsAllowed) IsAllowed=item.IsAllowed;
+                }
+            return IsAllowed;
+                }
 
         private void btnSearch_Click(object sender, EventArgs e) {
          List<MeterBillInvoiceVM>   data=meterBillCalculateServices.GetmeterBillInvoices(dtpFromDate.Value, dtptoDate.Value,cbotransformer.SelectedValue.ToString(),cboQuarter.SelectedValue.ToString(), string.Empty,string.Empty);
