@@ -55,6 +55,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,6 +66,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +100,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(225, 58);
+            this.txtPassword.Location = new System.Drawing.Point(225, 59);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 25);
             this.txtPassword.TabIndex = 2;
@@ -114,7 +119,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(225, 112);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(225, 113);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(200, 25);
             this.txtConfirmPassword.TabIndex = 3;
@@ -156,7 +161,7 @@
             // 
             this.cboUserRole.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUserRole.FormattingEnabled = true;
-            this.cboUserRole.Location = new System.Drawing.Point(225, 277);
+            this.cboUserRole.Location = new System.Drawing.Point(225, 278);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(200, 25);
             this.cboUserRole.TabIndex = 6;
@@ -174,7 +179,7 @@
             // txtSecurityQuestion
             // 
             this.txtSecurityQuestion.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecurityQuestion.Location = new System.Drawing.Point(225, 169);
+            this.txtSecurityQuestion.Location = new System.Drawing.Point(225, 170);
             this.txtSecurityQuestion.Name = "txtSecurityQuestion";
             this.txtSecurityQuestion.Size = new System.Drawing.Size(200, 25);
             this.txtSecurityQuestion.TabIndex = 4;
@@ -192,7 +197,7 @@
             // txtSecurityAnswer
             // 
             this.txtSecurityAnswer.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecurityAnswer.Location = new System.Drawing.Point(225, 225);
+            this.txtSecurityAnswer.Location = new System.Drawing.Point(225, 226);
             this.txtSecurityAnswer.Name = "txtSecurityAnswer";
             this.txtSecurityAnswer.Size = new System.Drawing.Size(200, 25);
             this.txtSecurityAnswer.TabIndex = 5;
@@ -252,6 +257,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.4359F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.5641F));
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cboUserRole, 1, 5);
@@ -264,25 +270,27 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUserName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmPassword, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtFullName, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(55, 36);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.45872F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.54128F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(468, 332);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(468, 353);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(3, 277);
+            this.panel6.Location = new System.Drawing.Point(3, 278);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 34);
+            this.panel6.Size = new System.Drawing.Size(176, 32);
             this.panel6.TabIndex = 12;
             // 
             // panel1
@@ -298,7 +306,7 @@
             // 
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(3, 58);
+            this.panel3.Location = new System.Drawing.Point(3, 59);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(176, 34);
             this.panel3.TabIndex = 12;
@@ -307,7 +315,7 @@
             // 
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Location = new System.Drawing.Point(3, 112);
+            this.panel4.Location = new System.Drawing.Point(3, 113);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(176, 34);
             this.panel4.TabIndex = 13;
@@ -315,7 +323,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(3, 169);
+            this.panel5.Location = new System.Drawing.Point(3, 170);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(176, 34);
             this.panel5.TabIndex = 14;
@@ -323,10 +331,47 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(3, 225);
+            this.panel2.Location = new System.Drawing.Point(3, 226);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 34);
             this.panel2.TabIndex = 11;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Location = new System.Drawing.Point(3, 316);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(176, 34);
+            this.panel7.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Full Name";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(82, 8);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(11, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "*";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(225, 316);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(200, 25);
+            this.txtFullName.TabIndex = 1;
             // 
             // Userfrm
             // 
@@ -356,6 +401,8 @@
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +436,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel2;
-    }
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtFullName;
+        }
 }

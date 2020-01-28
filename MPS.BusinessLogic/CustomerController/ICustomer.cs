@@ -14,6 +14,7 @@ namespace MPS.BusinessLogic.CustomerController
         void DeleteCustomer(Customer c);
         void SaveRange(List<Customer> customerList);
         bool GetCustomerCustomerCode(string CustomerCode);
+        bool GetCustomerBySMDNo(string SMDNo);
         Township GetTownshipByTownshipCode(string townshipCode);
         Quarter GetQuarterByQarterCode(string QarterCode);
         Meter GetMeterByQarterNo(string MeterNo);

@@ -36,9 +36,8 @@ namespace MPS
                 txtUserName.Text = user.UserName;
                 txtSecurityAnswer.Text = user.SecurityAnswer;
                 txtSecurityQuestion.Text = user.SecurityQuestion;
-                txtPassword.Text = user.Password;
-                txtConfirmPassword.Text = user.Password;
                 cboUserRole.Text = user.Role.RoleName;
+                txtFullName.Text = user.FullName;
                             }
         }
         public void bindUserRole()
@@ -74,6 +73,16 @@ namespace MPS
                 tooltip.Show("Please fill up Password", txtPassword);
                 hasError = false;
             }
+            else if (txtConfirmPassword.Text.Trim() == string.Empty) {
+                tooltip.SetToolTip(txtPassword, "Error");
+                tooltip.Show("Please fill up Confirm Password", txtConfirmPassword);
+                hasError = false;
+                }
+            else if (txtFullName.Text.Trim() == string.Empty) {
+                tooltip.SetToolTip(txtFullName, "Error");
+                tooltip.Show("Please fill up Full Name", txtFullName);
+                hasError = false;
+                }
             else if (txtConfirmPassword.Text.Trim() == string.Empty || txtConfirmPassword.Text != txtPassword.Text)
             {
                 tooltip.SetToolTip(txtConfirmPassword, "Error");
@@ -100,6 +109,7 @@ namespace MPS
                     updateUser.SecurityQuestion = txtSecurityQuestion.Text;
                     updateUser.SecurityAnswer = txtSecurityAnswer.Text;
                     updateUser.RoleID = cboUserRole.SelectedValue.ToString();
+                    updateUser.FullName = txtFullName.Text;
                     updateUser.Password = Utility.EncryptString(txtPassword.Text, "scadmin@123");
                     updateUser.UpdatedUserID = UserID;
                     updateUser.LastLoginDate = DateTime.Now;
@@ -120,6 +130,7 @@ namespace MPS
                     user.SecurityQuestion = txtSecurityQuestion.Text;
                     user.SecurityAnswer = txtSecurityAnswer.Text;
                     user.RoleID = cboUserRole.SelectedValue.ToString();
+                    user.FullName = txtFullName.Text;
                     user.Active = true;
                     user.CreatedUserID = UserID;
                     user.CreatedDate = DateTime.Now;

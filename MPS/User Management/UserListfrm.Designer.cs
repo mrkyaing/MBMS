@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserListfrm));
             this.dgvUserList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboRoleName = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,50 +53,15 @@
             this.Column1,
             this.Column2,
             this.Column3,
+            this.FullName,
             this.Column4,
             this.Column5});
             this.dgvUserList.Location = new System.Drawing.Point(54, 137);
             this.dgvUserList.Name = "dgvUserList";
-            this.dgvUserList.Size = new System.Drawing.Size(644, 367);
+            this.dgvUserList.Size = new System.Drawing.Size(791, 141);
             this.dgvUserList.TabIndex = 0;
             this.dgvUserList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellClick);
             this.dgvUserList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvUserList_DataBindingComplete);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "UserID";
-            this.Column1.FillWeight = 200F;
-            this.Column1.HeaderText = "UserID";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "UserName";
-            this.Column2.HeaderText = "User Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "RoleName";
-            this.Column3.HeaderText = "Role Name";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "";
-            this.Column4.Name = "Column4";
-            this.Column4.Text = "Edit";
-            this.Column4.UseColumnTextForLinkValue = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.Text = "Delete";
-            this.Column5.UseColumnTextForLinkValue = true;
             // 
             // txtUserName
             // 
@@ -156,11 +122,53 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "UserID";
+            this.Column1.FillWeight = 200F;
+            this.Column1.HeaderText = "UserID";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UserName";
+            this.Column2.HeaderText = "User Name";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "RoleName";
+            this.Column3.HeaderText = "Role Name";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.Name = "FullName";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "";
+            this.Column4.Name = "Column4";
+            this.Column4.Text = "Edit";
+            this.Column4.UseColumnTextForLinkValue = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "";
+            this.Column5.Name = "Column5";
+            this.Column5.Text = "Delete";
+            this.Column5.UseColumnTextForLinkValue = true;
+            // 
             // UserListfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 551);
+            this.ClientSize = new System.Drawing.Size(868, 303);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cboRoleName);
@@ -182,16 +190,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUserList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewLinkColumn Column4;
-        private System.Windows.Forms.DataGridViewLinkColumn Column5;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboRoleName;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRefresh;
-    }
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewLinkColumn Column4;
+        private System.Windows.Forms.DataGridViewLinkColumn Column5;
+        }
 }

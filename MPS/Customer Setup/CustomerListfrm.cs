@@ -40,8 +40,8 @@ namespace MPS.Customer_Setup
                 row.Cells[8].Value = customer.Meter.MeterNo;
                 row.Cells[9].Value = customer.Ledger.BookCode;
                 row.Cells[10].Value = customer.BillCode7Layer.BillCode7LayerNo;
-
-            }
+                row.Cells[14].Value = customer.SMDNo;
+                }
         }
         public void FormRefresh()
         {

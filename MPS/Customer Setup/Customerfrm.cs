@@ -62,8 +62,8 @@ namespace MPS
                     cboMeterNo.Text = customer.Meter.MeterNo;
                     cboQuarterName.Text = customer.Quarter.QuarterNameInEng;
                     cboTownshipName.Text = customer.Township.TownshipNameInEng;
-                }
-                   
+                    txtSMDSerial.Text = customer.SMDNo;
+                    }              
                 }
         }
         public void bindQuarter()
@@ -237,6 +237,13 @@ namespace MPS
                     editLineNo = Convert.ToInt32(txtLineNo.Text);
                     editPageNo = Convert.ToInt32(txtPageNo.Text);
 
+                    bool IsSMDSerialExist = mbmsEntities.Customers.Any(x => x.SMDNo == txtSMDSerial.Text);
+                    if (IsSMDSerialExist) {
+                        tooltip.SetToolTip(txtSMDSerial, "Error");
+                        tooltip.Show("Customer SMD Serial No is already exist!", txtSMDSerial);
+                        return;
+                        }
+
                     int editCustomerCodeCount = 0, editNRCCount = 0;
                     Customer updateCustomer = (from c in mbmsEntities.Customers where c.CustomerID == customerID select c).FirstOrDefault();
                     if (txtCustomerCode.Text != updateCustomer.CustomerCode)
@@ -296,6 +303,7 @@ namespace MPS
                     updateCustomer.TownshipID = cboTownshipName.SelectedValue.ToString();
                     updateCustomer.BillCode7LayerID = cboBillCodeNo.SelectedValue.ToString();
                     updateCustomer.MeterID = cboMeterNo.SelectedValue.ToString();
+                    updateCustomer.SMDNo = txtSMDSerial.Text;
                     updateCustomer.UpdatedUserID = UserID;
                     updateCustomer.UpdatedDate = DateTime.Now;
                     customerController.UpdateCustomer(updateCustomer);
@@ -310,9 +318,13 @@ namespace MPS
                     customerListForm.Show();
                     this.Close();
                 }
-                else
-                {
-                    Customer customer = new Customer();
+                else {
+                    bool IsSMDSerialExist = mbmsEntities.Customers.Any(x => x.SMDNo == txtSMDSerial.Text);
+                    if (IsSMDSerialExist) {
+                        tooltip.SetToolTip(txtSMDSerial, "Error");
+                        tooltip.Show("Customer SMD Serial No is already exist!", txtSMDSerial);
+                        return;
+                        }
                     int customerCodeCount = 0, nrcCount=0;
                     customerCodeCount = (from c in mbmsEntities.Customers where c.CustomerCode == txtCustomerCode.Text && c.Active == true select c).ToList().Count;
                     nrcCount = (from c in mbmsEntities.Customers where c.NRC == txtNRC.Text && c.Active == true select c).ToList().Count;
@@ -342,6 +354,7 @@ namespace MPS
                         tooltip.Show("Line No is already used!", txtLineNo);
                         return;
                     }
+                    Customer customer = new Customer();
                     customer.CustomerID = Guid.NewGuid().ToString();
                     customer.CustomerCode = txtCustomerCode.Text;
                     customer.CustomerNameInEng = txtCustomerNameEng.Text;
@@ -358,7 +371,7 @@ namespace MPS
                     customer.TownshipID = cboTownshipName.SelectedValue.ToString();
                     customer.BillCode7LayerID = cboBillCodeNo.SelectedValue.ToString();
                     customer.MeterID = cboMeterNo.SelectedValue.ToString();
-
+                    customer.SMDNo = txtSMDSerial.Text;
                     customer.Active = true;
                     customer.CreatedUserID = UserID;
                     customer.CreatedDate = DateTime.Now;

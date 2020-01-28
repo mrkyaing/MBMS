@@ -25,6 +25,10 @@ namespace MPS.BusinessLogic.CustomerController
             return mBMSEntities.BillCode7Layer.Where(x => x.Active == true && x.BillCode7LayerNo == BillCodeNo).SingleOrDefault();
             }
 
+        public bool GetCustomerBySMDNo(string SMDNo) {
+            return mBMSEntities.Customers.Any(x => x.Active == true && x.SMDNo == SMDNo);
+            }
+
         public bool GetCustomerCustomerCode(string CustomerCode) {
             return mBMSEntities.Customers.Any(x => x.Active == true && x.CustomerCode == CustomerCode);
             }
@@ -60,26 +64,8 @@ namespace MPS.BusinessLogic.CustomerController
             }
 
         public void UpdateCustomer(Customer c)
-        {
-            Customer customer = mBMSEntities.Customers.Where(x => x.CustomerID == c.CustomerID).SingleOrDefault();
-            customer.CustomerCode = c.CustomerCode;
-            customer.CustomerNameInEng = c.CustomerNameInEng;
-            customer.CustomerNameInMM = c.CustomerNameInMM;
-            customer.CustomerAddressInMM = c.CustomerAddressInMM;
-            customer.CustomerAddressInEng = c.CustomerAddressInEng;
-            customer.BillCode7LayerID = c.BillCode7LayerID;
-            customer.LineNo = c.LineNo;
-            customer.PageNo = c.PageNo;
-            customer.PhoneNo = c.PhoneNo;
-            customer.NRC = c.NRC;
-            customer.Post = c.Post;
-            customer.QuarterID = c.QuarterID;
-            customer.MeterID = c.MeterID;
-            customer.TownshipID = c.TownshipID;
-            customer.LedgerID = c.LedgerID;            
-            customer.UpdatedUserID = c.UpdatedUserID;
-            customer.UpdatedDate = c.UpdatedDate;
-            mBMSEntities.Customers.AddOrUpdate(customer); //requires using System.Data.Entity.Migrations;
+        {        
+            mBMSEntities.Customers.AddOrUpdate(c); //requires using System.Data.Entity.Migrations;
             mBMSEntities.SaveChanges();
         }
     }

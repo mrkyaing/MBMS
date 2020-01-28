@@ -90,7 +90,7 @@ namespace MPS.User_Management
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == 4)
+                if (e.ColumnIndex == 5)
                 {
                     //DeleteForUser
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
@@ -111,7 +111,7 @@ namespace MPS.User_Management
                     }
 
                 }
-                else if (e.ColumnIndex == 3)
+                else if (e.ColumnIndex == 4)
                 {
                     //EditUser
                     Userfrm userForm = new Userfrm();

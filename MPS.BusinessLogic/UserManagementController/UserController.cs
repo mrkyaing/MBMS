@@ -27,16 +27,16 @@ public    class UserController:IUser {
 
         public void UpdateUserID(User u)
         {
-            User user = mBMSEntities.Users.Where(x => x.UserID == u.UserID).SingleOrDefault();
-            user.UserName = u.UserName;
-            user.Password = u.Password;
-            user.RoleID = u.RoleID;
-            user.SecurityQuestion = u.SecurityQuestion;
-            user.SecurityAnswer = u.SecurityAnswer;
-            user.LastLoginDate = DateTime.Now;
-            user.UpdatedUserID = u.UpdatedUserID;
-            user.UpdatedDate = DateTime.Now;
-            mBMSEntities.Users.AddOrUpdate(user);
+            //User user = mBMSEntities.Users.Where(x => x.UserID == u.UserID).SingleOrDefault();
+            //user.UserName = u.UserName;
+            //user.Password = u.Password;
+            //user.RoleID = u.RoleID;
+            //user.SecurityQuestion = u.SecurityQuestion;
+            //user.SecurityAnswer = u.SecurityAnswer;
+            //user.LastLoginDate = DateTime.Now;
+            //user.UpdatedUserID = u.UpdatedUserID;
+            //user.UpdatedDate = DateTime.Now;
+            mBMSEntities.Users.AddOrUpdate(u);
             mBMSEntities.SaveChanges();
         }
     }
