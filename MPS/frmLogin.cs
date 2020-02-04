@@ -14,7 +14,7 @@ namespace MPS
     public partial class frmLogin : Form
     {
         MBMSEntities mbsEntities = new MBMSEntities();
-         ToolTip tooltip = new ToolTip();
+        ToolTip tooltip = new ToolTip();
         public frmLogin()
         {
             InitializeComponent();
@@ -28,17 +28,17 @@ namespace MPS
             tooltip.ToolTipIcon = ToolTipIcon.Error;
             tooltip.ToolTipTitle = "Error";
             //Validation
-            if (txtUserName.Text.Trim() == string.Empty)
-            {
+            if (string.IsNullOrEmpty(txtUserName.Text)){
                 tooltip.SetToolTip(txtUserName, "Error");
                 tooltip.Show("Please fill up User name!", txtUserName);
+                txtUserName.Focus();
                 hasError = true;
-            }else if(txtPassword.Text.Trim() == string.Empty)
-            {
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text)) {               
                 tooltip.SetToolTip(txtPassword, "Error");
                 tooltip.Show("Please fill up Password!", txtPassword);
+                txtPassword.Focus();
                 hasError = true;
-
             }
             if (!hasError) {
                 User user = new User();
@@ -88,5 +88,14 @@ namespace MPS
                 btnLogin_Click(this, new EventArgs());
             }
         }
-    }
+
+        private void frmLogin_Load(object sender, EventArgs e) {
+            txtUserName.Focus();
+            }
+
+        private void frmLogin_MouseMove(object sender, MouseEventArgs e) {
+            tooltip.Hide(txtUserName);
+            tooltip.Hide(txtPassword);
+            }
+        }
 }

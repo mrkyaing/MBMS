@@ -95,13 +95,9 @@ namespace MPS
             }
             return hasError;
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            
-            if (checkValidation())
-            {
-                if (isEdit)
-                {
+        private void btnSave_Click(object sender, EventArgs e) {           
+            if (checkValidation()) {
+                if (isEdit) {
                     int editPoleNoCount=0;
                     Pole updatePole = (from p in mbmsEntities.Poles where p.PoleID == poleID select p).FirstOrDefault();
                     if (txtPoleNo.Text != updatePole.PoleNo)

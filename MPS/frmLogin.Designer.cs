@@ -163,6 +163,8 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MBMS";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

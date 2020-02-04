@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,16 +78,30 @@ namespace MPS.Setting_Setup {
                     MessageBox.Show("Same Quarter data already exists!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                     }
-                StreetLightFee streetlightfeeentity = new StreetLightFee();
-                streetlightfeeentity.StreetLightFeesID = Guid.NewGuid().ToString();
-                streetlightfeeentity.QuarterID = QuarterId;
-                streetlightfeeentity.Amount =Convert.ToDecimal( txtstreetlightfeeamt.Text);
-                streetlightfeeentity.Active = true;
-                streetlightfeeentity.CreatedDate = DateTime.Now;
-                streetlightfeeentity.CreatedUserID = UserID;
-                mbmsEntities.StreetLightFees.Add(streetlightfeeentity);
-                mbmsEntities.SaveChanges();
-                MessageBox.Show("Successfully Saved", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (btnSave.Text.Equals("Update")) {
+                    StreetLightFee streetlightfeeentity = mbmsEntities.StreetLightFees.Where(x => x.Active == true && x.StreetLightFeesID == streetLightFeesId).SingleOrDefault();
+                    streetlightfeeentity.QuarterID = QuarterId;
+                    streetlightfeeentity.Amount = Convert.ToDecimal(txtstreetlightfeeamt.Text);
+                    streetlightfeeentity.Active = true;
+                    streetlightfeeentity.UpdatedDate = DateTime.Now;
+                    streetlightfeeentity.UpdatedUserID = UserID;
+                    mbmsEntities.StreetLightFees.AddOrUpdate(streetlightfeeentity);
+                    mbmsEntities.SaveChanges();
+                    MessageBox.Show("Successfully Updated", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSave.Text = "Save";
+                    }
+                else {
+                    StreetLightFee streetlightfeeentity = new StreetLightFee();
+                    streetlightfeeentity.StreetLightFeesID = Guid.NewGuid().ToString();
+                    streetlightfeeentity.QuarterID = QuarterId;
+                    streetlightfeeentity.Amount = Convert.ToDecimal(txtstreetlightfeeamt.Text);
+                    streetlightfeeentity.Active = true;
+                    streetlightfeeentity.CreatedDate = DateTime.Now;
+                    streetlightfeeentity.CreatedUserID = UserID;
+                    mbmsEntities.StreetLightFees.Add(streetlightfeeentity);
+                    mbmsEntities.SaveChanges();
+                    MessageBox.Show("Successfully Saved", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 bindStreetLightFeesGridView();
                 }
             }
@@ -109,6 +124,7 @@ namespace MPS.Setting_Setup {
             }
 
         private void btnCancel_Click(object sender, EventArgs e) {
+            btnSave.Text = "Save";
             cboQuarterName.SelectedIndex = cboTownshipName.SelectedIndex = 0;
             txtstreetlightfeeamt.Text = string.Empty;
             bindStreetLightFeesGridView();
@@ -127,7 +143,7 @@ namespace MPS.Setting_Setup {
         private void gvStreetLightFees_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0) {
                 if (e.ColumnIndex == 5) {
-                    //DeleteForCompany
+                    //Delete
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result.Equals(DialogResult.OK)) {
                         DataGridViewRow row = gvStreetLightFees.Rows[e.RowIndex];
@@ -140,19 +156,17 @@ namespace MPS.Setting_Setup {
                         MessageBox.Show("Successfully Deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         bindStreetLightFeesGridView();
                         }
-
                     }
                 else if (e.ColumnIndex == 4) {
                     //Edit
                     DataGridViewRow row = gvStreetLightFees.Rows[e.RowIndex];
                     StreetLightFee streetLightFee = (StreetLightFee)row.DataBoundItem;//get the selected row's data 
                     streetLightFeesId = streetLightFee.StreetLightFeesID;
-                    cboQuarterName.SelectedText = streetLightFee.Quarter.QuarterNameInEng;
-                    cboTownshipName.SelectedText = streetLightFee.Quarter.Township.TownshipNameInEng;
+                    cboQuarterName.Text = streetLightFee.Quarter.QuarterNameInEng;
+                    cboTownshipName.Text = streetLightFee.Quarter.Township.TownshipNameInEng;
                     txtstreetlightfeeamt.Text = streetLightFee.Amount.ToString();
                     btnSave.Text = "Update";
                     }
-
                 }
             }
         }

@@ -13,6 +13,7 @@ using System.Windows.Forms;
 namespace MPS.MeterBillCalculation {
     public partial class MeterBillCalculate : Form {
         MBMSEntities mbmsEntities = new MBMSEntities();
+
         #region vairable & initialize Componemt
         public string UserID { get; set; }
         public int meterMultiplier { get; set; }
@@ -85,7 +86,13 @@ namespace MPS.MeterBillCalculation {
                     //getting multiplier value from customer's meter  value
                    meterMultiplier=(int)item.Customer.Meter.Multiplier;
                     mb.MeterFees =getMeterFeesAmountwith7LayerCode(item) ;
-                    mb.StreetLightFees =Utility.SettingController.StreetLightFees;
+                    StreetLightFee streetLightFeeEntity = mbmsEntities.StreetLightFees.Where(x => x.Active == true && x.QuarterID == item.Customer.QuarterID).SingleOrDefault();
+                    if (streetLightFeeEntity == null) {
+                        mb.StreetLightFees = Utility.SettingController.StreetLightFees;
+                        }
+                    else {
+                        mb.StreetLightFees = streetLightFeeEntity.Amount;
+                        }
                     mb.HorsePowerFees = 0;
                     mb.TotalFees =Convert.ToDecimal( (mb.ServicesFees+ mb.MeterFees+ mb.StreetLightFees + mb.HorsePowerFees));
                     //multiply totol meter unit with multiplier value
@@ -177,6 +184,7 @@ namespace MPS.MeterBillCalculation {
             }
         #endregion
 
+        #region cboQuarter SelectedIndex Change Event
         private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
             if(cboQuarter.SelectedIndex!= -1){
                 cbotransformer.DisplayMember = "TransformerName";
@@ -189,5 +197,7 @@ namespace MPS.MeterBillCalculation {
                 }
           
             }
+        #endregion
+
         }
     }
