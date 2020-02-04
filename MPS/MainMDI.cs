@@ -247,6 +247,7 @@ namespace MPS
         private void configurationSettingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settingfrm settingform = new Settingfrm();
+            settingform.UserID = UserID;
             settingform.Show();
         }
 

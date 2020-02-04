@@ -19,6 +19,7 @@ namespace MPS.Setting_Setup
         MBMSEntities mbmsEntities = new MBMSEntities();
        
         private ToolTip tp = new ToolTip();
+        public string  UserID { get; set; }
         public Settingfrm()
         {
             InitializeComponent();
@@ -78,6 +79,7 @@ namespace MPS.Setting_Setup
 
         private void lblstreetlightfeescustom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             StreetLightFeesUI slfui = new StreetLightFeesUI();
+            slfui.UserID = this.UserID;
             slfui.Show();
             }
         }
