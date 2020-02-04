@@ -14,6 +14,7 @@ namespace MPS.Setting_Setup {
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbmsEntities = new MBMSEntities();
         public String UserID { get; set; }
+        private ToolTip tp = new ToolTip();
         public StreetLightFeesUI() {
             InitializeComponent();
             }
@@ -62,7 +63,35 @@ namespace MPS.Setting_Setup {
             }
 
         private void btnSave_Click(object sender, EventArgs e) {
+            if (checkValidation()) {
+                StreetLightFee streetlightfeeentity = new StreetLightFee();
+                streetlightfeeentity.StreetLightFeesID = Guid.NewGuid().ToString();
+                streetlightfeeentity.QuarterID = cboQuarterName.SelectedValue.ToString();
+                streetlightfeeentity.Amount =Convert.ToDecimal( txtstreetlightfeeamt.Text);
+                streetlightfeeentity.Active = true;
+                streetlightfeeentity.CreatedDate = DateTime.Now;
+                streetlightfeeentity.CreatedUserID = Guid.NewGuid().ToString();
+                mbmsEntities.StreetLightFees.Add(streetlightfeeentity);
+                mbmsEntities.SaveChanges();
+                MessageBox.Show("Successfully Saved", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
 
+        private bool checkValidation() {
+            tp.RemoveAll();
+            tp.IsBalloon = true;
+            tp.ToolTipIcon = ToolTipIcon.Error;
+            tp.ToolTipTitle = "Error";
+            if (cboQuarterName.SelectedIndex <= 0) {
+                MessageBox.Show("Select Quarter data!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+                }
+        else    if (txtstreetlightfeeamt.Text.Trim() == string.Empty || Convert.ToInt32(txtstreetlightfeeamt.Text) == 0) {
+                tp.SetToolTip(txtstreetlightfeeamt, "Error");
+                tp.Show("Please Fill Up Street Light Fees Amount", txtstreetlightfeeamt);
+                return false;
+                }
+            return true;
             }
         }
     }

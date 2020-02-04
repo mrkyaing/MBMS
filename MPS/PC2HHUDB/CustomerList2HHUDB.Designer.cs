@@ -68,7 +68,7 @@
             this.Column5,
             this.Column11,
             this.Column12});
-            this.dgvCustomerList.Location = new System.Drawing.Point(40, 116);
+            this.dgvCustomerList.Location = new System.Drawing.Point(50, 204);
             this.dgvCustomerList.Name = "dgvCustomerList";
             this.dgvCustomerList.Size = new System.Drawing.Size(1070, 377);
             this.dgvCustomerList.TabIndex = 0;
@@ -142,41 +142,41 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 22);
+            this.label1.Location = new System.Drawing.Point(50, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 16);
+            this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Code:";
             // 
             // txtCustomerCode
             // 
             this.txtCustomerCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerCode.Location = new System.Drawing.Point(159, 19);
+            this.txtCustomerCode.Location = new System.Drawing.Point(159, 36);
             this.txtCustomerCode.Name = "txtCustomerCode";
-            this.txtCustomerCode.Size = new System.Drawing.Size(166, 23);
+            this.txtCustomerCode.Size = new System.Drawing.Size(166, 26);
             this.txtCustomerCode.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 52);
+            this.label2.Location = new System.Drawing.Point(47, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 16);
+            this.label2.Size = new System.Drawing.Size(99, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Customer Name:";
             // 
             // txtCustomerName
             // 
             this.txtCustomerName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerName.Location = new System.Drawing.Point(159, 48);
+            this.txtCustomerName.Location = new System.Drawing.Point(159, 112);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(166, 23);
+            this.txtCustomerName.Size = new System.Drawing.Size(166, 26);
             this.txtCustomerName.TabIndex = 2;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(722, 84);
+            this.btnSearch.Location = new System.Drawing.Point(443, 150);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 26);
             this.btnSearch.TabIndex = 4;
@@ -186,7 +186,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(837, 84);
+            this.btnRefresh.Location = new System.Drawing.Point(559, 150);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 26);
             this.btnRefresh.TabIndex = 4;
@@ -198,9 +198,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(334, 21);
+            this.label4.Location = new System.Drawing.Point(372, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 16);
+            this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Township Name:";
             // 
@@ -208,14 +208,14 @@
             // 
             this.cboTownshipName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTownshipName.FormattingEnabled = true;
-            this.cboTownshipName.Location = new System.Drawing.Point(439, 18);
+            this.cboTownshipName.Location = new System.Drawing.Point(480, 36);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(191, 24);
+            this.cboTownshipName.Size = new System.Drawing.Size(166, 25);
             this.cboTownshipName.TabIndex = 3;
             // 
             // btnSave2HHUDB
             // 
-            this.btnSave2HHUDB.Location = new System.Drawing.Point(943, 85);
+            this.btnSave2HHUDB.Location = new System.Drawing.Point(674, 151);
             this.btnSave2HHUDB.Name = "btnSave2HHUDB";
             this.btnSave2HHUDB.Size = new System.Drawing.Size(107, 25);
             this.btnSave2HHUDB.TabIndex = 12;
@@ -227,24 +227,24 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(353, 55);
+            this.label3.Location = new System.Drawing.Point(381, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
+            this.label3.Size = new System.Drawing.Size(55, 19);
             this.label3.TabIndex = 34;
             this.label3.Text = "Db File:";
             // 
             // cbofileName
             // 
             this.cbofileName.FormattingEnabled = true;
-            this.cbofileName.Location = new System.Drawing.Point(439, 48);
+            this.cbofileName.Location = new System.Drawing.Point(480, 112);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 22);
+            this.cbofileName.Size = new System.Drawing.Size(166, 24);
             this.cbofileName.TabIndex = 33;
             // 
             // CustomerList2HHUDB
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1147, 505);
+            this.ClientSize = new System.Drawing.Size(1147, 593);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbofileName);
             this.Controls.Add(this.btnSave2HHUDB);

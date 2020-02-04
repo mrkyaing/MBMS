@@ -310,5 +310,11 @@ namespace MPS
             rolemgtui.UserID = UserID;
             rolemgtui.Show();
             }
+
+        private void ledgerSearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LedgerSearchFrm ledgerSearchForm = new LedgerSearchFrm();
+            ledgerSearchForm.Show();
         }
+    }
 }

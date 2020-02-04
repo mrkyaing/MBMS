@@ -61,8 +61,10 @@
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvmeterbillinvoice)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvmeterbillinvoice
@@ -93,10 +95,10 @@
             this.AdditonalFees3,
             this.Edit,
             this.Print});
-            this.gvmeterbillinvoice.Location = new System.Drawing.Point(-2, 192);
+            this.gvmeterbillinvoice.Location = new System.Drawing.Point(17, 29);
             this.gvmeterbillinvoice.Name = "gvmeterbillinvoice";
             this.gvmeterbillinvoice.ReadOnly = true;
-            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1235, 209);
+            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1229, 343);
             this.gvmeterbillinvoice.TabIndex = 0;
             this.gvmeterbillinvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvmeterbillinvoice_CellClick);
             // 
@@ -263,7 +265,7 @@
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(1109, 407);
+            this.btnPrint.Location = new System.Drawing.Point(1133, 389);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(113, 35);
             this.btnPrint.TabIndex = 1;
@@ -284,58 +286,58 @@
             this.groupBox1.Controls.Add(this.dtpFromDate);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(24, 2);
+            this.groupBox1.Location = new System.Drawing.Point(24, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(735, 171);
+            this.groupBox1.Size = new System.Drawing.Size(989, 177);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Invoice Infromation";
+            this.groupBox1.Text = "Meter Bill Infromation Search ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(365, 34);
+            this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(56, 19);
             this.label4.TabIndex = 10;
             this.label4.Text = "Quarter:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(365, 82);
+            this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(487, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.Size = new System.Drawing.Size(88, 19);
             this.label3.TabIndex = 11;
             this.label3.Text = "Transformer :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(91, 91);
+            this.label6.Location = new System.Drawing.Point(562, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 20);
+            this.label6.Size = new System.Drawing.Size(16, 19);
             this.label6.TabIndex = 8;
             this.label6.Text = "*";
             // 
             // cboQuarter
             // 
-            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQuarter.FormattingEnabled = true;
-            this.cboQuarter.Location = new System.Drawing.Point(477, 33);
+            this.cboQuarter.Location = new System.Drawing.Point(159, 92);
             this.cboQuarter.Name = "cboQuarter";
-            this.cboQuarter.Size = new System.Drawing.Size(245, 28);
+            this.cboQuarter.Size = new System.Drawing.Size(226, 27);
             this.cboQuarter.TabIndex = 8;
             this.cboQuarter.SelectedIndexChanged += new System.EventHandler(this.cboQuarter_SelectedIndexChanged);
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(208, 120);
+            this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(741, 138);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 30);
             this.btnCancel.TabIndex = 5;
@@ -345,8 +347,8 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(95, 120);
+            this.btnSearch.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(614, 138);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(98, 30);
             this.btnSearch.TabIndex = 5;
@@ -356,68 +358,78 @@
             // 
             // cbotransformer
             // 
-            this.cbotransformer.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotransformer.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotransformer.FormattingEnabled = true;
-            this.cbotransformer.Location = new System.Drawing.Point(477, 81);
+            this.cbotransformer.Location = new System.Drawing.Point(614, 87);
             this.cbotransformer.Name = "cbotransformer";
-            this.cbotransformer.Size = new System.Drawing.Size(245, 28);
+            this.cbotransformer.Size = new System.Drawing.Size(225, 27);
             this.cbotransformer.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(91, 34);
+            this.label5.Location = new System.Drawing.Point(116, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 20);
+            this.label5.Size = new System.Drawing.Size(16, 19);
             this.label5.TabIndex = 9;
             this.label5.Text = "*";
             // 
             // dtptoDate
             // 
-            this.dtptoDate.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtptoDate.Location = new System.Drawing.Point(95, 78);
+            this.dtptoDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtptoDate.Location = new System.Drawing.Point(614, 47);
             this.dtptoDate.Name = "dtptoDate";
-            this.dtptoDate.Size = new System.Drawing.Size(264, 29);
+            this.dtptoDate.Size = new System.Drawing.Size(225, 28);
             this.dtptoDate.TabIndex = 4;
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFromDate.Location = new System.Drawing.Point(95, 34);
+            this.dtpFromDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFromDate.Location = new System.Drawing.Point(159, 47);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(264, 29);
+            this.dtpFromDate.Size = new System.Drawing.Size(226, 28);
             this.dtpFromDate.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 78);
+            this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(487, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 20);
+            this.label2.Size = new System.Drawing.Size(58, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "To Date:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 34);
+            this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(73, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "From Date:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.gvmeterbillinvoice);
+            this.groupBox2.Controls.Add(this.btnPrint);
+            this.groupBox2.Location = new System.Drawing.Point(24, 195);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1268, 447);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Meter Bill Print";
             // 
             // ViewMeterBillInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 443);
+            this.ClientSize = new System.Drawing.Size(1321, 670);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.gvmeterbillinvoice);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewMeterBillInvoice";
             this.Text = "View Meter Bill Invoice";
@@ -425,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvmeterbillinvoice)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
             }
@@ -467,5 +480,6 @@
         private System.Windows.Forms.ComboBox cboQuarter;
         private System.Windows.Forms.ComboBox cbotransformer;
         private System.Windows.Forms.Button btnCancel;
-        }
+        private System.Windows.Forms.GroupBox groupBox2;
+    }
     }

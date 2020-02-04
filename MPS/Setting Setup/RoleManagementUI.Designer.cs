@@ -106,7 +106,7 @@
             this.cboUserRole.FormattingEnabled = true;
             this.cboUserRole.Location = new System.Drawing.Point(144, 10);
             this.cboUserRole.Name = "cboUserRole";
-            this.cboUserRole.Size = new System.Drawing.Size(200, 25);
+            this.cboUserRole.Size = new System.Drawing.Size(200, 27);
             this.cboUserRole.TabIndex = 6;
             this.cboUserRole.SelectedIndexChanged += new System.EventHandler(this.cboUserRole_SelectedIndexChanged);
             // 
@@ -116,7 +116,7 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(358, 15);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 14);
+            this.label11.Size = new System.Drawing.Size(107, 16);
             this.label11.TabIndex = 10;
             this.label11.Text = "* is Mandatory Field";
             // 
@@ -148,7 +148,7 @@
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(100, 17);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 14);
+            this.label10.Size = new System.Drawing.Size(14, 16);
             this.label10.TabIndex = 4;
             this.label10.Text = "*";
             // 
@@ -158,7 +158,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(30, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(66, 19);
             this.label4.TabIndex = 0;
             this.label4.Text = "User Role";
             // 
@@ -898,9 +898,9 @@
             // 
             // RoleManagementUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 629);
+            this.ClientSize = new System.Drawing.Size(922, 647);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tbLayOutBOSetUp);
             this.Controls.Add(this.label4);

@@ -150,31 +150,30 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(28, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 16;
+            this.tableLayoutPanel1.RowCount = 15;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.19277F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.80723F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 78F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 678);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(522, 646);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // txtSMDSerial
             // 
             this.txtSMDSerial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSMDSerial.Location = new System.Drawing.Point(244, 640);
+            this.txtSMDSerial.Location = new System.Drawing.Point(244, 613);
             this.txtSMDSerial.Name = "txtSMDSerial";
             this.txtSMDSerial.Size = new System.Drawing.Size(241, 22);
             this.txtSMDSerial.TabIndex = 37;
@@ -182,7 +181,7 @@
             // panel16
             // 
             this.panel16.Controls.Add(this.label31);
-            this.panel16.Location = new System.Drawing.Point(3, 640);
+            this.panel16.Location = new System.Drawing.Point(3, 613);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(200, 26);
             this.panel16.TabIndex = 36;
@@ -200,7 +199,7 @@
             // txtCustomerCode
             // 
             this.txtCustomerCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerCode.Location = new System.Drawing.Point(244, 79);
+            this.txtCustomerCode.Location = new System.Drawing.Point(244, 81);
             this.txtCustomerCode.Name = "txtCustomerCode";
             this.txtCustomerCode.Size = new System.Drawing.Size(241, 22);
             this.txtCustomerCode.TabIndex = 3;
@@ -210,7 +209,7 @@
             // 
             this.panel15.Controls.Add(this.label28);
             this.panel15.Controls.Add(this.label30);
-            this.panel15.Location = new System.Drawing.Point(3, 603);
+            this.panel15.Location = new System.Drawing.Point(3, 574);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(200, 28);
             this.panel15.TabIndex = 35;
@@ -239,7 +238,7 @@
             // 
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.label14);
-            this.panel5.Location = new System.Drawing.Point(3, 562);
+            this.panel5.Location = new System.Drawing.Point(3, 529);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 28);
             this.panel5.TabIndex = 33;
@@ -268,7 +267,7 @@
             // 
             this.panel12.Controls.Add(this.label26);
             this.panel12.Controls.Add(this.label12);
-            this.panel12.Location = new System.Drawing.Point(3, 523);
+            this.panel12.Location = new System.Drawing.Point(3, 490);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(200, 28);
             this.panel12.TabIndex = 32;
@@ -297,7 +296,7 @@
             // 
             this.cboBookCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBookCode.FormattingEnabled = true;
-            this.cboBookCode.Location = new System.Drawing.Point(244, 523);
+            this.cboBookCode.Location = new System.Drawing.Point(244, 490);
             this.cboBookCode.Name = "cboBookCode";
             this.cboBookCode.Size = new System.Drawing.Size(241, 24);
             this.cboBookCode.TabIndex = 12;
@@ -307,7 +306,7 @@
             // 
             this.cboQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQuarterName.FormattingEnabled = true;
-            this.cboQuarterName.Location = new System.Drawing.Point(244, 40);
+            this.cboQuarterName.Location = new System.Drawing.Point(244, 41);
             this.cboQuarterName.Name = "cboQuarterName";
             this.cboQuarterName.Size = new System.Drawing.Size(241, 24);
             this.cboQuarterName.TabIndex = 2;
@@ -317,7 +316,7 @@
             // 
             this.panel11.Controls.Add(this.label24);
             this.panel11.Controls.Add(this.label10);
-            this.panel11.Location = new System.Drawing.Point(3, 40);
+            this.panel11.Location = new System.Drawing.Point(3, 41);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(200, 28);
             this.panel11.TabIndex = 14;
@@ -386,7 +385,7 @@
             // 
             this.panel9.Controls.Add(this.label23);
             this.panel9.Controls.Add(this.label9);
-            this.panel9.Location = new System.Drawing.Point(3, 409);
+            this.panel9.Location = new System.Drawing.Point(3, 373);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 28);
             this.panel9.TabIndex = 22;
@@ -415,7 +414,7 @@
             // 
             this.panel8.Controls.Add(this.label22);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(3, 335);
+            this.panel8.Location = new System.Drawing.Point(3, 300);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 28);
             this.panel8.TabIndex = 20;
@@ -445,7 +444,7 @@
             this.panel14.Controls.Add(this.txtLineNo);
             this.panel14.Controls.Add(this.txtPageNo);
             this.panel14.Controls.Add(this.label19);
-            this.panel14.Location = new System.Drawing.Point(244, 562);
+            this.panel14.Location = new System.Drawing.Point(244, 529);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(241, 35);
             this.panel14.TabIndex = 13;
@@ -480,7 +479,7 @@
             // 
             this.cboBillCodeNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBillCodeNo.FormattingEnabled = true;
-            this.cboBillCodeNo.Location = new System.Drawing.Point(244, 603);
+            this.cboBillCodeNo.Location = new System.Drawing.Point(244, 574);
             this.cboBillCodeNo.Name = "cboBillCodeNo";
             this.cboBillCodeNo.Size = new System.Drawing.Size(241, 24);
             this.cboBillCodeNo.TabIndex = 15;
@@ -490,7 +489,7 @@
             // 
             this.panel13.Controls.Add(this.label27);
             this.panel13.Controls.Add(this.label13);
-            this.panel13.Location = new System.Drawing.Point(3, 482);
+            this.panel13.Location = new System.Drawing.Point(3, 451);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(200, 28);
             this.panel13.TabIndex = 24;
@@ -519,14 +518,14 @@
             // 
             this.cboMeterNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMeterNo.FormattingEnabled = true;
-            this.cboMeterNo.Location = new System.Drawing.Point(244, 482);
+            this.cboMeterNo.Location = new System.Drawing.Point(244, 451);
             this.cboMeterNo.Name = "cboMeterNo";
             this.cboMeterNo.Size = new System.Drawing.Size(241, 24);
             this.cboMeterNo.TabIndex = 11;
             // 
             // txtAddressMM
             // 
-            this.txtAddressMM.Location = new System.Drawing.Point(244, 409);
+            this.txtAddressMM.Location = new System.Drawing.Point(244, 373);
             this.txtAddressMM.Multiline = true;
             this.txtAddressMM.Name = "txtAddressMM";
             this.txtAddressMM.Size = new System.Drawing.Size(241, 66);
@@ -534,7 +533,7 @@
             // 
             // txtAddressEng
             // 
-            this.txtAddressEng.Location = new System.Drawing.Point(244, 335);
+            this.txtAddressEng.Location = new System.Drawing.Point(244, 300);
             this.txtAddressEng.Multiline = true;
             this.txtAddressEng.Name = "txtAddressEng";
             this.txtAddressEng.Size = new System.Drawing.Size(241, 66);
@@ -543,7 +542,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(3, 296);
+            this.panel7.Location = new System.Drawing.Point(3, 259);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 28);
             this.panel7.TabIndex = 18;
@@ -561,7 +560,7 @@
             // txtPost
             // 
             this.txtPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPost.Location = new System.Drawing.Point(244, 296);
+            this.txtPost.Location = new System.Drawing.Point(244, 259);
             this.txtPost.Name = "txtPost";
             this.txtPost.Size = new System.Drawing.Size(241, 22);
             this.txtPost.TabIndex = 8;
@@ -570,7 +569,7 @@
             // 
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(3, 259);
+            this.panel6.Location = new System.Drawing.Point(3, 220);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 28);
             this.panel6.TabIndex = 11;
@@ -598,7 +597,7 @@
             // txtPhone
             // 
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(244, 259);
+            this.txtPhone.Location = new System.Drawing.Point(244, 220);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(241, 22);
             this.txtPhone.TabIndex = 7;
@@ -608,7 +607,7 @@
             // 
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(3, 223);
+            this.panel4.Location = new System.Drawing.Point(3, 185);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 28);
             this.panel4.TabIndex = 7;
@@ -636,7 +635,7 @@
             // txtNRC
             // 
             this.txtNRC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNRC.Location = new System.Drawing.Point(244, 223);
+            this.txtNRC.Location = new System.Drawing.Point(244, 185);
             this.txtNRC.Name = "txtNRC";
             this.txtNRC.Size = new System.Drawing.Size(241, 22);
             this.txtNRC.TabIndex = 6;
@@ -646,7 +645,7 @@
             // 
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(3, 159);
+            this.panel3.Location = new System.Drawing.Point(3, 149);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 28);
             this.panel3.TabIndex = 6;
@@ -674,7 +673,7 @@
             // txtCustomerNameMM
             // 
             this.txtCustomerNameMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerNameMM.Location = new System.Drawing.Point(244, 159);
+            this.txtCustomerNameMM.Location = new System.Drawing.Point(244, 149);
             this.txtCustomerNameMM.Name = "txtCustomerNameMM";
             this.txtCustomerNameMM.Size = new System.Drawing.Size(241, 22);
             this.txtCustomerNameMM.TabIndex = 5;
@@ -684,7 +683,7 @@
             // 
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(3, 119);
+            this.panel2.Location = new System.Drawing.Point(3, 113);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 28);
             this.panel2.TabIndex = 5;
@@ -712,7 +711,7 @@
             // txtCustomerNameEng
             // 
             this.txtCustomerNameEng.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerNameEng.Location = new System.Drawing.Point(244, 119);
+            this.txtCustomerNameEng.Location = new System.Drawing.Point(244, 113);
             this.txtCustomerNameEng.Name = "txtCustomerNameEng";
             this.txtCustomerNameEng.Size = new System.Drawing.Size(241, 22);
             this.txtCustomerNameEng.TabIndex = 4;
@@ -722,9 +721,9 @@
             // 
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(3, 79);
+            this.panel1.Location = new System.Drawing.Point(3, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 28);
+            this.panel1.Size = new System.Drawing.Size(200, 26);
             this.panel1.TabIndex = 4;
             // 
             // label15
@@ -752,7 +751,7 @@
             this.btnSave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSave.Location = new System.Drawing.Point(249, 718);
+            this.btnSave.Location = new System.Drawing.Point(272, 686);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 26);
             this.btnSave.TabIndex = 16;
@@ -763,7 +762,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(372, 718);
+            this.btnCancel.Location = new System.Drawing.Point(395, 686);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
             this.btnCancel.TabIndex = 17;
@@ -776,7 +775,7 @@
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(259, 693);
+            this.label29.Location = new System.Drawing.Point(282, 661);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(115, 15);
             this.label29.TabIndex = 3;
