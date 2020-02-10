@@ -38,12 +38,14 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtRoleName, "Error");
                 tooltip.Show("Please fill up Role name!", txtRoleName);
+                txtRoleName.Focus();
                 hasError = false;
             }
             else if (cboRoleLevel.SelectedIndex == -1)
             {
-                tooltip.SetToolTip(txtRoleName, "Error");
-                tooltip.Show("Please choose Role Level !", txtRoleName);
+                tooltip.SetToolTip(cboRoleLevel, "Error");
+                tooltip.Show("Please choose Role Level !", cboRoleLevel);
+                cboRoleLevel.Focus();
                 hasError = false;
             }
             return hasError;
@@ -211,6 +213,12 @@ namespace MPS
                 
 
             }
+
+        private void Rolefrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtRoleName);
+            tooltip.Hide(cboRoleLevel);
         }
+    }
     }
 

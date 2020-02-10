@@ -508,6 +508,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pole Registration";
             this.Load += new System.EventHandler(this.Polefrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Polefrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel5.ResumeLayout(false);

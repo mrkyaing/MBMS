@@ -137,90 +137,107 @@ namespace MPS
             tooltip.IsBalloon = true;
             tooltip.ToolTipIcon = ToolTipIcon.Error;
             tooltip.ToolTipTitle = "Error";
-            if (txtCustomerCode.Text == string.Empty)
+              if (cboTownshipName.SelectedIndex == 0)
             {
-                tooltip.SetToolTip(txtCustomerCode, "Error");
-                tooltip.Show("Please fill up Customer Code!", txtCustomerCode);
-                hasError = false;
-            }
-            else if (txtAddressEng.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtAddressEng, "Error");
-                tooltip.Show("Please fill up Address (English)!", txtAddressEng);
-                hasError = false;
-            }
-            else if (txtAddressMM.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtAddressMM, "Error");
-                tooltip.Show("Please fill up Address (Myanmar)!", txtAddressMM);
-                hasError = false;
-            }
-            else if (txtCustomerNameEng.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtCustomerNameEng, "Error");
-                tooltip.Show("Please fill up Customer Name (English)!", txtCustomerNameEng);
-                hasError = false;
-            }
-            else if (txtCustomerNameMM.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtCustomerNameMM, "Error");
-                tooltip.Show("Please fill up Customer Name (Myanmar)!", txtCustomerNameMM);
-                hasError = false;
-            }
-            else if (txtNRC.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtNRC, "Error");
-                tooltip.Show("Please fill up NRC!", txtNRC);
-                hasError = false;
-            }
-            else if (txtLineNo.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtLineNo, "Error");
-                tooltip.Show("Please fill up Line No!", txtLineNo);
-                hasError = false;
-            }
-            else if (txtPageNo.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtPageNo, "Error");
-                tooltip.Show("Please fill up Page No!", txtPageNo);
-                hasError = false;
-            }
-            else if (txtPhone.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtPhone, "Error");
-                tooltip.Show("Please fill up Phone No!", txtPhone);
-                hasError = false;
-            }
-            else if (cboBillCodeNo.SelectedIndex == 0)
-            {
-                tooltip.SetToolTip(cboBillCodeNo, "Error");
-                tooltip.Show("Please choose Bill Code No!", cboBillCodeNo);
-                hasError = false;
-            }
-            else if (cboBookCode.SelectedIndex == 0)
-            {
-                tooltip.SetToolTip(cboBookCode, "Error");
-                tooltip.Show("Please choose Book Code!", cboBookCode);
-                hasError = false;
-            }
-            else if (cboMeterNo.SelectedIndex == 0)
-            {
-                tooltip.SetToolTip(cboMeterNo, "Error");
-                tooltip.Show("Please choose Meter No!", cboMeterNo);
+                tooltip.SetToolTip(cboTownshipName, "Error");
+                tooltip.Show("Please choose Township Name!", cboTownshipName);
+                cboTownshipName.Focus();
                 hasError = false;
             }
             else if (cboQuarterName.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboQuarterName, "Error");
                 tooltip.Show("Please choose Quarter Name!", cboQuarterName);
+                cboQuarterName.Focus();
                 hasError = false;
             }
-            else if (cboTownshipName.SelectedIndex == 0)
+            else if (txtCustomerCode.Text == string.Empty)
             {
-                tooltip.SetToolTip(cboTownshipName, "Error");
-                tooltip.Show("Please choose Township Name!", cboTownshipName);
+                tooltip.SetToolTip(txtCustomerCode, "Error");
+                tooltip.Show("Please fill up Customer Code!", txtCustomerCode);
+                txtCustomerCode.Focus();
                 hasError = false;
             }
+            else if (txtCustomerNameEng.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtCustomerNameEng, "Error");
+                tooltip.Show("Please fill up Customer Name (English)!", txtCustomerNameEng);
+                txtCustomerNameEng.Focus();
+                hasError = false;
+            }
+            else if (txtCustomerNameMM.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtCustomerNameMM, "Error");
+                tooltip.Show("Please fill up Customer Name (Myanmar)!", txtCustomerNameMM);
+                txtCustomerNameMM.Focus();
+                hasError = false;
+            }
+            else if (txtNRC.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtNRC, "Error");
+                tooltip.Show("Please fill up NRC!", txtNRC);
+                txtNRC.Focus();
+                hasError = false;
+            }
+            else if (txtPhone.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtPhone, "Error");
+                tooltip.Show("Please fill up Phone No!", txtPhone);
+                txtPhone.Focus();
+                hasError = false;
+            }
+            else if (txtAddressEng.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtAddressEng, "Error");
+                tooltip.Show("Please fill up Address (English)!", txtAddressEng);
+                txtAddressEng.Focus();
+                hasError = false;
+            }
+            else if (txtAddressMM.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtAddressMM, "Error");
+                tooltip.Show("Please fill up Address (Myanmar)!", txtAddressMM);
+                txtAddressMM.Focus();
+                hasError = false;
+            }      
+              else if (cboMeterNo.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboMeterNo, "Error");
+                tooltip.Show("Please choose Meter No!", cboMeterNo);
+                cboMeterNo.Focus();
+                hasError = false;
+            }
+            else if (cboBookCode.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboBookCode, "Error");
+                tooltip.Show("Please choose Book Code!", cboBookCode);
+                cboBookCode.Focus();
+                hasError = false;
+            }
+            else if (txtPageNo.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtPageNo, "Error");
+                tooltip.Show("Please fill up Page No!", txtPageNo);
+                txtPageNo.Focus();
+                hasError = false;
+            }
+
+            else if (txtLineNo.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtLineNo, "Error");
+                tooltip.Show("Please fill up Line No!", txtLineNo);
+                txtLineNo.Focus();
+                hasError = false;
+            }
+
+            else if (cboBillCodeNo.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboBillCodeNo, "Error");
+                tooltip.Show("Please choose Bill Code No!", cboBillCodeNo);
+                cboBillCodeNo.Focus();
+                hasError = false;
+            }
+          
             return hasError;
         }
 
@@ -398,6 +415,7 @@ namespace MPS
             cboMeterNo.SelectedIndex = 0;
             cboQuarterName.SelectedIndex = 0;
             cboTownshipName.SelectedIndex = 0;
+            txtSMDSerial.Text = string.Empty;
            
         }
 
@@ -504,6 +522,24 @@ namespace MPS
                     txtCustomerCode.Text = townsipCode+"-" + quarterData.QuarterCode;
                 }
             }
+        }
+
+        private void Customerfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(cboTownshipName);
+            tooltip.Hide(cboQuarterName);
+            tooltip.Hide(txtCustomerCode);
+            tooltip.Hide(txtCustomerNameEng);
+            tooltip.Hide(txtCustomerNameMM);
+            tooltip.Hide(txtNRC);
+            tooltip.Hide(txtPhone);
+            tooltip.Hide(txtAddressEng);
+            tooltip.Hide(txtAddressMM);
+            tooltip.Hide(cboMeterNo);
+            tooltip.Hide(txtPhone);
+            tooltip.Hide(txtLineNo);
+            tooltip.Hide(cboBillCodeNo);
+            tooltip.Hide(cboBookCode);
         }
     }
 }

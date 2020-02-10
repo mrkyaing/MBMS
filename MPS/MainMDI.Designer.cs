@@ -63,6 +63,7 @@
             this.meterListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ledgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addLedgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ledgerSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.integrateWithHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pCToHHUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hHUToPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,7 +82,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.ledgerSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -124,14 +124,14 @@
             // 
             this.versionInfoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("versionInfoToolStripMenuItem.Image")));
             this.versionInfoToolStripMenuItem.Name = "versionInfoToolStripMenuItem";
-            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.versionInfoToolStripMenuItem.Text = "Version info";
             // 
             // existToolStripMenuItem
             // 
             this.existToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("existToolStripMenuItem.Image")));
             this.existToolStripMenuItem.Name = "existToolStripMenuItem";
-            this.existToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.existToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
             this.existToolStripMenuItem.Text = "Exit";
             this.existToolStripMenuItem.Click += new System.EventHandler(this.existToolStripMenuItem_Click);
             // 
@@ -403,9 +403,17 @@
             // 
             this.addLedgerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addLedgerToolStripMenuItem.Image")));
             this.addLedgerToolStripMenuItem.Name = "addLedgerToolStripMenuItem";
-            this.addLedgerToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.addLedgerToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
             this.addLedgerToolStripMenuItem.Text = "Add Ledger";
             this.addLedgerToolStripMenuItem.Click += new System.EventHandler(this.addLedgerToolStripMenuItem_Click);
+            // 
+            // ledgerSearchToolStripMenuItem
+            // 
+            this.ledgerSearchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ledgerSearchToolStripMenuItem.Image")));
+            this.ledgerSearchToolStripMenuItem.Name = "ledgerSearchToolStripMenuItem";
+            this.ledgerSearchToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.ledgerSearchToolStripMenuItem.Text = "Ledger Search ";
+            this.ledgerSearchToolStripMenuItem.Click += new System.EventHandler(this.ledgerSearchToolStripMenuItem_Click);
             // 
             // integrateWithHHUToolStripMenuItem
             // 
@@ -477,6 +485,7 @@
             this.meterToolStripMenuItem1.Name = "meterToolStripMenuItem1";
             this.meterToolStripMenuItem1.Size = new System.Drawing.Size(152, 24);
             this.meterToolStripMenuItem1.Text = "Meter";
+            this.meterToolStripMenuItem1.Click += new System.EventHandler(this.meterToolStripMenuItem1_Click);
             // 
             // reportToolStripMenuItem
             // 
@@ -560,14 +569,6 @@
             this.tpUserName.Name = "tpUserName";
             this.tpUserName.Size = new System.Drawing.Size(65, 17);
             this.tpUserName.Text = "User Name";
-            // 
-            // ledgerSearchToolStripMenuItem
-            // 
-            this.ledgerSearchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ledgerSearchToolStripMenuItem.Image")));
-            this.ledgerSearchToolStripMenuItem.Name = "ledgerSearchToolStripMenuItem";
-            this.ledgerSearchToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
-            this.ledgerSearchToolStripMenuItem.Text = "Ledger Search ";
-            this.ledgerSearchToolStripMenuItem.Click += new System.EventHandler(this.ledgerSearchToolStripMenuItem_Click);
             // 
             // MainMDI
             // 

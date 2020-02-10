@@ -43,18 +43,21 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtTownshipCode, "Error");
                 tooltip.Show("Please fill up Township code!", txtTownshipCode);
+                txtTownshipCode.Focus();
                 hasError = false;
             }
             else if (txtTownshipNameEng.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtTownshipNameEng, "Error");
                 tooltip.Show("Please fill up Township Name (English)!", txtTownshipNameEng);
+                txtTownshipNameEng.Focus();
                 hasError = false;
             }
             else if (txtTowsshipNameMM.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtTowsshipNameMM, "Error");
                 tooltip.Show("Please fill up Township Name (Myanmar)!", txtTowsshipNameMM);
+                txtTowsshipNameMM.Focus();
                 hasError = false;
             }
             return hasError;
@@ -262,6 +265,14 @@ namespace MPS
             {
                 btnSave_Click(this, new EventArgs());
             }
+        }
+
+        private void Townshipfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtTownshipCode);
+            tooltip.Hide(txtTownshipNameEng);
+            tooltip.Hide(txtTowsshipNameMM);
+           
         }
     }
 }

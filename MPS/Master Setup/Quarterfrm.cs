@@ -38,24 +38,28 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtQuarterCode, "Error");
                 tooltip.Show("Please fill up Quarter Code!", txtQuarterCode);
+                txtQuarterCode.Focus();
                 hasError = false;
             }
             if (string.IsNullOrEmpty(txtQuarterNameEng.Text))
             {
                 tooltip.SetToolTip(txtQuarterNameEng, "Error");
                 tooltip.Show("Please fill up Quarter Name (Eng)!", txtQuarterNameEng);
+                txtQuarterNameEng.Focus();
                 hasError = false;
             }
             if (string.IsNullOrEmpty(txtQuarterNameMM.Text))
             {
                 tooltip.SetToolTip(txtQuarterNameMM, "Error");
                 tooltip.Show("Please fill up Quarter Name (MM)!", txtQuarterNameMM);
+                txtQuarterNameMM.Focus();
                 hasError = false;
             }
             if (cboTownshipName.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboTownshipName, "Error");
                 tooltip.Show("Please Choose Township Name!", cboTownshipName);
+                cboTownshipName.Focus();
                 hasError = false;
             }
             return hasError;
@@ -376,6 +380,14 @@ namespace MPS
             txtSearchQuarterName.Text = string.Empty;
             FormRefresh();
             
+        }
+
+        private void Quarterfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtQuarterCode);
+            tooltip.Hide(txtQuarterNameEng);
+            tooltip.Hide(txtQuarterNameMM);
+            tooltip.Hide(cboTownshipName);
         }
     }
 }

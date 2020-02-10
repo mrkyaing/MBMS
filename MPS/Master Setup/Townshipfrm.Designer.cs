@@ -317,6 +317,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Township Registration";
             this.Load += new System.EventHandler(this.Townshipfrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Townshipfrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel3.ResumeLayout(false);

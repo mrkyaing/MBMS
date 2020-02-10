@@ -65,34 +65,36 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtUserName, "Error");
                 tooltip.Show("Please fill up User name!", txtUserName);
+                txtUserName.Focus();
+                hasError = false;
+            }
+            else if (txtFullName.Text.Trim() == string.Empty)
+            {
+                tooltip.SetToolTip(txtFullName, "Error");
+                tooltip.Show("Please fill up Full Name", txtFullName);
+                txtFullName.Focus();
                 hasError = false;
             }
             else if (txtPassword.Text.Trim() == string.Empty)
             {
                 tooltip.SetToolTip(txtPassword, "Error");
                 tooltip.Show("Please fill up Password", txtPassword);
+                txtPassword.Focus();
                 hasError = false;
-            }
-            else if (txtConfirmPassword.Text.Trim() == string.Empty) {
-                tooltip.SetToolTip(txtPassword, "Error");
-                tooltip.Show("Please fill up Confirm Password", txtConfirmPassword);
-                hasError = false;
-                }
-            else if (txtFullName.Text.Trim() == string.Empty) {
-                tooltip.SetToolTip(txtFullName, "Error");
-                tooltip.Show("Please fill up Full Name", txtFullName);
-                hasError = false;
-                }
+            }           
+            
             else if (txtConfirmPassword.Text.Trim() == string.Empty || txtConfirmPassword.Text != txtPassword.Text)
             {
                 tooltip.SetToolTip(txtConfirmPassword, "Error");
                 tooltip.Show("Do not match password or fill up password", txtConfirmPassword);
+                txtConfirmPassword.Focus();
                 hasError = false;
             }
             else if (cboUserRole.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboUserRole, "Error");
                 tooltip.Show("Please choose User role", cboUserRole);
+                cboUserRole.Focus();
                 hasError = false;
             }
             return hasError;
@@ -148,12 +150,22 @@ namespace MPS
             txtConfirmPassword.Text = string.Empty;
             txtPassword.Text = string.Empty;
             txtSecurityAnswer.Text = string.Empty;
+            txtFullName.Text = string.Empty;
             cboUserRole.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void Userfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtUserName);
+            tooltip.Hide(txtFullName);
+            tooltip.Hide(txtPassword);
+            tooltip.Hide(txtConfirmPassword);
+            tooltip.Hide(cboUserRole);
         }
     }
 }

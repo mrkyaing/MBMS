@@ -46,18 +46,21 @@ namespace MPS.CompanyProfileSetup
             {
                 tooltip.SetToolTip(txtCompanyName, "Error");
                 tooltip.Show("Please fill up Company Name!", txtCompanyName);
+                txtCompanyName.Focus();
                 hasError = false;
             }
             else if (txtPhoneNumber.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtPhoneNumber, "Error");
                 tooltip.Show("Please fill up Phone Number!", txtPhoneNumber);
+                txtPhoneNumber.Focus();
                 hasError = false;
             }
             else if (txtAddressEng.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtAddressEng, "Error");
                 tooltip.Show("Please fill up Address (Eng)!", txtAddressEng);
+                txtAddressEng.Focus();
                 hasError = false;
             }
             return hasError;
@@ -261,6 +264,13 @@ namespace MPS.CompanyProfileSetup
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void CompanyProfilefrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtCompanyName);
+            tooltip.Hide(txtPhoneNumber);
+            tooltip.Hide(txtAddressEng);
         }
     }
 }

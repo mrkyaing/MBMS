@@ -53,20 +53,20 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtFullName = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +82,7 @@
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(228, 3);
+            this.txtUserName.Location = new System.Drawing.Point(227, 3);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(200, 28);
             this.txtUserName.TabIndex = 1;
@@ -100,7 +100,7 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(228, 102);
+            this.txtPassword.Location = new System.Drawing.Point(227, 102);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(200, 28);
             this.txtPassword.TabIndex = 2;
@@ -119,7 +119,7 @@
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(228, 146);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(227, 146);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(200, 28);
             this.txtConfirmPassword.TabIndex = 3;
@@ -161,7 +161,7 @@
             // 
             this.cboUserRole.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUserRole.FormattingEnabled = true;
-            this.cboUserRole.Location = new System.Drawing.Point(228, 295);
+            this.cboUserRole.Location = new System.Drawing.Point(227, 295);
             this.cboUserRole.Name = "cboUserRole";
             this.cboUserRole.Size = new System.Drawing.Size(200, 27);
             this.cboUserRole.TabIndex = 6;
@@ -179,7 +179,7 @@
             // txtSecurityQuestion
             // 
             this.txtSecurityQuestion.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecurityQuestion.Location = new System.Drawing.Point(228, 193);
+            this.txtSecurityQuestion.Location = new System.Drawing.Point(227, 193);
             this.txtSecurityQuestion.Name = "txtSecurityQuestion";
             this.txtSecurityQuestion.Size = new System.Drawing.Size(200, 28);
             this.txtSecurityQuestion.TabIndex = 4;
@@ -197,7 +197,7 @@
             // txtSecurityAnswer
             // 
             this.txtSecurityAnswer.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSecurityAnswer.Location = new System.Drawing.Point(228, 244);
+            this.txtSecurityAnswer.Location = new System.Drawing.Point(227, 244);
             this.txtSecurityAnswer.Name = "txtSecurityAnswer";
             this.txtSecurityAnswer.Size = new System.Drawing.Size(200, 28);
             this.txtSecurityAnswer.TabIndex = 5;
@@ -322,23 +322,29 @@
             this.panel6.Size = new System.Drawing.Size(176, 32);
             this.panel6.TabIndex = 12;
             // 
-            // panel1
+            // txtFullName
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 34);
-            this.panel1.TabIndex = 10;
+            this.txtFullName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Location = new System.Drawing.Point(227, 55);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(200, 28);
+            this.txtFullName.TabIndex = 1;
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(3, 102);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 34);
-            this.panel3.TabIndex = 12;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(3, 244);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(176, 34);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(3, 193);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(176, 34);
+            this.panel5.TabIndex = 14;
             // 
             // panel4
             // 
@@ -349,29 +355,23 @@
             this.panel4.Size = new System.Drawing.Size(176, 34);
             this.panel4.TabIndex = 13;
             // 
-            // panel5
+            // panel3
             // 
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(3, 193);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(176, 34);
-            this.panel5.TabIndex = 14;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(3, 102);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(176, 34);
+            this.panel3.TabIndex = 12;
             // 
-            // panel2
+            // panel1
             // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(3, 244);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(176, 34);
-            this.panel2.TabIndex = 11;
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(228, 55);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(200, 28);
-            this.txtFullName.TabIndex = 1;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(176, 34);
+            this.panel1.TabIndex = 10;
             // 
             // Userfrm
             // 
@@ -387,22 +387,23 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Registration";
             this.Load += new System.EventHandler(this.Userfrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Userfrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

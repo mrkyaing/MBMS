@@ -310,6 +310,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Punishment Rule Registration";
             this.Load += new System.EventHandler(this.PunishmentRulefrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PunishmentRulefrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel4.ResumeLayout(false);

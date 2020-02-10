@@ -78,7 +78,7 @@
             this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Location = new System.Drawing.Point(112, 7);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(14, 16);
+            this.label24.Size = new System.Drawing.Size(15, 17);
             this.label24.TabIndex = 1;
             this.label24.Text = "*";
             // 
@@ -129,7 +129,7 @@
             this.label25.ForeColor = System.Drawing.Color.Red;
             this.label25.Location = new System.Drawing.Point(131, 7);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(14, 16);
+            this.label25.Size = new System.Drawing.Size(15, 17);
             this.label25.TabIndex = 1;
             this.label25.Text = "*";
             // 
@@ -158,7 +158,7 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(148, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(14, 16);
+            this.label15.Size = new System.Drawing.Size(15, 17);
             this.label15.TabIndex = 1;
             this.label15.Text = "*";
             // 
@@ -222,7 +222,7 @@
             this.Delete});
             this.gvStreetLightFees.Location = new System.Drawing.Point(68, 251);
             this.gvStreetLightFees.Name = "gvStreetLightFees";
-            this.gvStreetLightFees.Size = new System.Drawing.Size(512, 131);
+            this.gvStreetLightFees.Size = new System.Drawing.Size(546, 240);
             this.gvStreetLightFees.TabIndex = 24;
             this.gvStreetLightFees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvStreetLightFees_CellClick);
             this.gvStreetLightFees.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gvStreetLightFees_DataBindingComplete);
@@ -264,9 +264,9 @@
             // 
             // StreetLightFeesUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 407);
+            this.ClientSize = new System.Drawing.Size(678, 567);
             this.Controls.Add(this.gvStreetLightFees);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.btnCancel);

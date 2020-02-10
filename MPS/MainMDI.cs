@@ -317,5 +317,11 @@ namespace MPS
             LedgerSearchFrm ledgerSearchForm = new LedgerSearchFrm();
             ledgerSearchForm.Show();
         }
+
+        private void meterToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MeterImportingUI meterImporting = new MeterImportingUI();
+            meterImporting.Show();
+        }
     }
 }

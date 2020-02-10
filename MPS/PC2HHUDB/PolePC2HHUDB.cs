@@ -29,10 +29,16 @@ namespace MPS
         private void getDbFileList() {
             this.cbofileName.Items.Add("Select One");
             this.cbofileName.SelectedIndex = 0;
-            DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
-            FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
-            foreach (FileInfo file in Files) {
-                this.cbofileName.Items.Add(file.Name);
+            try {
+                DirectoryInfo dirInfo = new DirectoryInfo(System.Configuration.ConfigurationManager.AppSettings["dbFileListPath"]);
+                FileInfo[] Files = dirInfo.GetFiles("*.db"); //Getting db files
+                foreach (FileInfo file in Files) {
+                    this.cbofileName.Items.Add(file.Name);
+                    }
+                }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
                 }
             }
         private void BuildSQLiteConnection() {

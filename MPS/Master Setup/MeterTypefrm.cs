@@ -44,12 +44,14 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtMeterTypeCode, "Error");
                 tooltip.Show("Please fill up Meter Type Code!", txtMeterTypeCode);
+                txtMeterTypeCode.Focus();
                 hasError = false;
             }
             else if (txtMeterTypeDes.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtMeterTypeDes, "Error");
                 tooltip.Show("Please fill up Meter Type Description!", txtMeterTypeDes);
+                txtMeterTypeDes.Focus();
                 hasError = false;
             }
             return hasError;
@@ -200,6 +202,13 @@ namespace MPS
             {
                 btnSave_Click(this, new EventArgs());
             }
+        }
+
+        private void MeterTypefrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtMeterTypeCode);
+            tooltip.Hide(txtMeterTypeDes);
+         
         }
     }
 }

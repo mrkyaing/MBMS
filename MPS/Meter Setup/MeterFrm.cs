@@ -62,7 +62,7 @@ namespace MPS.Meter_Setup
                 txtManufacture.Text= meter.ManufactureBy;
                 txtFrequency.Text = Convert.ToString(meter.Frequency);
                 cboMeterBoxCode.Text = meter.MeterBox.MeterBoxCode;
-                txtMeterBoxSequence.Text = meter.MeterBoxSequence;
+                cboMeterSequence.Text = meter.MeterBoxSequence;
                 cboMeterTypeCode.Text = meter.MeterType.MeterTypeCode;
             }
         }
@@ -102,77 +102,106 @@ namespace MPS.Meter_Setup
             {
                 tooltip.SetToolTip(txtMeterNo, "Error");
                 tooltip.Show("Please fill up Meter No !", txtMeterNo);
+                txtMeterNo.Focus();
                 hasError = false;
             }
             else if (txtMeterModel.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtMeterModel, "Error");
                 tooltip.Show("Please fill up Meter Model!", txtMeterModel);
+                txtMeterModel.Focus();
                 hasError = false;
             }
             else if (dtpInstallDate.Value.ToString() == "")
             {
                 tooltip.SetToolTip(dtpInstallDate, "Error");
                 tooltip.Show("Please Select Install Date!", dtpInstallDate);
-                hasError = false;
-            }
-            else if (txtVoltage.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtVoltage, "Error");
-                tooltip.Show("Please fill up Voltage!", txtVoltage);
-                hasError = false;
-            }
-            else if (txtManufacture.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtManufacture, "Error");
-                tooltip.Show("Please fill up Manufacture By!", txtManufacture);
-                hasError = false;
-            }
-            else if (cboMeterBoxCode.SelectedIndex == 0)
-            {
-                tooltip.SetToolTip(cboMeterBoxCode, "Error");
-                tooltip.Show("Please choose Meter Box Code!", cboMeterBoxCode);
-                hasError = false;
-            }
-            else if (cboMeterTypeCode.SelectedIndex == 0)
-            {
-                tooltip.SetToolTip(cboMeterTypeCode, "Error");
-                tooltip.Show("Please choose Meter Type Code!", cboMeterTypeCode);
-                hasError = false;
-            }else if (txtAvailableYear.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtAvailableYear, "Error");
-                tooltip.Show("Please fill up Available Year!", txtAvailableYear);
-                hasError = false;
-            }
-            else if (txtWire.Text == string.Empty)
-            {
-                tooltip.SetToolTip(txtWire, "Error");
-                tooltip.Show("Please fill up Wire!", txtWire);
+                dtpInstallDate.Focus();
                 hasError = false;
             }
             else if (txtPhrase.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtPhrase, "Error");
                 tooltip.Show("Please fill up Phrase!", txtPhrase);
+                txtPhrase.Focus();
                 hasError = false;
             }
-            else if (txtiMax.Text == string.Empty)
+            else if (txtWire.Text == string.Empty)
             {
-                tooltip.SetToolTip(txtiMax, "Error");
-                tooltip.Show("Please fill up Max Current!", txtiMax);
+                tooltip.SetToolTip(txtWire, "Error");
+                tooltip.Show("Please fill up Wire!", txtWire);
+                txtWire.Focus();
                 hasError = false;
             }
             else if (txtBasicCurrent.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtBasicCurrent, "Error");
                 tooltip.Show("Please fill up Basic Current!", txtBasicCurrent);
+                txtBasicCurrent.Focus();
                 hasError = false;
             }
-            else if (txtMeterBoxSequence.Text == string.Empty)
+            else if (txtiMax.Text == string.Empty)
             {
-                tooltip.SetToolTip(txtMeterBoxSequence, "Error");
-                tooltip.Show("Please fill up Meter Box Sequence!", txtMeterBoxSequence);
+                tooltip.SetToolTip(txtiMax, "Error");
+                tooltip.Show("Please fill up Max Current!", txtiMax);
+                txtiMax.Focus();
+                hasError = false;
+            }
+            else if (txtVoltage.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtVoltage, "Error");
+                tooltip.Show("Please fill up Voltage!", txtVoltage);
+                txtVoltage.Focus();
+                hasError = false;
+            }
+            else if (txtManufacture.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtManufacture, "Error");
+                tooltip.Show("Please fill up Manufacture By!", txtManufacture);
+                txtManufacture.Focus();
+                hasError = false;
+            }
+            else if (txtAvailableYear.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtAvailableYear, "Error");
+                tooltip.Show("Please fill up Available Year!", txtAvailableYear);
+                txtAvailableYear.Focus();
+                hasError = false;
+            }
+            else if (cboMeterBoxCode.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboMeterBoxCode, "Error");
+                tooltip.Show("Please choose Meter Box Code!", cboMeterBoxCode);
+                cboMeterBoxCode.Focus();
+                hasError = false;
+            }
+            else if (cboMeterSequence.Text == string.Empty)
+            {
+                tooltip.SetToolTip(cboMeterSequence, "Error");
+                tooltip.Show("Please choose up Meter Box Sequence!", cboMeterSequence);
+                cboMeterSequence.Focus();
+                hasError = false;
+            }
+            else if (cboMeterTypeCode.SelectedIndex == 0)
+            {
+                tooltip.SetToolTip(cboMeterTypeCode, "Error");
+                tooltip.Show("Please choose Meter Type Code!", cboMeterTypeCode);
+                cboMeterTypeCode.Focus();
+                hasError = false;
+            }            
+            
+            else if (txtLosses.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtLosses, "Error");
+                tooltip.Show("Please fill up Losses!", txtLosses);
+                txtLosses.Focus();
+                hasError = false;
+            }
+            else if (txtMultiplier.Text == string.Empty)
+            {
+                tooltip.SetToolTip(txtMultiplier, "Error");
+                tooltip.Show("Please fill up Multiplier!", txtMultiplier);
+                txtMultiplier.Focus();
                 hasError = false;
             }
             return hasError;
@@ -182,13 +211,23 @@ namespace MPS.Meter_Setup
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-
             if (checkValidation())
             {
                 if (isEdit)
                 {
-                    int editMeterCount = 0;
-                    Meter updateMeter = (from m in mbmsEntities.Meters where m.MeterID == meterID select m).FirstOrDefault();
+                    int editMeterCount = 0; int editmeterBoxNoCount = 0;
+                    Meter updateMeter = (from m in mbmsEntities.Meters where m.MeterID == meterID select m).FirstOrDefault();                  
+
+                    if (cboMeterSequence.Text != updateMeter.MeterBoxSequence)
+                    {
+                        editmeterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.Active == true select m).ToList().Count;
+                    }
+                    if (editmeterBoxNoCount > 0)
+                    {
+                        tooltip.SetToolTip(cboMeterSequence, "Error");
+                        tooltip.Show("MeterBox Sequence No is already used!", cboMeterSequence);
+                        return;
+                    }
                     if (txtMeterNo.Text != updateMeter.MeterNo)
                     {
                         editMeterCount = (from m in mbmsEntities.Meters where m.MeterNo == txtMeterNo.Text && m.Active == true select m).ToList().Count;
@@ -230,7 +269,7 @@ namespace MPS.Meter_Setup
                     updateMeter.ManufactureBy = txtManufacture.Text;
                     updateMeter.Frequency = Convert.ToInt32(txtFrequency.Text);
                     updateMeter.MeterBoxID = cboMeterBoxCode.SelectedValue.ToString();
-                    updateMeter.MeterBoxSequence = txtMeterBoxSequence.Text;
+                    updateMeter.MeterBoxSequence = cboMeterSequence.Text;
                     updateMeter.MeterTypeID = cboMeterTypeCode.SelectedValue.ToString();
                     updateMeter.UpdatedUserID = UserID;
                     updateMeter.UpdatedDate = DateTime.Now;
@@ -245,7 +284,16 @@ namespace MPS.Meter_Setup
                 else
                 {
                     Meter meter = new Meter();
-                    int meterNoCount = 0;
+                    int meterNoCount = 0; int meterBoxNoCount = 0;
+                                    
+                        meterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.Active == true select m).ToList().Count;
+                   
+                    if (meterBoxNoCount > 0)
+                    {
+                        tooltip.SetToolTip(cboMeterSequence, "Error");
+                        tooltip.Show("MeterBox Sequence No is already used!", cboMeterSequence);
+                        return;
+                    }
                     meterNoCount = (from m in mbmsEntities.Meters where m.MeterNo == txtMeterNo.Text && m.Active == true select m).ToList().Count;
 
                     if (meterNoCount > 0)
@@ -258,8 +306,8 @@ namespace MPS.Meter_Setup
                     meter.MeterNo = txtMeterNo.Text;
                     meter.Model = txtMeterModel.Text;
                     meter.InstalledDate = dtpInstallDate.Value.Date;
-                    meter.Losses = Convert.ToInt32(txtLosses.Text == "" ? "0" : txtLosses.Text);
-                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text == "" ? "0" : txtMultiplier.Text);
+                    meter.Losses = Convert.ToInt32(txtLosses.Text);
+                    meter.Multiplier = Convert.ToInt32(txtMultiplier.Text);
                     meter.HP = Convert.ToInt32(txtHp.Text == "" ? "0" : txtHp.Text);
                     meter.Voltage = Convert.ToInt32(txtVoltage.Text);
                     meter.AMP = txtAMP.Text==""?"0":txtAMP.Text ;
@@ -284,7 +332,7 @@ namespace MPS.Meter_Setup
                     meter.ManufactureBy = txtManufacture.Text;
                     meter.Frequency = Convert.ToInt32(txtFrequency.Text == "" ? "0" :txtFrequency.Text);
                     meter.MeterBoxID = cboMeterBoxCode.SelectedValue.ToString();
-                    meter.MeterBoxSequence = txtMeterBoxSequence.Text;
+                    meter.MeterBoxSequence = cboMeterSequence.Text;
                     meter.MeterTypeID = cboMeterTypeCode.SelectedValue.ToString();
                     meter.Active = true;
                     meter.CreatedUserID = UserID;
@@ -305,7 +353,7 @@ namespace MPS.Meter_Setup
             txtKVA.Text = string.Empty;
             txtLosses.Text = string.Empty;
             txtManufacture.Text = string.Empty;
-            txtMeterBoxSequence.Text = string.Empty;
+            cboMeterSequence.Enabled = false;
             txtMeterModel.Text = string.Empty;
             txtMeterNo.Text = string.Empty;
             txtMultiplier.Text = string.Empty;
@@ -328,6 +376,52 @@ namespace MPS.Meter_Setup
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void cboMeterBoxCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mbmsEntities = new MBMSEntities();
+            if (cboMeterBoxCode.SelectedIndex > 0)
+            {
+                cboMeterSequence.Items.Clear();
+                string meterBoxID = Convert.ToString(cboMeterBoxCode.SelectedValue);
+                var meterBoxData = (from m in mbmsEntities.MeterBoxes where m.MeterBoxID == meterBoxID select m).FirstOrDefault();
+                if (meterBoxData.MeterBoxName == "Single Box" || meterBoxData.MeterBoxName == "Three Phase Box")
+                {
+                    cboMeterSequence.Enabled = true;
+                    cboMeterSequence.Items.Add(meterBoxData.Box + "1");
+                }else if (meterBoxData.MeterBoxName == "Single Phase 4 Unit Box")
+                {
+                    cboMeterSequence.Enabled = true;
+                    cboMeterSequence.Items.Add(meterBoxData.Box + "1");
+                    cboMeterSequence.Items.Add(meterBoxData.Box + "2");
+                    cboMeterSequence.Items.Add(meterBoxData.Box + "3");
+                    cboMeterSequence.Items.Add(meterBoxData.Box + "4");
+                }       
+            }
+            else
+            {
+                cboMeterSequence.Enabled = false;
+            }
+        }
+
+        private void MeterFrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtMeterNo);
+            tooltip.Hide(txtMeterModel);
+            tooltip.Hide(dtpInstallDate);
+            tooltip.Hide(txtPhrase);
+            tooltip.Hide(txtWire);
+            tooltip.Hide(txtBasicCurrent);
+            tooltip.Hide(txtiMax);
+            tooltip.Hide(txtVoltage);
+            tooltip.Hide(txtManufacture);
+            tooltip.Hide(txtAvailableYear);
+            tooltip.Hide(cboMeterBoxCode);
+            tooltip.Hide(cboMeterSequence);
+            tooltip.Hide(cboMeterTypeCode);
+            tooltip.Hide(txtLosses);
+            tooltip.Hide(txtMultiplier);
         }
     }
 }

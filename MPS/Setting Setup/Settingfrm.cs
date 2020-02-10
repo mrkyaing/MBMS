@@ -78,9 +78,14 @@ namespace MPS.Setting_Setup
         }
 
         private void lblstreetlightfeescustom_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+           
+            }
+
+        private void btnDefineCustom_Click(object sender, EventArgs e)
+        {
             StreetLightFeesUI slfui = new StreetLightFeesUI();
             slfui.UserID = this.UserID;
             slfui.Show();
-            }
         }
+    }
 }

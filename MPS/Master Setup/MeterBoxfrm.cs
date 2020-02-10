@@ -101,7 +101,7 @@ namespace MPS
             if (txtMeterBoxCode.Text.Trim() == string.Empty)
             {
                 tooltip.SetToolTip(txtMeterBoxCode, "Error");
-                tooltip.Show("Please fill up Meterbox Code!", txtMeterBoxCode);
+                tooltip.Show("Please fill up Meterbox Code!", txtMeterBoxCode);                
                 txtMeterBoxCode.Focus();
                 hasError = false;
             }
@@ -411,6 +411,14 @@ namespace MPS
             cboSearchPoleNo.SelectedIndex = 0;
             cboSearchQuarterName.SelectedIndex = 0;
             FormRefresh();
+        }
+
+        private void MeterBoxfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtMeterBoxCode);
+            tooltip.Hide(cboPoleNo);
+            tooltip.Hide(cboMeterBoxName);
+            tooltip.Hide(txtMeterBox);
         }
     }
 }

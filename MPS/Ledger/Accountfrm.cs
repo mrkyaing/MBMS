@@ -56,18 +56,21 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtLedgerCode, "Error");
                 tooltip.Show("Please fill up Ledger Code!", txtLedgerCode);
+                txtLedgerCode.Focus();
                 hasError = false;
             }
             else if (txtBookCode.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtBookCode, "Error");
                 tooltip.Show("Please fill up Book Code!", txtBookCode);
+                txtBookCode.Focus();
                 hasError = false;
             }
             else if (cboTransformerName.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboTransformerName, "Error");
                 tooltip.Show("Please choose Transformer Name!", cboTransformerName);
+                cboTransformerName.Focus();
                 hasError = false;
             }
             return hasError;
@@ -232,6 +235,13 @@ namespace MPS
             {
                 btnSave_Click(this, new EventArgs());
             }
+        }
+
+        private void Accountfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtBookCode);
+            tooltip.Hide(txtLedgerCode);
+            tooltip.Hide(cboTransformerName);
         }
     }
 }

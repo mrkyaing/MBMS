@@ -176,7 +176,7 @@
             this.txtSMDSerial.Location = new System.Drawing.Point(244, 613);
             this.txtSMDSerial.Name = "txtSMDSerial";
             this.txtSMDSerial.Size = new System.Drawing.Size(241, 22);
-            this.txtSMDSerial.TabIndex = 37;
+            this.txtSMDSerial.TabIndex = 16;
             // 
             // panel16
             // 
@@ -754,7 +754,7 @@
             this.btnSave.Location = new System.Drawing.Point(272, 686);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 26);
-            this.btnSave.TabIndex = 16;
+            this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -765,7 +765,7 @@
             this.btnCancel.Location = new System.Drawing.Point(395, 686);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 26);
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 18;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -795,6 +795,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Customer";
             this.Load += new System.EventHandler(this.RegisterCustomer_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Customerfrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel16.ResumeLayout(false);

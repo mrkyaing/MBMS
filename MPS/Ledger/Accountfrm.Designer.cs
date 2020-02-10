@@ -308,6 +308,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ledger Registration";
             this.Load += new System.EventHandler(this.RegisterAccount_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Accountfrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

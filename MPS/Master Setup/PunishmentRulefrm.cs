@@ -54,6 +54,7 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtPunishmentCode, "Error");
                 tooltip.Show("Please fill up Punishment Rule Code!", txtPunishmentCode);
+                txtPunishmentCode.Focus();
                 hasError = false;
             }
             
@@ -61,12 +62,14 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtExceedMonth, "Error");
                 tooltip.Show("Please fill up To ExceedMonth!", txtExceedMonth);
+                txtExceedMonth.Focus();
                 hasError = false;
             }
             else if (txtAmount.Text == string.Empty)
             {
                 tooltip.SetToolTip(txtAmount, "Error");
                 tooltip.Show("Please fill up Amount!", txtAmount);
+                txtAmount.Focus();
                 hasError = false;
             }
             return hasError;
@@ -233,6 +236,13 @@ namespace MPS
             {
                 btnSave_Click(this, new EventArgs());
             }
+        }
+
+        private void PunishmentRulefrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtPunishmentCode);
+            tooltip.Hide(txtExceedMonth);
+            tooltip.Hide(txtAmount);
         }
     }
 }

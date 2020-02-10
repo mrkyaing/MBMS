@@ -254,6 +254,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Type Registration";
             this.Load += new System.EventHandler(this.MeterTypefrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MeterTypefrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

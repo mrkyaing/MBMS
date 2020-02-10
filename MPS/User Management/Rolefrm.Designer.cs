@@ -59,7 +59,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.Size = new System.Drawing.Size(72, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Role Name";
             // 
@@ -68,7 +68,7 @@
             this.txtRoleName.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoleName.Location = new System.Drawing.Point(161, 3);
             this.txtRoleName.Name = "txtRoleName";
-            this.txtRoleName.Size = new System.Drawing.Size(179, 25);
+            this.txtRoleName.Size = new System.Drawing.Size(179, 28);
             this.txtRoleName.TabIndex = 1;
             // 
             // label2
@@ -77,7 +77,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(71, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Role Level";
             // 
@@ -87,7 +87,7 @@
             this.cboRoleLevel.FormattingEnabled = true;
             this.cboRoleLevel.Location = new System.Drawing.Point(161, 53);
             this.cboRoleLevel.Name = "cboRoleLevel";
-            this.cboRoleLevel.Size = new System.Drawing.Size(179, 25);
+            this.cboRoleLevel.Size = new System.Drawing.Size(179, 27);
             this.cboRoleLevel.TabIndex = 2;
             // 
             // btnSave
@@ -244,6 +244,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Role Registration";
             this.Load += new System.EventHandler(this.Rolefrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Rolefrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

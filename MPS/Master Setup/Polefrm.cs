@@ -84,6 +84,7 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtPoleNo, "Error");
                 tooltip.Show("Please fill up Pole No!", txtPoleNo);
+                txtPoleNo.Focus();
                 hasError = false;
             }
             
@@ -91,6 +92,7 @@ namespace MPS
             {
                 tooltip.SetToolTip(cboTransformerName, "Error");
                 tooltip.Show("Please Choose Transformer Name!", cboTransformerName);
+                cboTransformerName.Focus();
                 hasError = false;
             }
             return hasError;
@@ -350,6 +352,12 @@ namespace MPS
             {
                 txtQuarterName.Text = string.Empty;
             }
+        }
+
+        private void Polefrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtPoleNo);
+            tooltip.Hide(cboTransformerName);           
         }
     }
 }

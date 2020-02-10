@@ -39,18 +39,22 @@ namespace MPS
             {
                 tooltip.SetToolTip(txtTransformerName, "Error");
                 tooltip.Show("Please fill up Transformer name!", txtTransformerName);
+                txtTransformerName.Focus();
                 hasError = false;
             }
             else if (txtTransformerModel.Text.Trim() == string.Empty)
             {
                 tooltip.SetToolTip(txtTransformerModel, "Error");
                 tooltip.Show("Please fill up Transformer model!", txtTransformerModel);
+                txtTransformerModel.Focus();
+                
                 hasError = false;
             }
             else if (cboQuarterName.SelectedIndex == 0)
             {
                 tooltip.SetToolTip(cboQuarterName, "Error");
                 tooltip.Show("Please choose Quarter name!", cboQuarterName);
+                cboQuarterName.Focus();
                 hasError = false;
             }
             return hasError;
@@ -261,6 +265,14 @@ namespace MPS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void Transformerfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtTransformerName);
+            tooltip.Hide(txtTransformerName);
+            tooltip.Hide(cboQuarterName);
+            
         }
     }
 }

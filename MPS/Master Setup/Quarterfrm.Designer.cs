@@ -62,14 +62,14 @@
             this.Column6 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSearchQuarterCode = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSearchQuarterName = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.txtSearchQuarterCode = new System.Windows.Forms.TextBox();
             this.cboSearchTownshipName = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -418,15 +418,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Quarter";
             // 
-            // txtSearchQuarterCode
+            // btnRefresh
             // 
-            this.txtSearchQuarterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchQuarterCode.Location = new System.Drawing.Point(127, 37);
-            this.txtSearchQuarterCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSearchQuarterCode.Name = "txtSearchQuarterCode";
-            this.txtSearchQuarterCode.Size = new System.Drawing.Size(148, 22);
-            this.txtSearchQuarterCode.TabIndex = 1;
-            this.txtSearchQuarterCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
+            this.btnRefresh.Location = new System.Drawing.Point(518, 88);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 26;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(426, 88);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 16);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Township Name";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(332, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(92, 16);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Quarter Name";
             // 
             // label10
             // 
@@ -448,15 +478,15 @@
             this.txtSearchQuarterName.TabIndex = 1;
             this.txtSearchQuarterName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
             // 
-            // label12
+            // txtSearchQuarterCode
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(332, 38);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(92, 16);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Quarter Name";
+            this.txtSearchQuarterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchQuarterCode.Location = new System.Drawing.Point(127, 37);
+            this.txtSearchQuarterCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearchQuarterCode.Name = "txtSearchQuarterCode";
+            this.txtSearchQuarterCode.Size = new System.Drawing.Size(148, 22);
+            this.txtSearchQuarterCode.TabIndex = 1;
+            this.txtSearchQuarterCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
             // 
             // cboSearchTownshipName
             // 
@@ -468,36 +498,6 @@
             this.cboSearchTownshipName.Size = new System.Drawing.Size(149, 24);
             this.cboSearchTownshipName.TabIndex = 4;
             this.cboSearchTownshipName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTownshipName_KeyDown);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 91);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 16);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "Township Name";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(426, 88);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 26;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(518, 88);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 26;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Quarterfrm
             // 
@@ -515,6 +515,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quarter Registration";
             this.Load += new System.EventHandler(this.Quarterfrm_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Quarterfrm_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel5.ResumeLayout(false);
