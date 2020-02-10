@@ -75,6 +75,11 @@ namespace MPS.Importing {
                         MessageBox.Show("Please define MeterNo data for>" + customerEntity.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                         }
+                    bool IsMeterIDExitsin = iCustomerServices.GetCustomerByMeterID(m.MeterBoxID);
+                    if (IsMeterIDExitsin) {
+                        MessageBox.Show("Customer  Meter No already exists in the system for>" + row["CustomerCode"].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                        }
                     customerEntity.MeterID = m.MeterBoxID;
                     customerEntity.Meter = m;
 

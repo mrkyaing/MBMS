@@ -25,6 +25,10 @@ namespace MPS.BusinessLogic.CustomerController
             return mBMSEntities.BillCode7Layer.Where(x => x.Active == true && x.BillCode7LayerNo == BillCodeNo).SingleOrDefault();
             }
 
+        public bool GetCustomerByMeterID(string MeterID) {
+            return mBMSEntities.Customers.Any(x => x.Active == true && x.MeterID == MeterID);
+            }
+
         public bool GetCustomerBySMDNo(string SMDNo) {
             return mBMSEntities.Customers.Any(x => x.Active == true && x.SMDNo == SMDNo);
             }

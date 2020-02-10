@@ -12,11 +12,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MPS
-{
-    public partial class Customerfrm : Form
-    {
+namespace MPS{
+    public partial class Customerfrm : Form {
         IMeter meterservice;
+        ICustomer iCustomerServices;
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbmsEntities = new MBMSEntities();
         public String UserID { get; set; }
@@ -26,12 +25,11 @@ namespace MPS
         string townsipCode;
         
         CustomerController customerController = new CustomerController();
-        public Customerfrm()
-        {
+        public Customerfrm() {
             InitializeComponent();
             meterservice = new MeterController();
+            iCustomerServices = new CustomerController();
         }
-
         private void RegisterCustomer_Load(object sender, EventArgs e)
         {
             bindQuarter();
@@ -66,8 +64,7 @@ namespace MPS
                     }              
                 }
         }
-        public void bindQuarter()
-        {
+        public void bindQuarter(){
             List<Quarter> quarterList = new List<Quarter>();
             Quarter quarter = new Quarter();
             quarter.QuarterID = Convert.ToString(0);
@@ -77,8 +74,7 @@ namespace MPS
             cboQuarterName.DataSource = quarterList;
             cboQuarterName.DisplayMember = "QuarterNameInEng";
             cboQuarterName.ValueMember = "QuarterID";
-        }
-
+        }  
         public void bindBillCode()
         {
             List<BillCode7Layer> billode7LayerList = new List<BillCode7Layer>();
@@ -103,8 +99,7 @@ namespace MPS
             cboBookCode.DisplayMember = "BookCode";
             cboBookCode.ValueMember = "LedgerID";
         }
-        public void bindTownship()
-        {
+        public void bindTownship() {
             List<Township> townshipList = new List<Township>();
             Township township = new Township();
             township.TownshipID = Convert.ToString(0);
@@ -116,8 +111,7 @@ namespace MPS
             cboTownshipName.ValueMember = "TownshipID";
         }
 
-        public void bindMeter()
-        {
+        public void bindMeter(){
             List<Meter> meterList = new List<Meter>();
             Meter meter = new Meter();
             meter.MeterID = Convert.ToString(0);
@@ -240,14 +234,16 @@ namespace MPS
           
             return hasError;
         }
+        private void btnSave_Click(object sender, EventArgs e){        
+            if (checkValidation()) {
+                string meterId = cboMeterNo.SelectedValue.ToString();
+                bool IsMeterIDExitsin = iCustomerServices.GetCustomerByMeterID(meterId);
+                if (IsMeterIDExitsin) {
+                    MessageBox.Show("Customer's Meter No already exists in the system for>" +txtCustomerCode.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                    }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            
-            if (checkValidation())
-            {
-                if (isEdit)
-                {
+                if (isEdit) {
                     int editBookCode = 0; int editPageNo = 0; int editLineNo = 0; int editLineCount = 0;
                     int editMeterCount = 0;
                     editBookCode = Convert.ToInt32(cboBookCode.Text);
