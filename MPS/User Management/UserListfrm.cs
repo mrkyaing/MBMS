@@ -46,7 +46,19 @@ namespace MPS.User_Management
         public void FormRefresh()
         {
             dgvUserList.AutoGenerateColumns = false;
-            dgvUserList.DataSource = (from u in mbsEntities.Users where u.Active == true orderby u.UserName descending select u).ToList();
+            User u = mbsEntities.Users.Where(x => x.UserID == this.UserID).SingleOrDefault();
+            Role role = mbsEntities.Roles.Where(x => x.RoleID == u.RoleID).SingleOrDefault();
+            if (role.RoleLevel.Equals("Admin")) {
+                userList = mbsEntities.Users.Where(x => x.Active == true).OrderByDescending(y=>y.CreatedDate).ToList();
+            }
+            else if (role.RoleLevel.Equals("Manager")) {
+                userList = mbsEntities.Users.Where(x => x.Active == true && !x.Role.RoleLevel.Equals("Admin")).OrderByDescending(y => y.CreatedDate).ToList();
+            }
+            else if (role.RoleLevel.Equals("Operator")) {
+                userList = mbsEntities.Users.Where(x => x.Active == true && x.Role.RoleLevel.Equals("Operator")).OrderByDescending(y => y.CreatedDate).ToList();
+            }
+          
+            dgvUserList.DataSource = userList; 
         }
         public void loadData()
         {

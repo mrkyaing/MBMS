@@ -19,59 +19,51 @@ using System.Windows.Forms;
 
 namespace MPS
 {
-    public partial class MainMDI : Form
-    {
+    public partial class MainMDI : Form {
         public string UserID { get; set; }
         public Role role { get; set; }
         public string UserName { get; set; }
         private int childFormNumber = 0;
 
-        public MainMDI()
-        {
+        public MainMDI() {
             InitializeComponent();
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
+        private void ShowNewForm(object sender, EventArgs e) {
             Form childForm = new Form();
             childForm.MdiParent = this;
             childForm.Text = "Window " + childFormNumber++;
             childForm.Show();
         }
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e) {
             this.Close();
         }
 
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
-            {
+        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e) {
+            foreach (Form childForm in MdiChildren) {
                 childForm.Close();
             }
         }
 
-        private void hHUToPCToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void hHUToPCToolStripMenuItem_Click(object sender, EventArgs e) {
             PolePC2HHUDB poleui2hhudb = new PolePC2HHUDB();
             poleui2hhudb.UserID = UserID;
             poleui2hhudb.Show();
-            }
+        }
 
-        private void roleManagementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void roleManagementToolStripMenuItem_Click(object sender, EventArgs e) {
             Rolefrm roleForm = new Rolefrm();
             roleForm.UserID = UserID;
             roleForm.Show();
         }
 
-        private void MainMDI_Load(object sender, EventArgs e)
-        {
-             tpUserName.Text = UserName;
+        private void MainMDI_Load(object sender, EventArgs e) {
+            tpUserName.Text = UserName;
             MenuPermission(role.RoleLevel);
         }
         public void MenuPermission(string roleName) {
-            if (!roleName.Equals("Admin")) {
+            //checking the role,if operator role then hide the role menu,add user menu,bill code 7 layer menu,add customer menu,add meter menu,punishment menu
+            if (roleName.Equals("Operator")) {
                 // MenuVisiableEnable(false);
                 //Remove sub Menu  items
                 userManagementToolStripMenuItem.DropDownItems.RemoveAt(3);//mgt role 

@@ -20,7 +20,7 @@ namespace MPS
         public Boolean isEdit { get; set; }
         public String edituserID { get; set; }
         public String UserID { get; set; }
-     
+        public Role LoginUserRole { get; set; }
         UserController userController = new UserController();
         public Userfrm()
         {
@@ -38,7 +38,7 @@ namespace MPS
                 txtSecurityQuestion.Text = user.SecurityQuestion;
                 cboUserRole.Text = user.Role.RoleName;
                 txtFullName.Text = user.FullName;
-                            }
+          }
         }
         public void bindUserRole()
         {
@@ -47,7 +47,7 @@ namespace MPS
             role.RoleID =Convert.ToString( 0);
             role.RoleName = "Select";
             roleList.Add(role);
-            roleList.AddRange(mbmsEntityies.Roles.Where(x => x.Active == true).ToList());
+            roleList.AddRange(mbmsEntityies.Roles.Where(x => x.Active == true).ToList());    
             cboUserRole.DataSource = roleList;
             cboUserRole.DisplayMember = "RoleName";
             cboUserRole.ValueMember = "RoleID";
