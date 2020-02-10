@@ -17,8 +17,7 @@ using MPS.User_Management;
 using System;
 using System.Windows.Forms;
 
-namespace MPS
-{
+namespace MPS{
     public partial class MainMDI : Form {
         public string UserID { get; set; }
         public Role role { get; set; }
@@ -65,16 +64,13 @@ namespace MPS
             //checking the role,if operator role then hide the role menu,add user menu,bill code 7 layer menu,add customer menu,add meter menu,punishment menu
             if (roleName.Equals("Operator")) {
                 // MenuVisiableEnable(false);
+                
                 //Remove sub Menu  items
                 userManagementToolStripMenuItem.DropDownItems.RemoveAt(3);//mgt role 
                 userManagementToolStripMenuItem.DropDownItems.RemoveAt(0);//add user
-
                 billingToolStripMenuItem.DropDownItems.RemoveAt(0);//add bill code 7 layer 
-
                 customerToolStripMenuItem.DropDownItems.RemoveAt(0);//add customer 
-
                 meterToolStripMenuItem.DropDownItems.RemoveAt(0);//add meter 
-
                 masterSetupToolStripMenuItem.DropDownItems.RemoveAt(7);//punishment rule setup
                 }
             }

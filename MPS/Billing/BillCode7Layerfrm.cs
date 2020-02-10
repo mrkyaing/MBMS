@@ -100,7 +100,6 @@ namespace MPS.Billing {
                     this.Close();
                     }
                 else {
-
                     if (gv7layer.Rows.Count == 0) {
                         MessageBox.Show("please define 7 layers information firstly!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
@@ -247,11 +246,7 @@ namespace MPS.Billing {
                     txtAmount.Text = Convert.ToString(row.Cells[3].Value);                       
                     }              
                 }//end of Edit function
-            }//end of cell click
-        
-
-      
-
+            }//end of cell click       
         private void txtUpperLimit_KeyDown(object sender, KeyEventArgs e){
             if (e.KeyCode == Keys.Enter) {
                 if(Convert.ToDecimal(txtLowerLimit.Text)> Convert.ToDecimal(txtUpperLimit.Text)) {
@@ -296,5 +291,14 @@ namespace MPS.Billing {
                 e.Handled = true;
                 }
             }
+
+        private void btnCancel_Click(object sender, EventArgs e) {
+            this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            this.txtAmount.Text = txtBillCodeNo.Text = txtLowerLimit.Text = txtUpperLimit.Text = txtRateUnit.Text = string.Empty;
+            cboBillCodeType.SelectedIndex = 0;
+        }
+    }
 }

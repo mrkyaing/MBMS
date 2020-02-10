@@ -9,30 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MBMS.DAL;
 using MPS.BusinessLogic.MasterSetUpController;
-
-namespace MPS.User_Management
-{
-    
-    public partial class UserListfrm : Form
-    {
+namespace MPS.User_Management{   
+    public partial class UserListfrm : Form{
         public string UserID { get; set; }
         string deleteUserID;
         
         MBMSEntities mbsEntities = new MBMSEntities();
      private   List<User> userList = new List<User>();
         UserController userController = new UserController();
-        public UserListfrm()
-        {
+        public UserListfrm(){
             InitializeComponent();
         }
         
-        private void UserListfrm_Load(object sender, EventArgs e)
-        {
+        private void UserListfrm_Load(object sender, EventArgs e) {
             FormRefresh();
             bindUserRole();
         }
-        public void bindUserRole()
-        {
+        public void bindUserRole() {
             List<Role> roleList = new List<Role>();
             Role role = new Role();
             role.RoleID = Convert.ToString(0);
@@ -43,8 +36,7 @@ namespace MPS.User_Management
             cboRoleName.DisplayMember = "RoleName";
             cboRoleName.ValueMember = "RoleID";
         }
-        public void FormRefresh()
-        {
+        public void FormRefresh(){
             dgvUserList.AutoGenerateColumns = false;
             User u = mbsEntities.Users.Where(x => x.UserID == this.UserID).SingleOrDefault();
             Role role = mbsEntities.Roles.Where(x => x.RoleID == u.RoleID).SingleOrDefault();
@@ -56,58 +48,43 @@ namespace MPS.User_Management
             }
             else if (role.RoleLevel.Equals("Operator")) {
                 userList = mbsEntities.Users.Where(x => x.Active == true && x.Role.RoleLevel.Equals("Operator")).OrderByDescending(y => y.CreatedDate).ToList();
-            }
-          
+            }       
             dgvUserList.DataSource = userList; 
         }
-        public void loadData()
-        {
+        public void loadData(){
             userList = (from u in mbsEntities.Users
                         where u.Active == true &&
                         (u.UserName ==txtUserName.Text  || u.Role.RoleName == cboRoleName.Text)
                         select u).ToList();
             foundDataBind();
-
         }
-        public void foundDataBind()
-        {
-
+        public void foundDataBind(){
             dgvUserList.DataSource = "";
-
-            if (userList.Count < 1)
-            {
+            if (userList.Count < 1) {
                 MessageBox.Show("No data Found", "Cannot find");
                 dgvUserList.DataSource = "";
                 return;
             }
-            else
-            {
+            else {
                 dgvUserList.DataSource = userList;
             }
         }
 
-        private void dgvUserList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvUserList.Rows)
-            {
+        private void dgvUserList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e) {
+            foreach (DataGridViewRow row in dgvUserList.Rows) {
                 User user = (User)row.DataBoundItem;
                 row.Cells[0].Value = user.UserID;
                 row.Cells[1].Value = user.UserName;
                 row.Cells[2].Value = user.Role.RoleName;
-
             }
         }
 
-        private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                if (e.ColumnIndex == 5)
-                {
+        private void dgvUserList_CellClick(object sender, DataGridViewCellEventArgs e){
+            if (e.RowIndex >= 0) {
+                if (e.ColumnIndex == 5){
                     //DeleteForUser
                     DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (result.Equals(DialogResult.OK))
-                    {
+                    if (result.Equals(DialogResult.OK)) {
                         DataGridViewRow row = dgvUserList.Rows[e.RowIndex];
                         deleteUserID = Convert.ToString(row.Cells[0].Value);
                           dgvUserList.DataSource = "";
@@ -118,13 +95,11 @@ namespace MPS.User_Management
                                userController.DeleteUserID(user);
                             dgvUserList.DataSource = (from u in mbsEntities.Users where u.Active == true orderby u.UserID descending select u).ToList();
                             MessageBox.Show(this, "Successfully Deleted!", "Delete Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            FormRefresh();
-                        
+                            FormRefresh();                     
                     }
 
                 }
-                else if (e.ColumnIndex == 4)
-                {
+                else if (e.ColumnIndex == 4) {
                     //EditUser
                     Userfrm userForm = new Userfrm();
                     userForm.isEdit = true;
@@ -133,18 +108,15 @@ namespace MPS.User_Management
                     userForm.UserID = UserID;
                     userForm.ShowDialog();
                     this.Close();
-
                 }
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
+        private void btnSearch_Click(object sender, EventArgs e){
             loadData();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
+        private void btnRefresh_Click(object sender, EventArgs e) {
             txtUserName.Text = string.Empty;
             cboRoleName.SelectedIndex = 0;
             FormRefresh();
