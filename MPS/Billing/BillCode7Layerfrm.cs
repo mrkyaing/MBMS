@@ -54,7 +54,10 @@ namespace MPS.Billing {
                 txtBillCodeNo.Focus();
                 hasError = false;
                 }
-
+            if(!string.IsNullOrEmpty(txtLowerLimit.Text) || !string.IsNullOrEmpty(txtUpperLimit.Text) || !string.IsNullOrEmpty(txtRateUnit.Text) || !string.IsNullOrEmpty( txtAmount.Text)) {
+                MessageBox.Show("can't save. plz add the layers data to the table list", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                hasError=false;
+            }
             return hasError;
             }
         private void btnSave_Click(object sender, EventArgs e) {
@@ -101,7 +104,7 @@ namespace MPS.Billing {
                     }
                 else {
                     if (gv7layer.Rows.Count == 0) {
-                        MessageBox.Show("please define 7 layers information firstly!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("please define  layers information firstly!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                         }
                     int billCodeNoCount = 0;
@@ -136,7 +139,10 @@ namespace MPS.Billing {
                     mbsEntities.SaveChanges();
                     MessageBox.Show("Success", "Save Success");
                     Clear();
-                    }
+                    BillCode7LayerList billcode7LayerListForm = new BillCode7LayerList();
+                    billcode7LayerListForm.Show();
+                    this.Close();
+                }
                 }
             }
 

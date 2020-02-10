@@ -105,21 +105,21 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 32);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Location = new System.Drawing.Point(164, 589);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 32);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -131,7 +131,7 @@
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(233, 25);
-            this.txtAmount.TabIndex = 5;
+            this.txtAmount.TabIndex = 6;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // txtUpperLimit
@@ -384,7 +384,7 @@
             this.gv7layer.Name = "gv7layer";
             this.gv7layer.ReadOnly = true;
             this.gv7layer.Size = new System.Drawing.Size(540, 211);
-            this.gv7layer.TabIndex = 25;
+            this.gv7layer.TabIndex = 9;
             this.gv7layer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv7layer_CellClick);
             // 
             // LowerLimit
@@ -459,7 +459,7 @@
             this.gb7layer.Size = new System.Drawing.Size(546, 226);
             this.gb7layer.TabIndex = 27;
             this.gb7layer.TabStop = false;
-            this.gb7layer.Text = "7 Layers Information";
+            this.gb7layer.Text = "Layers Information";
             // 
             // btnAdd
             // 
@@ -480,7 +480,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 32);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Clear";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
