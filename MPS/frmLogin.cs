@@ -22,7 +22,7 @@ namespace MPS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Boolean hasError = false;
+            bool hasError = false;
             tooltip.RemoveAll();
             tooltip.IsBalloon = true;
             tooltip.ToolTipIcon = ToolTipIcon.Error;

@@ -20,6 +20,18 @@ namespace MPS.BusinessLogic.MeterController
             mBMSEntities.SaveChanges();
         }
 
+        public MeterBox getMeterBoxByMeterBoxNo(string meterBoxNo) {
+            return mBMSEntities.MeterBoxes.Where(x => x.Active == true && x.MeterBoxCode == meterBoxNo).SingleOrDefault();
+        }
+
+        public bool getMeterByMeterNo(string meterNo) {
+            return mBMSEntities.Meters.Any(x => x.Active == true && x.MeterNo == meterNo);
+        }
+
+        public MeterType getMeterTypeByMeterTypeCode(string metertypecode) {
+            return mBMSEntities.MeterTypes.Where(x => x.Active == true && x.MeterTypeCode == metertypecode).SingleOrDefault();
+        }
+
         public void RemoveMeter(MeterHistory meterhistoryEntity) {
             mBMSEntities.MeterHistories.Add(meterhistoryEntity);
             mBMSEntities.SaveChanges();
@@ -29,6 +41,12 @@ namespace MPS.BusinessLogic.MeterController
         {
             mBMSEntities.Meters.Add(m);
             mBMSEntities.SaveChanges();
+        }
+
+        public void SaveRange(List<Meter> meterList) {
+            foreach(Meter m in meterList) {
+                this.Save(m);
+            }
         }
 
         public void UpdateMeter(Meter m)

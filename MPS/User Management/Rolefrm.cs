@@ -18,7 +18,7 @@ namespace MPS
         public string UserID { get; set; }
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbsEntities = new MBMSEntities();
-        Role role = new Role();
+    
         RoleController roleController = new RoleController();
         public Boolean isEdit { get; set; }
         public Rolefrm()
@@ -95,6 +95,7 @@ namespace MPS
                         tooltip.Show("Role Name is already exist!", txtRoleName);
                         return;
                     }
+                    Role role = new Role();
                     role.RoleID = Guid.NewGuid().ToString();
                     role.RoleName = txtRoleName.Text;
                     role.RoleLevel = cboRoleLevel.Text;
@@ -153,7 +154,6 @@ namespace MPS
                 row.Cells[0].Value = role.RoleID;
                 row.Cells[1].Value = role.RoleName;
                 row.Cells[2].Value = role.RoleLevel;
-
             }
         }
 
@@ -209,13 +209,10 @@ namespace MPS
                     isEdit = true;
 
                 }
-            }
-                
-
+            }             
             }
 
-        private void Rolefrm_MouseMove(object sender, MouseEventArgs e)
-        {
+        private void Rolefrm_MouseMove(object sender, MouseEventArgs e) {
             tooltip.Hide(txtRoleName);
             tooltip.Hide(cboRoleLevel);
         }

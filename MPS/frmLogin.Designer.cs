@@ -141,9 +141,9 @@
             this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(3, 696);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(197, 16);
+            this.label4.Size = new System.Drawing.Size(213, 16);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Power By : Source Code Co.,Ltd";
+            this.label4.Text = "Powered By : Source Code Co.,Ltd";
             // 
             // frmLogin
             // 

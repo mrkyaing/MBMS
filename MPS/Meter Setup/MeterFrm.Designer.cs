@@ -172,7 +172,7 @@
             this.label24.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(4, 6);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(126, 19);
+            this.label24.Size = new System.Drawing.Size(118, 17);
             this.label24.TabIndex = 0;
             this.label24.Text = "Meter Box Sequence";
             // 
@@ -201,7 +201,7 @@
             this.label17.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(3, 3);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 19);
+            this.label17.Size = new System.Drawing.Size(102, 17);
             this.label17.TabIndex = 0;
             this.label17.Text = "Meter Type Code";
             // 
@@ -219,7 +219,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(3, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 19);
+            this.label13.Size = new System.Drawing.Size(65, 17);
             this.label13.TabIndex = 0;
             this.label13.Text = "Frequency";
             // 
@@ -237,7 +237,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 19);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 0;
             this.label9.Text = "Standard";
             // 
@@ -255,7 +255,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(4, 5);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 19);
+            this.label8.Size = new System.Drawing.Size(37, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "AMP";
             // 
@@ -265,7 +265,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(4, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 19);
+            this.label6.Size = new System.Drawing.Size(24, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "HP";
             // 
@@ -294,7 +294,7 @@
             this.label16.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(4, 6);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(103, 19);
+            this.label16.Size = new System.Drawing.Size(94, 17);
             this.label16.TabIndex = 0;
             this.label16.Text = "Meter Box Code";
             // 
@@ -323,7 +323,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 19);
+            this.label10.Size = new System.Drawing.Size(113, 17);
             this.label10.TabIndex = 0;
             this.label10.Text = "Basic / Max Current";
             // 
@@ -363,7 +363,7 @@
             this.label14.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(4, 5);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 19);
+            this.label14.Size = new System.Drawing.Size(42, 17);
             this.label14.TabIndex = 0;
             this.label14.Text = "Status";
             // 
@@ -381,7 +381,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 5);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(39, 19);
+            this.label11.Size = new System.Drawing.Size(35, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "KVA";
             // 
@@ -391,7 +391,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 19);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Multuplier";
             // 
@@ -401,7 +401,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 19);
+            this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Losses";
             // 
@@ -411,7 +411,7 @@
             this.cboMeterBoxCode.FormattingEnabled = true;
             this.cboMeterBoxCode.Location = new System.Drawing.Point(308, 436);
             this.cboMeterBoxCode.Name = "cboMeterBoxCode";
-            this.cboMeterBoxCode.Size = new System.Drawing.Size(200, 27);
+            this.cboMeterBoxCode.Size = new System.Drawing.Size(200, 25);
             this.cboMeterBoxCode.TabIndex = 13;
             this.cboMeterBoxCode.SelectedIndexChanged += new System.EventHandler(this.cboMeterBoxCode_SelectedIndexChanged);
             // 
@@ -440,7 +440,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(4, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 19);
+            this.label12.Size = new System.Drawing.Size(98, 17);
             this.label12.TabIndex = 0;
             this.label12.Text = "Manufacture By ";
             // 
@@ -469,7 +469,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 19);
+            this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "Voltage";
             // 
@@ -479,7 +479,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 19);
+            this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Install Date";
             // 
@@ -499,7 +499,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 19);
+            this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Meter Model";
             // 
@@ -509,7 +509,7 @@
             this.rdoDisable.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoDisable.Location = new System.Drawing.Point(179, 3);
             this.rdoDisable.Name = "rdoDisable";
-            this.rdoDisable.Size = new System.Drawing.Size(70, 23);
+            this.rdoDisable.Size = new System.Drawing.Size(66, 21);
             this.rdoDisable.TabIndex = 11;
             this.rdoDisable.Text = "Disable";
             this.rdoDisable.UseVisualStyleBackColor = true;
@@ -521,7 +521,7 @@
             this.rdoEnable.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoEnable.Location = new System.Drawing.Point(13, 6);
             this.rdoEnable.Name = "rdoEnable";
-            this.rdoEnable.Size = new System.Drawing.Size(66, 23);
+            this.rdoEnable.Size = new System.Drawing.Size(62, 21);
             this.rdoEnable.TabIndex = 10;
             this.rdoEnable.TabStop = true;
             this.rdoEnable.Text = "Enable";
@@ -543,7 +543,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Meter Serial No";
             // 
@@ -678,7 +678,7 @@
             this.txtMeterNo.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMeterNo.Location = new System.Drawing.Point(308, 3);
             this.txtMeterNo.Name = "txtMeterNo";
-            this.txtMeterNo.Size = new System.Drawing.Size(200, 28);
+            this.txtMeterNo.Size = new System.Drawing.Size(200, 25);
             this.txtMeterNo.TabIndex = 1;
             // 
             // txtMeterModel
@@ -686,7 +686,7 @@
             this.txtMeterModel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMeterModel.Location = new System.Drawing.Point(308, 47);
             this.txtMeterModel.Name = "txtMeterModel";
-            this.txtMeterModel.Size = new System.Drawing.Size(200, 28);
+            this.txtMeterModel.Size = new System.Drawing.Size(200, 25);
             this.txtMeterModel.TabIndex = 2;
             // 
             // dtpInstallDate
@@ -694,7 +694,7 @@
             this.dtpInstallDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpInstallDate.Location = new System.Drawing.Point(308, 96);
             this.dtpInstallDate.Name = "dtpInstallDate";
-            this.dtpInstallDate.Size = new System.Drawing.Size(200, 28);
+            this.dtpInstallDate.Size = new System.Drawing.Size(200, 25);
             this.dtpInstallDate.TabIndex = 3;
             // 
             // panel2
@@ -731,7 +731,7 @@
             this.label29.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(3, 5);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(86, 19);
+            this.label29.Size = new System.Drawing.Size(80, 17);
             this.label29.TabIndex = 0;
             this.label29.Text = "Phrase / Wire";
             // 
@@ -750,7 +750,7 @@
             this.txtBasicCurrent.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBasicCurrent.Location = new System.Drawing.Point(3, 6);
             this.txtBasicCurrent.Name = "txtBasicCurrent";
-            this.txtBasicCurrent.Size = new System.Drawing.Size(129, 28);
+            this.txtBasicCurrent.Size = new System.Drawing.Size(129, 25);
             this.txtBasicCurrent.TabIndex = 6;
             // 
             // label30
@@ -759,7 +759,7 @@
             this.label30.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(136, 10);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(13, 19);
+            this.label30.Size = new System.Drawing.Size(12, 17);
             this.label30.TabIndex = 0;
             this.label30.Text = "/";
             // 
@@ -768,7 +768,7 @@
             this.txtiMax.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtiMax.Location = new System.Drawing.Point(170, 6);
             this.txtiMax.Name = "txtiMax";
-            this.txtiMax.Size = new System.Drawing.Size(127, 28);
+            this.txtiMax.Size = new System.Drawing.Size(127, 25);
             this.txtiMax.TabIndex = 7;
             // 
             // panel21
@@ -786,7 +786,7 @@
             this.txtPhrase.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhrase.Location = new System.Drawing.Point(3, 4);
             this.txtPhrase.Name = "txtPhrase";
-            this.txtPhrase.Size = new System.Drawing.Size(129, 28);
+            this.txtPhrase.Size = new System.Drawing.Size(129, 25);
             this.txtPhrase.TabIndex = 4;
             // 
             // label31
@@ -795,7 +795,7 @@
             this.label31.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(136, 10);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(13, 19);
+            this.label31.Size = new System.Drawing.Size(12, 17);
             this.label31.TabIndex = 0;
             this.label31.Text = "/";
             // 
@@ -804,7 +804,7 @@
             this.txtWire.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWire.Location = new System.Drawing.Point(170, 3);
             this.txtWire.Name = "txtWire";
-            this.txtWire.Size = new System.Drawing.Size(127, 28);
+            this.txtWire.Size = new System.Drawing.Size(127, 25);
             this.txtWire.TabIndex = 5;
             // 
             // txtVoltage
@@ -812,7 +812,7 @@
             this.txtVoltage.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoltage.Location = new System.Drawing.Point(308, 247);
             this.txtVoltage.Name = "txtVoltage";
-            this.txtVoltage.Size = new System.Drawing.Size(200, 28);
+            this.txtVoltage.Size = new System.Drawing.Size(200, 25);
             this.txtVoltage.TabIndex = 8;
             // 
             // txtManufacture
@@ -820,7 +820,7 @@
             this.txtManufacture.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtManufacture.Location = new System.Drawing.Point(308, 290);
             this.txtManufacture.Name = "txtManufacture";
-            this.txtManufacture.Size = new System.Drawing.Size(200, 28);
+            this.txtManufacture.Size = new System.Drawing.Size(200, 25);
             this.txtManufacture.TabIndex = 9;
             // 
             // panel1
@@ -857,7 +857,7 @@
             this.label33.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.Location = new System.Drawing.Point(4, 5);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(93, 19);
+            this.label33.Size = new System.Drawing.Size(86, 17);
             this.label33.TabIndex = 0;
             this.label33.Text = "Available Year";
             // 
@@ -866,7 +866,7 @@
             this.txtAvailableYear.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAvailableYear.Location = new System.Drawing.Point(308, 390);
             this.txtAvailableYear.Name = "txtAvailableYear";
-            this.txtAvailableYear.Size = new System.Drawing.Size(200, 28);
+            this.txtAvailableYear.Size = new System.Drawing.Size(200, 25);
             this.txtAvailableYear.TabIndex = 12;
             // 
             // cboMeterTypeCode
@@ -875,7 +875,7 @@
             this.cboMeterTypeCode.FormattingEnabled = true;
             this.cboMeterTypeCode.Location = new System.Drawing.Point(308, 534);
             this.cboMeterTypeCode.Name = "cboMeterTypeCode";
-            this.cboMeterTypeCode.Size = new System.Drawing.Size(200, 27);
+            this.cboMeterTypeCode.Size = new System.Drawing.Size(200, 25);
             this.cboMeterTypeCode.TabIndex = 15;
             // 
             // cboMeterSequence
@@ -885,7 +885,7 @@
             this.cboMeterSequence.FormattingEnabled = true;
             this.cboMeterSequence.Location = new System.Drawing.Point(308, 486);
             this.cboMeterSequence.Name = "cboMeterSequence";
-            this.cboMeterSequence.Size = new System.Drawing.Size(200, 27);
+            this.cboMeterSequence.Size = new System.Drawing.Size(200, 25);
             this.cboMeterSequence.TabIndex = 14;
             // 
             // panel5
@@ -912,7 +912,7 @@
             this.txtLosses.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLosses.Location = new System.Drawing.Point(232, 3);
             this.txtLosses.Name = "txtLosses";
-            this.txtLosses.Size = new System.Drawing.Size(200, 28);
+            this.txtLosses.Size = new System.Drawing.Size(200, 25);
             this.txtLosses.TabIndex = 16;
             // 
             // txtMultiplier
@@ -920,7 +920,7 @@
             this.txtMultiplier.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMultiplier.Location = new System.Drawing.Point(232, 48);
             this.txtMultiplier.Name = "txtMultiplier";
-            this.txtMultiplier.Size = new System.Drawing.Size(200, 28);
+            this.txtMultiplier.Size = new System.Drawing.Size(200, 25);
             this.txtMultiplier.TabIndex = 17;
             // 
             // txtHp
@@ -928,7 +928,7 @@
             this.txtHp.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHp.Location = new System.Drawing.Point(232, 95);
             this.txtHp.Name = "txtHp";
-            this.txtHp.Size = new System.Drawing.Size(200, 28);
+            this.txtHp.Size = new System.Drawing.Size(200, 25);
             this.txtHp.TabIndex = 18;
             // 
             // txtAMP
@@ -936,7 +936,7 @@
             this.txtAMP.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAMP.Location = new System.Drawing.Point(232, 142);
             this.txtAMP.Name = "txtAMP";
-            this.txtAMP.Size = new System.Drawing.Size(200, 28);
+            this.txtAMP.Size = new System.Drawing.Size(200, 25);
             this.txtAMP.TabIndex = 19;
             // 
             // txtStandard
@@ -944,7 +944,7 @@
             this.txtStandard.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStandard.Location = new System.Drawing.Point(232, 194);
             this.txtStandard.Name = "txtStandard";
-            this.txtStandard.Size = new System.Drawing.Size(200, 28);
+            this.txtStandard.Size = new System.Drawing.Size(200, 25);
             this.txtStandard.TabIndex = 20;
             // 
             // txtKVA
@@ -952,7 +952,7 @@
             this.txtKVA.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKVA.Location = new System.Drawing.Point(232, 248);
             this.txtKVA.Name = "txtKVA";
-            this.txtKVA.Size = new System.Drawing.Size(200, 28);
+            this.txtKVA.Size = new System.Drawing.Size(200, 25);
             this.txtKVA.TabIndex = 21;
             // 
             // txtFrequency
@@ -960,7 +960,7 @@
             this.txtFrequency.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrequency.Location = new System.Drawing.Point(232, 291);
             this.txtFrequency.Name = "txtFrequency";
-            this.txtFrequency.Size = new System.Drawing.Size(200, 28);
+            this.txtFrequency.Size = new System.Drawing.Size(200, 25);
             this.txtFrequency.TabIndex = 22;
             // 
             // tableLayoutPanel2
@@ -1015,7 +1015,7 @@
             this.label34.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.Location = new System.Drawing.Point(3, 6);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(41, 19);
+            this.label34.Size = new System.Drawing.Size(37, 17);
             this.label34.TabIndex = 0;
             this.label34.Text = "Class";
             // 
@@ -1024,7 +1024,7 @@
             this.txtClass.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClass.Location = new System.Drawing.Point(232, 341);
             this.txtClass.Name = "txtClass";
-            this.txtClass.Size = new System.Drawing.Size(200, 28);
+            this.txtClass.Size = new System.Drawing.Size(200, 25);
             this.txtClass.TabIndex = 23;
             // 
             // panel24
@@ -1041,7 +1041,7 @@
             this.label35.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.Location = new System.Drawing.Point(3, 6);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(60, 19);
+            this.label35.Size = new System.Drawing.Size(57, 17);
             this.label35.TabIndex = 0;
             this.label35.Text = "Constant";
             // 
@@ -1050,7 +1050,7 @@
             this.txtConstant.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConstant.Location = new System.Drawing.Point(232, 392);
             this.txtConstant.Name = "txtConstant";
-            this.txtConstant.Size = new System.Drawing.Size(200, 28);
+            this.txtConstant.Size = new System.Drawing.Size(200, 25);
             this.txtConstant.TabIndex = 24;
             // 
             // MeterFrm

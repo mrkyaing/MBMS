@@ -321,6 +321,7 @@ namespace MPS
         private void meterToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MeterImportingUI meterImporting = new MeterImportingUI();
+            meterImporting.UserID = UserID;
             meterImporting.Show();
         }
     }

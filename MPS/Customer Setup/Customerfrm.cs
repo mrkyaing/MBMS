@@ -236,27 +236,13 @@ namespace MPS{
         }
         private void btnSave_Click(object sender, EventArgs e){        
             if (checkValidation()) {
-                string meterId = cboMeterNo.SelectedValue.ToString();
-                bool IsMeterIDExitsin = iCustomerServices.GetCustomerByMeterID(meterId);
-                if (IsMeterIDExitsin) {
-                    MessageBox.Show("Customer's Meter No already exists in the system for>" +txtCustomerCode.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }
-
                 if (isEdit) {
                     int editBookCode = 0; int editPageNo = 0; int editLineNo = 0; int editLineCount = 0;
                     int editMeterCount = 0;
                     editBookCode = Convert.ToInt32(cboBookCode.Text);
                     editLineNo = Convert.ToInt32(txtLineNo.Text);
                     editPageNo = Convert.ToInt32(txtPageNo.Text);
-
-                    bool IsSMDSerialExist = mbmsEntities.Customers.Any(x => x.SMDNo == txtSMDSerial.Text);
-                    if (IsSMDSerialExist) {
-                        tooltip.SetToolTip(txtSMDSerial, "Error");
-                        tooltip.Show("Customer SMD Serial No is already exist!", txtSMDSerial);
-                        return;
-                        }
-
+               
                     int editCustomerCodeCount = 0, editNRCCount = 0;
                     Customer updateCustomer = (from c in mbmsEntities.Customers where c.CustomerID == customerID select c).FirstOrDefault();
                     if (txtCustomerCode.Text != updateCustomer.CustomerCode)
@@ -331,13 +317,7 @@ namespace MPS{
                     customerListForm.Show();
                     this.Close();
                 }
-                else {
-                    bool IsSMDSerialExist = mbmsEntities.Customers.Any(x => x.SMDNo == txtSMDSerial.Text);
-                    if (IsSMDSerialExist) {
-                        tooltip.SetToolTip(txtSMDSerial, "Error");
-                        tooltip.Show("Customer SMD Serial No is already exist!", txtSMDSerial);
-                        return;
-                        }
+                else {                
                     int customerCodeCount = 0, nrcCount=0;
                     customerCodeCount = (from c in mbmsEntities.Customers where c.CustomerCode == txtCustomerCode.Text && c.Active == true select c).ToList().Count;
                     nrcCount = (from c in mbmsEntities.Customers where c.NRC == txtNRC.Text && c.Active == true select c).ToList().Count;
@@ -367,6 +347,19 @@ namespace MPS{
                         tooltip.Show("Line No is already used!", txtLineNo);
                         return;
                     }
+                    string meterId = cboMeterNo.SelectedValue.ToString();
+                    bool IsMeterIDExists = iCustomerServices.GetCustomerByMeterID(meterId);
+                    if (IsMeterIDExists) {
+                        MessageBox.Show("Customer's Meter No already exists in the system for>" + txtCustomerCode.Text, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                        }
+
+                    bool IsSMDSerialExist = mbmsEntities.Customers.Any(x => x.SMDNo == txtSMDSerial.Text);
+                    if (IsSMDSerialExist) {
+                        tooltip.SetToolTip(txtSMDSerial, "Error");
+                        tooltip.Show("Customer SMD Serial No is already exist!", txtSMDSerial);
+                        return;
+                        }
                     Customer customer = new Customer();
                     customer.CustomerID = Guid.NewGuid().ToString();
                     customer.CustomerCode = txtCustomerCode.Text;

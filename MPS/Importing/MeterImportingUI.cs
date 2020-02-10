@@ -1,5 +1,6 @@
 ﻿using MBMS.DAL;
 using MPS.BusinessLogic.CustomerController;
+using MPS.BusinessLogic.MeterController;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,14 @@ using System.Windows.Forms;
 
 namespace MPS.Importing {
     public partial class MeterImportingUI : Form {
-        ICustomer iCustomerServices;
+        IMeter meterservices;
         DataTable dt = new DataTable();
         public string UserID { get; set; }
         private string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
         private string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
         public MeterImportingUI() {
             InitializeComponent();
-            iCustomerServices = new CustomerController();
+            meterservices = new MeterController();
             }
 
         private void btnSelect_Click(object sender, EventArgs e) {
@@ -31,70 +32,49 @@ namespace MPS.Importing {
             }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            List<Customer> customerList = new List<Customer>();
+            List<Meter> meterList = new List<Meter>();
             foreach (DataRow row in dt.Rows) {            
-                bool isdataexit = iCustomerServices.GetCustomerCustomerCode(row["CustomerCode"].ToString());
+                bool isdataexit = meterservices.getMeterByMeterNo(row["MeterNo"].ToString());
                 if (isdataexit) {
-                    MessageBox.Show("Customer  data already exists in the system for>" + row["CustomerCode"].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Meter  data already exists in the system for>" + row["MeterNo"].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                     }
-                Customer c = new Customer();
-                c.CustomerCode = row["CustomerCode"].ToString();
-                c.CustomerID = Guid.NewGuid().ToString();            
-                c.CustomerNameInEng= row["CustomerNameInEng"].ToString();
-                c.CustomerNameInMM = row["CustomerNameInMM"].ToString();
-                c.NRC = row["NRC"].ToString();
-                c.PhoneNo = row["PhoneNo"].ToString();
-                c.Post = row["PostalCode"].ToString();
-                Township t = iCustomerServices.GetTownshipByTownshipCode(row["TownshipCode"].ToString());
-                if (t == null) {
-                    MessageBox.Show("Please define Township Code for>" + c.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Meter meter = new Meter();
+                meter.MeterNo = row["MeterNo"].ToString();
+                meter.MeterID = Guid.NewGuid().ToString();            
+                meter.Model= row["Model"].ToString();
+                meter.InstalledDate =Convert.ToDateTime( row["InstalledDate"].ToString());
+                meter.Phrase = row["Phrase"].ToString();
+                meter.Wire = row["Wire"].ToString();
+                meter.BasicCurrent = row["BasicCurrent"].ToString();
+                meter.iMax = Convert.ToInt32(row["iMax"]) ;
+                meter.Voltage = Convert.ToInt32(row["Voltage"]);
+                meter.ManufactureBy = row["ManufactureBy"].ToString();
+                meter.Status = row["Status"].ToString();
+                meter.AvailableYear = Convert.ToInt32(row["AvailableYear"]);
+                MeterBox meterbox = meterservices.getMeterBoxByMeterBoxNo(row["MeterBoxCode"].ToString());
+                if (meterbox == null) {
+                    MessageBox.Show("Please define Meter Box Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                     }                 
-               c.TownshipID = t.TownshipID;
-                c.Township = t;
-                Quarter q = iCustomerServices.GetQuarterByQarterCode(row["QuarterCode"].ToString());
-                if (q == null) {
-                    MessageBox.Show("Please define Quarter Code  for>" + c.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }
-                c.QuarterID =q.QuarterID ;
-                c.Quarter = q;
-                c.CustomerAddressInEng = row["Address(English)"].ToString();
-                c.CustomerAddressInMM = row["Address(Myanmar)"].ToString();
-                Meter m = iCustomerServices.GetMeterByQarterNo(row["MeterNo"].ToString());
-                if (m == null) {
-                    MessageBox.Show("Please define MeterNo data for>" + c.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }
-                c.MeterID = m.MeterBoxID;
-                c.Meter = m;
+               meter.MeterBoxID = meterbox.MeterBoxID;
 
-                Ledger l = iCustomerServices.GetLedgerByLedgerCode(Convert.ToInt32(row["LedgerCode"].ToString()));
-                if (l == null) {
-                    MessageBox.Show("Please define LedgerCode data for>" + c.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                meter.MeterBoxSequence = Convert.ToString(row["MeterBoxSequence"]);
+                MeterType metertype = meterservices.getMeterTypeByMeterTypeCode(row["MeterTypeCode"].ToString());
+                if (metertype == null) {
+                    MessageBox.Show("Please define Meter Type Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                    }
-                c.Ledger = l;
-                c.LedgerID = l.LedgerID;
-                c.PageNo = Convert.ToInt16( row["PageNo"].ToString());
-                c.LineNo =Convert.ToInt16( row["LineNo"].ToString());
-                BillCode7Layer b=iCustomerServices.GetBillCode7LayerByBillCodeNo(Convert.ToInt32( row["BillCodeNo"].ToString()));
-                if (b == null) {
-                    MessageBox.Show("Please define BillCodeNo data for>" + c.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }
-                c.BillCode7LayerID = b.BillCode7LayerID;
-                c.BillCode7Layer = b;
-                c.Active = true;
-                c.CreatedDate = DateTime.Now;
-                c.CreatedUserID = UserID;
-                customerList.Add(c);
                 }
-            if (customerList.Count > 0) {
+                meter.MeterTypeID = metertype.MeterTypeID;   
+                meter.Active = true;
+                meter.CreatedDate = DateTime.Now;
+                meter.CreatedUserID = UserID;
+                meterList.Add(meter);
+                }
+            if (meterList.Count > 0) {
                 try {
-                    iCustomerServices.SaveRange(customerList);
-                    MessageBox.Show("Importing Customer data is successfylly saved.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    meterservices.SaveRange(meterList);
+                    MessageBox.Show("Importing Meter data is successfully saved.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                 catch (Exception ex) {
                     MessageBox.Show("Error occur :(", "information");

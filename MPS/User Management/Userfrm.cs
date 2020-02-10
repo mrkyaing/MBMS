@@ -20,7 +20,7 @@ namespace MPS
         public Boolean isEdit { get; set; }
         public String edituserID { get; set; }
         public String UserID { get; set; }
-        User user = new User();
+     
         UserController userController = new UserController();
         public Userfrm()
         {
@@ -125,7 +125,12 @@ namespace MPS
                 }
                 else
                 {
-
+                    bool usercheck = mbmsEntityies.Users.Any(x => x.Active == true && x.UserName == txtUserName.Text);
+                    if (usercheck) {
+                        MessageBox.Show("User already exists!", "Information",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                        return;
+                    }
+                    User user = new User();
                     user.UserID = Guid.NewGuid().ToString();
                     user.UserName = txtUserName.Text;
                     user.Password =Utility.EncryptString( txtPassword.Text,"scadmin@123");

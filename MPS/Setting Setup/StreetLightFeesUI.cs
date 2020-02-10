@@ -118,6 +118,7 @@ namespace MPS.Setting_Setup {
         else    if (string.IsNullOrEmpty(txtstreetlightfeeamt.Text)) {
                 tp.SetToolTip(txtstreetlightfeeamt, "Error");
                 tp.Show("Please Fill Up Street Light Fees Amount", txtstreetlightfeeamt);
+                txtstreetlightfeeamt.Focus();
                 return false;
                 }
             return true;
@@ -135,8 +136,8 @@ namespace MPS.Setting_Setup {
                 StreetLightFee streetLightFeesEntity = (StreetLightFee)row.DataBoundItem;
                 row.Cells[0].Value = streetLightFeesEntity.StreetLightFeesID;
                 row.Cells[1].Value = streetLightFeesEntity.Quarter.QuarterNameInEng;             
-                row.Cells[3].Value = streetLightFeesEntity.Quarter.Township.TownshipNameInEng;
-                row.Cells[2].Value = streetLightFeesEntity.Amount;
+                row.Cells[2].Value = streetLightFeesEntity.Quarter.Township.TownshipNameInEng;
+                row.Cells[3].Value = streetLightFeesEntity.Amount;
                 }
             }
 
@@ -144,7 +145,7 @@ namespace MPS.Setting_Setup {
             if (e.RowIndex >= 0) {
                 if (e.ColumnIndex == 5) {
                     //Delete
-                    DialogResult result = MessageBox.Show(this, "Are you sure you want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    DialogResult result = MessageBox.Show(this, "Are you sure  to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result.Equals(DialogResult.OK)) {
                         DataGridViewRow row = gvStreetLightFees.Rows[e.RowIndex];
                         StreetLightFee griddata = (StreetLightFee)row.DataBoundItem;//get the selected row's data 
