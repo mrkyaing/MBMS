@@ -32,54 +32,59 @@ namespace MPS.Importing {
             }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            List<Meter> meterList = new List<Meter>();
-            foreach (DataRow row in dt.Rows) {            
-                bool isdataexit = meterservices.getMeterByMeterNo(row["MeterNo"].ToString());
-                if (isdataexit) {
-                    MessageBox.Show("Meter  data already exists in the system for>" + row["MeterNo"].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }
-                Meter meter = new Meter();
-                meter.MeterNo = row["MeterNo"].ToString();
-                meter.MeterID = Guid.NewGuid().ToString();            
-                meter.Model= row["Model"].ToString();
-                meter.InstalledDate =Convert.ToDateTime( row["InstalledDate"].ToString());
-                meter.Phrase = row["Phrase"].ToString();
-                meter.Wire = row["Wire"].ToString();
-                meter.BasicCurrent = row["BasicCurrent"].ToString();
-                meter.iMax = Convert.ToInt32(row["iMax"]) ;
-                meter.Voltage = Convert.ToInt32(row["Voltage"]);
-                meter.ManufactureBy = row["ManufactureBy"].ToString();
-                meter.Status = row["Status"].ToString();
-                meter.AvailableYear = Convert.ToInt32(row["AvailableYear"]);
-                MeterBox meterbox = meterservices.getMeterBoxByMeterBoxNo(row["MeterBoxCode"].ToString());
-                if (meterbox == null) {
-                    MessageBox.Show("Please define Meter Box Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                    }                 
-               meter.MeterBoxID = meterbox.MeterBoxID;
+            if (dt.Rows.Count > 0) {
+                DialogResult ok = MessageBox.Show("are you sure to save data?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ok == DialogResult.Yes) {
+                    List<Meter> meterList = new List<Meter>();
+                    foreach (DataRow row in dt.Rows) {
+                        bool isdataexit = meterservices.getMeterByMeterNo(row["MeterNo"].ToString());
+                        if (isdataexit) {
+                            MessageBox.Show("Meter  data already exists in the system for>" + row["MeterNo"].ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        Meter meter = new Meter();
+                        meter.MeterNo = row["MeterNo"].ToString();
+                        meter.MeterID = Guid.NewGuid().ToString();
+                        meter.Model = row["Model"].ToString();
+                        meter.InstalledDate = Convert.ToDateTime(row["InstalledDate"].ToString());
+                        meter.Phrase = row["Phrase"].ToString();
+                        meter.Wire = row["Wire"].ToString();
+                        meter.BasicCurrent = row["BasicCurrent"].ToString();
+                        meter.iMax = Convert.ToInt32(row["iMax"]);
+                        meter.Voltage = Convert.ToInt32(row["Voltage"]);
+                        meter.ManufactureBy = row["ManufactureBy"].ToString();
+                        meter.Status = row["Status"].ToString();
+                        meter.AvailableYear = Convert.ToInt32(row["AvailableYear"]);
+                        MeterBox meterbox = meterservices.getMeterBoxByMeterBoxNo(row["MeterBoxCode"].ToString());
+                        if (meterbox == null) {
+                            MessageBox.Show("Please define Meter Box Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        meter.MeterBoxID = meterbox.MeterBoxID;
 
-                meter.MeterBoxSequence = Convert.ToString(row["MeterBoxSequence"]);
-                MeterType metertype = meterservices.getMeterTypeByMeterTypeCode(row["MeterTypeCode"].ToString());
-                if (metertype == null) {
-                    MessageBox.Show("Please define Meter Type Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                meter.MeterTypeID = metertype.MeterTypeID;   
-                meter.Active = true;
-                meter.CreatedDate = DateTime.Now;
-                meter.CreatedUserID = UserID;
-                meterList.Add(meter);
-                }
-            if (meterList.Count > 0) {
-                try {
-                    meterservices.SaveRange(meterList);
-                    MessageBox.Show("Importing Meter data is successfully saved.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        meter.MeterBoxSequence = Convert.ToString(row["MeterBoxSequence"]);
+                        MeterType metertype = meterservices.getMeterTypeByMeterTypeCode(row["MeterTypeCode"].ToString());
+                        if (metertype == null) {
+                            MessageBox.Show("Please define Meter Type Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        meter.MeterTypeID = metertype.MeterTypeID;
+                        meter.Active = true;
+                        meter.CreatedDate = DateTime.Now;
+                        meter.CreatedUserID = UserID;
+                        meterList.Add(meter);
                     }
-                catch (Exception ex) {
-                    MessageBox.Show("Error occur :(", "information");
+                    if (meterList.Count > 0) {
+                        try {
+                            meterservices.SaveRange(meterList);
+                            MessageBox.Show("Importing Meter data is successfully saved.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex) {
+                            MessageBox.Show("Error occur :(", "information");
+                        }
                     }
-                }
+                }//end of Yes Dialog
+            }//end of dt.rows.Count>0
             }
 
         private void ofdSelect_FileOk(object sender, CancelEventArgs e) {
