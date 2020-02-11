@@ -310,6 +310,12 @@
     <Compile Include="Setting Setup\StreetLightFeesUI.Designer.cs">
       <DependentUpon>StreetLightFeesUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setting Setup\VersionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting Setup\VersionInfo.designer.cs">
+      <DependentUpon>VersionInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Management\Rolefrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Setting Setup\StreetLightFeesUI.resx">
       <DependentUpon>StreetLightFeesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setting Setup\VersionInfo.resx">
+      <DependentUpon>VersionInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Management\Rolefrm.resx">
       <DependentUpon>Rolefrm.cs</DependentUpon>

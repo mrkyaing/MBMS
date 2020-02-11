@@ -312,5 +312,9 @@ namespace MPS{
             meterImporting.UserID = UserID;
             meterImporting.Show();
         }
+
+        private void versionInfoToolStripMenuItem_Click(object sender, EventArgs e) {
+            new VersionInfo().Show();
+        }
     }
 }
