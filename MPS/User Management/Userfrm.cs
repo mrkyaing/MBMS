@@ -20,6 +20,7 @@ namespace MPS
         public Boolean isEdit { get; set; }
         public String edituserID { get; set; }
         public String UserID { get; set; }
+       
         public Role LoginUserRole { get; set; }
         UserController userController = new UserController();
         public Userfrm()
@@ -32,13 +33,15 @@ namespace MPS
             bindUserRole();
             if (isEdit)
             {
-                User user = (from u in mbmsEntityies.Users where u.UserID == edituserID select u).FirstOrDefault();
+                User user = (from u in mbmsEntityies.Users where u.UserID == edituserID select u).FirstOrDefault<User>();
                 txtUserName.Text = user.UserName;
                 txtSecurityAnswer.Text = user.SecurityAnswer;
                 txtSecurityQuestion.Text = user.SecurityQuestion;
                 cboUserRole.Text = user.Role.RoleName;
                 txtFullName.Text = user.FullName;
-          }
+                txtPassword.Text = Utility.DecryptString(user.Password, "scadmin@123");
+                txtConfirmPassword.Text = Utility.DecryptString(user.Password, "scadmin@123");
+            }
         }
         public void bindUserRole()
         {
@@ -119,7 +122,9 @@ namespace MPS
                     userController.UpdateUserID(updateUser);
                     MessageBox.Show("Successfully updated User!", "Update");
                     Clear();
+                   
                     UserListfrm userListForm = new UserListfrm();
+                    userListForm.UserID = UserID;
                     userListForm.Show();
                     this.Close();
                 }

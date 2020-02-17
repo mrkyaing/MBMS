@@ -192,7 +192,7 @@ namespace MPS
                     {
                         meterBox.MeterBoxID = Guid.NewGuid().ToString();
                         meterBox.MeterBoxCode = txtMeterBoxCode.Text;
-                        meterBox.Box = txtMeterBox.SelectedText;
+                        meterBox.Box = txtMeterBox.Text;
                         meterBox.PoleID = cboPoleNo.SelectedValue.ToString();
                         meterBox.MeterBoxName = cboMeterBoxName.Text;
                         meterBox.Active = true;

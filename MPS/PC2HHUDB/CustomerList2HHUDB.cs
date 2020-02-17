@@ -116,7 +116,6 @@ namespace MPS.Customer_Setup {
                     DetailCustomerfrm detailCustomerForm = new DetailCustomerfrm();
                     detailCustomerForm.customerID = Convert.ToString(dgvCustomerList.Rows[e.RowIndex].Cells[0].Value);
                     detailCustomerForm.ShowDialog();
-
                     }
                 }
             }

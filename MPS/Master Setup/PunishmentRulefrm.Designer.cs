@@ -108,6 +108,7 @@
             this.txtAmount.Size = new System.Drawing.Size(233, 22);
             this.txtAmount.TabIndex = 4;
             this.txtAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAmount_KeyDown);
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // btnSave
             // 
@@ -236,6 +237,7 @@
             this.txtExceedMonth.Size = new System.Drawing.Size(233, 22);
             this.txtExceedMonth.TabIndex = 1;
             this.txtExceedMonth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtExceedMonth_KeyDown);
+            this.txtExceedMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExceedMonth_KeyPress);
             // 
             // dgvPunishmentRuleList
             // 

@@ -179,7 +179,13 @@ namespace MPS.Billing {
             tooltip.IsBalloon = true;
             tooltip.ToolTipIcon = ToolTipIcon.Error;
             tooltip.ToolTipTitle = "Error";
-            if (txtLowerLimit.Text.Trim() == string.Empty) {
+            if (txtBillCodeNo.Text.Trim() == string.Empty)
+            {
+                tooltip.SetToolTip(txtBillCodeNo, "Error");
+                tooltip.Show("Please fill up Bill Code No !", txtBillCodeNo);
+                return false;
+            }
+            else if (txtLowerLimit.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtLowerLimit, "Error");
                 tooltip.Show("Please fill up Lower Limit !", txtLowerLimit);
                 return false;
@@ -305,6 +311,15 @@ namespace MPS.Billing {
         private void button1_Click(object sender, EventArgs e) {
             this.txtAmount.Text = txtBillCodeNo.Text = txtLowerLimit.Text = txtUpperLimit.Text = txtRateUnit.Text = string.Empty;
             cboBillCodeType.SelectedIndex = 0;
+        }
+
+        private void BillCode7Layerfrm_MouseMove(object sender, MouseEventArgs e)
+        {
+            tooltip.Hide(txtBillCodeNo);
+            tooltip.Hide(cboBillCodeType);
+            tooltip.Hide(txtLowerLimit);
+            tooltip.Hide(txtUpperLimit);
+            tooltip.Hide(txtRateUnit);           
         }
     }
 }

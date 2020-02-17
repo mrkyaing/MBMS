@@ -133,17 +133,15 @@ namespace MPS.MeterBillPayment {
                 txtChangeAmt.Text = (Convert.ToDecimal(txtReceivedAmount.Text) - Convert.ToDecimal(txtFinalTotalFees.Text)).ToString();
                 }
             }
-
-
         private void OnlyAllowforNumericKey_KeyPress(object sender, KeyPressEventArgs e) {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.')) {
                 e.Handled = true;
-                }
+                txtChangeAmt.Text =(Convert.ToDecimal(txtReceivedAmount.Text) - Convert.ToDecimal(txtFinalTotalFees.Text)).ToString();
+            }
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1)) {
                 e.Handled = true;
-                }
-            }
-
-        }
+                }       
+        }         
+    }
     }

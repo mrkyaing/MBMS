@@ -68,7 +68,7 @@
             this.lblcopyright.Name = "lblcopyright";
             this.lblcopyright.Size = new System.Drawing.Size(189, 18);
             this.lblcopyright.TabIndex = 5;
-            this.lblcopyright.Text = "Copyright © Sourcecode Co,Ltd 2018";
+            this.lblcopyright.Text = "Copyright © Sourcecode Co,Ltd 2020";
             // 
             // label4
             // 

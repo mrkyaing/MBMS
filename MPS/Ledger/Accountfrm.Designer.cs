@@ -78,6 +78,7 @@
             this.txtLedgerCode.Size = new System.Drawing.Size(233, 22);
             this.txtLedgerCode.TabIndex = 1;
             this.txtLedgerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLedgerCode_KeyDown);
+            this.txtLedgerCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLedgerCode_KeyPress);
             // 
             // label2
             // 
@@ -98,6 +99,7 @@
             this.txtBookCode.Size = new System.Drawing.Size(233, 22);
             this.txtBookCode.TabIndex = 2;
             this.txtBookCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBookCode_KeyDown);
+            this.txtBookCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBookCode_KeyPress);
             // 
             // label4
             // 

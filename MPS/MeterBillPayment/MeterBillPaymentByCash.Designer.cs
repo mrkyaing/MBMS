@@ -71,7 +71,7 @@
             this.txtTotalFees.Location = new System.Drawing.Point(203, 206);
             this.txtTotalFees.Name = "txtTotalFees";
             this.txtTotalFees.ReadOnly = true;
-            this.txtTotalFees.Size = new System.Drawing.Size(197, 29);
+            this.txtTotalFees.Size = new System.Drawing.Size(197, 32);
             this.txtTotalFees.TabIndex = 1;
             // 
             // label12
@@ -80,7 +80,7 @@
             this.label12.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(45, 206);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 20);
+            this.label12.Size = new System.Drawing.Size(90, 23);
             this.label12.TabIndex = 0;
             this.label12.Text = "Total Fees:";
             // 
@@ -90,7 +90,7 @@
             this.txtBillCodeNo.Location = new System.Drawing.Point(203, 168);
             this.txtBillCodeNo.Name = "txtBillCodeNo";
             this.txtBillCodeNo.ReadOnly = true;
-            this.txtBillCodeNo.Size = new System.Drawing.Size(197, 29);
+            this.txtBillCodeNo.Size = new System.Drawing.Size(197, 32);
             this.txtBillCodeNo.TabIndex = 1;
             // 
             // label4
@@ -99,7 +99,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(45, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 20);
+            this.label4.Size = new System.Drawing.Size(110, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Bill Code No:";
             // 
@@ -109,7 +109,7 @@
             this.txtTownshipName.Location = new System.Drawing.Point(203, 127);
             this.txtTownshipName.Name = "txtTownshipName";
             this.txtTownshipName.ReadOnly = true;
-            this.txtTownshipName.Size = new System.Drawing.Size(197, 29);
+            this.txtTownshipName.Size = new System.Drawing.Size(197, 32);
             this.txtTownshipName.TabIndex = 1;
             // 
             // label3
@@ -118,7 +118,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(45, 127);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.Size = new System.Drawing.Size(134, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Township Name:";
             // 
@@ -128,7 +128,7 @@
             this.txtQuarterName.Location = new System.Drawing.Point(203, 78);
             this.txtQuarterName.Name = "txtQuarterName";
             this.txtQuarterName.ReadOnly = true;
-            this.txtQuarterName.Size = new System.Drawing.Size(197, 29);
+            this.txtQuarterName.Size = new System.Drawing.Size(197, 32);
             this.txtQuarterName.TabIndex = 1;
             // 
             // label2
@@ -137,7 +137,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(45, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.Size = new System.Drawing.Size(117, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "Quarter Name:";
             // 
@@ -147,7 +147,7 @@
             this.txtCustomerName.Location = new System.Drawing.Point(203, 39);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(197, 29);
+            this.txtCustomerName.Size = new System.Drawing.Size(197, 32);
             this.txtCustomerName.TabIndex = 1;
             // 
             // label1
@@ -156,7 +156,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(45, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 20);
+            this.label1.Size = new System.Drawing.Size(132, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer Name:";
             // 
@@ -202,7 +202,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 509);
+            this.groupBox1.Size = new System.Drawing.Size(481, 530);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Payment Information";
@@ -214,7 +214,7 @@
             this.txtFinalTotalFees.Location = new System.Drawing.Point(203, 320);
             this.txtFinalTotalFees.Name = "txtFinalTotalFees";
             this.txtFinalTotalFees.ReadOnly = true;
-            this.txtFinalTotalFees.Size = new System.Drawing.Size(197, 29);
+            this.txtFinalTotalFees.Size = new System.Drawing.Size(197, 32);
             this.txtFinalTotalFees.TabIndex = 12;
             // 
             // label11
@@ -224,16 +224,16 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(46, 320);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 20);
+            this.label11.Size = new System.Drawing.Size(131, 23);
             this.label11.TabIndex = 11;
             this.label11.Text = "Final Total Fees:";
             // 
             // rdoadvancemoney
             // 
             this.rdoadvancemoney.AutoSize = true;
-            this.rdoadvancemoney.Location = new System.Drawing.Point(289, 428);
+            this.rdoadvancemoney.Location = new System.Drawing.Point(316, 428);
             this.rdoadvancemoney.Name = "rdoadvancemoney";
-            this.rdoadvancemoney.Size = new System.Drawing.Size(121, 24);
+            this.rdoadvancemoney.Size = new System.Drawing.Size(140, 27);
             this.rdoadvancemoney.TabIndex = 10;
             this.rdoadvancemoney.TabStop = true;
             this.rdoadvancemoney.Text = "advance money";
@@ -245,7 +245,7 @@
             this.rdocashback.Checked = true;
             this.rdocashback.Location = new System.Drawing.Point(203, 428);
             this.rdocashback.Name = "rdocashback";
-            this.rdocashback.Size = new System.Drawing.Size(88, 24);
+            this.rdocashback.Size = new System.Drawing.Size(98, 27);
             this.rdocashback.TabIndex = 10;
             this.rdocashback.TabStop = true;
             this.rdocashback.Text = "cash back";
@@ -258,7 +258,7 @@
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(171, 360);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 20);
+            this.label10.Size = new System.Drawing.Size(19, 23);
             this.label10.TabIndex = 9;
             this.label10.Text = "*";
             // 
@@ -267,7 +267,7 @@
             this.txtpunishment.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpunishment.Location = new System.Drawing.Point(203, 243);
             this.txtpunishment.Name = "txtpunishment";
-            this.txtpunishment.Size = new System.Drawing.Size(197, 29);
+            this.txtpunishment.Size = new System.Drawing.Size(197, 32);
             this.txtpunishment.TabIndex = 4;
             // 
             // txtAdvanceMoney
@@ -275,7 +275,7 @@
             this.txtAdvanceMoney.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdvanceMoney.Location = new System.Drawing.Point(203, 280);
             this.txtAdvanceMoney.Name = "txtAdvanceMoney";
-            this.txtAdvanceMoney.Size = new System.Drawing.Size(197, 29);
+            this.txtAdvanceMoney.Size = new System.Drawing.Size(197, 32);
             this.txtAdvanceMoney.TabIndex = 4;
             // 
             // txtChangeAmt
@@ -283,7 +283,7 @@
             this.txtChangeAmt.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChangeAmt.Location = new System.Drawing.Point(203, 392);
             this.txtChangeAmt.Name = "txtChangeAmt";
-            this.txtChangeAmt.Size = new System.Drawing.Size(197, 29);
+            this.txtChangeAmt.Size = new System.Drawing.Size(197, 32);
             this.txtChangeAmt.TabIndex = 4;
             this.txtChangeAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowforNumericKey_KeyPress);
             // 
@@ -292,7 +292,7 @@
             this.txtReceivedAmount.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceivedAmount.Location = new System.Drawing.Point(203, 357);
             this.txtReceivedAmount.Name = "txtReceivedAmount";
-            this.txtReceivedAmount.Size = new System.Drawing.Size(197, 29);
+            this.txtReceivedAmount.Size = new System.Drawing.Size(197, 32);
             this.txtReceivedAmount.TabIndex = 4;
             this.txtReceivedAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceivedAmount_KeyDown);
             this.txtReceivedAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyAllowforNumericKey_KeyPress);
@@ -303,7 +303,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(45, 246);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 20);
+            this.label7.Size = new System.Drawing.Size(155, 23);
             this.label7.TabIndex = 0;
             this.label7.Text = "Punishment Money:";
             // 
@@ -313,7 +313,7 @@
             this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(45, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 20);
+            this.label6.Size = new System.Drawing.Size(134, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Advance Money:";
             // 
@@ -323,7 +323,7 @@
             this.label9.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(46, 428);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 20);
+            this.label9.Size = new System.Drawing.Size(118, 23);
             this.label9.TabIndex = 0;
             this.label9.Text = "Change Status:";
             // 
@@ -333,7 +333,7 @@
             this.label8.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(45, 392);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.Size = new System.Drawing.Size(133, 23);
             this.label8.TabIndex = 0;
             this.label8.Text = "Change Amount:";
             // 
@@ -343,7 +343,7 @@
             this.label5.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(45, 357);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 20);
+            this.label5.Size = new System.Drawing.Size(146, 23);
             this.label5.TabIndex = 0;
             this.label5.Text = "Reveived Amount:";
             // 
@@ -351,7 +351,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 527);
+            this.ClientSize = new System.Drawing.Size(525, 563);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterBillPaymentByCash";

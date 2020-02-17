@@ -243,5 +243,24 @@ namespace MPS
             tooltip.Hide(txtLedgerCode);
             tooltip.Hide(cboTransformerName);
         }
+
+        private void txtLedgerCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please input numbers.");
+
+            }
+        }
+
+        private void txtBookCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please input numbers.");
+            }
+        }
     }
 }

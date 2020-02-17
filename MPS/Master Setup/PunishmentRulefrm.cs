@@ -244,5 +244,25 @@ namespace MPS
             tooltip.Hide(txtExceedMonth);
             tooltip.Hide(txtAmount);
         }
+
+        private void txtExceedMonth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;                
+                MessageBox.Show("Please input numbers.");
+                
+            }
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please input numbers.");
+
+            }
+        }
     }
 }

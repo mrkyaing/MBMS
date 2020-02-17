@@ -86,7 +86,7 @@ namespace MPS.Importing {
 
                         Ledger l = iCustomerServices.GetLedgerByLedgerCode(Convert.ToInt32(row["LedgerCode"].ToString()));
                         if (l == null) {
-                            MessageBox.Show("Please define LedgerCode data for>" + customerEntity.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Please define Ledger Code data for>" + customerEntity.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                         customerEntity.Ledger = l;
@@ -95,7 +95,7 @@ namespace MPS.Importing {
                         customerEntity.LineNo = Convert.ToInt16(row["LineNo"].ToString());
                         BillCode7Layer b = iCustomerServices.GetBillCode7LayerByBillCodeNo(Convert.ToInt32(row["BillCodeNo"].ToString()));
                         if (b == null) {
-                            MessageBox.Show("Please define BillCodeNo data for>" + customerEntity.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Please define Bill Code No data for>" + customerEntity.CustomerCode, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                         customerEntity.BillCode7LayerID = b.BillCode7LayerID;
