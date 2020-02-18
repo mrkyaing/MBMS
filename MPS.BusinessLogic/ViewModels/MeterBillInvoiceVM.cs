@@ -9,6 +9,7 @@ namespace MPS.ViewModels {
         public string MeterBillID { get; set; }
         public string MeterBillCode { get; set; }
         public string CustomerName { get; set; }
+        public string CustomerCode { get; set; }
         public string TownshipName { get; set; }
         public string QuarterName { get; set; }
         public System.DateTime InvoiceDate { get; set; }

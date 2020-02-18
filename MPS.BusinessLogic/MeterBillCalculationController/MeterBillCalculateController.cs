@@ -45,6 +45,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         && custo.QuarterID==QuarterID && mb.isPaid==false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
+                            CustomerCode=custo.CustomerCode,
                             CustomerName = custo.CustomerNameInEng,
                             QuarterName = custo.Quarter.QuarterNameInEng,
                             TownshipName = custo.Township.TownshipNameInEng,

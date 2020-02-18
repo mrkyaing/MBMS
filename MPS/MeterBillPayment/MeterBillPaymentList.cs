@@ -35,8 +35,7 @@ namespace MPS.MeterBillPayment {
             cboQuarter.Text = "Select One";
             }
 
-        private void bindTownshipData() {
-          
+        private void bindTownshipData() {       
             cboTownship.DisplayMember = "TownshipNameInMM";
             cboTownship.ValueMember = "TownshipID";
             cboTownship.DataSource = meterbillcalculateservice.GetTownship();
@@ -83,7 +82,7 @@ namespace MPS.MeterBillPayment {
         private void gvmeterbillinvoice_CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.RowIndex >= 0) {
                 //Payment function
-                if (e.ColumnIndex == 20) {
+                if (e.ColumnIndex == 21) {
                     DataGridViewRow row = gvmeterbillinvoice.Rows[e.RowIndex];
                     MeterBillInvoiceVM meterBillInvoice = (MeterBillInvoiceVM)row.DataBoundItem;//get the selected row's data 
                     MeterBillPaymentByCash paymentbycash = new MeterBillPaymentByCash();
