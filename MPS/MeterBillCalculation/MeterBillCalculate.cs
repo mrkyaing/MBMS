@@ -100,6 +100,7 @@ namespace MPS.MeterBillCalculation {
                     mb.UsageUnit = (item.TotalMeterUnit* meterMultiplier);
                     mb.PreviousMonthUnit = 0;
                     mb.CurrentMonthUnit = (item.TotalMeterUnit - mb.PreviousMonthUnit);
+                    //calculate advance money 
                     List<AdvanceMoneyCustomer> advmoneyList = mbmsEntities.AdvanceMoneyCustomers.Where(x => x.Active == true && x.MeterBill.MeterUnitCollect.CustomerID == item.CustomerID && EntityFunctions.TruncateTime(x.ForMonth)!=item.FromDate.Date).ToList() ;
                     decimal TotalAdvance = 0;
                     foreach(AdvanceMoneyCustomer i in advmoneyList) {

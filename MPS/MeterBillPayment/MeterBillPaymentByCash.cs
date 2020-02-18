@@ -23,13 +23,11 @@ namespace MPS.MeterBillPayment {
         IPunishmentRuleServices punishmentruleservices;
         IPunishmentCustomerServices punishmentCutomerServices;
         IAdvanceMoneyCustomerServices advanceMoneyCustomerServices;
-        PunishmentRule pr;
         public MeterBillPaymentByCash() {
             InitializeComponent();
             meterBillCalculateservices = new MeterBillCalculateController();
             punishmentruleservices = new PunishmentRuleController();
             advanceMoneyCustomerServices = new AdvanceMoneyCustomerController();
-            pr = new PunishmentRule();
             punishmentCutomerServices = new PunishmentCustomerController();
             }
 
@@ -41,19 +39,22 @@ namespace MPS.MeterBillPayment {
             txtQuarterName.Text = vm.QuarterName;
             txtTownshipName.Text = vm.TownshipName;
             txtBillCodeNo.Text = vm.MeterBillCode;    
-            txtTotalFees.Text = vm.TotalFees.ToString();
-            pr= punishmentruleservices.getPunishment(ConfigurationManager.AppSettings["dafaultpunishmentrule"]);
+            txtTotalFees.Text = vm.TotalFees.ToString();     
+            List<PunishmentRule> punishmentRuleList = punishmentruleservices.getPunishmentList();
             int datediff = 0;
-            if (pr != null) {
+            if (punishmentRuleList.Count>0) {
                 datediff = (DateTime.Now.Date - vm.InvoiceDate.Date).Days / 30;
                 }
-           
-            if(datediff==pr.ExceedMonth) {
-                txtpunishment.Text = pr.Amount.ToString();
-                }else {
-                txtpunishment.Text = "0.0";
+            decimal totalPunishmentRuleAmount = 0;
+            foreach(PunishmentRule rule in punishmentRuleList) {
+                if (rule.ExceedMonth<=datediff) {
+                    totalPunishmentRuleAmount += rule.Amount;
                 }
-            txtAdvanceMoney.Text = "0.0";
+            }
+          
+            txtpunishment.Text = totalPunishmentRuleAmount.ToString();
+
+            txtAdvanceMoney.Text = vm.AdvanceMoney.ToString();
             txtFinalTotalFees.Text = (Convert.ToDecimal(vm.TotalFees) + Convert.ToDecimal(txtpunishment.Text)).ToString();
             }
         private void btnClose_Click(object sender, EventArgs e) {

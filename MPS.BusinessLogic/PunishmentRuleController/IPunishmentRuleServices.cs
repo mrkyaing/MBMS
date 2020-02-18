@@ -8,5 +8,6 @@ using System.Threading.Tasks;
 namespace MPS.BusinessLogic.PunishmentRuleController {
    public interface IPunishmentRuleServices {
         PunishmentRule getPunishment(string punishmentRuleCode);
+        List<PunishmentRule> getPunishmentList();
         }
     }

@@ -11,5 +11,9 @@ namespace MPS.BusinessLogic.PunishmentRuleController {
         public PunishmentRule getPunishment(string punishmentRuleCode) {
             return mBMSEntities.PunishmentRules.Where(x => x.Active == true && x.PunishmentCode == punishmentRuleCode).SingleOrDefault();
             }
+
+        public List<PunishmentRule> getPunishmentList() {
+            return mBMSEntities.PunishmentRules.Where(x => x.Active == true).OrderByDescending(y=>y.Amount).ToList();
         }
+    }
     }
