@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Objects;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -99,7 +100,12 @@ namespace MPS.MeterBillCalculation {
                     mb.UsageUnit = (item.TotalMeterUnit* meterMultiplier);
                     mb.PreviousMonthUnit = 0;
                     mb.CurrentMonthUnit = (item.TotalMeterUnit - mb.PreviousMonthUnit);
-                    mb.AdvanceMoney = 0;
+                    List<AdvanceMoneyCustomer> advmoneyList = mbmsEntities.AdvanceMoneyCustomers.Where(x => x.Active == true && x.MeterBill.MeterUnitCollect.CustomerID == item.CustomerID && EntityFunctions.TruncateTime(x.ForMonth)!=item.FromDate.Date).ToList() ;
+                    decimal TotalAdvance = 0;
+                    foreach(AdvanceMoneyCustomer i in advmoneyList) {
+                        TotalAdvance += i.AdvanceMonthAmount;
+                    }
+                    mb.AdvanceMoney = TotalAdvance;
                     mb.CreditAmount = 0;
                     mb.isPaid = false;
                     mb.Remark = "bill data for " + item.FromDate.ToString("MMMM");           

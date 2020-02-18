@@ -194,18 +194,33 @@ namespace MPS.MeterUnitCollect {
             
             }
         #endregion
+
+        #region event
         private void btnSave_Click(object sender, EventArgs e) {
             if (!CheckingRoleManagementFeature("BillUnitCollectEditOrDelete")) {
                 MessageBox.Show("Access Deined for this function.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-                }
+            }
             DialogResult result = MessageBox.Show("are you sure to collect all of meter unit data to the system?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (DialogResult.OK == result) {
                 if (SaveMeterUnitCollection(nodeMeterList)) {
                     MessageBox.Show("Meter Unit Collection process is successully complete.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
                 }
             }
+        }
+        private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
+            if (cboQuarter.SelectedIndex > 0) {
+                string qid = cboQuarter.SelectedValue.ToString();
+                List<Transformer> data = mbmsEntities.Transformers.Where(x => x.Active == true && x.QuarterID == qid).OrderBy(x => x.TransformerName).ToList();
+                if (data.Count > 0)
+                    cboTransformer.DataSource = data;
+                else {
+                    MessageBox.Show("There is no transformer data.");
+                    this.bindTransformer();
+                }
+            }
+        }
+        #endregion
         private bool CheckingRoleManagementFeature(string ProgramName) {
             bool IsAllowed = false;
             string roleID = mbmsEntities.Users.Where(x => x.Active == true && x.UserID == UserID).SingleOrDefault().RoleID;
@@ -216,18 +231,6 @@ namespace MPS.MeterUnitCollect {
                 }
             return IsAllowed;
             }
-
-        private void cboQuarter_SelectedIndexChanged(object sender, EventArgs e) {
-            if (cboQuarter.SelectedIndex >0) {
-                string qid = cboQuarter.SelectedValue.ToString();
-                List<Transformer> data = mbmsEntities.Transformers.Where(x => x.Active == true && x.QuarterID==qid).OrderBy(x => x.TransformerName).ToList();
-                if(data.Count>0)
-                cboTransformer.DataSource = data;
-                else {
-                    MessageBox.Show("There is no transformer data.");
-                    this.bindTransformer();
-                    }
-                }
-            }
+   
         }
     }

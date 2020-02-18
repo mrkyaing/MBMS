@@ -90,21 +90,19 @@ namespace MPS.Meter_Setup
             }
         public void LoadData()
         {
-            List<string> MeterIDList = new List<string>();
-            var data = mbsEntities.Customers.Where(x => x.Active == true).ToList();
-            foreach(var item in data) {
-                MeterIDList.Add(item.MeterID);
-                }
+          
             if (rdoregistermeter.Checked) {
                 meterList = (from m in mbsEntities.Meters
-                             where m.Active == true && MeterIDList.Any(meterid=>m.MeterID==meterid)
+                                     join custo in mbsEntities.Customers on m.MeterID equals custo.MeterID
+                             where m.Active == true                         
                              select m).ToList();
                 }
            else if (rdounregistermeter.Checked) {
                 meterList = (from m in mbsEntities.Meters
-                             where m.Active == true && !MeterIDList.Any(meterid => m.MeterID == meterid)
+                             join custo in mbsEntities.Customers on m.MeterID equals custo.MeterID
+                             where m.Active == true && !mbsEntities.Meters.Any(pv => pv.MeterID ==custo.MeterID)
                              select m).ToList();
-                }
+            }
             else if (rdoremovedmeter.Checked) {
                 meterList = (from m in mbsEntities.Meters
                                      join mh in mbsEntities.MeterHistories on m.MeterID equals mh.OldMeterID
