@@ -6,13 +6,6 @@ using MPS.BusinessLogic.PunishmentRuleController;
 using MPS.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MPS.MeterBillPayment {
@@ -23,24 +16,27 @@ namespace MPS.MeterBillPayment {
         IPunishmentRuleServices punishmentruleservices;
         IPunishmentCustomerServices punishmentCutomerServices;
         IAdvanceMoneyCustomerServices advanceMoneyCustomerServices;
+        List<PunishmentRule> punishmentRuleList;
+        public string punishmentruleID { get; set; }
         public MeterBillPaymentByCash() {
             InitializeComponent();
             meterBillCalculateservices = new MeterBillCalculateController();
             punishmentruleservices = new PunishmentRuleController();
             advanceMoneyCustomerServices = new AdvanceMoneyCustomerController();
             punishmentCutomerServices = new PunishmentCustomerController();
+            punishmentRuleList = new List<PunishmentRule>();
             }
 
         private void MeterBillPaymentByCash_Load(object sender, EventArgs e) {
             bindData();
             }
         private void bindData() {
-            this.txtCustomerName.Text = vm.CustomerName;
+            txtCustomerName.Text = vm.CustomerName;
             txtQuarterName.Text = vm.QuarterName;
             txtTownshipName.Text = vm.TownshipName;
             txtBillCodeNo.Text = vm.MeterBillCode;    
-            txtTotalFees.Text = vm.TotalFees.ToString();     
-            List<PunishmentRule> punishmentRuleList = punishmentruleservices.getPunishmentList();
+            txtTotalFees.Text = vm.TotalFees.ToString();
+            punishmentRuleList = punishmentruleservices.getPunishmentList();
             int datediff = 0;
             if (punishmentRuleList.Count>0) {
                 datediff = (DateTime.Now.Date - vm.InvoiceDate.Date).Days / 30;
@@ -49,6 +45,7 @@ namespace MPS.MeterBillPayment {
             foreach(PunishmentRule rule in punishmentRuleList) {
                 if (rule.ExceedMonth<=datediff) {
                     totalPunishmentRuleAmount += rule.Amount;
+                    punishmentruleID = rule.PunishmentRuleID;
                 }
             }
           
@@ -75,7 +72,6 @@ namespace MPS.MeterBillPayment {
                     PunishmentCustomer pc = new PunishmentCustomer();
                     BindPunishmentCustomerEntity(pc);
                     if (punishmentCutomerServices.Save(pc)){
-
                         }//end of Punishment Customer function save
                     }
                 MessageBox.Show("Payment is Complete Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -88,7 +84,7 @@ namespace MPS.MeterBillPayment {
             pc.CreatedDate = DateTime.Now;
             pc.CreatedUserID = UserID;
             pc.MeterBillID = vm.MeterBillID;
-            pc.PunishmentRuleID = pr.PunishmentRuleID;
+            pc.PunishmentRuleID = punishmentruleID;
             pc.PunishmentAmount = Convert.ToDecimal(txtpunishment.Text);
             pc.ForMonth = vm.InvoiceDate;
             }
@@ -97,7 +93,7 @@ namespace MPS.MeterBillPayment {
             amc.AdvanceMoneyCustomerID = Guid.NewGuid().ToString();
             amc.MeterBillID = vm.MeterBillID;
             amc.ForMonth = vm.InvoiceDate;
-            amc.AdvanceMonthAmount =Convert.ToDecimal( txtChangeAmt.Text);
+            amc.AdvanceMonthAmount =Convert.ToDecimal(txtChangeAmt.Text);
             amc.Active = true;
             amc.CreatedDate = DateTime.Now;
             amc.CreatedUserID = UserID;
