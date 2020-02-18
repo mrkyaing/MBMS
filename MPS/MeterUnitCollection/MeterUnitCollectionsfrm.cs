@@ -127,7 +127,13 @@ namespace MPS.MeterUnitCollect {
                         return false;
                         }
                     meterUnit.TransformerID = transformer.TransformerID;
-                    meterUnit.PoleID = mbmsEntities.Poles.Where(x => x.TransformerID == transformer.TransformerID&&x.Active==true).SingleOrDefault().PoleID;
+                    Pole p = mbmsEntities.Poles.Where(x => x.TransformerID == transformer.TransformerID && x.Active == true).SingleOrDefault();
+                    if (p == null) {
+                        ErrorList.Append("Set Pole record for :" + customerinfo.Quarter.QuarterNameInEng);
+                        MessageBox.Show(ErrorList.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    meterUnit.PoleID = p.PoleID;
                     meterUnit.MeterID = customerinfo.MeterID;
                     meterUnit.GPSX = Convert.ToDecimal(item.nod_gps_h);
                     meterUnit.GPSY = Convert.ToDecimal(item.nod_gps_l);
@@ -144,6 +150,7 @@ namespace MPS.MeterUnitCollect {
                 return true;
                 }
             catch (Exception ex) {
+                MessageBox.Show("Error occur" + ex.Message, "Error");
                 return false;
                 }
             }
