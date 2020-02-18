@@ -43,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gvmeterbillinvoice = new System.Windows.Forms.DataGridView();
             this.MeterBillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TownshipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuarterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -236,7 +235,6 @@
             this.gvmeterbillinvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvmeterbillinvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MeterBillID,
-            this.CustomerCode,
             this.CustomerName,
             this.TownshipName,
             this.QuarterName,
@@ -271,13 +269,6 @@
             this.MeterBillID.Name = "MeterBillID";
             this.MeterBillID.ReadOnly = true;
             this.MeterBillID.Visible = false;
-            // 
-            // CustomerCode
-            // 
-            this.CustomerCode.DataPropertyName = "CustomerCode";
-            this.CustomerCode.HeaderText = "CustomerCode";
-            this.CustomerCode.Name = "CustomerCode";
-            this.CustomerCode.ReadOnly = true;
             // 
             // CustomerName
             // 
@@ -461,7 +452,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView gvmeterbillinvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn MeterBillID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TownshipName;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuarterName;
