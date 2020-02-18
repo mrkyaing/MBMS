@@ -84,6 +84,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         || custo.QuarterID == QuarterID) && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
+                            CustomerCode = custo.CustomerCode,
                             CustomerName = custo.CustomerNameInEng,
                             QuarterName = custo.Quarter.QuarterNameInEng,
                             TownshipName = custo.Township.TownshipNameInEng,
@@ -122,6 +123,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         && custo.CustomerID== CustomerID && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
+                            CustomerCode = custo.CustomerCode,
                             CustomerName = custo.CustomerNameInEng,
                             QuarterName = custo.Quarter.QuarterNameInEng,
                             TownshipName = custo.Township.TownshipNameInEng,
@@ -162,6 +164,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                             QuarterName = mb.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
                             TownshipName = mb.MeterUnitCollect.Customer.Township.TownshipNameInEng,
                             MeterBillCode = mb.MeterBillCode,
+                            CustomerCode = mb.MeterUnitCollect.Customer.CustomerCode,
                             InvoiceDate = mb.InvoiceDate,
                             LastBillPaidDate = mb.LastBillPaidDate,
                             ServicesFees = mb.ServicesFees,
@@ -194,6 +197,7 @@ namespace MPS.BusinessLogic.MeterBillCalculationController {
                         &&EntityFunctions.TruncateTime(mb.InvoiceDate) <= toDate.Date && mb.isPaid == false
                         select new MeterBillInvoiceVM {
                             MeterBillID = mb.MeterBillID,
+                            CustomerCode = mb.MeterUnitCollect.Customer.CustomerCode,
                             CustomerName = mb.MeterUnitCollect.Customer.CustomerNameInEng,
                             QuarterName = mb.MeterUnitCollect.Customer.Quarter.QuarterNameInEng,
                             TownshipName = mb.MeterUnitCollect.Customer.Township.TownshipNameInEng,
