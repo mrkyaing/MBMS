@@ -55,7 +55,7 @@
             this.dgvMeterList.Location = new System.Drawing.Point(25, 254);
             this.dgvMeterList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMeterList.Name = "dgvMeterList";
-            this.dgvMeterList.Size = new System.Drawing.Size(561, 200);
+            this.dgvMeterList.Size = new System.Drawing.Size(631, 200);
             this.dgvMeterList.TabIndex = 12;
             // 
             // MeterNo
@@ -103,7 +103,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(315, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 34;
             this.label2.Text = "Db File:";
             // 
@@ -113,7 +113,7 @@
             this.cbofileName.FormattingEnabled = true;
             this.cbofileName.Location = new System.Drawing.Point(411, 106);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 27);
+            this.cbofileName.Size = new System.Drawing.Size(191, 25);
             this.cbofileName.TabIndex = 33;
             // 
             // btnSave2HHUDB
@@ -152,7 +152,7 @@
             this.label13.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(6, 114);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 17);
+            this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 10;
             this.label13.Text = "Meter Box:";
             // 
@@ -162,7 +162,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(316, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Model :";
             // 
@@ -171,7 +171,7 @@
             this.txtmetermodelsearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmetermodelsearch.Location = new System.Drawing.Point(411, 44);
             this.txtmetermodelsearch.Name = "txtmetermodelsearch";
-            this.txtmetermodelsearch.Size = new System.Drawing.Size(191, 26);
+            this.txtmetermodelsearch.Size = new System.Drawing.Size(191, 23);
             this.txtmetermodelsearch.TabIndex = 7;
             // 
             // label11
@@ -180,7 +180,7 @@
             this.label11.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(6, 46);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 17);
+            this.label11.Size = new System.Drawing.Size(56, 16);
             this.label11.TabIndex = 10;
             this.label11.Text = "Meter No";
             // 
@@ -189,7 +189,7 @@
             this.txtmeternoSearch.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmeternoSearch.Location = new System.Drawing.Point(91, 44);
             this.txtmeternoSearch.Name = "txtmeternoSearch";
-            this.txtmeternoSearch.Size = new System.Drawing.Size(175, 26);
+            this.txtmeternoSearch.Size = new System.Drawing.Size(175, 23);
             this.txtmeternoSearch.TabIndex = 7;
             // 
             // cbometerBox
@@ -199,19 +199,20 @@
             this.cbometerBox.Location = new System.Drawing.Point(91, 110);
             this.cbometerBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbometerBox.Name = "cbometerBox";
-            this.cbometerBox.Size = new System.Drawing.Size(175, 27);
+            this.cbometerBox.Size = new System.Drawing.Size(175, 25);
             this.cbometerBox.TabIndex = 8;
             // 
             // MeterList2HHUDB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 493);
+            this.ClientSize = new System.Drawing.Size(668, 460);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvMeterList);
             this.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MeterList2HHUDB";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter List 2 HHU DB";
             this.Load += new System.EventHandler(this.MeterList2HHUDB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeterList)).EndInit();
