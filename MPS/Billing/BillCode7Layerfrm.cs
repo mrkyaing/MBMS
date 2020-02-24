@@ -50,7 +50,7 @@ namespace MPS.Billing {
             //Validation
             if (txtBillCodeNo.Text.Trim() == string.Empty) {
                 tooltip.SetToolTip(txtBillCodeNo, "Error");
-                tooltip.Show("Please fill up Bill Code No !", txtBillCodeNo);
+                tooltip.Show("Please fill up Bill Code No in numeric value(s)!", txtBillCodeNo);
                 txtBillCodeNo.Focus();
                 hasError = false;
                 }
