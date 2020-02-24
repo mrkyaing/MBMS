@@ -32,7 +32,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.txtUpperLimit = new System.Windows.Forms.TextBox();
             this.txtLowerLimit = new System.Windows.Forms.TextBox();
@@ -67,6 +66,8 @@
             this.gb7layer = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,7 +85,7 @@
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(100, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 16);
+            this.label8.Size = new System.Drawing.Size(14, 14);
             this.label8.TabIndex = 15;
             this.label8.Text = "*";
             // 
@@ -94,14 +95,14 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(108, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 16);
+            this.label5.Size = new System.Drawing.Size(13, 14);
             this.label5.TabIndex = 18;
             this.label5.Text = "*";
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(300, 589);
+            this.btnCancel.Location = new System.Drawing.Point(254, 664);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 32);
@@ -110,58 +111,45 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(164, 589);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(117, 32);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(232, 151);
+            this.txtAmount.Location = new System.Drawing.Point(158, 191);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(233, 28);
+            this.txtAmount.Size = new System.Drawing.Size(213, 25);
             this.txtAmount.TabIndex = 6;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // txtUpperLimit
             // 
             this.txtUpperLimit.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpperLimit.Location = new System.Drawing.Point(232, 70);
+            this.txtUpperLimit.Location = new System.Drawing.Point(158, 69);
             this.txtUpperLimit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUpperLimit.Name = "txtUpperLimit";
-            this.txtUpperLimit.Size = new System.Drawing.Size(233, 28);
+            this.txtUpperLimit.Size = new System.Drawing.Size(210, 25);
             this.txtUpperLimit.TabIndex = 4;
+            this.txtUpperLimit.TabIndexChanged += new System.EventHandler(this.txtUpperLimit_TabIndexChanged);
             this.txtUpperLimit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUpperLimit_KeyDown);
             this.txtUpperLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUpperLimit_KeyPress);
             // 
             // txtLowerLimit
             // 
             this.txtLowerLimit.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLowerLimit.Location = new System.Drawing.Point(232, 26);
+            this.txtLowerLimit.Location = new System.Drawing.Point(158, 26);
             this.txtLowerLimit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLowerLimit.Name = "txtLowerLimit";
-            this.txtLowerLimit.Size = new System.Drawing.Size(233, 28);
+            this.txtLowerLimit.Size = new System.Drawing.Size(210, 25);
             this.txtLowerLimit.TabIndex = 3;
             this.txtLowerLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLowerLimit_KeyPress);
             // 
             // txtBillCodeNo
             // 
             this.txtBillCodeNo.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillCodeNo.Location = new System.Drawing.Point(233, 4);
+            this.txtBillCodeNo.Location = new System.Drawing.Point(171, 4);
             this.txtBillCodeNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBillCodeNo.Name = "txtBillCodeNo";
-            this.txtBillCodeNo.Size = new System.Drawing.Size(233, 28);
+            this.txtBillCodeNo.Size = new System.Drawing.Size(210, 25);
             this.txtBillCodeNo.TabIndex = 1;
             this.txtBillCodeNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillCodeNo_KeyPress);
             // 
@@ -171,7 +159,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 19);
+            this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "RateUnit";
             // 
@@ -181,7 +169,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.Size = new System.Drawing.Size(70, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "Upper Limit";
             // 
@@ -191,7 +179,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 19);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Lower Limit";
             // 
@@ -202,7 +190,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 19);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Bill Code No";
             // 
@@ -212,7 +200,7 @@
             this.label10.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 19);
+            this.label10.Size = new System.Drawing.Size(87, 17);
             this.label10.TabIndex = 4;
             this.label10.Text = "Bill Code Type";
             // 
@@ -222,7 +210,7 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(121, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(14, 16);
+            this.label11.Size = new System.Drawing.Size(13, 14);
             this.label11.TabIndex = 15;
             this.label11.Text = "*";
             // 
@@ -230,10 +218,10 @@
             // 
             this.cboBillCodeType.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBillCodeType.FormattingEnabled = true;
-            this.cboBillCodeType.Location = new System.Drawing.Point(233, 45);
+            this.cboBillCodeType.Location = new System.Drawing.Point(171, 45);
             this.cboBillCodeType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboBillCodeType.Name = "cboBillCodeType";
-            this.cboBillCodeType.Size = new System.Drawing.Size(233, 27);
+            this.cboBillCodeType.Size = new System.Drawing.Size(210, 25);
             this.cboBillCodeType.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -245,7 +233,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cboBillCodeType, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtBillCodeNo, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(30, 13);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -254,7 +242,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(549, 86);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(401, 86);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // panel2
@@ -264,7 +252,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 45);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 32);
+            this.panel2.Size = new System.Drawing.Size(149, 32);
             this.panel2.TabIndex = 21;
             // 
             // panel1
@@ -274,17 +262,17 @@
             this.panel1.Location = new System.Drawing.Point(3, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 32);
+            this.panel1.Size = new System.Drawing.Size(149, 32);
             this.panel1.TabIndex = 20;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(16, 106);
+            this.panel5.Location = new System.Drawing.Point(16, 148);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(150, 32);
+            this.panel5.Size = new System.Drawing.Size(136, 32);
             this.panel5.TabIndex = 24;
             // 
             // panel4
@@ -294,7 +282,7 @@
             this.panel4.Location = new System.Drawing.Point(16, 66);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 32);
+            this.panel4.Size = new System.Drawing.Size(136, 32);
             this.panel4.TabIndex = 23;
             // 
             // label6
@@ -303,7 +291,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(100, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(14, 14);
             this.label6.TabIndex = 15;
             this.label6.Text = "*";
             // 
@@ -313,7 +301,7 @@
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(100, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 16);
+            this.label13.Size = new System.Drawing.Size(14, 14);
             this.label13.TabIndex = 15;
             this.label13.Text = "*";
             // 
@@ -324,27 +312,28 @@
             this.panel3.Location = new System.Drawing.Point(16, 22);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(150, 32);
+            this.panel3.Size = new System.Drawing.Size(136, 32);
             this.panel3.TabIndex = 22;
             // 
             // txtRateUnit
             // 
             this.txtRateUnit.Enabled = false;
-            this.txtRateUnit.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRateUnit.Location = new System.Drawing.Point(232, 110);
+            this.txtRateUnit.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRateUnit.ForeColor = System.Drawing.Color.Red;
+            this.txtRateUnit.Location = new System.Drawing.Point(158, 146);
             this.txtRateUnit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtRateUnit.Name = "txtRateUnit";
-            this.txtRateUnit.Size = new System.Drawing.Size(233, 28);
+            this.txtRateUnit.Size = new System.Drawing.Size(213, 25);
             this.txtRateUnit.TabIndex = 5;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(16, 146);
+            this.panel6.Location = new System.Drawing.Point(16, 188);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(150, 32);
+            this.panel6.Size = new System.Drawing.Size(136, 32);
             this.panel6.TabIndex = 24;
             // 
             // label7
@@ -353,7 +342,7 @@
             this.label7.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 19);
+            this.label7.Size = new System.Drawing.Size(98, 17);
             this.label7.TabIndex = 4;
             this.label7.Text = "Amount Per Unit";
             // 
@@ -363,7 +352,7 @@
             this.label12.ForeColor = System.Drawing.Color.Red;
             this.label12.Location = new System.Drawing.Point(100, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 16);
+            this.label12.Size = new System.Drawing.Size(14, 14);
             this.label12.TabIndex = 15;
             this.label12.Text = "*";
             // 
@@ -380,10 +369,10 @@
             this.Edit,
             this.Delete,
             this.BillCode7LayerDetailID});
-            this.gv7layer.Location = new System.Drawing.Point(18, 352);
+            this.gv7layer.Location = new System.Drawing.Point(12, 427);
             this.gv7layer.Name = "gv7layer";
             this.gv7layer.ReadOnly = true;
-            this.gv7layer.Size = new System.Drawing.Size(540, 211);
+            this.gv7layer.Size = new System.Drawing.Size(447, 211);
             this.gv7layer.TabIndex = 9;
             this.gv7layer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv7layer_CellClick);
             // 
@@ -443,6 +432,7 @@
             // 
             // gb7layer
             // 
+            this.gb7layer.Controls.Add(this.label9);
             this.gb7layer.Controls.Add(this.txtRateUnit);
             this.gb7layer.Controls.Add(this.panel3);
             this.gb7layer.Controls.Add(this.txtAmount);
@@ -454,9 +444,9 @@
             this.gb7layer.Controls.Add(this.panel6);
             this.gb7layer.Controls.Add(this.panel5);
             this.gb7layer.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gb7layer.Location = new System.Drawing.Point(12, 106);
+            this.gb7layer.Location = new System.Drawing.Point(26, 106);
             this.gb7layer.Name = "gb7layer";
-            this.gb7layer.Size = new System.Drawing.Size(546, 226);
+            this.gb7layer.Size = new System.Drawing.Size(405, 300);
             this.gb7layer.TabIndex = 27;
             this.gb7layer.TabStop = false;
             this.gb7layer.Text = "Layers Information";
@@ -464,7 +454,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(310, 187);
+            this.button1.Location = new System.Drawing.Point(236, 239);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 32);
@@ -476,7 +466,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(232, 187);
+            this.btnAdd.Location = new System.Drawing.Point(158, 239);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(72, 32);
@@ -485,16 +475,36 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(2, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(400, 14);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "plz press[Enter Key] to get Rate Unit After Upper Limit Value Insert.";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(124, 664);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 32);
+            this.btnSave.TabIndex = 28;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // BillCode7Layerfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(572, 634);
+            this.ClientSize = new System.Drawing.Size(480, 712);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gv7layer);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gb7layer);
             this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -529,7 +539,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox txtUpperLimit;
         private System.Windows.Forms.TextBox txtLowerLimit;
@@ -564,5 +573,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillCode7LayerDetailID;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnSave;
     }
 }

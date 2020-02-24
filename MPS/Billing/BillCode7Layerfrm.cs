@@ -140,6 +140,7 @@ namespace MPS.Billing {
                     MessageBox.Show("Success", "Save Success");
                     Clear();
                     BillCode7LayerList billcode7LayerListForm = new BillCode7LayerList();
+                    billcode7LayerListForm.UserID = this.UserID;
                     billcode7LayerListForm.Show();
                     this.Close();
                 }
@@ -320,6 +321,13 @@ namespace MPS.Billing {
             tooltip.Hide(txtLowerLimit);
             tooltip.Hide(txtUpperLimit);
             tooltip.Hide(txtRateUnit);           
+        }
+
+        private void txtUpperLimit_TabIndexChanged(object sender, EventArgs e) {
+                if (Convert.ToDecimal(txtLowerLimit.Text) > Convert.ToDecimal(txtUpperLimit.Text)) {
+                    MessageBox.Show("Lower Limit is greater than upper limit.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else txtRateUnit.Text = Convert.ToString(Convert.ToDecimal(txtUpperLimit.Text) - (Convert.ToDecimal(txtLowerLimit.Text) - 1));           
         }
     }
 }
