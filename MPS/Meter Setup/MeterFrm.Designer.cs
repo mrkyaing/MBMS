@@ -914,6 +914,7 @@
             this.txtLosses.Name = "txtLosses";
             this.txtLosses.Size = new System.Drawing.Size(200, 25);
             this.txtLosses.TabIndex = 16;
+            this.txtLosses.Text = "1";
             // 
             // txtMultiplier
             // 
@@ -922,6 +923,7 @@
             this.txtMultiplier.Name = "txtMultiplier";
             this.txtMultiplier.Size = new System.Drawing.Size(200, 25);
             this.txtMultiplier.TabIndex = 17;
+            this.txtMultiplier.Text = "1";
             // 
             // txtHp
             // 

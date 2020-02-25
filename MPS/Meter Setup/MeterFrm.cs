@@ -16,22 +16,17 @@ namespace MPS.Meter_Setup
     {
         private ToolTip tooltip = new ToolTip();
         MBMSEntities mbmsEntities = new MBMSEntities();
-        public String UserID { get; set; }
-        public String meterID { get; set; }
-        public Boolean isEdit { get; set; }
-       
+        public string UserID { get; set; }
+        public string meterID { get; set; }
+        public bool isEdit { get; set; }  
         MeterController meterController = new MeterController();
-        public MeterFrm()
-        {
+        public MeterFrm() {
             InitializeComponent();
         }
-
-        private void MeterFrm_Load(object sender, EventArgs e)
-        {
+        private void MeterFrm_Load(object sender, EventArgs e) {
             bindMeterBoxCode();
             bindMeterTypeCode();
-            if (isEdit)
-            {
+            if (isEdit)  {
                 btnSave.Text = "Update";
                 Meter meter = (from m in mbmsEntities.Meters where m.MeterID == meterID select m).FirstOrDefault();
                 txtMeterNo.Text = meter.MeterNo;
@@ -220,7 +215,8 @@ namespace MPS.Meter_Setup
 
                     if (cboMeterSequence.Text != updateMeter.MeterBoxSequence)
                     {
-                        editmeterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.Active == true select m).ToList().Count;
+                        string meterboxId = cboMeterBoxCode.SelectedValue.ToString();
+                        editmeterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.MeterBoxID==meterboxId && m.Active == true select m).ToList().Count;
                     }
                     if (editmeterBoxNoCount > 0)
                     {
@@ -262,8 +258,6 @@ namespace MPS.Meter_Setup
                     updateMeter.Constant = txtConstant.Text;
                     updateMeter.AvailableYear =Convert.ToInt32( txtAvailableYear.Text);
                     updateMeter.Class = txtClass.Text;
-
-
                     updateMeter.iMax = Convert.ToInt32(txtiMax.Text);
                     updateMeter.KVA = Convert.ToInt32(txtKVA.Text);
                     updateMeter.ManufactureBy = txtManufacture.Text;
@@ -273,8 +267,7 @@ namespace MPS.Meter_Setup
                     updateMeter.MeterTypeID = cboMeterTypeCode.SelectedValue.ToString();
                     updateMeter.UpdatedUserID = UserID;
                     updateMeter.UpdatedDate = DateTime.Now;
-                    meterController.UpdateMeter(updateMeter);
-                    
+                    meterController.UpdateMeter(updateMeter);               
                     MessageBox.Show("Successfully updated Meter!", "Update");
                     Clear();
                     MeterListfrm meterListForm = new MeterListfrm();
@@ -285,8 +278,8 @@ namespace MPS.Meter_Setup
                 {
                     Meter meter = new Meter();
                     int meterNoCount = 0; int meterBoxNoCount = 0;
-                                    
-                        meterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.Active == true select m).ToList().Count;
+                    string meterboxId = cboMeterBoxCode.SelectedValue.ToString();               
+                    meterBoxNoCount = (from m in mbmsEntities.Meters where m.MeterBoxSequence == cboMeterSequence.Text && m.MeterBoxID== meterboxId && m.Active == true select m).ToList().Count;
                    
                     if (meterBoxNoCount > 0)
                     {

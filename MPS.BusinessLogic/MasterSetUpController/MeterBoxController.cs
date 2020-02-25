@@ -31,6 +31,7 @@ namespace MPS.BusinessLogic.MasterSetUpController
             MeterBox meterBox = mBMSEntities.MeterBoxes.Where(x => x.MeterBoxID == mb.MeterBoxID).SingleOrDefault();
             meterBox.MeterBoxCode = mb.MeterBoxCode;
             meterBox.Box = mb.Box;
+            meterBox.MeterBoxName = mb.MeterBoxName;
             meterBox.AvailableInMBQty = mb.AvailableInMBQty;
             meterBox.PoleID = mb.PoleID;
             meterBox.UpdatedUserID = mb.UpdatedUserID;
