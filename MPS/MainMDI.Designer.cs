@@ -105,7 +105,8 @@
             this.logoutToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1370, 25);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.MainMenu.Size = new System.Drawing.Size(1370, 27);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "MenuStrip";
             // 
@@ -124,7 +125,7 @@
             // 
             this.versionInfoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("versionInfoToolStripMenuItem.Image")));
             this.versionInfoToolStripMenuItem.Name = "versionInfoToolStripMenuItem";
-            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.versionInfoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.versionInfoToolStripMenuItem.Text = "Version info";
             this.versionInfoToolStripMenuItem.Click += new System.EventHandler(this.versionInfoToolStripMenuItem_Click);
             // 
@@ -132,7 +133,7 @@
             // 
             this.existToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("existToolStripMenuItem.Image")));
             this.existToolStripMenuItem.Name = "existToolStripMenuItem";
-            this.existToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.existToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.existToolStripMenuItem.Text = "Exit";
             this.existToolStripMenuItem.Click += new System.EventHandler(this.existToolStripMenuItem_Click);
             // 
@@ -552,8 +553,9 @@
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tpUserName});
-            this.statusStrip.Location = new System.Drawing.Point(0, 551);
+            this.statusStrip.Location = new System.Drawing.Point(0, 728);
             this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
             this.statusStrip.Size = new System.Drawing.Size(1370, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
@@ -573,14 +575,16 @@
             // 
             // MainMDI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 573);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.MainMenu);
+            this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MainMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Billing Management Sytem";

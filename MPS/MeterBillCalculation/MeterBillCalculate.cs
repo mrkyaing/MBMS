@@ -69,6 +69,7 @@ namespace MPS.MeterBillCalculation {
             viewMeterBillInvoice.toDate = dtpToDate.Value.Date;
             viewMeterBillInvoice.TransformerID = cbotransformer.SelectedValue.ToString();
             viewMeterBillInvoice.QuarterID = cboQuarter.SelectedValue.ToString();
+            viewMeterBillInvoice.isPassedByCalculateForm = true;
             viewMeterBillInvoice.Show();
             }
         #endregion

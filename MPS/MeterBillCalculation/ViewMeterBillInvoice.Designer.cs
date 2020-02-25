@@ -95,11 +95,11 @@
             this.AdditonalFees3,
             this.Edit,
             this.Print});
-            this.gvmeterbillinvoice.Location = new System.Drawing.Point(17, 42);
+            this.gvmeterbillinvoice.Location = new System.Drawing.Point(6, 27);
             this.gvmeterbillinvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvmeterbillinvoice.Name = "gvmeterbillinvoice";
             this.gvmeterbillinvoice.ReadOnly = true;
-            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1229, 501);
+            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1273, 387);
             this.gvmeterbillinvoice.TabIndex = 6;
             this.gvmeterbillinvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvmeterbillinvoice_CellClick);
             // 
@@ -426,11 +426,11 @@
             // 
             this.groupBox2.Controls.Add(this.gvmeterbillinvoice);
             this.groupBox2.Controls.Add(this.btnPrint);
-            this.groupBox2.Location = new System.Drawing.Point(24, 285);
+            this.groupBox2.Location = new System.Drawing.Point(24, 297);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1268, 653);
+            this.groupBox2.Size = new System.Drawing.Size(1285, 430);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Meter Bill Print";
@@ -445,6 +445,7 @@
             this.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "ViewMeterBillInvoice";
             this.Text = "View Meter Bill Invoice";
             this.Load += new System.EventHandler(this.ViewMeterBillInvoice_Load);

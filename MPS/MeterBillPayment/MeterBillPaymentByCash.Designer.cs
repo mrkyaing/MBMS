@@ -61,7 +61,7 @@
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 38);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -173,7 +173,7 @@
             this.btnPaid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPaid.Name = "btnPaid";
             this.btnPaid.Size = new System.Drawing.Size(97, 38);
-            this.btnPaid.TabIndex = 4;
+            this.btnPaid.TabIndex = 12;
             this.btnPaid.Text = "Paid";
             this.btnPaid.UseVisualStyleBackColor = true;
             this.btnPaid.Click += new System.EventHandler(this.btnPaid_Click);
