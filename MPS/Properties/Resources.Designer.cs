@@ -63,6 +63,16 @@ namespace MPS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap import__1_ {
+            get {
+                object obj = ResourceManager.GetObject("import (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap meter_bill_system_architecture_deign {
             get {
                 object obj = ResourceManager.GetObject("meter bill system architecture deign", resourceCulture);

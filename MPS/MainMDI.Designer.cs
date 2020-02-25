@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMDI));
             this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,9 +79,40 @@
             this.configurationSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnmeterimport = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.exportcustotohhu = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.picMeterUnitCollect = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.picbillcalculate = new System.Windows.Forms.PictureBox();
+            this.picbillpayment = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmeterimport)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exportcustotohhu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMeterUnitCollect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbillcalculate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbillpayment)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -108,43 +135,9 @@
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.MainMenu.Size = new System.Drawing.Size(1370, 27);
+            this.MainMenu.Size = new System.Drawing.Size(1287, 27);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "MenuStrip";
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tpUserName});
-            this.statusStrip.Location = new System.Drawing.Point(0, 728);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
-            this.toolStripStatusLabel1.Text = "User Name:";
-            // 
-            // tpUserName
-            // 
-            this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
-            this.tpUserName.Name = "tpUserName";
-            this.tpUserName.Size = new System.Drawing.Size(65, 17);
-            this.tpUserName.Text = "User Name";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MPS.Properties.Resources.meter_bill_system_architecture_deign;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(752, 685);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // systemToolStripMenuItem
             // 
@@ -513,7 +506,7 @@
             // 
             this.importExportCustomerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("importExportCustomerToolStripMenuItem.Image")));
             this.importExportCustomerToolStripMenuItem.Name = "importExportCustomerToolStripMenuItem";
-            this.importExportCustomerToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.importExportCustomerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.importExportCustomerToolStripMenuItem.Text = "Customer";
             this.importExportCustomerToolStripMenuItem.Click += new System.EventHandler(this.importExportCustomerToolStripMenuItem_Click);
             // 
@@ -521,7 +514,7 @@
             // 
             this.meterToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("meterToolStripMenuItem1.Image")));
             this.meterToolStripMenuItem1.Name = "meterToolStripMenuItem1";
-            this.meterToolStripMenuItem1.Size = new System.Drawing.Size(127, 22);
+            this.meterToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.meterToolStripMenuItem1.Text = "Meter";
             this.meterToolStripMenuItem1.Click += new System.EventHandler(this.meterToolStripMenuItem1_Click);
             // 
@@ -584,11 +577,233 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tpUserName});
+            this.statusStrip.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1287, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel1.Text = "User Name:";
+            // 
+            // tpUserName
+            // 
+            this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
+            this.tpUserName.Name = "tpUserName";
+            this.tpUserName.Size = new System.Drawing.Size(65, 17);
+            this.tpUserName.Text = "User Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::MPS.Properties.Resources.meter_bill_system_architecture_deign;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(752, 701);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.btnmeterimport);
+            this.groupBox1.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(759, 39);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(517, 211);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Importing Meter/Customer";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(247, 88);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 81);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.importExportCustomerToolStripMenuItem_Click);
+            // 
+            // btnmeterimport
+            // 
+            this.btnmeterimport.Image = ((System.Drawing.Image)(resources.GetObject("btnmeterimport.Image")));
+            this.btnmeterimport.Location = new System.Drawing.Point(43, 78);
+            this.btnmeterimport.Name = "btnmeterimport";
+            this.btnmeterimport.Size = new System.Drawing.Size(115, 91);
+            this.btnmeterimport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnmeterimport.TabIndex = 0;
+            this.btnmeterimport.TabStop = false;
+            this.btnmeterimport.Click += new System.EventHandler(this.meterToolStripMenuItem1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.pictureBox3);
+            this.groupBox2.Controls.Add(this.exportcustotohhu);
+            this.groupBox2.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(759, 262);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(517, 211);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Integrate HHU Devices";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.picbillpayment);
+            this.groupBox3.Controls.Add(this.picbillcalculate);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.picMeterUnitCollect);
+            this.groupBox3.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(759, 493);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(517, 183);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Bill Collection/Calculation";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Meter Importing";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(247, 177);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Customer Importing";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(83, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 22);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Customer Data to HHU";
+            // 
+            // exportcustotohhu
+            // 
+            this.exportcustotohhu.Image = ((System.Drawing.Image)(resources.GetObject("exportcustotohhu.Image")));
+            this.exportcustotohhu.Location = new System.Drawing.Point(78, 52);
+            this.exportcustotohhu.Name = "exportcustotohhu";
+            this.exportcustotohhu.Size = new System.Drawing.Size(120, 91);
+            this.exportcustotohhu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exportcustotohhu.TabIndex = 2;
+            this.exportcustotohhu.TabStop = false;
+            this.exportcustotohhu.Click += new System.EventHandler(this.customerDataToHHUDBToolStripMenuItem_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(270, 52);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(120, 91);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.meterDataToHHUDBToolStripMenuItem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(275, 154);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 22);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Meter Data to HHU";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(52, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 22);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Collect Meter Unit";
+            // 
+            // picMeterUnitCollect
+            // 
+            this.picMeterUnitCollect.Image = ((System.Drawing.Image)(resources.GetObject("picMeterUnitCollect.Image")));
+            this.picMeterUnitCollect.Location = new System.Drawing.Point(47, 51);
+            this.picMeterUnitCollect.Name = "picMeterUnitCollect";
+            this.picMeterUnitCollect.Size = new System.Drawing.Size(120, 91);
+            this.picMeterUnitCollect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMeterUnitCollect.TabIndex = 4;
+            this.picMeterUnitCollect.TabStop = false;
+            this.picMeterUnitCollect.Click += new System.EventHandler(this.meterBillCollectToolStripMenuItem_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(221, 148);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 22);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Calculate Bill";
+            // 
+            // picbillcalculate
+            // 
+            this.picbillcalculate.Image = ((System.Drawing.Image)(resources.GetObject("picbillcalculate.Image")));
+            this.picbillcalculate.Location = new System.Drawing.Point(203, 51);
+            this.picbillcalculate.Name = "picbillcalculate";
+            this.picbillcalculate.Size = new System.Drawing.Size(120, 91);
+            this.picbillcalculate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbillcalculate.TabIndex = 6;
+            this.picbillcalculate.TabStop = false;
+            this.picbillcalculate.Click += new System.EventHandler(this.meterBillCalculationProcessToolStripMenuItem_Click);
+            // 
+            // picbillpayment
+            // 
+            this.picbillpayment.Image = ((System.Drawing.Image)(resources.GetObject("picbillpayment.Image")));
+            this.picbillpayment.Location = new System.Drawing.Point(346, 51);
+            this.picbillpayment.Name = "picbillpayment";
+            this.picbillpayment.Size = new System.Drawing.Size(120, 91);
+            this.picbillpayment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbillpayment.TabIndex = 6;
+            this.picbillpayment.TabStop = false;
+            this.picbillpayment.Click += new System.EventHandler(this.meterBillPaymentToolStripMenuItem_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(360, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 22);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Bill Payment";
+            // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1287, 750);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.MainMenu);
@@ -600,7 +815,6 @@
             this.Name = "MainMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Billing Management Sytem";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMDI_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMDI_FormClosed);
             this.Load += new System.EventHandler(this.MainMDI_Load);
@@ -609,6 +823,19 @@
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmeterimport)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.exportcustotohhu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMeterUnitCollect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbillcalculate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbillpayment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,6 +895,23 @@
         private System.Windows.Forms.ToolStripMenuItem mgtroleMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ledgerSearchToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox btnmeterimport;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox exportcustotohhu;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox picMeterUnitCollect;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picbillcalculate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox picbillpayment;
     }
 }
 

@@ -545,8 +545,16 @@
     <Content Include="applogo.ico" />
     <Content Include="resources\ajax-loader %281%29.gif" />
     <Content Include="resources\ajax-loader.gif" />
+    <Content Include="resources\analytics.png" />
     <Content Include="resources\applogo.ico" />
     <Content Include="resources\applogo1.ico" />
+    <Content Include="resources\excel logo.jpg" />
+    <Content Include="resources\import.png" />
+    <Content Include="resources\money.png" />
+    <Content Include="resources\payment.png" />
+    <None Include="resources\import %281%29.png" />
+    <Content Include="resources\export.png" />
+    <Content Include="resources\export.svg" />
     <Content Include="resources\meter bill system architecture deign.png" />
     <Content Include="resources\meter bill system flowchart deign.png" />
   </ItemGroup>

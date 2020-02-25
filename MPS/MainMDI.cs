@@ -247,7 +247,6 @@ namespace MPS{
         }
 
         private void meterBillCalculationProcessToolStripMenuItem_Click(object sender, EventArgs e) {
-
             MeterBillCalculate mbc = new MeterBillCalculate();
             mbc.UserID = UserID;
             mbc.Show();
