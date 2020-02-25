@@ -74,9 +74,10 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            this.dgvLedgerSearchList.Location = new System.Drawing.Point(23, 142);
+            this.dgvLedgerSearchList.Location = new System.Drawing.Point(23, 208);
+            this.dgvLedgerSearchList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvLedgerSearchList.Name = "dgvLedgerSearchList";
-            this.dgvLedgerSearchList.Size = new System.Drawing.Size(1111, 442);
+            this.dgvLedgerSearchList.Size = new System.Drawing.Size(1111, 646);
             this.dgvLedgerSearchList.TabIndex = 5;
             this.dgvLedgerSearchList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvLedgerSearchList_DataBindingComplete);
             // 
@@ -161,20 +162,21 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(23, 19);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1002, 112);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.groupBox1.Size = new System.Drawing.Size(1002, 164);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search";
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(834, 44);
+            this.btnRefresh.Location = new System.Drawing.Point(834, 64);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(87, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(87, 34);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -182,9 +184,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(700, 44);
+            this.btnSearch.Location = new System.Drawing.Point(700, 64);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 23);
+            this.btnSearch.Size = new System.Drawing.Size(87, 34);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -193,32 +196,35 @@
             // cboLineNo
             // 
             this.cboLineNo.FormattingEnabled = true;
-            this.cboLineNo.Location = new System.Drawing.Point(585, 44);
+            this.cboLineNo.Location = new System.Drawing.Point(585, 64);
+            this.cboLineNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboLineNo.Name = "cboLineNo";
-            this.cboLineNo.Size = new System.Drawing.Size(84, 21);
+            this.cboLineNo.Size = new System.Drawing.Size(84, 27);
             this.cboLineNo.TabIndex = 1;
             // 
             // cboPageNo
             // 
             this.cboPageNo.FormattingEnabled = true;
-            this.cboPageNo.Location = new System.Drawing.Point(336, 44);
+            this.cboPageNo.Location = new System.Drawing.Point(336, 64);
+            this.cboPageNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboPageNo.Name = "cboPageNo";
-            this.cboPageNo.Size = new System.Drawing.Size(84, 21);
+            this.cboPageNo.Size = new System.Drawing.Size(84, 27);
             this.cboPageNo.TabIndex = 1;
             // 
             // cboBookCode
             // 
             this.cboBookCode.FormattingEnabled = true;
-            this.cboBookCode.Location = new System.Drawing.Point(94, 44);
+            this.cboBookCode.Location = new System.Drawing.Point(94, 64);
+            this.cboBookCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboBookCode.Name = "cboBookCode";
-            this.cboBookCode.Size = new System.Drawing.Size(84, 21);
+            this.cboBookCode.Size = new System.Drawing.Size(84, 27);
             this.cboBookCode.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(497, 47);
+            this.label3.Location = new System.Drawing.Point(497, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 0;
@@ -228,7 +234,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(248, 47);
+            this.label2.Location = new System.Drawing.Point(248, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 0;
@@ -238,7 +244,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 47);
+            this.label1.Location = new System.Drawing.Point(6, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 0;
@@ -246,12 +252,14 @@
             // 
             // LedgerSearchFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 611);
+            this.ClientSize = new System.Drawing.Size(1153, 750);
             this.Controls.Add(this.dgvLedgerSearchList);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LedgerSearchFrm";
             this.Text = "LedgerSearchFrm";
             this.Load += new System.EventHandler(this.LedgerSearchFrm_Load);

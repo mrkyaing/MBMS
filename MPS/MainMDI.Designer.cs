@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMDI));
             this.MainMenu = new System.Windows.Forms.MenuStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versionInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.existToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,11 +83,9 @@
             this.configurationSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tpUserName = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainMenu.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -109,6 +111,40 @@
             this.MainMenu.Size = new System.Drawing.Size(1370, 27);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "MenuStrip";
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tpUserName});
+            this.statusStrip.Location = new System.Drawing.Point(0, 728);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
+            this.statusStrip.TabIndex = 2;
+            this.statusStrip.Text = "StatusStrip";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
+            this.toolStripStatusLabel1.Text = "User Name:";
+            // 
+            // tpUserName
+            // 
+            this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
+            this.tpUserName.Name = "tpUserName";
+            this.tpUserName.Size = new System.Drawing.Size(65, 17);
+            this.tpUserName.Text = "User Name";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MPS.Properties.Resources.meter_bill_system_architecture_deign;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(752, 685);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // systemToolStripMenuItem
             // 
@@ -548,36 +584,12 @@
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
-            // statusStrip
-            // 
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tpUserName});
-            this.statusStrip.Location = new System.Drawing.Point(0, 728);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1370, 22);
-            this.statusStrip.TabIndex = 2;
-            this.statusStrip.Text = "StatusStrip";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(68, 17);
-            this.toolStripStatusLabel1.Text = "User Name:";
-            // 
-            // tpUserName
-            // 
-            this.tpUserName.ForeColor = System.Drawing.Color.DarkOrange;
-            this.tpUserName.Name = "tpUserName";
-            this.tpUserName.Size = new System.Drawing.Size(65, 17);
-            this.tpUserName.Text = "User Name";
-            // 
             // MainMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.MainMenu);
             this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -596,6 +608,7 @@
             this.MainMenu.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,6 +667,7 @@
         private System.Windows.Forms.ToolStripMenuItem customerDataToHHUDBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mgtroleMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ledgerSearchToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
