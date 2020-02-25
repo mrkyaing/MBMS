@@ -471,6 +471,7 @@
             this.txtSearchPoleName.Name = "txtSearchPoleName";
             this.txtSearchPoleName.Size = new System.Drawing.Size(164, 21);
             this.txtSearchPoleName.TabIndex = 7;
+            this.txtSearchPoleName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchPoleName_KeyDown);
             // 
             // cboSearchQuarterName
             // 

@@ -183,6 +183,7 @@
             this.txtCustomerCode.Name = "txtCustomerCode";
             this.txtCustomerCode.Size = new System.Drawing.Size(166, 23);
             this.txtCustomerCode.TabIndex = 2;
+            this.txtCustomerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCode_KeyDown);
             // 
             // label2
             // 
@@ -201,6 +202,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(166, 23);
             this.txtCustomerName.TabIndex = 2;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // btnSearch
             // 

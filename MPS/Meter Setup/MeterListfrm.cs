@@ -271,5 +271,11 @@ namespace MPS.Meter_Setup
                 rdoregistermeter.Checked = rdounregistermeter.Checked = false;
                 }
             }
+
+        private void txtMeterNo_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
         }
+    }
 }

@@ -144,7 +144,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(50, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
+            this.label1.Size = new System.Drawing.Size(86, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Code:";
             // 
@@ -153,8 +153,9 @@
             this.txtCustomerCode.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerCode.Location = new System.Drawing.Point(159, 36);
             this.txtCustomerCode.Name = "txtCustomerCode";
-            this.txtCustomerCode.Size = new System.Drawing.Size(166, 26);
+            this.txtCustomerCode.Size = new System.Drawing.Size(166, 23);
             this.txtCustomerCode.TabIndex = 2;
+            this.txtCustomerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCode_KeyDown);
             // 
             // label2
             // 
@@ -162,7 +163,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(47, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 17);
+            this.label2.Size = new System.Drawing.Size(89, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Customer Name:";
             // 
@@ -171,8 +172,9 @@
             this.txtCustomerName.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.Location = new System.Drawing.Point(159, 112);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(166, 26);
+            this.txtCustomerName.Size = new System.Drawing.Size(166, 23);
             this.txtCustomerName.TabIndex = 2;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // btnSearch
             // 
@@ -200,7 +202,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(372, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 17);
+            this.label4.Size = new System.Drawing.Size(92, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Township Name:";
             // 
@@ -210,7 +212,7 @@
             this.cboTownshipName.FormattingEnabled = true;
             this.cboTownshipName.Location = new System.Drawing.Point(480, 36);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(166, 25);
+            this.cboTownshipName.Size = new System.Drawing.Size(166, 24);
             this.cboTownshipName.TabIndex = 3;
             // 
             // btnSave2HHUDB
@@ -229,7 +231,7 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(381, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 19);
+            this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 34;
             this.label3.Text = "Db File:";
             // 
@@ -238,7 +240,7 @@
             this.cbofileName.FormattingEnabled = true;
             this.cbofileName.Location = new System.Drawing.Point(480, 112);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(166, 24);
+            this.cbofileName.Size = new System.Drawing.Size(166, 22);
             this.cbofileName.TabIndex = 33;
             // 
             // CustomerList2HHUDB

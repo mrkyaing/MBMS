@@ -359,5 +359,11 @@ namespace MPS
             tooltip.Hide(txtPoleNo);
             tooltip.Hide(cboTransformerName);           
         }
+
+        private void txtSearchPoleName_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
     }
 }

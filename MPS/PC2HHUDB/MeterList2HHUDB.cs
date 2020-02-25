@@ -134,5 +134,17 @@ namespace MPS.PC2HHUDB {
                     }
                 }
             }
+
+        private void txtmeternoSearch_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
         }
+
+        private void txtmetermodelsearch_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+    }
     }

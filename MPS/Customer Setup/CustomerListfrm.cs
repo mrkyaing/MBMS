@@ -183,5 +183,17 @@ namespace MPS.Customer_Setup
             Customerfrm customerForm = new Customerfrm();
             customerForm.Show();
         }
+
+        private void txtCustomerCode_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                this.btnSearch_Click(sender, e);
+            }
+        }
+
+        private void txtCustomerName_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                this.btnSearch_Click(sender, e);
+            }
+        }
     }
 }

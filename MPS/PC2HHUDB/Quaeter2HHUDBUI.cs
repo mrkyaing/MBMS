@@ -103,6 +103,12 @@ namespace MPS.PC2HHUDB {
                 MessageBox.Show(ex.Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
                 }
-            }   
+            }
+
+        private void txtQuarterCode_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
         }
+    }
     }

@@ -103,5 +103,23 @@ namespace MPS.MeterBillPayment {
             txtBillCodeNo.Text = txtCustomerCode.Text = txtCustomerName.Text = string.Empty;
             gvmeterbillinvoice.DataSource = null;
             }
+
+        private void txtCustomerName_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                this.btnSearch_Click(sender, e);
+            }
         }
+
+        private void txtCustomerCode_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                this.btnSearch_Click(sender, e);
+            }
+        }
+
+        private void txtBillCodeNo_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                this.btnSearch_Click(sender, e);
+            }
+        }
+    }
     }

@@ -173,6 +173,7 @@
             this.txtmetermodelsearch.Name = "txtmetermodelsearch";
             this.txtmetermodelsearch.Size = new System.Drawing.Size(191, 23);
             this.txtmetermodelsearch.TabIndex = 7;
+            this.txtmetermodelsearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmetermodelsearch_KeyDown);
             // 
             // label11
             // 
@@ -191,6 +192,7 @@
             this.txtmeternoSearch.Name = "txtmeternoSearch";
             this.txtmeternoSearch.Size = new System.Drawing.Size(175, 23);
             this.txtmeternoSearch.TabIndex = 7;
+            this.txtmeternoSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtmeternoSearch_KeyDown);
             // 
             // cbometerBox
             // 

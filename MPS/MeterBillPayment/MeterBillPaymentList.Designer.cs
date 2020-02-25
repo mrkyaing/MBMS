@@ -178,6 +178,7 @@
             this.txtCustomerCode.Name = "txtCustomerCode";
             this.txtCustomerCode.Size = new System.Drawing.Size(194, 26);
             this.txtCustomerCode.TabIndex = 3;
+            this.txtCustomerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCode_KeyDown);
             // 
             // txtBillCodeNo
             // 
@@ -186,6 +187,7 @@
             this.txtBillCodeNo.Name = "txtBillCodeNo";
             this.txtBillCodeNo.Size = new System.Drawing.Size(224, 26);
             this.txtBillCodeNo.TabIndex = 6;
+            this.txtBillCodeNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillCodeNo_KeyDown);
             // 
             // txtCustomerName
             // 
@@ -194,6 +196,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(194, 26);
             this.txtCustomerName.TabIndex = 2;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // label6
             // 

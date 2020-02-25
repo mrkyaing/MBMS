@@ -191,5 +191,17 @@ namespace MPS.Customer_Setup {
                     }
                 }
             }
+
+        private void txtCustomerCode_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
         }
+
+        private void txtCustomerName_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                btnSearch_Click(this, new EventArgs());
+            }
+        }
+    }
 }

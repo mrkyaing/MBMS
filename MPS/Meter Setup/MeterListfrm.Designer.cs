@@ -140,6 +140,7 @@
             this.txtMeterNo.Name = "txtMeterNo";
             this.txtMeterNo.Size = new System.Drawing.Size(176, 23);
             this.txtMeterNo.TabIndex = 18;
+            this.txtMeterNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMeterNo_KeyDown);
             // 
             // btnSearch
             // 

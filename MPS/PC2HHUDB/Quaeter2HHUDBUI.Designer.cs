@@ -116,6 +116,7 @@
             this.txtQuarterCode.Name = "txtQuarterCode";
             this.txtQuarterCode.Size = new System.Drawing.Size(191, 22);
             this.txtQuarterCode.TabIndex = 28;
+            this.txtQuarterCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuarterCode_KeyDown);
             // 
             // btnSearch
             // 
@@ -142,7 +143,7 @@
             this.cbofileName.FormattingEnabled = true;
             this.cbofileName.Location = new System.Drawing.Point(467, 34);
             this.cbofileName.Name = "cbofileName";
-            this.cbofileName.Size = new System.Drawing.Size(191, 24);
+            this.cbofileName.Size = new System.Drawing.Size(191, 22);
             this.cbofileName.TabIndex = 31;
             // 
             // label2
@@ -173,7 +174,7 @@
             // 
             // Quaeter2HHUDBUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 424);
             this.Controls.Add(this.groupBox1);
