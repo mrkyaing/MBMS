@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterBillCalculate));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
-            this.label29 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bill Calculation Process";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(169, 216);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(115, 15);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "* is Mandatory Field";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -72,7 +83,7 @@
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(145, 127);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 19);
+            this.label7.Size = new System.Drawing.Size(15, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "*";
             // 
@@ -83,7 +94,7 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(145, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(16, 19);
+            this.label6.Size = new System.Drawing.Size(15, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "*";
             // 
@@ -94,7 +105,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(145, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 19);
+            this.label5.Size = new System.Drawing.Size(15, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "*";
             // 
@@ -104,7 +115,7 @@
             this.label4.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(60, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 19);
+            this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Quarter:";
             // 
@@ -114,28 +125,28 @@
             this.label3.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(60, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 19);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Transformer :";
             // 
             // cboQuarter
             // 
-            this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarter.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQuarter.FormattingEnabled = true;
             this.cboQuarter.Location = new System.Drawing.Point(172, 126);
             this.cboQuarter.Name = "cboQuarter";
             this.cboQuarter.Size = new System.Drawing.Size(245, 27);
-            this.cboQuarter.TabIndex = 6;
+            this.cboQuarter.TabIndex = 2;
             this.cboQuarter.SelectedIndexChanged += new System.EventHandler(this.cboQuarter_SelectedIndexChanged);
             // 
             // cbotransformer
             // 
-            this.cbotransformer.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotransformer.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotransformer.FormattingEnabled = true;
             this.cbotransformer.Location = new System.Drawing.Point(172, 174);
             this.cbotransformer.Name = "cbotransformer";
             this.cbotransformer.Size = new System.Drawing.Size(245, 27);
-            this.cbotransformer.TabIndex = 6;
+            this.cbotransformer.TabIndex = 3;
             // 
             // btnViewInvoices
             // 
@@ -163,7 +174,7 @@
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(64, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
+            this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "To Date:";
             // 
@@ -172,8 +183,8 @@
             this.dtpToDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Location = new System.Drawing.Point(172, 85);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(245, 28);
-            this.dtpToDate.TabIndex = 2;
+            this.dtpToDate.Size = new System.Drawing.Size(245, 25);
+            this.dtpToDate.TabIndex = 1;
             // 
             // label1
             // 
@@ -181,7 +192,7 @@
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(60, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "From Date:";
             // 
@@ -190,26 +201,17 @@
             this.dtpfromDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfromDate.Location = new System.Drawing.Point(168, 34);
             this.dtpfromDate.Name = "dtpfromDate";
-            this.dtpfromDate.Size = new System.Drawing.Size(249, 28);
+            this.dtpfromDate.Size = new System.Drawing.Size(249, 25);
             this.dtpfromDate.TabIndex = 0;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(169, 216);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(115, 15);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "* is Mandatory Field";
             // 
             // MeterBillCalculate
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(566, 405);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MeterBillCalculate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Bill Calculate";

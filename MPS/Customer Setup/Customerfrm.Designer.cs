@@ -189,19 +189,19 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(5, 3);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(100, 16);
+            this.label31.Size = new System.Drawing.Size(119, 22);
             this.label31.TabIndex = 0;
-            this.label31.Text = "SMD Serial No:";
+            this.label31.Text = "Customer Serial No:";
             // 
             // txtCustomerCode
             // 
-            this.txtCustomerCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerCode.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerCode.Location = new System.Drawing.Point(244, 81);
             this.txtCustomerCode.Name = "txtCustomerCode";
-            this.txtCustomerCode.Size = new System.Drawing.Size(241, 22);
+            this.txtCustomerCode.Size = new System.Drawing.Size(241, 30);
             this.txtCustomerCode.TabIndex = 3;
             this.txtCustomerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCode_KeyDown);
             // 
@@ -220,7 +220,7 @@
             this.label28.ForeColor = System.Drawing.Color.Red;
             this.label28.Location = new System.Drawing.Point(97, 4);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(12, 15);
+            this.label28.Size = new System.Drawing.Size(15, 22);
             this.label28.TabIndex = 1;
             this.label28.Text = "*";
             // 
@@ -249,7 +249,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(127, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 15);
+            this.label5.Size = new System.Drawing.Size(15, 22);
             this.label5.TabIndex = 1;
             this.label5.Text = "*";
             // 
@@ -278,7 +278,7 @@
             this.label26.ForeColor = System.Drawing.Color.Red;
             this.label26.Location = new System.Drawing.Point(103, 3);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(12, 15);
+            this.label26.Size = new System.Drawing.Size(15, 22);
             this.label26.TabIndex = 1;
             this.label26.Text = "*";
             // 
@@ -304,11 +304,11 @@
             // 
             // cboQuarterName
             // 
-            this.cboQuarterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboQuarterName.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQuarterName.FormattingEnabled = true;
             this.cboQuarterName.Location = new System.Drawing.Point(244, 41);
             this.cboQuarterName.Name = "cboQuarterName";
-            this.cboQuarterName.Size = new System.Drawing.Size(241, 24);
+            this.cboQuarterName.Size = new System.Drawing.Size(241, 30);
             this.cboQuarterName.TabIndex = 2;
             this.cboQuarterName.SelectedIndexChanged += new System.EventHandler(this.cboQuarterName_SelectedIndexChanged);
             // 
@@ -327,7 +327,7 @@
             this.label24.ForeColor = System.Drawing.Color.Red;
             this.label24.Location = new System.Drawing.Point(96, 6);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(12, 15);
+            this.label24.Size = new System.Drawing.Size(15, 22);
             this.label24.TabIndex = 1;
             this.label24.Text = "*";
             // 
@@ -343,11 +343,11 @@
             // 
             // cboTownshipName
             // 
-            this.cboTownshipName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTownshipName.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTownshipName.FormattingEnabled = true;
             this.cboTownshipName.Location = new System.Drawing.Point(244, 3);
             this.cboTownshipName.Name = "cboTownshipName";
-            this.cboTownshipName.Size = new System.Drawing.Size(241, 24);
+            this.cboTownshipName.Size = new System.Drawing.Size(241, 30);
             this.cboTownshipName.TabIndex = 1;
             this.cboTownshipName.SelectedIndexChanged += new System.EventHandler(this.cboTownshipName_SelectedIndexChanged);
             this.cboTownshipName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboTownshipName_KeyDown);
@@ -367,7 +367,7 @@
             this.label25.ForeColor = System.Drawing.Color.Red;
             this.label25.Location = new System.Drawing.Point(112, 6);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(12, 15);
+            this.label25.Size = new System.Drawing.Size(15, 22);
             this.label25.TabIndex = 1;
             this.label25.Text = "*";
             // 
@@ -396,7 +396,7 @@
             this.label23.ForeColor = System.Drawing.Color.Red;
             this.label23.Location = new System.Drawing.Point(103, 5);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(12, 15);
+            this.label23.Size = new System.Drawing.Size(15, 22);
             this.label23.TabIndex = 1;
             this.label23.Text = "*";
             // 
@@ -425,7 +425,7 @@
             this.label22.ForeColor = System.Drawing.Color.Red;
             this.label22.Location = new System.Drawing.Point(96, 3);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(12, 15);
+            this.label22.Size = new System.Drawing.Size(15, 22);
             this.label22.TabIndex = 1;
             this.label22.Text = "*";
             // 
@@ -500,7 +500,7 @@
             this.label27.ForeColor = System.Drawing.Color.Red;
             this.label27.Location = new System.Drawing.Point(112, 3);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(12, 15);
+            this.label27.Size = new System.Drawing.Size(15, 22);
             this.label27.TabIndex = 1;
             this.label27.Text = "*";
             // 
@@ -580,7 +580,7 @@
             this.label20.ForeColor = System.Drawing.Color.Red;
             this.label20.Location = new System.Drawing.Point(87, 5);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 15);
+            this.label20.Size = new System.Drawing.Size(15, 22);
             this.label20.TabIndex = 1;
             this.label20.Text = "*";
             // 
@@ -596,10 +596,10 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(244, 220);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(241, 22);
+            this.txtPhone.Size = new System.Drawing.Size(241, 30);
             this.txtPhone.TabIndex = 7;
             this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
             // 
@@ -618,7 +618,7 @@
             this.label18.ForeColor = System.Drawing.Color.Red;
             this.label18.Location = new System.Drawing.Point(49, 6);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(12, 15);
+            this.label18.Size = new System.Drawing.Size(15, 22);
             this.label18.TabIndex = 1;
             this.label18.Text = "*";
             // 
@@ -634,10 +634,10 @@
             // 
             // txtNRC
             // 
-            this.txtNRC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNRC.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNRC.Location = new System.Drawing.Point(244, 185);
             this.txtNRC.Name = "txtNRC";
-            this.txtNRC.Size = new System.Drawing.Size(241, 22);
+            this.txtNRC.Size = new System.Drawing.Size(241, 30);
             this.txtNRC.TabIndex = 6;
             this.txtNRC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNRC_KeyDown);
             // 
@@ -656,7 +656,7 @@
             this.label17.ForeColor = System.Drawing.Color.Red;
             this.label17.Location = new System.Drawing.Point(152, 6);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(12, 15);
+            this.label17.Size = new System.Drawing.Size(15, 22);
             this.label17.TabIndex = 1;
             this.label17.Text = "*";
             // 
@@ -672,10 +672,10 @@
             // 
             // txtCustomerNameMM
             // 
-            this.txtCustomerNameMM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerNameMM.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerNameMM.Location = new System.Drawing.Point(244, 149);
             this.txtCustomerNameMM.Name = "txtCustomerNameMM";
-            this.txtCustomerNameMM.Size = new System.Drawing.Size(241, 22);
+            this.txtCustomerNameMM.Size = new System.Drawing.Size(241, 30);
             this.txtCustomerNameMM.TabIndex = 5;
             this.txtCustomerNameMM.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNameMM_KeyDown);
             // 
@@ -694,7 +694,7 @@
             this.label16.ForeColor = System.Drawing.Color.Red;
             this.label16.Location = new System.Drawing.Point(149, 8);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(12, 15);
+            this.label16.Size = new System.Drawing.Size(15, 22);
             this.label16.TabIndex = 1;
             this.label16.Text = "*";
             // 
@@ -710,10 +710,10 @@
             // 
             // txtCustomerNameEng
             // 
-            this.txtCustomerNameEng.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerNameEng.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerNameEng.Location = new System.Drawing.Point(244, 113);
             this.txtCustomerNameEng.Name = "txtCustomerNameEng";
-            this.txtCustomerNameEng.Size = new System.Drawing.Size(241, 22);
+            this.txtCustomerNameEng.Size = new System.Drawing.Size(241, 30);
             this.txtCustomerNameEng.TabIndex = 4;
             this.txtCustomerNameEng.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNameEng_KeyDown);
             // 
@@ -732,7 +732,7 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(103, 5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(12, 15);
+            this.label15.Size = new System.Drawing.Size(15, 22);
             this.label15.TabIndex = 1;
             this.label15.Text = "*";
             // 
@@ -789,8 +789,9 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Customerfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Customer";

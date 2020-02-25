@@ -30,15 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerListfrm));
             this.dgvCustomerList = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtCustomerCode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboTownshipName = new System.Windows.Forms.ComboBox();
-            this.btnAddNewCustomer = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +45,15 @@
             this.Column13 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.SMDSerialNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCustomerCode = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboTownshipName = new System.Windows.Forms.ComboBox();
+            this.btnAddNewCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,6 +83,88 @@
             this.dgvCustomerList.TabIndex = 0;
             this.dgvCustomerList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomerList_CellClick);
             this.dgvCustomerList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvCustomerList_DataBindingComplete);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Customer Code";
+            this.Column9.Name = "Column9";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Customer Name Eng";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Customer Name MM";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "NRC";
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Phone No";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Township ";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Quarter ";
+            this.Column8.Name = "Column8";
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Meter No";
+            this.Column10.Name = "Column10";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Book Code No";
+            this.Column5.Name = "Column5";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Bill Code No";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "";
+            this.Column12.Name = "Column12";
+            this.Column12.Text = "View Detail";
+            this.Column12.UseColumnTextForLinkValue = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "";
+            this.Column13.Name = "Column13";
+            this.Column13.Text = "Edit";
+            this.Column13.UseColumnTextForLinkValue = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "";
+            this.Column14.Name = "Column14";
+            this.Column14.Text = "Delete";
+            this.Column14.UseColumnTextForLinkValue = true;
+            // 
+            // SMDSerialNo
+            // 
+            this.SMDSerialNo.HeaderText = "SMDSerialNo";
+            this.SMDSerialNo.Name = "SMDSerialNo";
             // 
             // label1
             // 
@@ -169,88 +251,6 @@
             this.btnAddNewCustomer.UseVisualStyleBackColor = true;
             this.btnAddNewCustomer.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Customer Code";
-            this.Column9.Name = "Column9";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Customer Name Eng";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Customer Name MM";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "NRC";
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Phone No";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Township ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Quarter ";
-            this.Column8.Name = "Column8";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Meter No";
-            this.Column10.Name = "Column10";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Book Code No";
-            this.Column5.Name = "Column5";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Bill Code No";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "";
-            this.Column12.Name = "Column12";
-            this.Column12.Text = "View Detail";
-            this.Column12.UseColumnTextForLinkValue = true;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "";
-            this.Column13.Name = "Column13";
-            this.Column13.Text = "Edit";
-            this.Column13.UseColumnTextForLinkValue = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "";
-            this.Column14.Name = "Column14";
-            this.Column14.Text = "Delete";
-            this.Column14.UseColumnTextForLinkValue = true;
-            // 
-            // SMDSerialNo
-            // 
-            this.SMDSerialNo.HeaderText = "SMDSerialNo";
-            this.SMDSerialNo.Name = "SMDSerialNo";
-            // 
             // CustomerListfrm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -265,7 +265,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvCustomerList);
-            this.Font = new System.Drawing.Font("Myanmar3", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CustomerListfrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

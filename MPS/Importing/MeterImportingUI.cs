@@ -82,8 +82,12 @@ namespace MPS.Importing {
                 MessageBox.Show("Please define Meter Box Code for>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            meter.MeterBoxID = meterbox.MeterBoxID;
-
+            bool checkmeterboxsequence = meterservices.getMeterByMeterboxIdBoxSequence(meterbox.MeterBoxID, Convert.ToString(row["MeterBoxSequence"]));
+            if (checkmeterboxsequence) {
+                MessageBox.Show("Meter Box Sequence is already used!!>" + meter.MeterNo, "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            meter.MeterBoxID = meterbox.MeterBoxID;        
             meter.MeterBoxSequence = Convert.ToString(row["MeterBoxSequence"]);
             MeterType metertype = meterservices.getMeterTypeByMeterTypeCode(row["MeterTypeCode"].ToString());
             if (metertype == null) {

@@ -24,6 +24,10 @@ namespace MPS.BusinessLogic.MeterController
             return mBMSEntities.MeterBoxes.Where(x => x.Active == true && x.MeterBoxCode == meterBoxNo).SingleOrDefault();
         }
 
+        public bool getMeterByMeterboxIdBoxSequence(string meterboxId, string boxSequence) {
+            return mBMSEntities.Meters.Any(x => x.MeterBoxID == meterboxId && x.MeterBoxSequence == boxSequence && x.Active == true);
+        }
+
         public bool getMeterByMeterNo(string meterNo) {
             return mBMSEntities.Meters.Any(x => x.Active == true && x.MeterNo == meterNo);
         }

@@ -87,8 +87,10 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 184);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(664, 269);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By";
@@ -97,135 +99,144 @@
             // 
             this.cboQuarter.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboQuarter.FormattingEnabled = true;
-            this.cboQuarter.Location = new System.Drawing.Point(434, 68);
+            this.cboQuarter.Location = new System.Drawing.Point(434, 99);
+            this.cboQuarter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboQuarter.Name = "cboQuarter";
             this.cboQuarter.Size = new System.Drawing.Size(224, 22);
-            this.cboQuarter.TabIndex = 11;
+            this.cboQuarter.TabIndex = 5;
             // 
             // cboTownship
             // 
             this.cboTownship.Font = new System.Drawing.Font("Myanmar3", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTownship.FormattingEnabled = true;
-            this.cboTownship.Location = new System.Drawing.Point(434, 33);
+            this.cboTownship.Location = new System.Drawing.Point(434, 48);
+            this.cboTownship.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboTownship.Name = "cboTownship";
             this.cboTownship.Size = new System.Drawing.Size(224, 22);
-            this.cboTownship.TabIndex = 12;
+            this.cboTownship.TabIndex = 4;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(542, 143);
+            this.btnCancel.Location = new System.Drawing.Point(542, 209);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 26);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Size = new System.Drawing.Size(100, 38);
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(434, 143);
+            this.btnSearch.Location = new System.Drawing.Point(434, 209);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(102, 26);
-            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Size = new System.Drawing.Size(102, 38);
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dtptoDate
             // 
-            this.dtptoDate.Location = new System.Drawing.Point(98, 77);
+            this.dtptoDate.Location = new System.Drawing.Point(98, 112);
+            this.dtptoDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtptoDate.Name = "dtptoDate";
-            this.dtptoDate.Size = new System.Drawing.Size(200, 20);
-            this.dtptoDate.TabIndex = 8;
+            this.dtptoDate.Size = new System.Drawing.Size(200, 26);
+            this.dtptoDate.TabIndex = 1;
             // 
             // dtpFromDate
             // 
-            this.dtpFromDate.Location = new System.Drawing.Point(98, 33);
+            this.dtpFromDate.Location = new System.Drawing.Point(98, 48);
+            this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpFromDate.TabIndex = 9;
+            this.dtpFromDate.Size = new System.Drawing.Size(200, 26);
+            this.dtpFromDate.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 77);
+            this.label3.Location = new System.Drawing.Point(33, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(49, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "To Date:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 33);
+            this.label4.Location = new System.Drawing.Point(33, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(61, 19);
             this.label4.TabIndex = 7;
             this.label4.Text = "From Date:";
             // 
             // txtCustomerCode
             // 
-            this.txtCustomerCode.Location = new System.Drawing.Point(98, 149);
+            this.txtCustomerCode.Location = new System.Drawing.Point(98, 218);
+            this.txtCustomerCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerCode.Name = "txtCustomerCode";
-            this.txtCustomerCode.Size = new System.Drawing.Size(194, 20);
-            this.txtCustomerCode.TabIndex = 1;
+            this.txtCustomerCode.Size = new System.Drawing.Size(194, 26);
+            this.txtCustomerCode.TabIndex = 3;
             // 
             // txtBillCodeNo
             // 
-            this.txtBillCodeNo.Location = new System.Drawing.Point(434, 112);
+            this.txtBillCodeNo.Location = new System.Drawing.Point(434, 164);
+            this.txtBillCodeNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBillCodeNo.Name = "txtBillCodeNo";
-            this.txtBillCodeNo.Size = new System.Drawing.Size(224, 20);
-            this.txtBillCodeNo.TabIndex = 1;
+            this.txtBillCodeNo.Size = new System.Drawing.Size(224, 26);
+            this.txtBillCodeNo.TabIndex = 6;
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(98, 115);
+            this.txtCustomerName.Location = new System.Drawing.Point(98, 168);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(194, 20);
-            this.txtCustomerName.TabIndex = 1;
+            this.txtCustomerName.Size = new System.Drawing.Size(194, 26);
+            this.txtCustomerName.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 77);
+            this.label6.Location = new System.Drawing.Point(330, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.Size = new System.Drawing.Size(78, 19);
             this.label6.TabIndex = 1;
             this.label6.Text = "Quarter Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 146);
+            this.label2.Location = new System.Drawing.Point(12, 213);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Customer Code:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 39);
+            this.label5.Location = new System.Drawing.Point(330, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(88, 19);
             this.label5.TabIndex = 1;
             this.label5.Text = "Township Name:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(330, 115);
+            this.label7.Location = new System.Drawing.Point(330, 168);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.Size = new System.Drawing.Size(98, 19);
             this.label7.TabIndex = 1;
             this.label7.Text = "Meter Bill Code No:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 115);
+            this.label1.Location = new System.Drawing.Point(12, 168);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(87, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Customer Name:";
             // 
@@ -257,11 +268,12 @@
             this.AdditonalFees2,
             this.AdditonalFees3,
             this.Edit});
-            this.gvmeterbillinvoice.Location = new System.Drawing.Point(0, 190);
+            this.gvmeterbillinvoice.Location = new System.Drawing.Point(0, 252);
+            this.gvmeterbillinvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvmeterbillinvoice.Name = "gvmeterbillinvoice";
             this.gvmeterbillinvoice.ReadOnly = true;
-            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1355, 209);
-            this.gvmeterbillinvoice.TabIndex = 1;
+            this.gvmeterbillinvoice.Size = new System.Drawing.Size(1358, 306);
+            this.gvmeterbillinvoice.TabIndex = 9;
             this.gvmeterbillinvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvmeterbillinvoice_CellClick);
             // 
             // MeterBillID
@@ -424,12 +436,14 @@
             // 
             // MeterBillPaymentList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 406);
+            this.ClientSize = new System.Drawing.Size(1370, 593);
             this.Controls.Add(this.gvmeterbillinvoice);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Pyidaungsu", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MeterBillPaymentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meter Bill Payment List";

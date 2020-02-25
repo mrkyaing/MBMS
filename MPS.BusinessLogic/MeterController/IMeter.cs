@@ -18,5 +18,6 @@ namespace MPS.BusinessLogic.MeterController
         bool getMeterByMeterNo(string meterNo);
         MeterBox getMeterBoxByMeterBoxNo(string meterBoxNo);
         MeterType getMeterTypeByMeterTypeCode(string metertypecode);
+        bool getMeterByMeterboxIdBoxSequence(string meterboxId, string boxSequence);
     }
 }

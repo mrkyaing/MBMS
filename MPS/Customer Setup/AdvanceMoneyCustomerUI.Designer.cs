@@ -58,10 +58,11 @@
             this.Amount,
             this.ForMonth,
             this.Remark});
-            this.gvadvancemoneycustomer.Location = new System.Drawing.Point(12, 202);
+            this.gvadvancemoneycustomer.Location = new System.Drawing.Point(14, 342);
+            this.gvadvancemoneycustomer.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gvadvancemoneycustomer.Name = "gvadvancemoneycustomer";
             this.gvadvancemoneycustomer.ReadOnly = true;
-            this.gvadvancemoneycustomer.Size = new System.Drawing.Size(747, 268);
+            this.gvadvancemoneycustomer.Size = new System.Drawing.Size(871, 454);
             this.gvadvancemoneycustomer.TabIndex = 0;
             // 
             // CustomerCode
@@ -123,18 +124,21 @@
             this.groupBox1.Controls.Add(this.dtpfromDate);
             this.groupBox1.Controls.Add(this.dtpToDate);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(53, 12);
+            this.groupBox1.Location = new System.Drawing.Point(62, 20);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 184);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.groupBox1.Size = new System.Drawing.Size(566, 311);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(228, 121);
+            this.btnCancel.Location = new System.Drawing.Point(266, 205);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 27);
+            this.btnCancel.Size = new System.Drawing.Size(126, 46);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -142,9 +146,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(114, 121);
+            this.btnSearch.Location = new System.Drawing.Point(133, 205);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(108, 27);
+            this.btnSearch.Size = new System.Drawing.Size(126, 46);
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -155,9 +160,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Myanmar3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(82, 72);
+            this.label6.Location = new System.Drawing.Point(96, 122);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 23);
+            this.label6.Size = new System.Drawing.Size(17, 20);
             this.label6.TabIndex = 13;
             this.label6.Text = "*";
             // 
@@ -165,9 +170,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Location = new System.Drawing.Point(7, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "From Date:";
             // 
@@ -176,9 +181,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(85, 25);
+            this.label5.Location = new System.Drawing.Point(99, 42);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 19);
+            this.label5.Size = new System.Drawing.Size(15, 17);
             this.label5.TabIndex = 14;
             this.label5.Text = "*";
             // 
@@ -186,37 +191,41 @@
             // 
             this.dtpfromDate.CalendarFont = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfromDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpfromDate.Location = new System.Drawing.Point(114, 23);
+            this.dtpfromDate.Location = new System.Drawing.Point(133, 39);
+            this.dtpfromDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpfromDate.Name = "dtpfromDate";
-            this.dtpfromDate.Size = new System.Drawing.Size(245, 28);
+            this.dtpfromDate.Size = new System.Drawing.Size(285, 25);
             this.dtpfromDate.TabIndex = 8;
             // 
             // dtpToDate
             // 
             this.dtpToDate.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpToDate.Location = new System.Drawing.Point(114, 69);
+            this.dtpToDate.Location = new System.Drawing.Point(133, 117);
+            this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(245, 28);
+            this.dtpToDate.Size = new System.Drawing.Size(285, 25);
             this.dtpToDate.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar3", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 76);
+            this.label2.Location = new System.Drawing.Point(12, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
+            this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "To Date:";
             // 
             // AdvanceMoneyCustomerUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 482);
+            this.ClientSize = new System.Drawing.Size(899, 750);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvadvancemoneycustomer);
+            this.Font = new System.Drawing.Font("Pyidaungsu", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "AdvanceMoneyCustomerUI";
             this.Text = "AdvanceMoneyCustomerUI";
             this.Load += new System.EventHandler(this.AdvanceMoneyCustomerUI_Load);
